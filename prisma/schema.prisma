@@ -28,8 +28,19 @@ model User {
   updatedAt     DateTime  @updatedAt
   sessions      Session[]
   accounts      Account[]
+  role          UserRole
+  lastName      String
+  afm           String
+  username      String
+  approved      Boolean   @default(false)
+  area          String
+  city          String
+  country       String
+
 
   @@unique([email])
+  @@unique([afm])
+  @@unique([username])
   @@map("user")
 }
 
