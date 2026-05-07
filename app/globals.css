@@ -1,26 +1,44 @@
-@import "tailwindcss";
+/*
+ * =========================================================================
+ * FILE         :   app/globals.css
+ *
+ * PROJECT      :   EventLoop
+ *
+ * DESCRIPTION  :   Central CSS import file for the EventLoop application.
+ *                  Imports Tailwind and all modular CSS files in proper order.
+ * =========================================================================
+ */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Imports Tailwind CSS utilities for the project */
+@import "tailwindcss"; /* Tailwind CSS utilities */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+/* Imports global base styles like colors, typography, and base page rules */
+@import "../styles/base.css"; /* Base page and global variables */
+
+
+/* Imports header styles, variables, responsive and profile dropdown */
+@import "../styles/header/header.css"; /* Header bar, links, search, profile dropdown, responsive overrides */
+
+
+/* Imports breadcrumb styles for welcome page navigation */
+@import "../styles/breadcrumb/breadcrumb.css"; /* Breadcrumb wrapper, links, separators, final overrides */
+
+
+/* Imports welcome page styles including hero, popular events, interactions and carousel */
+@import "../styles/welcome/welcome.css"; /* Welcome page layout, hero section, popular events carousel, animations, masks */
+
+
+/* Imports login page variables and layout/styles */
+@import "../styles/login/login.css"; /* Login page layout, form, card, inputs, buttons, error messages */
+
+
+/* Imports register page variables and layout/styles */
+@import "../styles/register/register.css"; /* Register page layout, form, card, buttons */
+
+
+/* Imports pending page variables and layout/styles */
+@import "../styles/register/pending/pending.css"; /* Pending approval page layout, card, button, error messages */
+
+

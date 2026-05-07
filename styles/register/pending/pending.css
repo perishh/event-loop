@@ -1,0 +1,370 @@
+/*
+ * =========================================================================
+ * FILE         :   styles/register/pending/pending.css
+ *
+ * PROJECT      :   EventLoop
+ *
+ * DESCRIPTION  :   Pending approval page layout variables for the
+ *                  EventLoop application.
+ * =========================================================================
+ */
+
+
+/*
+ * =========================================================================
+ * PENDING PAGE SETTINGS
+ * =========================================================================
+ */
+
+
+ /**
+ * @brief Stores the pending page layout settings.
+ */
+:root {
+    /* Stores the horizontal padding of the pending page content. */
+    --pending-page-padding-x: 2.5rem;
+
+    /* Stores the top padding of the pending page content. */
+    --pending-page-padding-top: 3.25rem;
+
+    /* Stores the pending page title font size. */
+    --pending-title-font-size: 1.75rem;
+
+    /* Stores the pending page title color. */
+    --pending-title-color: #7a7a7a;
+
+    /* Stores the pending card width. */
+    --pending-card-width: 50rem;
+
+    /* Stores the pending card border radius. */
+    --pending-card-border-radius: 1.5rem;
+
+    /* Stores the pending card top margin. */
+    --pending-card-margin-top: 4rem;
+
+    /* Stores the pending card inner padding. */
+    --pending-card-padding: 2.25rem;
+
+    /* Stores the pending card shadow opacity. */
+    --pending-card-shadow-opacity: 0.25;
+
+    /* Stores the pending button width. */
+    --pending-button-width: 21rem;
+
+    /* Stores the pending button height. */
+    --pending-button-height: 3rem;
+
+    /* Stores the pending button top margin. */
+    --pending-button-margin-top: 4.5rem;
+}
+
+/*
+ * =========================================================================
+ * PENDING PAGE STYLE
+ * =========================================================================
+ */
+
+/**
+ * @brief Defines the pending page content area.
+ */
+.eventloop-pending-page-content {
+    /* Sets the visible area below the header. */
+    min-height: calc(100vh - var(--header-min-height));
+
+    /* Adds horizontal spacing to the pending page. */
+    padding-left: var(--pending-page-padding-x);
+
+    /* Adds horizontal spacing to the pending page. */
+    padding-right: var(--pending-page-padding-x);
+
+    /* Adds top spacing to the pending page. */
+    padding-top: var(--pending-page-padding-top);
+
+    /* Applies the white page background. */
+    background-color: var(--background);
+}
+
+
+/**
+ * @brief Defines the pending page title.
+ */
+.eventloop-pending-page-title {
+    /* Removes the default heading margin. */
+    margin: 0;
+
+    /* Sets the pending title font size. */
+    font-size: var(--pending-title-font-size);
+
+    /* Keeps the pending title font weight light. */
+    font-weight: 400;
+
+    /* Applies the pending title color. */
+    color: var(--pending-title-color);
+
+    /* Applies a subtle text shadow to the pending title. */
+    text-shadow:
+        var(--header-text-shadow-x)
+        var(--header-text-shadow-y)
+        var(--header-text-shadow-blur)
+        color-mix(in srgb, var(--shadow-color) 12%, transparent);
+}
+
+
+/**
+ * @brief Defines the wrapper around the pending card and button.
+ */
+.eventloop-pending-wrapper {
+    /* Uses flexbox for vertical layout. */
+    display: flex;
+
+    /* Stacks the card and button vertically. */
+    flex-direction: column;
+
+    /* Centers the card and button horizontally. */
+    align-items: center;
+}
+
+
+/**
+ * @brief Defines the pending message card.
+ */
+.eventloop-pending-card {
+    /* Sets the pending card width. */
+    width: min(100%, var(--pending-card-width));
+
+    /* Adds top spacing before the card. */
+    margin-top: var(--pending-card-margin-top);
+
+    /* Adds inner spacing inside the card. */
+    padding: var(--pending-card-padding);
+
+    /* Rounds the pending card corners. */
+    border-radius: var(--pending-card-border-radius);
+
+    /* Applies the white card background. */
+    background-color: var(--eventloop-white);
+
+    /* Applies the pending card shadow. */
+    box-shadow: 0 8px 28px 0 color-mix(in srgb, var(--shadow-color) calc(var(--pending-card-shadow-opacity) * 100%), transparent);
+}
+
+
+/**
+ * @brief Defines the pending message list.
+ */
+.eventloop-pending-list {
+    /* Removes the default list margin. */
+    margin: 0;
+
+    /* Removes the default browser bullets because custom bullets are used. */
+    list-style-type: none;
+
+    /* Removes default left spacing from the list. */
+    padding-left: 0;
+
+    /* Uses flexbox for vertical list layout. */
+    display: flex;
+
+    /* Stacks the list items vertically. */
+    flex-direction: column;
+
+    /* Adds spacing between pending messages. */
+    gap: 2rem;
+}
+
+
+/**
+ * @brief Defines each pending message item.
+ */
+.eventloop-pending-list-item {
+    /* Places the custom bullet and text on the same row. */
+    display: flex;
+
+    /* Aligns the bullet with the first line of text. */
+    align-items: flex-start;
+
+    /* Adds spacing between the custom bullet and the message text. */
+    column-gap: 0.75rem;
+
+    /* Sets the pending message font size. */
+    font-size: 1.15rem;
+
+    /* Sets a comfortable line height for the message text. */
+    line-height: 1.35;
+
+    /* Applies the main readable text color. */
+    color: var(--foreground);
+}
+
+
+/**
+ * @brief Defines the custom large bullet of each pending message.
+ */
+.eventloop-pending-custom-bullet {
+    /* Sets the custom bullet width. */
+    width: 0.50rem;
+
+    /* Sets the custom bullet height. */
+    height: 0.50rem;
+
+    /* Makes the custom bullet perfectly round. */
+    border-radius: 50%;
+
+    /* Applies the main purple color to the custom bullet. */
+    background-color: var(--eventloop-purple);
+
+    /* Aligns the bullet with the first text line. */
+    margin-top: 0.38rem;
+
+    /* Prevents the custom bullet from shrinking. */
+    flex-shrink: 0;
+}
+
+
+/**
+ * @brief Defines the text area next to each custom bullet.
+ */
+.eventloop-pending-list-item-content {
+    /* Lets the message text use the remaining row width. */
+    display: block;
+}
+
+
+/**
+ * @brief Defines the bullet marker of each pending message.
+ */
+.eventloop-pending-list-item::marker {
+    /* Applies the main purple color to each bullet. */
+    color: var(--eventloop-purple);
+
+    /* Makes the bullet marker visually stronger. */
+    font-size: 1.2rem;
+}
+
+
+/**
+ * @brief Defines highlighted text on its own line.
+ */
+.eventloop-pending-highlight {
+    /* Places the highlighted email on its own line. */
+    display: block;
+
+    /* Adds top spacing before the highlighted email. */
+    margin-top: 1.25rem;
+
+    /* Applies the main purple color. */
+    color: var(--eventloop-purple);
+
+    /* Makes the highlighted email bold. */
+    font-weight: 800;
+}
+
+
+/**
+ * @brief Defines highlighted inline words inside the pending message.
+ */
+.eventloop-pending-highlight-inline {
+    /* Adds small left spacing before the highlighted word. */
+    margin-left: 0.25rem;
+
+    /* Adds small right spacing after the highlighted word. */
+    margin-right: 0.25rem;
+
+    /* Applies the main purple color. */
+    color: var(--eventloop-purple);
+
+    /* Makes the highlighted word bold. */
+    font-weight: 800;
+}
+
+
+/**
+ * @brief Defines the pending return button.
+ */
+.eventloop-pending-button {
+    /* Uses flexbox for button text alignment. */
+    display: flex;
+
+    /* Centers the button text horizontally. */
+    justify-content: center;
+
+    /* Centers the button text vertically. */
+    align-items: center;
+
+    /* Sets the button width. */
+    width: var(--pending-button-width);
+
+    /* Sets the button height. */
+    height: var(--pending-button-height);
+
+    /* Adds top spacing above the button. */
+    margin-top: var(--pending-button-margin-top);
+
+    /* Rounds the button fully. */
+    border-radius: var(--header-link-border-radius);
+
+    /* Applies the purple button background. */
+    background-color: var(--eventloop-purple);
+
+    /* Applies the white button text color. */
+    color: var(--eventloop-white);
+
+    /* Keeps the button text bold. */
+    font-weight: 800;
+
+    /* Sets the button font size. */
+    font-size: 1.15rem;
+
+    /* Removes the default underline from the link. */
+    text-decoration: none;
+
+    /* Applies the shared hover text shadow. */
+    text-shadow:
+        var(--header-hover-text-shadow-x)
+        var(--header-hover-text-shadow-y)
+        var(--header-hover-text-shadow-blur)
+        color-mix(in srgb, var(--shadow-color) calc(var(--header-hover-text-shadow-opacity) * 100%), transparent);
+
+    /* Applies the button shadow. */
+    box-shadow: 0 8px 18px color-mix(in srgb, var(--shadow-color) 30%, transparent);
+
+    /* Animates the hover changes. */
+    transition: background-color var(--header-link-transition-duration) ease, box-shadow var(--header-link-transition-duration) ease;
+}
+
+
+/**
+ * @brief Defines the hover state for the pending return button.
+ */
+.eventloop-pending-button:hover {
+    /* Applies the lime hover background. */
+    background-color: var(--eventloop-lime);
+
+    /* Applies a stronger hover shadow. */
+    box-shadow: 0 10px 22px color-mix(in srgb, var(--shadow-color) 35%, transparent);
+}
+
+
+/**
+ * @brief Defines the temporary register error message.
+ */
+.eventloop-register-error-message {
+    /* Removes the default paragraph margin. */
+    margin: 0;
+
+    /* Adds spacing above the register error message. */
+    margin-top: 1rem;
+
+    /* Applies the rose red logo color to the error message. */
+    color: var(--eventloop-rose-red);
+
+    /* Keeps the error message readable. */
+    font-weight: 700;
+
+    /* Applies a subtle shadow to the error message. */
+    text-shadow:
+        var(--header-text-shadow-x)
+        var(--header-text-shadow-y)
+        var(--header-text-shadow-blur)
+        color-mix(in srgb, var(--shadow-color) 10%, transparent);
+}

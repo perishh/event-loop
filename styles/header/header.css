@@ -1,0 +1,1643 @@
+/*
+ * =========================================================================
+ * FILE         :   styles/header/header.css
+ *
+ * PROJECT      :   EventLoop
+ *
+ * DESCRIPTION  :   Header bar variables and styles for the EventLoop
+ *                  application.
+ * =========================================================================
+ */
+
+
+/*
+ * =========================================================================
+ * HEADER BAR SIZE SETTINGS
+ * =========================================================================
+ */
+
+/**
+ * @brief Stores the size and spacing settings for the purple header bar.
+ */
+:root {
+    /* Stores the minimum height of the header bar. */
+    --header-min-height: 6rem;
+
+    /* Stores the small-screen horizontal padding of the header bar. */
+    --header-padding-x-small: 1rem;
+
+    /* Stores the large-screen horizontal padding of the header bar. */
+    --header-padding-x-large: 2rem;
+
+    /* Stores the vertical padding of the header bar. */
+    --header-padding-y: 0.5rem;
+
+    /* Stores the vertical gap used when the header wraps. */
+    --header-row-gap: 0.75rem;
+}
+
+
+/*
+ * =========================================================================
+ * HEADER BAR DROP SHADOW SETTINGS
+ * =========================================================================
+ */
+
+/**
+ * @brief Stores the external drop shadow settings for the purple header bar.
+ */
+:root {
+    /* Stores the horizontal position of the header drop shadow. */
+    --header-drop-shadow-x: 0px;
+
+    /* Stores the vertical position of the header drop shadow. */
+    --header-drop-shadow-y: 4px;
+
+    /* Stores the blur radius of the header drop shadow. */
+    --header-drop-shadow-blur: 20px;
+
+    /* Stores the spread radius of the header drop shadow. */
+    --header-drop-shadow-spread: 0px;
+
+    /* Stores the opacity of the header drop shadow. */
+    --header-drop-shadow-opacity: 0.20;
+}
+
+
+/*
+ * =========================================================================
+ * HEADER BAR INNER SHADOW SETTINGS
+ * =========================================================================
+ */
+
+/**
+ * @brief Stores the inner shadow settings for the purple header bar.
+ */
+:root {
+    /* Stores the color of the header inner shadow. */
+    --header-inner-shadow-color: #000000;
+
+    /* Stores the horizontal position of the header inner shadow. */
+    --header-inner-shadow-x: 0px;
+
+    /* Stores the vertical position of the header inner shadow. */
+    --header-inner-shadow-y: 2px;
+
+    /* Stores the blur radius of the header inner shadow. */
+    --header-inner-shadow-blur: 20px;
+
+    /* Stores the spread radius of the header inner shadow. */
+    --header-inner-shadow-spread: 5px;
+
+    /* Stores the opacity of the header inner shadow. */
+    --header-inner-shadow-opacity: 0.30;
+}
+
+
+/*
+ * =========================================================================
+ * HEADER TEXT SHADOW SETTINGS
+ * =========================================================================
+ */
+
+/**
+ * @brief Stores the text shadow settings for all header text.
+ */
+:root {
+    /* Stores the horizontal position of the header text shadow. */
+    --header-text-shadow-x: 0px;
+
+    /* Stores the vertical position of the header text shadow. */
+    --header-text-shadow-y: 2px;
+
+    /* Stores the blur radius of the header text shadow. */
+    --header-text-shadow-blur: 6px;
+
+    /* Stores the opacity of the header text shadow. */
+    --header-text-shadow-opacity: 0.35;
+}
+
+
+/*
+ * =========================================================================
+ * LOGO SETTINGS
+ * =========================================================================
+ */
+
+/**
+ * @brief Stores the size, offset and shadow settings for the EventLoop logo.
+ */
+:root {
+    /* Stores the small-screen visible logo height. */
+    --logo-height-small: 78px;
+
+    /* Stores the medium-screen visible logo height. */
+    --logo-height-medium: 82px;
+
+    /* Stores the large-screen visible logo height. */
+    --logo-height-large: 86px;
+
+    /* Stores the vertical logo offset inside the header. */
+    --logo-offset-y: -2px;
+
+    /* Stores the horizontal position of the logo drop shadow. */
+    --logo-drop-shadow-x: 0px;
+
+    /* Stores the vertical position of the logo drop shadow. */
+    --logo-drop-shadow-y: 2px;
+
+    /* Stores the blur radius of the logo drop shadow. */
+    --logo-drop-shadow-blur: 8px;
+
+    /* Stores the opacity of the logo drop shadow. */
+    --logo-drop-shadow-opacity: 0.30;
+
+    /* Stores the small-screen right margin after the logo. */
+    --logo-margin-right-small: 1rem;
+
+    /* Stores the large-screen right margin after the logo. */
+    --logo-margin-right-large: 2rem;
+
+    /* Stores the visible logo opacity as a percentage number. */
+    --logo-opacity-percent: 100;
+}
+
+
+/*
+ * =========================================================================
+ * HEADER LINK SETTINGS
+ * =========================================================================
+ */
+
+/**
+ * @brief Stores the common layout and hover settings for header links.
+ */
+:root {
+    /* Stores the horizontal padding of normal header links. */
+    --header-link-padding-x: 0.75rem;
+
+    /* Stores the vertical padding of normal header links. */
+    --header-link-padding-y: 0.5rem;
+
+    /* Stores the border radius of normal header links. */
+    --header-link-border-radius: 9999px;
+
+    /* Stores the animation duration of normal header links. */
+    --header-link-transition-duration: 150ms;
+}
+
+
+/*
+ * =========================================================================
+ * DESKTOP NAVIGATION SETTINGS
+ * =========================================================================
+ */
+
+/**
+ * @brief Stores the spacing and font settings for the desktop category navigation.
+ */
+:root {
+    /* Stores the desktop category gap on normal wide screens. */
+    --desktop-navigation-gap: 1.25rem;
+
+    /* Stores the desktop category gap on extra wide screens. */
+    --desktop-navigation-gap-large: 2rem;
+
+    /* Stores the desktop category font size on normal wide screens. */
+    --desktop-navigation-font-size: 1rem;
+
+    /* Stores the desktop category font size on extra wide screens. */
+    --desktop-navigation-font-size-large: 1.125rem;
+}
+
+
+/*
+ * =========================================================================
+ * DROPDOWN BUTTON SETTINGS
+ * =========================================================================
+ */
+
+/**
+ * @brief Stores the layout settings for the responsive categories dropdown button.
+ */
+:root {
+    /* Stores the right margin of the dropdown button. */
+    --dropdown-button-margin-right: 1rem;
+
+    /* Stores the horizontal padding of the dropdown button. */
+    --dropdown-button-padding-x: 1rem;
+
+    /* Stores the vertical padding of the dropdown button. */
+    --dropdown-button-padding-y: 0.5rem;
+
+    /* Stores the border radius of the dropdown button. */
+    --dropdown-button-border-radius: 9999px;
+
+    /* Stores the default background opacity of the dropdown button. */
+    --dropdown-button-background-opacity: 0.15;
+}
+
+
+/*
+ * =========================================================================
+ * DROPDOWN PANEL SETTINGS
+ * =========================================================================
+ */
+
+/**
+ * @brief Stores the size, spacing and shadow settings for the responsive dropdown panel.
+ */
+:root {
+    /* Stores the width of the dropdown panel. */
+    --dropdown-panel-width: 14rem;
+
+    /* Stores the top margin of the dropdown panel. */
+    --dropdown-panel-margin-top: 0.75rem;
+
+    /* Stores the padding inside the dropdown panel. */
+    --dropdown-panel-padding: 0.75rem;
+
+    /* Stores the gap between dropdown links. */
+    --dropdown-panel-gap: 0.25rem;
+
+    /* Stores the border radius of the dropdown panel. */
+    --dropdown-panel-border-radius: 1rem;
+
+    /* Stores the horizontal position of the dropdown panel shadow. */
+    --dropdown-panel-shadow-x: 0px;
+
+    /* Stores the vertical position of the dropdown panel shadow. */
+    --dropdown-panel-shadow-y: 8px;
+
+    /* Stores the blur radius of the dropdown panel shadow. */
+    --dropdown-panel-shadow-blur: 24px;
+
+    /* Stores the spread radius of the dropdown panel shadow. */
+    --dropdown-panel-shadow-spread: 0px;
+
+    /* Stores the opacity of the dropdown panel shadow. */
+    --dropdown-panel-shadow-opacity: 0.25;
+}
+
+
+/*
+ * =========================================================================
+ * DROPDOWN TEXT SHADOW SETTINGS
+ * =========================================================================
+ */
+
+/**
+ * @brief Stores the text shadow settings for normal dropdown links.
+ */
+:root {
+    /* Stores the horizontal position of the normal dropdown text shadow. */
+    --dropdown-link-text-shadow-x: 0px;
+
+    /* Stores the vertical position of the normal dropdown text shadow. */
+    --dropdown-link-text-shadow-y: 1px;
+
+    /* Stores the blur radius of the normal dropdown text shadow. */
+    --dropdown-link-text-shadow-blur: 2px;
+
+    /* Stores the opacity of the normal dropdown text shadow. */
+    --dropdown-link-text-shadow-opacity: 0.22;
+}
+
+
+/*
+ * =========================================================================
+ * HEADER HOVER TEXT SHADOW SETTINGS
+ * =========================================================================
+ */
+
+/**
+ * @brief Stores the shared text shadow settings for all hover links.
+ */
+:root {
+    /* Stores the horizontal position of the hover text shadow. */
+    --header-hover-text-shadow-x: 0px;
+
+    /* Stores the vertical position of the hover text shadow. */
+    --header-hover-text-shadow-y: 1px;
+
+    /* Stores the blur radius of the hover text shadow. */
+    --header-hover-text-shadow-blur: 3px;
+
+    /* Stores the opacity of the hover text shadow. */
+    --header-hover-text-shadow-opacity: 0.35;
+}
+
+
+/*
+ * =========================================================================
+ * SEARCH BOX SETTINGS
+ * =========================================================================
+ */
+
+/**
+ * @brief Stores the size and layout settings for the search box.
+ */
+:root {
+    /* Stores the height of the search box. */
+    --search-box-height: 2.5rem;
+
+    /* Stores the small-screen width of the search box. */
+    --search-box-width-small: 10rem;
+
+    /* Stores the medium-screen width of the search box. */
+    --search-box-width-medium: 10.5rem;
+
+    /* Stores the large-screen width of the search box. */
+    --search-box-width-large: 11rem;
+
+    /* Stores the horizontal padding of the search box. */
+    --search-box-padding-x: 1rem;
+
+    /* Stores the border radius of the search box. */
+    --search-box-border-radius: 9999px;
+
+    /* Stores the background opacity of the search box. */
+    --search-box-background-opacity: 0.90;
+}
+
+
+/*
+ * =========================================================================
+ * AUTHENTICATION LINKS SETTINGS
+ * =========================================================================
+ */
+
+/**
+ * @brief Stores the spacing settings for the authentication links.
+ *        Note: font-size variables removed because they were always
+ *        overridden by --desktop-navigation-font-size.
+ */
+:root {
+    /* Stores the small-screen gap between authentication links. */
+    --auth-links-gap-small: 0.75rem;
+
+    /* Stores the medium-screen gap between authentication links. */
+    --auth-links-gap-medium: 1.25rem;
+
+    /* Stores the large-screen gap between authentication links. */
+    --auth-links-gap-large: 1.75rem;
+}
+
+
+/*
+ * =========================================================================
+ * PROFILE DROPDOWN SETTINGS
+ * =========================================================================
+ */
+
+/**
+ * @brief Stores the profile dropdown layout settings.
+ */
+:root {
+    /* Stores the gap between the profile button and the dropdown panel. */
+    --profile-dropdown-panel-margin-top: 0.5rem;
+
+    /* Stores the width of the profile dropdown panel. */
+    --profile-dropdown-panel-width: 11rem;
+
+    /* Stores the padding of the profile dropdown panel. */
+    --profile-dropdown-panel-padding: 0.75rem;
+
+    /* Stores the border radius of the profile dropdown panel. */
+    --profile-dropdown-panel-border-radius: 1rem;
+
+    /* Stores the gap between profile dropdown items. */
+    --profile-dropdown-panel-gap: 0.35rem;
+
+    /* Stores the horizontal position of the profile dropdown shadow. */
+    --profile-dropdown-shadow-x: 0px;
+
+    /* Stores the vertical position of the profile dropdown shadow. */
+    --profile-dropdown-shadow-y: 4px;
+
+    /* Stores the blur radius of the profile dropdown shadow. */
+    --profile-dropdown-shadow-blur: 20px;
+
+    /* Stores the spread radius of the profile dropdown shadow. */
+    --profile-dropdown-shadow-spread: 0px;
+
+    /* Stores the opacity of the profile dropdown shadow. */
+    --profile-dropdown-shadow-opacity: 0.20;
+}
+
+
+/*
+ * =========================================================================
+ * HEADER BAR STYLE
+ * =========================================================================
+ */
+
+/**
+ * @brief Defines the purple header bar layout and shadows.
+ */
+.eventloop-header-bar {
+    /* Uses flexbox for horizontal header layout. */
+    display: flex;
+
+    /* Allows wrapping when the viewport is not wide enough. */
+    flex-wrap: wrap;
+
+    /* Aligns header children vertically in the center. */
+    align-items: center;
+
+    /* Sets the minimum header height. */
+    min-height: var(--header-min-height);
+
+    /* Makes the header cover the full viewport width. */
+    width: 100%;
+
+    /* Adds vertical gap when wrapped. */
+    row-gap: var(--header-row-gap);
+
+    /* Applies the small-screen horizontal padding. */
+    padding-left: var(--header-padding-x-small);
+
+    /* Applies the small-screen horizontal padding. */
+    padding-right: var(--header-padding-x-small);
+
+    /* Applies the vertical padding. */
+    padding-top: var(--header-padding-y);
+
+    /* Applies the vertical padding. */
+    padding-bottom: var(--header-padding-y);
+
+    /* Applies the main purple header background color. */
+    background-color: var(--eventloop-purple);
+
+    /* Applies both the external drop shadow and the inner shadow. */
+    box-shadow:
+        var(--header-drop-shadow-x)
+        var(--header-drop-shadow-y)
+        var(--header-drop-shadow-blur)
+        var(--header-drop-shadow-spread)
+        color-mix(in srgb, var(--shadow-color) calc(var(--header-drop-shadow-opacity) * 100%), transparent),
+        inset
+        var(--header-inner-shadow-x)
+        var(--header-inner-shadow-y)
+        var(--header-inner-shadow-blur)
+        var(--header-inner-shadow-spread)
+        color-mix(in srgb, var(--header-inner-shadow-color) calc(var(--header-inner-shadow-opacity) * 100%), transparent);
+
+    /* Applies the shared text shadow to all header text. */
+    text-shadow:
+        var(--header-text-shadow-x)
+        var(--header-text-shadow-y)
+        var(--header-text-shadow-blur)
+        color-mix(in srgb, var(--shadow-color) calc(var(--header-text-shadow-opacity) * 100%), transparent);
+}
+
+
+/*
+ * =========================================================================
+ * LOGO STYLE
+ * =========================================================================
+ */
+
+/**
+ * @brief Defines the logo link that wraps the EventLoop image.
+ */
+.eventloop-logo-link {
+    /* Uses flexbox to center the logo image. */
+    display: flex;
+
+    /* Keeps the logo vertically centered inside the header. */
+    align-items: center;
+
+    /* Prevents the logo area from shrinking. */
+    flex-shrink: 0;
+
+    /* Sets the logo link height to match its parent. */
+    height: 100%;
+
+    /* Applies the small-screen margin after the logo. */
+    margin-right: var(--logo-margin-right-small);
+}
+
+
+/**
+ * @brief Defines the EventLoop logo image size, offset and shadow.
+ */
+.eventloop-logo {
+    /* Sets the visible logo height on small screens. */
+    height: var(--logo-height-small);
+
+    /* Keeps the image width proportional to its height. */
+    width: auto;
+
+    /* Keeps the logo image contained inside its box. */
+    object-fit: contain;
+
+    /* Moves the visible logo slightly upward. */
+    transform: translateY(var(--logo-offset-y));
+
+    /* Applies the logo opacity from the percentage setting. */
+    opacity: calc(var(--logo-opacity-percent) * 1%);
+
+    /* Applies a shape-aware drop shadow to the transparent logo image. */
+    filter:
+        drop-shadow(
+            var(--logo-drop-shadow-x)
+            var(--logo-drop-shadow-y)
+            var(--logo-drop-shadow-blur)
+            color-mix(in srgb, var(--shadow-color) calc(var(--logo-drop-shadow-opacity) * 100%), transparent)
+        );
+}
+
+
+/*
+ * =========================================================================
+ * RESPONSIVE DROPDOWN STYLE
+ * =========================================================================
+ */
+
+/**
+ * @brief Defines the responsive dropdown wrapper.
+ */
+.eventloop-category-dropdown {
+    /* Keeps the dropdown positioned relative to its panel. */
+    position: relative;
+
+    /* Shows the dropdown on smaller layouts. */
+    display: flex;
+
+    /* Centers the categories button vertically with the other header items. */
+    align-items: center;
+
+    /* Prevents the dropdown from shrinking. */
+    flex-shrink: 0;
+
+    /* Applies right margin after the dropdown. */
+    margin-right: var(--dropdown-button-margin-right);
+}
+
+
+/**
+ * @brief Creates an invisible hover bridge between the categories button
+ *        and the categories dropdown panel.
+ */
+.eventloop-category-dropdown::after {
+    /* Creates the invisible hover bridge. */
+    content: "";
+
+    /* Positions the bridge relative to the dropdown wrapper. */
+    position: absolute;
+
+    /* Starts the bridge exactly below the categories button. */
+    top: 100%;
+
+    /* Aligns the bridge with the left side of the dropdown wrapper. */
+    left: 0;
+
+    /* Aligns the bridge with the right side of the dropdown wrapper. */
+    right: 0;
+
+    /* Gives the bridge the same height as the dropdown gap. */
+    height: var(--dropdown-panel-margin-top);
+
+    /* Keeps the bridge invisible. */
+    background-color: transparent;
+}
+
+
+/**
+ * @brief Defines the responsive dropdown trigger button.
+ */
+.eventloop-dropdown-button {
+    /* Removes the default button border. */
+    border: none;
+
+    /* Shows a pointer cursor because the button opens the hover dropdown. */
+    cursor: pointer;
+
+    /* Uses the same font family as the parent header. */
+    font-family: inherit;
+
+    /* Uses the same font size as the parent header. */
+    font-size: inherit;
+
+    /* Rounds the dropdown trigger fully. */
+    border-radius: var(--dropdown-button-border-radius);
+
+    /* Adds a subtle default background on the purple header. */
+    background-color: rgb(255 255 255 / var(--dropdown-button-background-opacity));
+
+    /* Adds horizontal space around the trigger text. */
+    padding-left: var(--dropdown-button-padding-x);
+
+    /* Adds horizontal space around the trigger text. */
+    padding-right: var(--dropdown-button-padding-x);
+
+    /* Adds vertical space around the trigger text. */
+    padding-top: var(--dropdown-button-padding-y);
+
+    /* Adds vertical space around the trigger text. */
+    padding-bottom: var(--dropdown-button-padding-y);
+
+    /* Keeps the default trigger text white. */
+    color: var(--eventloop-white);
+
+    /* Keeps the trigger text bold. */
+    font-weight: 700;
+
+    /* Animates the background and text color changes. */
+    transition: background-color var(--header-link-transition-duration) ease, color var(--header-link-transition-duration) ease;
+}
+
+
+/**
+ * @brief Defines the hover state for the responsive dropdown trigger button.
+ */
+.eventloop-dropdown-button:hover {
+    /* Applies the lime background box from the logo color. */
+    background-color: var(--eventloop-lime);
+
+    /* Keeps the hover text white. */
+    color: var(--eventloop-white);
+
+    /* Applies the shared hover text shadow. */
+    text-shadow:
+        var(--header-hover-text-shadow-x)
+        var(--header-hover-text-shadow-y)
+        var(--header-hover-text-shadow-blur)
+        color-mix(in srgb, var(--shadow-color) calc(var(--header-hover-text-shadow-opacity) * 100%), transparent);
+}
+
+
+/**
+ * @brief Removes the default marker from the dropdown summary in WebKit browsers.
+ */
+.eventloop-dropdown-button::-webkit-details-marker {
+    /* Hides the native marker icon. */
+    display: none;
+}
+
+
+/**
+ * @brief Defines the responsive dropdown panel.
+ */
+.eventloop-dropdown-panel {
+    /* Positions the dropdown panel relative to the dropdown wrapper. */
+    position: absolute;
+
+    /* Aligns the dropdown panel to the left side of the trigger. */
+    left: 0;
+
+    /* Places the dropdown panel below the invisible hover bridge. */
+    top: calc(100% + var(--dropdown-panel-margin-top));
+
+    /* Keeps the dropdown panel above the rest of the page. */
+    z-index: 50;
+
+    /* Hides the dropdown panel until the user hovers over the dropdown area. */
+    display: none;
+
+    /* Stacks dropdown links vertically. */
+    flex-direction: column;
+
+    /* Adds spacing between dropdown links. */
+    gap: var(--dropdown-panel-gap);
+
+    /* Sets the dropdown panel width. */
+    width: var(--dropdown-panel-width);
+
+    /* Adds inner spacing to the dropdown panel. */
+    padding: var(--dropdown-panel-padding);
+
+    /* Rounds the dropdown panel corners. */
+    border-radius: var(--dropdown-panel-border-radius);
+
+    /* Applies a white background to the dropdown panel. */
+    background-color: var(--eventloop-white);
+
+    /* Applies the dropdown panel shadow. */
+    box-shadow:
+        var(--dropdown-panel-shadow-x)
+        var(--dropdown-panel-shadow-y)
+        var(--dropdown-panel-shadow-blur)
+        var(--dropdown-panel-shadow-spread)
+        color-mix(in srgb, var(--shadow-color) calc(var(--dropdown-panel-shadow-opacity) * 100%), transparent);
+
+    /* Removes inherited header text shadow from the dropdown panel. */
+    text-shadow: none;
+}
+
+
+/**
+ * @brief Shows the dropdown panel while the user hovers over the dropdown area.
+ */
+.eventloop-category-dropdown:hover .eventloop-dropdown-panel {
+    /* Shows the dropdown links in a vertical flex layout. */
+    display: flex;
+}
+
+
+/**
+ * @brief Defines the category links inside the dropdown panel.
+ */
+.eventloop-dropdown-link {
+    /* Keeps each dropdown link as a block-like row. */
+    display: flex;
+
+    /* Centers the link text vertically inside the row. */
+    align-items: center;
+
+    /* Rounds the dropdown link box. */
+    border-radius: 0.75rem;
+
+    /* Adds horizontal space inside each dropdown link. */
+    padding-left: 1rem;
+
+    /* Adds horizontal space inside each dropdown link. */
+    padding-right: 1rem;
+
+    /* Adds vertical space inside each dropdown link. */
+    padding-top: 0.5rem;
+
+    /* Adds vertical space inside each dropdown link. */
+    padding-bottom: 0.5rem;
+
+    /* Uses the main purple color for dropdown link text. */
+    color: var(--eventloop-purple);
+
+    /* Keeps dropdown link text bold. */
+    font-weight: 700;
+
+    /* Removes the default underline from the link. */
+    text-decoration: none;
+
+    /* Applies a small shadow to normal dropdown text. */
+    text-shadow:
+        var(--dropdown-link-text-shadow-x)
+        var(--dropdown-link-text-shadow-y)
+        var(--dropdown-link-text-shadow-blur)
+        color-mix(in srgb, var(--shadow-color) calc(var(--dropdown-link-text-shadow-opacity) * 100%), transparent);
+
+    /* Animates the background and text color changes. */
+    transition: background-color var(--header-link-transition-duration) ease, color var(--header-link-transition-duration) ease;
+}
+
+
+/**
+ * @brief Defines the hover state for category links inside the dropdown panel.
+ */
+.eventloop-dropdown-link:hover {
+    /* Applies the lime background box from the logo color. */
+    background-color: var(--eventloop-lime);
+
+    /* Keeps the hover text white. */
+    color: var(--eventloop-white);
+
+    /* Applies the shared hover text shadow. */
+    text-shadow:
+        var(--header-hover-text-shadow-x)
+        var(--header-hover-text-shadow-y)
+        var(--header-hover-text-shadow-blur)
+        color-mix(in srgb, var(--shadow-color) calc(var(--header-hover-text-shadow-opacity) * 100%), transparent);
+}
+
+
+/*
+ * =========================================================================
+ * DESKTOP NAVIGATION STYLE
+ * =========================================================================
+ */
+
+/**
+ * @brief Defines the desktop category navigation container.
+ */
+.eventloop-desktop-navigation {
+    /* Hides the desktop navigation on smaller layouts. */
+    display: none;
+
+    /* Aligns desktop category links vertically. */
+    align-items: center;
+
+    /* Adds spacing between desktop category links. */
+    gap: var(--desktop-navigation-gap);
+
+    /* Sets the default desktop navigation font size. */
+    font-size: var(--desktop-navigation-font-size);
+
+    /* Keeps the desktop navigation text bold. */
+    font-weight: 700;
+
+    /* Keeps the desktop navigation text white. */
+    color: var(--eventloop-white);
+}
+
+
+/*
+ * =========================================================================
+ * HEADER LINK STYLE
+ * =========================================================================
+ */
+
+/**
+ * @brief Defines the shared style for visible header links.
+ */
+.eventloop-header-link {
+    /* Keeps the link as a small rounded box around its text. */
+    display: inline-flex;
+
+    /* Centers the text vertically inside the hover box. */
+    align-items: center;
+
+    /* Centers the text horizontally inside the hover box. */
+    justify-content: center;
+
+    /* Prevents the link text from wrapping to a second line. */
+    white-space: nowrap;
+
+    /* Rounds the hover box fully. */
+    border-radius: var(--header-link-border-radius);
+
+    /* Adds horizontal space around the link text. */
+    padding-left: var(--header-link-padding-x);
+
+    /* Adds horizontal space around the link text. */
+    padding-right: var(--header-link-padding-x);
+
+    /* Adds vertical space around the link text. */
+    padding-top: var(--header-link-padding-y);
+
+    /* Adds vertical space around the link text. */
+    padding-bottom: var(--header-link-padding-y);
+
+    /* Keeps the default link text white on the purple header. */
+    color: var(--eventloop-white);
+
+    /* Keeps the link text bold. */
+    font-weight: 700;
+
+    /* Removes the default underline from the link. */
+    text-decoration: none;
+
+    /* Animates the background and text color changes. */
+    transition: background-color var(--header-link-transition-duration) ease, color var(--header-link-transition-duration) ease;
+}
+
+
+/**
+ * @brief Defines the hover state for visible header links.
+ */
+.eventloop-header-link:hover {
+    /* Applies the lime background box from the logo color. */
+    background-color: var(--eventloop-lime);
+
+    /* Keeps the hover text white. */
+    color: var(--eventloop-white);
+
+    /* Applies the shared hover text shadow. */
+    text-shadow:
+        var(--header-hover-text-shadow-x)
+        var(--header-hover-text-shadow-y)
+        var(--header-hover-text-shadow-blur)
+        color-mix(in srgb, var(--shadow-color) calc(var(--header-hover-text-shadow-opacity) * 100%), transparent);
+}
+
+
+/*
+ * =========================================================================
+ * HEADER RIGHT SIDE STYLE
+ * =========================================================================
+ */
+
+/**
+ * @brief Defines the right side of the header that contains search and auth links.
+ */
+.eventloop-header-right-section {
+    /* Places the right side under the first row on very small layouts. */
+    order: 3;
+
+    /* Uses flexbox for search and authentication links. */
+    display: flex;
+
+    /* Allows children to shrink safely. */
+    min-width: 0;
+
+    /* Makes the right side take the full row on very small layouts. */
+    width: 100%;
+
+    /* Aligns children vertically in the center. */
+    align-items: center;
+
+    /* Places search and auth links apart on very small layouts. */
+    justify-content: space-between;
+
+    /* Adds spacing between search and auth links. */
+    gap: 0.75rem;
+
+    /* Pushes search and authentication links as far right as possible. */
+    margin-left: auto;
+}
+
+
+/*
+ * =========================================================================
+ * SEARCH BOX STYLE
+ * =========================================================================
+ */
+
+/**
+ * @brief Defines the search box container.
+ */
+.eventloop-search-box {
+    /* Uses flexbox for input and icon alignment. */
+    display: flex;
+
+    /* Aligns the input and icon vertically. */
+    align-items: center;
+
+    /* Allows the search box to shrink safely. */
+    min-width: 0;
+
+    /* Keeps the search box readable and stable. */
+    flex-shrink: 0;
+
+    /* Sets the search box height. */
+    height: var(--search-box-height);
+
+    /* Sets the small-screen search box width. */
+    width: var(--search-box-width-small);
+
+    /* Adds horizontal padding inside the search box. */
+    padding-left: var(--search-box-padding-x);
+
+    /* Adds horizontal padding inside the search box. */
+    padding-right: var(--search-box-padding-x);
+
+    /* Rounds the search box fully. */
+    border-radius: var(--search-box-border-radius);
+
+    /* Applies the white search box background with opacity. */
+    background-color: rgb(255 255 255 / var(--search-box-background-opacity));
+
+    /* Applies the search text color. */
+    color: var(--eventloop-search-text);
+
+    /* Applies a soft shadow around the search box. */
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--shadow-color) 22%, transparent);
+
+    /* Animates the search box shadow when the input is focused. */
+    transition: box-shadow var(--header-link-transition-duration) ease;
+
+    /* Removes inherited header text shadow from the search box. */
+    text-shadow: none;
+}
+
+
+/**
+ * @brief Defines the focused state of the search box.
+ */
+.eventloop-search-box:focus-within {
+    /* Applies a stronger shadow when the user writes in the search box. */
+    box-shadow: 0 6px 18px color-mix(in srgb, var(--shadow-color) 30%, transparent);
+}
+
+
+/**
+ * @brief Defines the search input inside the search box.
+ */
+.eventloop-search-input {
+    /* Allows the input to shrink inside the search box. */
+    min-width: 0;
+
+    /* Makes the input fill the remaining search box space. */
+    flex: 1;
+
+    /* Removes the default input background. */
+    background-color: transparent;
+
+    /* Centers the input text. */
+    text-align: center;
+
+    /* Sets the input font size. */
+    font-size: 1rem;
+
+    /* Removes the default input outline. */
+    outline: none;
+}
+
+
+/**
+ * @brief Defines the search input placeholder color.
+ */
+.eventloop-search-input::placeholder {
+    /* Applies the placeholder text color. */
+    color: var(--eventloop-search-placeholder);
+}
+
+
+/**
+ * @brief Defines the temporary search icon.
+ */
+.eventloop-search-icon {
+    /* Prevents the icon from shrinking. */
+    flex-shrink: 0;
+
+    /* Sets the icon font size. */
+    font-size: 1.5rem;
+
+    /* Sets the icon line height. */
+    line-height: 1;
+
+    /* Applies the icon text color. */
+    color: var(--eventloop-search-text);
+}
+
+
+/*
+ * =========================================================================
+ * AUTHENTICATION LINKS STYLE
+ * =========================================================================
+ */
+
+/**
+ * @brief Defines the authentication links container.
+ */
+.eventloop-authentication-links {
+    /* Uses flexbox for the login and register links. */
+    display: flex;
+
+    /* Prevents the auth links container from shrinking. */
+    flex-shrink: 0;
+
+    /* Aligns authentication links vertically. */
+    align-items: center;
+
+    /* Adds the small-screen gap between authentication links. */
+    gap: var(--auth-links-gap-small);
+}
+
+
+/**
+ * @brief Defines the authentication link text size.
+ *        Matches the authentication link size with the category link size.
+ */
+.eventloop-authentication-link {
+    /* Uses the same font size as the desktop category links. */
+    font-size: var(--desktop-navigation-font-size);
+}
+
+
+/*
+ * =========================================================================
+ * PROFILE DROPDOWN STYLE
+ * =========================================================================
+ */
+
+/**
+ * @brief Defines the profile dropdown trigger button.
+ */
+.eventloop-profile-button {
+    /* Removes the default button border. */
+    border: none;
+
+    /* Shows a pointer cursor because the button opens the hover dropdown. */
+    cursor: pointer;
+
+    /* Uses the same font family as the parent header. */
+    font-family: inherit;
+
+    /* Keeps the profile button content in one row. */
+    display: flex;
+
+    /* Centers the profile button content vertically. */
+    align-items: center;
+
+    /* Adds space between the profile text and icon. */
+    gap: 0.35rem;
+
+    /* Keeps the default profile button background transparent. */
+    background-color: transparent;
+
+    /* Applies the normal header text shadow like the other header links. */
+    text-shadow:
+        var(--header-text-shadow-x)
+        var(--header-text-shadow-y)
+        var(--header-text-shadow-blur)
+        color-mix(in srgb, var(--shadow-color) calc(var(--header-text-shadow-opacity) * 100%), transparent);
+
+    /* Removes default button appearance differences between browsers. */
+    appearance: none;
+}
+
+
+/**
+ * @brief Defines the profile button text.
+ */
+.eventloop-profile-button-text {
+    /* Keeps the profile label on one line. */
+    white-space: nowrap;
+}
+
+
+/**
+ * @brief Defines the profile icon.
+ */
+.eventloop-profile-icon {
+    /* Removes internal fill from the SVG shapes. */
+    fill: none;
+
+    /* Uses the current text color for the icon outline. */
+    stroke: currentColor;
+
+    /* Sets the profile icon line thickness. */
+    stroke-width: 2.4;
+
+    /* Rounds the ends of the profile icon lines. */
+    stroke-linecap: round;
+
+    /* Rounds the joins of the profile icon lines. */
+    stroke-linejoin: round;
+
+    /* Applies a shadow to the profile icon so it matches the profile text. */
+    filter:
+        drop-shadow(
+            var(--header-text-shadow-x)
+            var(--header-text-shadow-y)
+            var(--header-text-shadow-blur)
+            color-mix(in srgb, var(--shadow-color) calc(var(--header-text-shadow-opacity) * 100%), transparent)
+        );
+}
+
+
+/**
+ * @brief Defines the hover state for the profile button.
+ */
+.eventloop-profile-button:hover {
+    /* Applies the lime background box from the logo color. */
+    background-color: var(--eventloop-lime);
+
+    /* Keeps the hover text and icon white. */
+    color: var(--eventloop-white);
+
+    /* Applies the shared hover text shadow. */
+    text-shadow:
+        var(--header-hover-text-shadow-x)
+        var(--header-hover-text-shadow-y)
+        var(--header-hover-text-shadow-blur)
+        color-mix(in srgb, var(--shadow-color) calc(var(--header-hover-text-shadow-opacity) * 100%), transparent);
+}
+
+
+/**
+ * @brief Defines the profile dropdown wrapper.
+ */
+.eventloop-profile-dropdown {
+    /* Keeps the dropdown positioned relative to its panel. */
+    position: relative;
+
+    /* Keeps the profile dropdown as a flex item. */
+    display: flex;
+
+    /* Centers the profile button vertically with the other header items. */
+    align-items: center;
+}
+
+
+/**
+ * @brief Creates an invisible hover bridge between the profile button
+ *        and the profile dropdown panel.
+ */
+.eventloop-profile-dropdown::after {
+    /* Creates the pseudo-element used as the hover bridge. */
+    content: "";
+
+    /* Positions the hover bridge relative to the profile wrapper. */
+    position: absolute;
+
+    /* Starts the hover bridge exactly below the profile button. */
+    top: 100%;
+
+    /* Aligns the hover bridge with the left side of the profile wrapper. */
+    left: 0;
+
+    /* Aligns the hover bridge with the right side of the profile wrapper. */
+    right: 0;
+
+    /* Gives the bridge the same height as the dropdown gap. */
+    height: var(--profile-dropdown-panel-margin-top);
+
+    /* Keeps the hover bridge invisible. */
+    background-color: transparent;
+}
+
+
+/**
+ * @brief Defines the profile dropdown panel.
+ */
+.eventloop-profile-dropdown-panel {
+    /* Positions the dropdown panel relative to the profile wrapper. */
+    position: absolute;
+
+    /* Aligns the dropdown panel to the right side of the profile button. */
+    right: 0;
+
+    /* Places the dropdown panel below the invisible hover bridge. */
+    top: calc(100% + var(--profile-dropdown-panel-margin-top));
+
+    /* Keeps the dropdown panel above the rest of the page. */
+    z-index: 50;
+
+    /* Hides the dropdown panel until the user hovers over the profile area. */
+    display: none;
+
+    /* Stacks profile dropdown items vertically. */
+    flex-direction: column;
+
+    /* Adds spacing between profile dropdown items. */
+    gap: var(--profile-dropdown-panel-gap);
+
+    /* Sets the dropdown panel width. */
+    width: var(--profile-dropdown-panel-width);
+
+    /* Adds inner spacing to the dropdown panel. */
+    padding: var(--profile-dropdown-panel-padding);
+
+    /* Rounds the dropdown panel corners. */
+    border-radius: var(--profile-dropdown-panel-border-radius);
+
+    /* Applies a white background to the dropdown panel. */
+    background-color: var(--eventloop-white);
+
+    /* Applies the profile dropdown shadow. */
+    box-shadow:
+        var(--profile-dropdown-shadow-x)
+        var(--profile-dropdown-shadow-y)
+        var(--profile-dropdown-shadow-blur)
+        var(--profile-dropdown-shadow-spread)
+        color-mix(in srgb, var(--shadow-color) calc(var(--profile-dropdown-shadow-opacity) * 100%), transparent);
+
+    /* Removes inherited header text shadow from the dropdown panel. */
+    text-shadow: none;
+}
+
+
+/**
+ * @brief Shows the profile dropdown panel while the user hovers over the profile area.
+ */
+.eventloop-profile-dropdown:hover .eventloop-profile-dropdown-panel {
+    /* Shows the profile dropdown links in a vertical flex layout. */
+    display: flex;
+}
+
+
+/**
+ * @brief Defines the username text inside the profile dropdown.
+ */
+.eventloop-profile-username {
+    /* Adds horizontal space inside the username row. */
+    padding-left: 1rem;
+
+    /* Adds horizontal space inside the username row. */
+    padding-right: 1rem;
+
+    /* Adds vertical space inside the username row. */
+    padding-top: 0.5rem;
+
+    /* Adds vertical space inside the username row. */
+    padding-bottom: 0.5rem;
+
+    /* Uses the main purple color for the username text. */
+    color: var(--eventloop-purple);
+
+    /* Keeps the username text bold. */
+    font-weight: 800;
+
+    /* Applies a small shadow to normal dropdown text. */
+    text-shadow:
+        var(--dropdown-link-text-shadow-x)
+        var(--dropdown-link-text-shadow-y)
+        var(--dropdown-link-text-shadow-blur)
+        color-mix(in srgb, var(--shadow-color) calc(var(--dropdown-link-text-shadow-opacity) * 100%), transparent);
+}
+
+
+/**
+ * @brief Defines the links inside the profile dropdown panel.
+ */
+.eventloop-profile-dropdown-link {
+    /* Keeps each dropdown link as a block-like row. */
+    display: flex;
+
+    /* Centers the link text vertically inside the row. */
+    align-items: center;
+
+    /* Rounds the dropdown link box. */
+    border-radius: 0.75rem;
+
+    /* Adds horizontal space inside each dropdown link. */
+    padding-left: 1rem;
+
+    /* Adds horizontal space inside each dropdown link. */
+    padding-right: 1rem;
+
+    /* Adds vertical space inside each dropdown link. */
+    padding-top: 0.5rem;
+
+    /* Adds vertical space inside each dropdown link. */
+    padding-bottom: 0.5rem;
+
+    /* Uses the main purple color for dropdown link text. */
+    color: var(--eventloop-purple);
+
+    /* Keeps dropdown link text bold. */
+    font-weight: 700;
+
+    /* Removes the default underline from the link. */
+    text-decoration: none;
+
+    /* Applies a small shadow to normal dropdown text. */
+    text-shadow:
+        var(--dropdown-link-text-shadow-x)
+        var(--dropdown-link-text-shadow-y)
+        var(--dropdown-link-text-shadow-blur)
+        color-mix(in srgb, var(--shadow-color) calc(var(--dropdown-link-text-shadow-opacity) * 100%), transparent);
+
+    /* Animates the background and text color changes. */
+    transition: background-color var(--header-link-transition-duration) ease, color var(--header-link-transition-duration) ease;
+}
+
+
+/**
+ * @brief Defines the hover state for links inside the profile dropdown panel.
+ */
+.eventloop-profile-dropdown-link:hover {
+    /* Applies the lime background box from the logo color. */
+    background-color: var(--eventloop-lime);
+
+    /* Keeps the hover text white. */
+    color: var(--eventloop-white);
+
+    /* Applies the shared hover text shadow. */
+    text-shadow:
+        var(--header-hover-text-shadow-x)
+        var(--header-hover-text-shadow-y)
+        var(--header-hover-text-shadow-blur)
+        color-mix(in srgb, var(--shadow-color) calc(var(--header-hover-text-shadow-opacity) * 100%), transparent);
+}
+
+
+/*
+ * =========================================================================
+ * RESPONSIVE BREAKPOINTS
+ * =========================================================================
+ */
+
+/**
+ * @brief Applies medium-screen layout changes.
+ */
+@media (min-width: 640px) {
+    /**
+     * @brief Adjusts the logo image on medium screens.
+     */
+    .eventloop-logo {
+        /* Sets the medium-screen logo height. */
+        height: var(--logo-height-medium);
+    }
+
+    /**
+     * @brief Adjusts the header right side on medium screens.
+     */
+    .eventloop-header-right-section {
+        /* Restores the normal flex order. */
+        order: initial;
+
+        /* Pushes the right side to the far right. */
+        margin-left: auto;
+
+        /* Allows the right side to use only the space it needs. */
+        width: auto;
+
+        /* Aligns the right side content to the end. */
+        justify-content: flex-end;
+    }
+
+    /**
+     * @brief Adjusts the search box on medium screens.
+     */
+    .eventloop-search-box {
+        /* Sets the medium-screen search box width. */
+        width: var(--search-box-width-medium);
+    }
+
+    /**
+     * @brief Adjusts the authentication links on medium screens.
+     */
+    .eventloop-authentication-links {
+        /* Adds the medium-screen gap between authentication links. */
+        gap: var(--auth-links-gap-medium);
+    }
+}
+
+/**
+ * @brief Applies large-screen layout changes.
+ */
+@media (min-width: 1024px) {
+    /**
+     * @brief Adjusts the header bar on large screens.
+     */
+    .eventloop-header-bar {
+        /* Prevents the header from wrapping on large screens. */
+        flex-wrap: nowrap;
+
+        /* Applies the large-screen horizontal padding. */
+        padding-left: var(--header-padding-x-large);
+
+        /* Applies the large-screen horizontal padding. */
+        padding-right: var(--header-padding-x-large);
+    }
+
+    /**
+     * @brief Adjusts the logo link on large screens.
+     */
+    .eventloop-logo-link {
+        /* Applies the large-screen margin after the logo. */
+        margin-right: var(--logo-margin-right-large);
+    }
+
+    /**
+     * @brief Adjusts the logo image on large screens.
+     */
+    .eventloop-logo {
+        /* Sets the large-screen logo height. */
+        height: var(--logo-height-large);
+    }
+
+    /**
+     * @brief Adjusts the search box on large screens.
+     */
+    .eventloop-search-box {
+        /* Sets the large-screen search box width. */
+        width: var(--search-box-width-large);
+    }
+
+    /**
+     * @brief Adjusts the authentication links on large screens.
+     */
+    .eventloop-authentication-links {
+        /* Adds the large-screen gap between authentication links. */
+        gap: var(--auth-links-gap-large);
+    }
+}
+
+/**
+ * @brief Keeps the categories dropdown visible on extra-wide screens
+ *        when the full category list cannot safely fit yet.
+ */
+@media (min-width: 1280px) and (max-width: 1439px) {
+    /**
+     * @brief Shows the compact categories dropdown.
+     */
+    .eventloop-category-dropdown {
+        /* Keeps the compact categories button visible. */
+        display: flex;
+    }
+
+    /**
+     * @brief Hides the full category navigation before it safely fits.
+     */
+    .eventloop-desktop-navigation {
+        /* Prevents the full category list from being squeezed. */
+        display: none;
+    }
+}
+
+/**
+ * @brief Shows the full desktop navigation only when the header has enough space.
+ */
+@media (min-width: 1440px) {
+    /**
+     * @brief Keeps minimum spacing between the main header sections.
+     */
+    .eventloop-header-bar {
+        /* Keeps at least the same gap used between category links. */
+        column-gap: var(--desktop-navigation-gap);
+    }
+
+    /**
+     * @brief Hides the compact categories dropdown on wide screens.
+     */
+    .eventloop-category-dropdown {
+        /* Hides the compact categories button. */
+        display: none;
+    }
+
+    /**
+     * @brief Shows the full category navigation on wide screens.
+     */
+    .eventloop-desktop-navigation {
+        /* Shows all category links in one row. */
+        display: flex;
+    }
+
+    /**
+     * @brief Keeps the search box pushed right while preserving
+     *        the minimum distance from the category navigation.
+     */
+    .eventloop-header-right-section {
+        /* Pushes the right section to the far right. */
+        margin-left: auto;
+
+        /* Keeps the search box away from the auth links. */
+        gap: var(--desktop-navigation-gap);
+
+        /* Keeps the right section only as wide as its content. */
+        width: auto;
+
+        /* Aligns the right section content to the right. */
+        justify-content: flex-end;
+    }
+
+    /**
+     * @brief Keeps authentication links spaced like category links.
+     */
+    .eventloop-authentication-links {
+        /* Uses the same minimum gap as the category navigation. */
+        gap: var(--desktop-navigation-gap);
+    }
+}
+
+/**
+ * @brief Applies very-wide layout changes.
+ */
+@media (min-width: 1536px) {
+    /**
+     * @brief Increases the minimum spacing between main header sections.
+     */
+    .eventloop-header-bar {
+        /* Uses the larger category gap. */
+        column-gap: var(--desktop-navigation-gap-large);
+    }
+
+    /**
+     * @brief Adjusts desktop navigation spacing on very-wide screens.
+     */
+    .eventloop-desktop-navigation {
+        /* Applies the larger desktop category gap. */
+        gap: var(--desktop-navigation-gap-large);
+
+        /* Applies the larger desktop category font size. */
+        font-size: var(--desktop-navigation-font-size-large);
+    }
+
+    /**
+     * @brief Increases the spacing inside the right header section.
+     */
+    .eventloop-header-right-section {
+        /* Uses the larger header gap. */
+        gap: var(--desktop-navigation-gap-large);
+    }
+
+    /**
+     * @brief Increases the spacing between authentication links.
+     */
+    .eventloop-authentication-links {
+        /* Uses the larger category gap. */
+        gap: var(--desktop-navigation-gap-large);
+    }
+
+    /**
+     * @brief Applies the same large font size used by desktop categories.
+     */
+    .eventloop-authentication-link {
+        /* Matches the authentication link size with the large category link size. */
+        font-size: var(--desktop-navigation-font-size-large);
+    }
+}
+
+
+/*
+ * =========================================================================
+ * HEADER BOTTOM SHADOW OVERRIDE
+ * =========================================================================
+ */
+
+/**
+ * @brief Adds a strong shadow below the header bar while keeping the inner shadow.
+ */
+.eventloop-header-bar {
+    /* Applies the strong drop shadow below the header AND keeps the inner shadow. */
+    box-shadow:
+        0 12px 28px color-mix(in srgb, var(--shadow-color) 55%, transparent),
+        inset
+        var(--header-inner-shadow-x)
+        var(--header-inner-shadow-y)
+        var(--header-inner-shadow-blur)
+        var(--header-inner-shadow-spread)
+        color-mix(in srgb, var(--header-inner-shadow-color) calc(var(--header-inner-shadow-opacity) * 100%), transparent);
+
+    /* Keeps the header above the page content so the shadow shows. */
+    position: relative;
+
+    /* Stacks the header above the hero and page content. */
+    z-index: 10;
+}
+
+

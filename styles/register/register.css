@@ -1,0 +1,284 @@
+/*
+ * =========================================================================
+ * FILE         :   styles/register/register.css
+ *
+ * PROJECT      :   EventLoop
+ *
+ * DESCRIPTION  :   Register page layout variables and settings for the
+ *                  EventLoop application.
+ * =========================================================================
+ */
+
+
+/*
+ * =========================================================================
+ * REGISTER PAGE SETTINGS
+ * =========================================================================
+ */
+
+
+/**
+ * @brief Stores the register page layout and shadow settings.
+ */
+:root {
+    /* Stores the horizontal padding of the register page content. */
+    --register-page-padding-x: 2.5rem;
+
+    /* Stores the top padding of the register page content. */
+    --register-page-padding-top: 3.25rem;
+
+    /* Stores the register title font size. */
+    --register-title-font-size: 1.75rem;
+
+    /* Stores the register title color. */
+    --register-title-color: #7a7a7a;
+
+    /* Stores the register card width. */
+    --register-card-width: 54rem;
+
+    /* Stores the register card minimum height. */
+    --register-card-min-height: 37rem;
+
+    /* Stores the register card border radius. */
+    --register-card-border-radius: 1.5rem;
+
+    /* Stores the register card top margin. */
+    --register-card-margin-top: 1.75rem;
+
+    /* Stores the horizontal gap between register columns. */
+    --register-card-column-gap: 7rem;
+
+    /* Stores the vertical gap between register fields. */
+    --register-card-field-gap: 0.95rem;
+
+    /* Stores the register card horizontal shadow position. */
+    --register-card-shadow-x: 0px;
+
+    /* Stores the register card vertical shadow position. */
+    --register-card-shadow-y: 8px;
+
+    /* Stores the register card shadow blur. */
+    --register-card-shadow-blur: 28px;
+
+    /* Stores the register card shadow spread. */
+    --register-card-shadow-spread: 0px;
+
+    /* Stores the register card shadow opacity. */
+    --register-card-shadow-opacity: 0.25;
+
+    /* Stores the register button width. */
+    --register-button-width: 14rem;
+
+    /* Stores the register button height. */
+    --register-button-height: 3rem;
+
+    /* Stores the register button top margin. */
+    --register-button-margin-top: 1.5rem;
+
+    /* Stores the register button shadow opacity. */
+    --register-button-shadow-opacity: 0.30;
+}
+
+/*
+ * =========================================================================
+ * REGISTER PAGE STYLE
+ * =========================================================================
+ */
+
+/**
+ * @brief Defines the register page content area.
+ */
+.eventloop-register-page-content {
+    /* Sets the visible area below the header. */
+    min-height: calc(100vh - var(--header-min-height));
+
+    /* Adds horizontal spacing to the register page. */
+    padding-left: var(--register-page-padding-x);
+
+    /* Adds horizontal spacing to the register page. */
+    padding-right: var(--register-page-padding-x);
+
+    /* Adds top spacing to the register page. */
+    padding-top: var(--register-page-padding-top);
+
+    /* Applies the white page background. */
+    background-color: var(--background);
+}
+
+
+/**
+ * @brief Defines the register page title.
+ */
+.eventloop-register-page-title {
+    /* Removes the default heading margin. */
+    margin: 0;
+
+    /* Sets the register title font size. */
+    font-size: var(--register-title-font-size);
+
+    /* Keeps the register title font weight light. */
+    font-weight: 400;
+
+    /* Applies the register title color. */
+    color: var(--register-title-color);
+
+    /* Applies a subtle text shadow to the register title. */
+    text-shadow:
+        var(--header-text-shadow-x)
+        var(--header-text-shadow-y)
+        var(--header-text-shadow-blur)
+        color-mix(in srgb, var(--shadow-color) 12%, transparent);
+}
+
+
+/**
+ * @brief Defines the wrapper around the register card and button.
+ */
+.eventloop-register-form-wrapper {
+    /* Uses flexbox for vertical layout. */
+    display: flex;
+
+    /* Stacks the card and button vertically. */
+    flex-direction: column;
+
+    /* Centers the card and button horizontally. */
+    align-items: center;
+}
+
+
+/**
+ * @brief Defines the register form card.
+ */
+.eventloop-register-card {
+    /* Uses flexbox for the two register columns. */
+    display: flex;
+
+    /* Centers the two columns vertically. */
+    align-items: center;
+
+    /* Centers the two columns horizontally. */
+    justify-content: center;
+
+    /* Adds spacing between the two columns. */
+    column-gap: var(--register-card-column-gap);
+
+    /* Sets the register card width. */
+    width: min(100%, var(--register-card-width));
+
+    /* Sets the register card minimum height. */
+    min-height: var(--register-card-min-height);
+
+    /* Adds balanced empty space above the register fields. */
+    padding-top: 3.25rem;
+
+    /* Adds balanced empty space below the register fields. */
+    padding-bottom: 3.25rem;
+
+    /* Adds empty space on the left side of the register card. */
+    padding-left: 4.25rem;
+
+    /* Adds empty space on the right side of the register card. */
+    padding-right: 4.25rem;
+
+    /* Adds top spacing before the card. */
+    margin-top: var(--register-card-margin-top);
+
+    /* Rounds the register card corners. */
+    border-radius: var(--register-card-border-radius);
+
+    /* Applies the white card background. */
+    background-color: var(--eventloop-white);
+
+    /* Applies the register card shadow. */
+    box-shadow:
+        var(--register-card-shadow-x)
+        var(--register-card-shadow-y)
+        var(--register-card-shadow-blur)
+        var(--register-card-shadow-spread)
+        color-mix(in srgb, var(--shadow-color) calc(var(--register-card-shadow-opacity) * 100%), transparent);
+}
+
+
+/**
+ * @brief Defines one column of the register form.
+ */
+.eventloop-register-column {
+    /* Uses flexbox for vertical field layout. */
+    display: flex;
+
+    /* Stacks the fields vertically. */
+    flex-direction: column;
+
+    /* Adds spacing between register fields. */
+    gap: var(--register-card-field-gap);
+}
+
+
+/**
+ * @brief Defines register fields that reuse the login field style.
+ */
+.eventloop-register-field {
+    /* Keeps register fields aligned with the register design. */
+    width: var(--login-input-width);
+}
+
+
+/**
+ * @brief Defines the register submit button.
+ */
+.eventloop-register-submit-button {
+    /* Removes the default button border. */
+    border: none;
+
+    /* Shows a pointer cursor on the button. */
+    cursor: pointer;
+
+    /* Sets the button width. */
+    width: var(--register-button-width);
+
+    /* Sets the button height. */
+    height: var(--register-button-height);
+
+    /* Adds top spacing above the button. */
+    margin-top: var(--register-button-margin-top);
+
+    /* Rounds the button fully. */
+    border-radius: var(--header-link-border-radius);
+
+    /* Applies the purple button background. */
+    background-color: var(--eventloop-purple);
+
+    /* Applies the white button text color. */
+    color: var(--eventloop-white);
+
+    /* Keeps the button text bold. */
+    font-weight: 800;
+
+    /* Sets the button font size. */
+    font-size: 1.15rem;
+
+    /* Applies the shared hover text shadow. */
+    text-shadow:
+        var(--header-hover-text-shadow-x)
+        var(--header-hover-text-shadow-y)
+        var(--header-hover-text-shadow-blur)
+        color-mix(in srgb, var(--shadow-color) calc(var(--header-hover-text-shadow-opacity) * 100%), transparent);
+
+    /* Applies the button shadow. */
+    box-shadow: 0 8px 18px color-mix(in srgb, var(--shadow-color) calc(var(--register-button-shadow-opacity) * 100%), transparent);
+
+    /* Animates the hover changes. */
+    transition: background-color var(--header-link-transition-duration) ease, box-shadow var(--header-link-transition-duration) ease;
+}
+
+
+/**
+ * @brief Defines the hover state for the register submit button.
+ */
+.eventloop-register-submit-button:hover {
+    /* Applies the lime hover background. */
+    background-color: var(--eventloop-lime);
+
+    /* Applies a stronger hover shadow. */
+    box-shadow: 0 10px 22px color-mix(in srgb, var(--shadow-color) 35%, transparent);
+}
