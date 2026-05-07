@@ -1,5 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { headers } from "next/headers";
+import { auth } from "@/lib/auth";
+import LogoutButton from "./LogoutButton";
 
 /**
  * @brief Stores the category labels used in the desktop navigation and
@@ -39,17 +42,18 @@ function GuestAuthenticationLinks() {
 }
 
 /**
- * @brief  Renders the authentication area for a temporary logged-in user.
+ * @brief  Renders the authentication area for a logged-in user.
+ * @param  username the username shown inside the profile dropdown.
  * @return The JSX structure of the logged-in user links.
  */
-function LoggedInUserLinks({ onDummyLogout }: { onDummyLogout: () => void }) {
+function LoggedInUserLinks({ username }: { username: string }) {
   return (
     <div className="eventloop-authentication-links">
       <Link
         href="#"
         className="eventloop-header-link eventloop-authentication-link"
       >
-        {/*Μηνύματα ({dummyUser.unreadMessagesCount})*/}
+        Μηνύματα (0)
       </Link>
 
       <div className="eventloop-profile-dropdown">
@@ -67,21 +71,14 @@ function LoggedInUserLinks({ onDummyLogout }: { onDummyLogout: () => void }) {
             className="eventloop-profile-icon"
           >
             <circle cx="12" cy="8" r="4" />
-
             <path d="M4 21C4 16.6 7.6 13 12 13C16.4 13 20 16.6 20 21" />
           </svg>
         </button>
 
         <div className="eventloop-profile-dropdown-panel">
-          {/*<div className="eventloop-profile-username">{dummyUser.username}</div>*/}
+          <div className="eventloop-profile-username">{username}</div>
 
-          <button
-            type="button"
-            onClick={onDummyLogout}
-            className="eventloop-profile-dropdown-link eventloop-profile-dropdown-button"
-          >
-            Αποσύνδεση
-          </button>
+          <LogoutButton />
         </div>
       </div>
     </div>
@@ -90,9 +87,17 @@ function LoggedInUserLinks({ onDummyLogout }: { onDummyLogout: () => void }) {
 
 /**
  * @brief  Renders the main EventLoop header.
+ *         Reads the current better-auth session on the server to decide
+ *         whether to show guest links or logged-in user links.
  * @return The JSX structure of the header.
  */
-export default function Header() {
+export default async function Header() {
+  // Read the current session on the server. Returns null if the visitor is
+  // not signed in.
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+
   return (
     <nav className="eventloop-header-bar">
       <Link href="/" className="eventloop-logo-link">
@@ -148,11 +153,11 @@ export default function Header() {
           <span className="eventloop-search-icon">⌕</span>
         </div>
 
-        {/*{dummyUserIsLoggedIn ? (
-          <Logged_In_User_Links onDummyLogout={handleDummyLogout} />
+        {session?.user ? (
+          <LoggedInUserLinks username={session.user.name} />
         ) : (
-        )}*/}
-        <GuestAuthenticationLinks />
+          <GuestAuthenticationLinks />
+        )}
       </div>
     </nav>
   );
