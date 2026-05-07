@@ -41,3 +41,8 @@ yarn-error.log*
 next-env.d.ts
 
 /app/generated/prisma
+
+# Ignore Windows metadata files created through WSL.
+*:Zone.Identifier
+
+
