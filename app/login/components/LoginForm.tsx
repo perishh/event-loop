@@ -1,44 +1,84 @@
 "use client";
 
+import { useActionState, useEffect, useState, type FormEvent } from "react";import { useRouter } from "next/navigation";
+import { signInFormAction, type SignInFormState } from "../actions";
+import { getRawInput, SignInInputSchema } from "../schema";
+import z from "zod";
+import InputField from "./InputField";
+import LoginField from "./loginField";
 import Breadcrumb from "@/components/Breadcrumb";
-import { useRouter } from "next/navigation";
-import type { FormEvent } from "react";
 
-import { useState } from "react";
+/* -------------------------------------------------------------------------- */
+/*  Field definitions                                                         */
+/* -------------------------------------------------------------------------- */
+
+const loginFields: LoginField[] = [
+  {
+    id: "login-email",
+    name: "email",
+    label: "Email",
+    type: "email",
+  },
+  {
+    id: "login-password",
+    name: "password",
+    label: "Κωδικός χρήστη",
+    type: "password",
+  },
+];
+
+/* -------------------------------------------------------------------------- */
+/*  Helpers                                                                   */
+/* -------------------------------------------------------------------------- */
 
 /**
- * @brief  Renders the login form content.
- * @return The JSX structure of the login page content.
+ * Returns the first error message for a given field name, or undefined.
  */
+function getFieldError(
+  fieldErrors: Record<string, string[]> | undefined,
+  fieldName: string,
+): string | undefined {
+  const messages = fieldErrors?.[fieldName];
+  return messages?.length ? messages[0] : undefined;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Sub-components                                                            */
+/* -------------------------------------------------------------------------- */
+
 export default function LoginForm() {
   const router = useRouter();
 
-  const [loginErrorMessage, setLoginErrorMessage] = useState("");
+  const [state, formAction, isPending] = useActionState<
+    SignInFormState,
+    FormData
+  >(signInFormAction, null);
 
-  /**
-   * @brief Handles the temporary dummy login form submission.
-   * @param loginFormEvent the form submission event.
-   */
-  function handleDummyLogin(loginFormEvent: FormEvent<HTMLFormElement>) {
-    loginFormEvent.preventDefault();
+  const [errors, setErrors] = useState<Record<string, string[]> | null>(null);
 
-    const loginFormData = new FormData(loginFormEvent.currentTarget);
-    const submittedUsername = String(loginFormData.get("username") ?? "");
-    const submittedPassword = String(loginFormData.get("password") ?? "");
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    const formData = new FormData(event.currentTarget);
+    const parsed = SignInInputSchema.safeParse(getRawInput(formData));
 
-    if (
-      submittedUsername === dummyUser.username &&
-      submittedPassword === dummyUser.password
-    ) {
-      localStorage.setItem(dummyUserLoginStorageKey, "true");
-
-      router.push("/");
-
+    if (!parsed.success) {
+      event.preventDefault();
+      setErrors(z.flattenError(parsed.error).fieldErrors);
       return;
     }
 
-    setLoginErrorMessage("Λάθος όνομα χρήστη ή κωδικός χρήστη.");
+    setErrors(null);
   }
+
+  // Prefer client-side validation errors if present, otherwise use server-side errors from state.
+  const fieldErrors =
+    errors ?? (state && !state.success ? state.fieldErrors : undefined);
+
+  // If login succeeded, redirect to home.
+  useEffect(() => {
+    if (state && state.success) {
+      router.push("/");
+    }
+  }, [state, router]);
 
   return (
     <section className="eventloop-login-page-content">
@@ -56,38 +96,22 @@ export default function LoginForm() {
         <form
           id="eventloop-login-form"
           className="eventloop-login-card"
-          onSubmit={handleDummyLogin}
+          action={formAction}
+          onSubmit={handleSubmit}
+          noValidate
         >
-          <div className="eventloop-login-field">
-            <label htmlFor="username" className="eventloop-login-label">
-              Όνομα χρήστη
-            </label>
-
-            <input
-              id="username"
-              name="username"
-              type="text"
-              placeholder=" "
-              className="eventloop-login-input"
+          {loginFields.map((loginField) => (
+            <InputField
+              key={loginField.id}
+              loginField={loginField}
+              error={getFieldError(fieldErrors, loginField.name)}
             />
-          </div>
+          ))}
 
-          <div className="eventloop-login-field">
-            <label htmlFor="password" className="eventloop-login-label">
-              Κωδικός χρήστη
-            </label>
-
-            <input
-              id="password"
-              name="password"
-              type="password"
-              placeholder=" "
-              className="eventloop-login-input"
-            />
-          </div>
-
-          {loginErrorMessage !== "" && (
-            <p className="eventloop-login-error-message">{loginErrorMessage}</p>
+          {state && !state.success && state.error && (
+            <p className="eventloop-login-error-message" role="alert">
+              {state.error}
+            </p>
           )}
         </form>
 
@@ -95,8 +119,9 @@ export default function LoginForm() {
           form="eventloop-login-form"
           type="submit"
           className="eventloop-login-submit-button"
+          disabled={isPending}
         >
-          Συνέχεια
+          {isPending ? "Αποστολή…" : "Συνέχεια"}
         </button>
       </div>
     </section>
