@@ -1,9 +1,11 @@
 "use server";
 
-import { auth } from "@/lib/auth";
-import prisma from "@/lib/prisma";
 import { getRawInput, SignInInputSchema } from "./schema";
 import z from "zod";
+import prisma from "@/lib/prisma";
+import { verifyPassword } from "@/lib/auth/password";
+import { createSession } from "@/lib/auth/session";
+import { redirect } from "next/navigation";
 
 export type SignInResult =
   | { success: true }
@@ -12,60 +14,65 @@ export type SignInResult =
 /** Type used by useActionState, null means idle */
 export type SignInFormState = SignInResult | null;
 
-// Server action for signin
-export const signIn = async (rawInput: unknown): Promise<SignInResult> => {
-  const parsed = SignInInputSchema.safeParse(rawInput);
+export async function signInAction(
+  prevState: SignInFormState,
+  formData: FormData,
+): Promise<SignInResult> {
+  const parsed = SignInInputSchema.safeParse(getRawInput(formData));
 
   if (!parsed.success) {
     return {
       success: false,
-      error: "Μη έγκυρα πεδία.",
       fieldErrors: z.flattenError(parsed.error).fieldErrors,
+      error: "Μη έγκυρα στοιχεία σύνδεσης.",
     };
   }
 
-  // Look up the user first to check approval status before signing them in.
-  const existingUser = await prisma.user.findUnique({
-    where: { email: parsed.data.email },
-    select: { approved: true },
+  const input = parsed.data;
+
+  const user = await prisma.user.findUnique({
+    where: { username: input.username },
+    select: {
+      id: true,
+      hash: true,
+      approved: true,
+      role: true,
+      username: true,
+    },
   });
 
-  if (!existingUser) {
+  if (!user) {
     return {
       success: false,
-      error: "Λάθος email ή κωδικός χρήστη.",
+      fieldErrors: { password: ["Μη έγκυρα στοιχεία σύνδεσης."] },
+      error: "Μη έγκυρα στοιχεία σύνδεσης.",
     };
   }
 
-  if (!existingUser.approved) {
+  const isPasswordValid = await verifyPassword(input.password, user.hash);
+  if (!isPasswordValid) {
     return {
       success: false,
-      error: "Ο λογαριασμός σας δεν έχει εγκριθεί ακόμη.",
+      fieldErrors: { password: ["Μη έγκυρα στοιχεία σύνδεσης."] },
+      error: "Μη έγκυρα στοιχεία σύνδεσης.",
     };
   }
 
-  try {
-    await auth.api.signInEmail({
-      body: parsed.data,
-      asResponse: false,
-    });
-
-    return {
-      success: true,
-    };
-  } catch (error) {
+  if (!user.approved) {
     return {
       success: false,
-      error:
-        error instanceof Error ? error.message : "Λάθος email ή κωδικός χρήστη.",
+      fieldErrors: {
+        username: ["Ο λογαριασμός σας αναμένει έγκριση από διαχειριστή."],
+      },
+      error: "Ο λογαριασμός σας αναμένει έγκριση από διαχειριστή.",
     };
   }
-};
 
-// Form-action wrapper for useActionState.
-export const signInFormAction = async (
-  _prevState: SignInFormState,
-  formData: FormData,
-): Promise<SignInFormState> => {
-  return signIn(getRawInput(formData));
-};
+  await createSession({
+    sub: user.id,
+    username: user.username,
+    role: user.role,
+  });
+
+  redirect("/", "replace");
+}

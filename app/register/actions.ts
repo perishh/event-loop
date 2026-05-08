@@ -1,8 +1,9 @@
 "use server";
 
-import { auth } from "@/lib/auth";
 import { getRawInput, SignUpInputSchema } from "./schema";
 import z from "zod";
+import prisma from "@/lib/prisma";
+import { hashPassword } from "@/lib/auth/password";
 
 export type SignUpResult =
   | { success: true }
@@ -12,7 +13,11 @@ export type SignUpResult =
 export type SignUpFormState = SignUpResult | null;
 
 // Server action for signup
-export const signUp = async (rawInput: unknown): Promise<SignUpResult> => {
+export const signUp = async (
+  _prevState: SignUpFormState,
+  formData: FormData,
+): Promise<SignUpResult> => {
+  const rawInput = getRawInput(formData);
   const parsed = SignUpInputSchema.safeParse(rawInput);
 
   if (!parsed.success) {
@@ -23,26 +28,54 @@ export const signUp = async (rawInput: unknown): Promise<SignUpResult> => {
     };
   }
 
-  try {
-    await auth.api.signUpEmail({
-      body: parsed.data,
-    });
+  const existing = await prisma.user.findFirst({
+    where: {
+      OR: [
+        { email: parsed.data.email },
+        { afm: parsed.data.afm },
+        { username: parsed.data.username },
+      ],
+    },
+    select: { email: true, afm: true, username: true },
+  });
 
-    return {
-      success: true,
-    };
-  } catch (error) {
+  if (existing) {
+    const fieldErrors: Record<string, string[]> = {};
+
+    if (existing.email === parsed.data.email) {
+      fieldErrors.email = ["Το email χρησιμοποιείται ήδη."];
+    }
+    if (existing.afm === parsed.data.afm) {
+      fieldErrors.afm = ["Το ΑΦΜ χρησιμοποιείται ήδη."];
+    }
+    if (existing.username === parsed.data.username) {
+      fieldErrors.username = ["Το όνομα χρήστη χρησιμοποιείται ήδη."];
+    }
+
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Προέκυψε σφάλμα.",
+      error: "Υπάρχει ήδη χρήστης με αυτά τα στοιχεία.",
+      fieldErrors,
     };
   }
-};
 
-// Form-action wrapper for useActionState.
-export const signUpFormAction = async (
-  _prevState: SignUpFormState,
-  formData: FormData,
-): Promise<SignUpFormState> => {
-  return signUp(getRawInput(formData));
+  const hashedPassword = await hashPassword(parsed.data.password);
+  await prisma.user.create({
+    data: {
+      afm: parsed.data.afm,
+      email: parsed.data.email,
+      firstName: parsed.data.firstName,
+      lastName: parsed.data.lastName,
+      role: parsed.data.role,
+      username: parsed.data.username,
+      area: parsed.data.area,
+      city: parsed.data.city,
+      country: parsed.data.country,
+      hash: hashedPassword,
+    },
+  });
+
+  return {
+    success: true,
+  };
 };

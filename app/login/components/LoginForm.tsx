@@ -1,14 +1,13 @@
 "use client";
 
-import { useActionState, useEffect, useState, type FormEvent } from "react";
-import { useRouter } from "next/navigation";
-import { signInFormAction, type SignInFormState } from "../actions";
+import { useActionState, useState, type FormEvent } from "react";
 import { getRawInput, SignInInputSchema } from "../schema";
 import z from "zod";
 import InputField from "../../../components/InputField";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Lock, SquareArrowRightEnter, User } from "lucide-react";
 import Link from "next/link";
+import { signInAction, SignInFormState } from "../actions";
 
 /**
  * Returns the first error message for a given field name, or undefined.
@@ -22,12 +21,11 @@ function getFieldError(
 }
 
 export default function LoginForm() {
-  const router = useRouter();
 
   const [state, formAction, isPending] = useActionState<
     SignInFormState,
     FormData
-  >(signInFormAction, null);
+  >(signInAction, null);
 
   const [errors, setErrors] = useState<Record<string, string[]> | null>(null);
 
@@ -47,14 +45,6 @@ export default function LoginForm() {
   // Prefer client-side validation errors if present, otherwise use server-side errors from state.
   const fieldErrors =
     errors ?? (state && !state.success ? state.fieldErrors : undefined);
-
-  // If login succeeded, redirect to home.
-  useEffect(() => {
-    if (state && state.success) {
-      router.push("/");
-      router.refresh();
-    }
-  }, [state, router]);
 
   return (
     <>
@@ -85,13 +75,13 @@ export default function LoginForm() {
             noValidate
           >
             <InputField
-              name="email"
-              id="login-email"
-              label="Email"
-              type="email"
+              name="username"
+              id="login-username"
+              label="Όνομα χρήστη"
+              type="text"
               icon={User}
-              placeholder="example@eventloop.com"
-              error={getFieldError(fieldErrors, "email")}
+              placeholder="john_doe"
+              error={getFieldError(fieldErrors, "username")}
             />
             <InputField
               id="login-password"
@@ -103,12 +93,6 @@ export default function LoginForm() {
               wrapperClassName="mt-2"
               error={getFieldError(fieldErrors, "password")}
             />
-
-            {state && !state.success && state.error && (
-              <p className="eventloop-login-error-message" role="alert">
-                {state.error}
-              </p>
-            )}
           </form>
 
           <div className="flex items-center justify-between mt-4">

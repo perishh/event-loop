@@ -1,85 +1,142 @@
 "use client";
 
 import { useActionState, useState, type FormEvent } from "react";
-import { signUpFormAction, type SignUpFormState } from "../actions";
+import { signUp, type SignUpFormState } from "../actions";
 import { getRawInput, SignUpInputSchema } from "../schema";
 import z from "zod";
 import PendingStatus from "./PendingStatus";
-import RoleSelect from "./RoleSelect";
-import InputField from "./InputField";
-import RegisterField from "./registerField";
 import Breadcrumb from "@/components/Breadcrumb";
+import Switcher from "@/components/Switcher";
+import {
+  Building2,
+  Fingerprint,
+  Globe,
+  Lock,
+  Mail,
+  MapPinned,
+  User,
+} from "lucide-react";
+import InputField from "@/components/InputField";
+
+import { LucideProps } from "lucide-react";
+import { ComponentType } from "react";
+import { UserRole } from "@/app/generated/prisma/enums";
+
+interface RegisterField {
+  id: string;
+  name: string;
+  label: string;
+  type: string;
+  icon: ComponentType<LucideProps>;
+  placeholder: string;
+}
+
+interface RegisterSection {
+  title: string;
+  fields: RegisterField[];
+}
 
 /* -------------------------------------------------------------------------- */
 /*  Field definitions                                                         */
 /* -------------------------------------------------------------------------- */
 
-const leftRegisterFields: RegisterField[] = [
+const sections: RegisterSection[] = [
   {
-    id: "register-username",
-    name: "username",
-    label: "Όνομα χρήστη",
-    type: "text",
+    title: "ΣΤΟΙΧΕΙΑ ΕΙΣΟΔΟΥ",
+    fields: [
+      {
+        id: "register-username",
+        name: "username",
+        label: "Όνομα χρήστη",
+        type: "text",
+        icon: User,
+        placeholder: "••••••••",
+      },
+      {
+        id: "register-email",
+        name: "email",
+        label: "Email",
+        type: "email",
+        icon: Mail,
+        placeholder: "john@example.com",
+      },
+      {
+        id: "register-password",
+        name: "password",
+        label: "Κωδικός πρόσβασης",
+        type: "password",
+        icon: Lock,
+        placeholder: "••••••••",
+      },
+      {
+        id: "register-confirm-password",
+        name: "confirmPassword",
+        label: "Επιβεβαίωση κωδικού",
+        type: "password",
+        icon: Lock,
+        placeholder: "••••••••",
+      },
+    ],
   },
   {
-    id: "register-password",
-    name: "password",
-    label: "Κωδικός χρήστη",
-    type: "password",
+    title: "ΠΡΟΣΩΠΙΚΑ ΣΤΟΙΧΕΙΑ",
+    fields: [
+      {
+        id: "register-first-name",
+        name: "firstName",
+        label: "Όνομα",
+        type: "text",
+        icon: User,
+        placeholder: "John",
+      },
+      {
+        id: "register-last-name",
+        name: "lastName",
+        label: "Επώνυμο",
+        type: "text",
+        icon: User,
+        placeholder: "Doe",
+      },
+      {
+        id: "register-afm",
+        name: "afm",
+        label: "ΑΦΜ",
+        type: "text",
+        icon: Fingerprint,
+        placeholder: "123456789",
+      },
+    ],
   },
   {
-    id: "register-confirm-password",
-    name: "confirmPassword",
-    label: "Επιβεβαίωση κωδικού χρήστη",
-    type: "password",
-  },
-  {
-    id: "register-name",
-    name: "name",
-    label: "Όνομα",
-    type: "text",
-  },
-  {
-    id: "register-last-name",
-    name: "lastName",
-    label: "Επώνυμο",
-    type: "text",
-  },
-  {
-    id: "register-afm",
-    name: "afm",
-    label: "ΑΦΜ",
-    type: "text",
+    title: "ΔΙΕΥΘΥΝΣΗ",
+    fields: [
+      {
+        id: "register-country",
+        name: "country",
+        label: "Χώρα",
+        type: "text",
+        icon: Globe,
+        placeholder: "Ελλάδα",
+      },
+      {
+        id: "register-city",
+        name: "city",
+        label: "Πόλη",
+        type: "text",
+        icon: Building2,
+        placeholder: "Αθήνα",
+      },
+      {
+        id: "register-area",
+        name: "area",
+        label: "Περιοχή",
+        type: "text",
+        icon: MapPinned,
+        placeholder: "Βασ. Σοφίας 123",
+      },
+    ],
   },
 ];
-
-const rightRegisterFields: RegisterField[] = [
-  {
-    id: "register-email",
-    name: "email",
-    label: "Email",
-    type: "email",
-  },
-  {
-    id: "register-country",
-    name: "country",
-    label: "Χώρα",
-    type: "text",
-  },
-  {
-    id: "register-city",
-    name: "city",
-    label: "Πόλη",
-    type: "text",
-  },
-  {
-    id: "register-area",
-    name: "area",
-    label: "Διεύθυνση",
-    type: "text",
-  },
-];
-
 /* -------------------------------------------------------------------------- */
 /*  Helpers                                                                   */
 /* -------------------------------------------------------------------------- */
@@ -99,7 +156,7 @@ export default function RegisterForm() {
   const [state, formAction, isPending] = useActionState<
     SignUpFormState,
     FormData
-  >(signUpFormAction, null);
+  >(signUp, null);
 
   const [errors, setErrors] = useState<Record<string, string[]> | null>(null);
 
@@ -133,38 +190,55 @@ export default function RegisterForm() {
       />
 
       <h1 className="text-2xl font-bold tracking-wide mt-4 mb-6">
-        Δημιουργήστε νέο λογαριασμό:
+        Δημιουργήστε νέο λογαριασμό
       </h1>
 
       <div className="bg-violet-50 rounded-2xl shadow-lg shadow-violet-100/80 p-6">
         <form
           id="eventloop-register-form"
-          className="grid grid-cols-1 md:grid-cols-2 gap-4"
+          className="space-y-5"
           action={formAction}
           onSubmit={handleSubmit}
           noValidate
         >
-          <div className="space-y-3">
-            {leftRegisterFields.map((registerField) => (
-              <InputField
-                key={registerField.id}
-                registerField={registerField}
-                error={getFieldError(fieldErrors, registerField.name)}
-              />
-            ))}
-          </div>
+          <section className="rounded-2xl border border-violet-100 bg-white/80 p-5 shadow-sm shadow-violet-100/60">
+            <p className="text-xs font-bold tracking-[0.22em] text-violet-500 mb-3">
+              ΡΟΛΟΣ
+            </p>
 
-          <div className="space-y-3">
-            {rightRegisterFields.map((registerField) => (
-              <InputField
-                key={registerField.id}
-                registerField={registerField}
-                error={getFieldError(fieldErrors, registerField.name)}
-              />
-            ))}
+            <Switcher
+              left={{
+                label: "ΔΙΟΡΓΑΝΩΤΗΣ",
+                value: UserRole.ORGANIZER,
+              }}
+              right={{
+                label: "ΣΥΜΜΕΤΕΧΩΝ",
+                value: UserRole.ATTENDEE,
+              }}
+              name="role"
+            />
+          </section>
 
-            <RoleSelect error={getFieldError(fieldErrors, "role")} />
-          </div>
+          {sections.map((section) => (
+            <section
+              key={section.title}
+              className="rounded-2xl border border-violet-100 bg-white/80 p-5 shadow-sm shadow-violet-100/60 space-y-4"
+            >
+              <p className="text-xs font-bold tracking-[0.22em] text-violet-500">
+                {section.title}
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {section.fields.map((registerField) => (
+                  <InputField
+                    key={registerField.id}
+                    {...registerField}
+                    error={getFieldError(fieldErrors, registerField.name)}
+                  />
+                ))}
+              </div>
+            </section>
+          ))}
         </form>
 
         {state && !state.success && state.error && (

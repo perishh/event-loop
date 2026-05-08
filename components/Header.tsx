@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { headers } from "next/headers";
-import { auth } from "@/lib/auth";
-import LogoutButton from "./LogoutButton";
+import { signOut } from "@/app/logout/actions";
 
 import Logo from "../assets/logo.png";
-import { CircleUser, Search } from "lucide-react";
+import { Search } from "lucide-react";
+import { getSession } from "@/lib/auth/session";
 
 /**
  * @brief Stores the category labels used in the desktop navigation and
@@ -18,6 +17,21 @@ const navigationCategories = [
   "Σινεμά",
   "Φεστιβάλ",
 ];
+
+/**
+ * @brief Renders the logout button used inside the profile dropdown.
+ */
+export function LogoutButton() {
+  return (
+    <button
+      type="button"
+      onClick={signOut}
+      className="bg-white px-3 py-2 rounded-xl text-sm shadow-md shadow-violet-800 font-semibold"
+    >
+      Αποσύνδεση
+    </button>
+  );
+}
 
 /**
  * @brief  Renders the authentication area for a visitor that is not logged in.
@@ -68,9 +82,7 @@ function LoggedInUserLinks({ username }: { username: string }) {
 export default async function Header() {
   // Read the current session on the server. Returns null if the visitor is
   // not signed in.
-  const session = await auth.api.getSession({
-    headers: await headers(),
-  });
+  const session = await getSession();
 
   return (
     <nav className="bg-violet-700 px-4 py-2 md:px-6 lg:px-10 2xl:px-32 flex justify-between items-center">
@@ -146,8 +158,8 @@ export default async function Header() {
           <Search className="absolute right-2 pointer-events-none" />
         </div>
 
-        {session?.user ? (
-          <LoggedInUserLinks username={session.user.name} />
+        {session ? (
+          <LoggedInUserLinks username={session?.username} />
         ) : (
           <GuestAuthenticationLinks />
         )}

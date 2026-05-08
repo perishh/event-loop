@@ -36,7 +36,7 @@ const InputField = forwardRef<HTMLInputElement, InputProps>(
 
         <div className="relative flex items-center">
           {Icon && (
-            <Icon className="absolute left-2 opacity-50 group-focus-within:opacity-100 group-hover:opacity-100 transition-opacity" />
+            <Icon className="absolute left-2 opacity-50 group-focus-within:opacity-100 group-hover:opacity-100 transition-opacity pointer-events-none" />
           )}
           <input
             id={id}

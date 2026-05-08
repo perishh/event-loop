@@ -1,7 +1,6 @@
 "use server";
 
-import { auth } from "@/lib/auth";
-import { headers } from "next/headers";
+import { deleteSession } from "@/lib/auth/session";
 import { redirect } from "next/navigation";
 
 /**
@@ -9,9 +8,6 @@ import { redirect } from "next/navigation";
  *        and redirects them back to the welcome page.
  */
 export async function signOut() {
-  await auth.api.signOut({
-    headers: await headers(),
-  });
-
-  redirect("/");
+  await deleteSession();
+  redirect("/login");
 }

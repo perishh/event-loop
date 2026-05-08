@@ -15,7 +15,7 @@ export const SignUpInputSchema = z
           "Ο κωδικός πρόσβασης μπορεί να περιέχει το πολύ 128 χαρακτήρες.",
       }),
     confirmPassword: z.string(),
-    name: z
+    firstName: z
       .string({ message: "Το όνομα είναι απαραίτητο." })
       .min(1, { message: "Το όνομα είναι απαραίτητο." }),
     lastName: z
@@ -59,7 +59,7 @@ export const getRawInput = (formData: FormData) => {
     email: formData.get("email"),
     password: formData.get("password"),
     confirmPassword: formData.get("confirmPassword"),
-    name: formData.get("name"),
+    firstName: formData.get("firstName"),
     lastName: formData.get("lastName"),
     afm: formData.get("afm"),
     username: formData.get("username"),

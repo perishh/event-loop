@@ -2,7 +2,7 @@ import RegisterForm from "./components/RegisterForm";
 
 export default function Page() {
   return (
-    <main className="eventloop-main-page">
+    <main>
       <RegisterForm />
     </main>
   );
