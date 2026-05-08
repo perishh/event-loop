@@ -124,26 +124,27 @@ export default function RegisterForm() {
   if (state && state.success) return <PendingStatus />;
 
   return (
-    <section className="eventloop-register-page-content">
+    <section className="max-w-3xl mx-auto mt-8 px-4">
       <Breadcrumb
         breadcrumbItems={[
           { label: "Αρχική", href: "/" },
           { label: "Εγγραφή", href: "/register" },
         ]}
       />
-      <h1 className="eventloop-register-page-title">
+
+      <h1 className="text-2xl font-bold tracking-wide mt-4 mb-6">
         Δημιουργήστε νέο λογαριασμό:
       </h1>
 
-      <div className="eventloop-register-form-wrapper">
+      <div className="bg-violet-50 rounded-2xl shadow-lg shadow-violet-100/80 p-6">
         <form
           id="eventloop-register-form"
-          className="eventloop-register-card"
+          className="grid grid-cols-1 md:grid-cols-2 gap-4"
           action={formAction}
           onSubmit={handleSubmit}
           noValidate
         >
-          <div className="eventloop-register-column">
+          <div className="space-y-3">
             {leftRegisterFields.map((registerField) => (
               <InputField
                 key={registerField.id}
@@ -153,7 +154,7 @@ export default function RegisterForm() {
             ))}
           </div>
 
-          <div className="eventloop-register-column">
+          <div className="space-y-3">
             {rightRegisterFields.map((registerField) => (
               <InputField
                 key={registerField.id}
@@ -167,19 +168,21 @@ export default function RegisterForm() {
         </form>
 
         {state && !state.success && state.error && (
-          <p className="eventloop-register-error-message" role="alert">
+          <p className="text-sm text-red-700 mt-4 ml-1" role="alert">
             {state.error}
           </p>
         )}
 
-        <button
-          form="eventloop-register-form"
-          type="submit"
-          className="eventloop-register-submit-button"
-          disabled={isPending}
-        >
-          {isPending ? "Αποστολή…" : "Συνέχεια"}
-        </button>
+        <div className="flex justify-end mt-6">
+          <button
+            form="eventloop-register-form"
+            type="submit"
+            className="bg-violet-500 text-white px-3 py-2 rounded-lg ring-0 hover:ring-2 ring-violet-500 transition-all active:ring-offset-1 focus:ring-offset-2 outline-0 tracking-wide font-semibold"
+            disabled={isPending}
+          >
+            {isPending ? "Αποστολή…" : "Συνέχεια"}
+          </button>
+        </div>
       </div>
     </section>
   );

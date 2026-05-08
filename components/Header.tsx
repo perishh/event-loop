@@ -51,25 +51,10 @@ function GuestAuthenticationLinks() {
 function LoggedInUserLinks({ username }: { username: string }) {
   return (
     <div className="flex items-center space-x-2">
-      <Link href="#" className="bg-white px-3 py-1 rounded-full">
-        Μηνύματα (0)
-      </Link>
-
-      <div className="relative group">
-        <button
-          type="button"
-          className="bg-white flex items-center px-3 py-1 rounded-full space-x-2"
-        >
-          <div className="eventloop-profile-username">{username}</div>
-          <CircleUser />
-        </button>
-
-        <div className="absolute z-10 bg-violet-700 hidden group-hover:block right-0 rounded-xl shadow-lg p-4 w-48 text-sm text-white">
-          <span className="block">Προφίλ</span>
-
-          <LogoutButton />
-        </div>
-      </div>
+      <span className="bg-white px-3 py-2 rounded-xl text-sm shadow-md shadow-violet-800 font-semibold">
+        {username}
+      </span>
+      <LogoutButton />
     </div>
   );
 }
@@ -162,7 +147,7 @@ export default async function Header() {
         </div>
 
         {session?.user ? (
-          <LoggedInUserLinks username={"test"} />
+          <LoggedInUserLinks username={session.user.name} />
         ) : (
           <GuestAuthenticationLinks />
         )}

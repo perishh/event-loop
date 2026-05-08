@@ -52,6 +52,7 @@ export default function LoginForm() {
   useEffect(() => {
     if (state && state.success) {
       router.push("/");
+      router.refresh();
     }
   }, [state, router]);
 
