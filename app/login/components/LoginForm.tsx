@@ -1,35 +1,14 @@
 "use client";
 
-import { useActionState, useEffect, useState, type FormEvent } from "react";import { useRouter } from "next/navigation";
+import { useActionState, useEffect, useState, type FormEvent } from "react";
+import { useRouter } from "next/navigation";
 import { signInFormAction, type SignInFormState } from "../actions";
 import { getRawInput, SignInInputSchema } from "../schema";
 import z from "zod";
-import InputField from "./InputField";
-import LoginField from "./loginField";
+import InputField from "../../../components/InputField";
 import Breadcrumb from "@/components/Breadcrumb";
-
-/* -------------------------------------------------------------------------- */
-/*  Field definitions                                                         */
-/* -------------------------------------------------------------------------- */
-
-const loginFields: LoginField[] = [
-  {
-    id: "login-email",
-    name: "email",
-    label: "Email",
-    type: "email",
-  },
-  {
-    id: "login-password",
-    name: "password",
-    label: "Κωδικός χρήστη",
-    type: "password",
-  },
-];
-
-/* -------------------------------------------------------------------------- */
-/*  Helpers                                                                   */
-/* -------------------------------------------------------------------------- */
+import { Lock, SquareArrowRightEnter, User } from "lucide-react";
+import Link from "next/link";
 
 /**
  * Returns the first error message for a given field name, or undefined.
@@ -41,10 +20,6 @@ function getFieldError(
   const messages = fieldErrors?.[fieldName];
   return messages?.length ? messages[0] : undefined;
 }
-
-/* -------------------------------------------------------------------------- */
-/*  Sub-components                                                            */
-/* -------------------------------------------------------------------------- */
 
 export default function LoginForm() {
   const router = useRouter();
@@ -81,49 +56,82 @@ export default function LoginForm() {
   }, [state, router]);
 
   return (
-    <section className="eventloop-login-page-content">
+    <>
       <Breadcrumb
         breadcrumbItems={[
           { label: "Αρχική", href: "/" },
           { label: "Σύνδεση", href: "/login" },
         ]}
+        className="m-3"
       />
-      <h1 className="eventloop-login-page-title">
-        Συνδεθείτε στον λογαριασμό σας:
-      </h1>
+      <section className="bg-violet-50 w-fit mx-auto rounded-2xl shadow-lg shadow-violet-100/80 mt-8 p-4">
+        <div className="flex items-center space-x-4 mb-6 mt-2">
+          <div className="text-violet-800 bg-violet-200 p-2 rounded-xl">
+            <SquareArrowRightEnter size={32} />
+          </div>
+          <div className="">
+            <h1 className="font-bold text-2xl leading-5.5">Σύνδεση</h1>
+            <h1 className="leading-5.5 text-sm">Καλώς ήρθατε ξανά</h1>
+          </div>
+        </div>
 
-      <div className="eventloop-login-form-wrapper">
-        <form
-          id="eventloop-login-form"
-          className="eventloop-login-card"
-          action={formAction}
-          onSubmit={handleSubmit}
-          noValidate
-        >
-          {loginFields.map((loginField) => (
+        <div className="eventloop-login-form-wrapper">
+          <form
+            id="eventloop-login-form"
+            className="eventloop-login-card"
+            action={formAction}
+            onSubmit={handleSubmit}
+            noValidate
+          >
             <InputField
-              key={loginField.id}
-              loginField={loginField}
-              error={getFieldError(fieldErrors, loginField.name)}
+              name="email"
+              id="login-email"
+              label="Email"
+              type="email"
+              icon={User}
+              placeholder="example@eventloop.com"
+              error={getFieldError(fieldErrors, "email")}
             />
-          ))}
+            <InputField
+              id="login-password"
+              name="password"
+              label="Κωδικός χρήστη"
+              type="password"
+              icon={Lock}
+              placeholder="••••••••"
+              wrapperClassName="mt-2"
+              error={getFieldError(fieldErrors, "password")}
+            />
 
-          {state && !state.success && state.error && (
-            <p className="eventloop-login-error-message" role="alert">
-              {state.error}
+            {state && !state.success && state.error && (
+              <p className="eventloop-login-error-message" role="alert">
+                {state.error}
+              </p>
+            )}
+          </form>
+
+          <div className="flex items-center justify-between mt-4">
+            <p className="leading-4 text-xs">
+              <span>Δεν έχετε λογαριασμό;</span>
+              <br />
+              <Link
+                className="text-violet-700 hover:underline"
+                href="/register"
+              >
+                Εγγραφείτε εδώ
+              </Link>
             </p>
-          )}
-        </form>
-
-        <button
-          form="eventloop-login-form"
-          type="submit"
-          className="eventloop-login-submit-button"
-          disabled={isPending}
-        >
-          {isPending ? "Αποστολή…" : "Συνέχεια"}
-        </button>
-      </div>
-    </section>
+            <button
+              form="eventloop-login-form"
+              type="submit"
+              className="bg-violet-500 text-white px-3 py-2 rounded-lg ring-0 hover:ring-2 ring-violet-500 transition-all active:ring-offset-1 focus:ring-offset-2 outline-0 tracking-wide font-semibold"
+              disabled={isPending}
+            >
+              {isPending ? "Είσοδος..." : "Είσοδος"}
+            </button>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

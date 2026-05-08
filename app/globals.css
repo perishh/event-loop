@@ -1,44 +1,29 @@
-/*
- * =========================================================================
- * FILE         :   app/globals.css
- *
- * PROJECT      :   EventLoop
- *
- * DESCRIPTION  :   Central CSS import file for the EventLoop application.
- *                  Imports Tailwind and all modular CSS files in proper order.
- * =========================================================================
- */
-
-
 /* Imports Tailwind CSS utilities for the project */
+
 @import "tailwindcss"; /* Tailwind CSS utilities */
 
+* {
+  box-sizing: border-box;
+}
 
-/* Imports global base styles like colors, typography, and base page rules */
-@import "../styles/base.css"; /* Base page and global variables */
+body {
+  font-family: "Manrope", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 
+button {
+  cursor: pointer;
+}
 
-/* Imports header styles, variables, responsive and profile dropdown */
-@import "../styles/header/header.css"; /* Header bar, links, search, profile dropdown, responsive overrides */
+.embla__viewport {
+  overflow: hidden;
+}
 
+.embla__container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+}
 
-/* Imports breadcrumb styles for welcome page navigation */
-@import "../styles/breadcrumb/breadcrumb.css"; /* Breadcrumb wrapper, links, separators, final overrides */
-
-
-/* Imports welcome page styles including hero, popular events, interactions and carousel */
-@import "../styles/welcome/welcome.css"; /* Welcome page layout, hero section, popular events carousel, animations, masks */
-
-
-/* Imports login page variables and layout/styles */
-@import "../styles/login/login.css"; /* Login page layout, form, card, inputs, buttons, error messages */
-
-
-/* Imports register page variables and layout/styles */
-@import "../styles/register/register.css"; /* Register page layout, form, card, buttons */
-
-
-/* Imports pending page variables and layout/styles */
-@import "../styles/register/pending/pending.css"; /* Pending approval page layout, card, button, error messages */
-
-
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}

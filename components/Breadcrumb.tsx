@@ -1,3 +1,4 @@
+import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 /**
@@ -23,31 +24,6 @@ type BreadcrumbProps = {
 };
 
 /**
- * @brief  Renders the breadcrumb chevron separator.
- * @return The JSX structure of the breadcrumb separator icon.
- */
-function BreadcrumbSeparator() {
-  /* Returns the breadcrumb separator icon. */
-  return (
-    /* Chevron icon used between breadcrumb links. */
-    <svg
-      /* Hides the separator from screen readers. */
-      aria-hidden="true"
-      /* Applies the breadcrumb separator icon style. */
-      className="eventloop-breadcrumb-separator-icon"
-      /* Defines the SVG coordinate system. */
-      viewBox="0 0 24 24"
-    >
-      {/* Draws the chevron line. */}
-      <path
-        /* Defines the chevron shape. */
-        d="M9 6L15 12L9 18"
-      />
-    </svg>
-  );
-}
-
-/**
  * @brief  Renders a shared breadcrumb navigation row.
  * @param  breadcrumbItems  the breadcrumb items shown on the page.
  * @param  className        the optional extra CSS class.
@@ -64,48 +40,38 @@ export default function Breadcrumb({
       /* Adds an accessible label for the breadcrumb navigation. */
       aria-label="Διαδρομή σελίδας"
       /* Applies the breadcrumb style and any extra class. */
-      className={`eventloop-breadcrumb ${className}`}
+      className={`flex items-center ${className}`}
     >
-      {/* Breadcrumb ordered list. */}
-      <ol className="eventloop-breadcrumb-list">
-        {/* Creates one breadcrumb row item for each breadcrumb item. */}
-        {breadcrumbItems.map((breadcrumbItem, breadcrumbItemIndex) => {
-          /* Stores whether this breadcrumb item is the last item. */
-          const breadcrumbItemIsLast =
-            breadcrumbItemIndex === breadcrumbItems.length - 1;
+      {/* Creates one breadcrumb row item for each breadcrumb item. */}
+      {breadcrumbItems.map((breadcrumbItem, breadcrumbItemIndex) => {
+        /* Stores whether this breadcrumb item is the last item. */
+        const breadcrumbItemIsLast =
+          breadcrumbItemIndex === breadcrumbItems.length - 1;
 
-          /* Returns one breadcrumb item. */
-          return (
-            /* Breadcrumb list item. */
-            <li
-              /* Uses the breadcrumb label as the list key. */
-              key={breadcrumbItem.label}
-              /* Applies the breadcrumb item style. */
-              className="eventloop-breadcrumb-item"
+        /* Returns one breadcrumb item. */
+        return (
+          /* Breadcrumb list item. */
+          <div
+            key={`breadcrumb-${breadcrumbItem.href}`}
+            className="flex items-center"
+          >
+            <Link
+              /* Sends the user to the breadcrumb target page. */
+              href={breadcrumbItem.href}
+              /* Marks the current page link for accessibility. */
+              aria-current={breadcrumbItemIsLast ? "page" : undefined}
+              /* Applies the correct breadcrumb link style. */
+              className="text-violet-900 last:text-violet-950 hover:underline text-xs"
             >
-              {/* Shows every breadcrumb item as a link. */}
-              <Link
-                /* Sends the user to the breadcrumb target page. */
-                href={breadcrumbItem.href}
-                /* Marks the current page link for accessibility. */
-                aria-current={breadcrumbItemIsLast ? "page" : undefined}
-                /* Applies the correct breadcrumb link style. */
-                className={
-                  breadcrumbItemIsLast
-                    ? "eventloop-breadcrumb-link eventloop-breadcrumb-current-link"
-                    : "eventloop-breadcrumb-link"
-                }
-              >
-                {/* Prints the breadcrumb label. */}
-                {breadcrumbItem.label}
-              </Link>
+              {/* Prints the breadcrumb label. */}
+              {breadcrumbItem.label}
+            </Link>
 
-              {/* Shows a separator after every item except the last one. */}
-              {!breadcrumbItemIsLast && <BreadcrumbSeparator />}
-            </li>
-          );
-        })}
-      </ol>
+            {/* Shows a separator after every item except the last one. */}
+            {!breadcrumbItemIsLast && <ChevronRight size={16} />}
+          </div>
+        );
+      })}
     </nav>
   );
 }

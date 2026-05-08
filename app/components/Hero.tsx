@@ -101,42 +101,39 @@ export default function Hero() {
   }, [emblaApi]);
 
   return (
-    <section className="eventloop-welcome-hero-section">
-      <div className="eventloop-welcome-hero-image-wrapper">
-        <div className="eventloop-welcome-hero-viewport" ref={emblaRef}>
-          <div className="eventloop-welcome-hero-track">
+    <section>
+      <div className="embla relative">
+        <div className="embla__viewport" ref={emblaRef}>
+          <div className="embla__container">
             {welcomeHeroImages.map((welcomeHeroImage) => (
               <div
                 key={welcomeHeroImage.id}
-                className="eventloop-welcome-hero-slide"
+                className="embla__slide relative group"
               >
                 <img
-                  className="eventloop-welcome-hero-image"
                   src={welcomeHeroImage.imageSource}
                   alt={welcomeHeroImage.imageAlternativeText}
                 />
+                <button
+                  type="button"
+                  className="z-10 absolute bottom-16 right-16 bg-orange-700 text-white px-4 py-2 rounded-lg shadow-lg opacity-50 group-hover:opacity-100 transition-opacity"
+                >
+                  Εισιτήρια
+                </button>
               </div>
             ))}
           </div>
         </div>
-
-        <button type="button" className="eventloop-welcome-hero-ticket-button">
-          Εισιτήρια
-        </button>
       </div>
 
-      <div className="eventloop-welcome-hero-dots">
-        {welcomeHeroImages.map((welcomeHeroImage, welcomeHeroImageIndex) => (
+      <div className="flex items-center justify-center space-x-1.5 mt-4">
+        {welcomeHeroImages.map((img, index) => (
           <button
-            key={welcomeHeroImage.id}
+            key={img.id}
             type="button"
-            aria-label={`Μετάβαση στο hero ${welcomeHeroImageIndex + 1}`}
-            onClick={() => scrollTo(welcomeHeroImageIndex)}
-            className={
-              welcomeHeroImageIndex === selectedIndex
-                ? "eventloop-welcome-hero-dot eventloop-welcome-hero-dot-active"
-                : "eventloop-welcome-hero-dot"
-            }
+            aria-label={`Μετάβαση στο hero ${index + 1}`}
+            onClick={() => scrollTo(index)}
+            className={`bg-purple-300 rounded-full h-2 w-${index === selectedIndex ? "4" : "2"} focus:outline-none ${index === selectedIndex ? "bg-purple-500" : ""} focus:ring-2 focus:ring-purple-500 focus:ring-offset-1 transition-all`}
           />
         ))}
       </div>

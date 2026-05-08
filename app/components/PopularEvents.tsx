@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import ArrowIcon from "@/components/ArrowIcon";
+import { ChevronLeft, ChevronRight, Flame } from "lucide-react";
 
 /**
  * @brief Defines one temporary popular event.
@@ -135,22 +135,24 @@ function EventCard({ popularEvent }: { popularEvent: PopularEvent }) {
   const [isImageMissing, setIsImageMissing] = useState(false);
 
   return (
-    <article className="eventloop-popular-event-card">
-      <div className="eventloop-popular-event-image-area">
+    <article>
+      <div>
         {!isImageMissing && (
           <img
             src={popularEvent.imageSource}
             alt={popularEvent.title}
             onError={() => setIsImageMissing(true)}
-            className="eventloop-popular-event-image"
+            className="w-[300px] rounded-2xl shadow-violet-900/20 shadow-lg"
           />
         )}
       </div>
 
-      <div className="eventloop-popular-event-text-area">
-        <p className="eventloop-popular-event-date">{popularEvent.date}</p>
-        <h3 className="eventloop-popular-event-title">{popularEvent.title}</h3>
-        <p className="eventloop-popular-event-location">
+      <div className="mt-3 px-2">
+        <p className="text-xs tracking-wide font-bold leading-3">
+          {popularEvent.date}
+        </p>
+        <h3 className="text-xl tracking-wide">{popularEvent.title}</h3>
+        <p className="text-xs font-light tracking-wider">
           {popularEvent.location}
         </p>
       </div>
@@ -190,42 +192,48 @@ export default function PopularEvents() {
   }, [emblaApi]);
 
   return (
-    <section className="eventloop-popular-events-section">
-      <h2 className="eventloop-popular-events-title">
-        Δημοφιλείς επερχόμενες εκδηλώσεις:
-      </h2>
+    <section>
+      <div className="flex items-center justify-between w-full px-8">
+        <div className="flex items-center space-x-6">
+          <Flame size={36} />
+          <h2 className="text-2xl font-bold tracking-wide">
+            Δημοφιλείς εκδηλώσεις
+          </h2>
+        </div>
+        <div className="flex items-center space-x-2">
+          <button
+            className="border-2 border-orange-200 hover:border-orange-300 active:border-orange-400 hover:bg-orange-50 rounded-full p-1.5 transition-colors"
+            onClick={scrollPrev}
+            disabled={!canScrollPrev}
+            aria-label="Προηγούμενες εκδηλώσεις"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <button
+            className="border-2 border-orange-200 hover:border-orange-300 active:border-orange-400 hover:bg-orange-50 rounded-full p-1.5 transition-colors"
+            onClick={scrollNext}
+            disabled={!canScrollNext}
+            aria-label="Επόμενες εκδηλώσεις"
+          >
+            <ChevronRight size={20} />
+          </button>
+        </div>
+      </div>
 
-      <div className="eventloop-popular-events-carousel">
-        <button
-          type="button"
-          aria-label="Προηγούμενες εκδηλώσεις"
-          disabled={!canScrollPrev}
-          onClick={scrollPrev}
-          className="eventloop-popular-events-arrow-button"
-        >
-          <ArrowIcon direction="previous" />
-        </button>
-
-        <div
-          className="eventloop-popular-events-carousel-window"
-          ref={emblaRef}
-        >
-          <div className="eventloop-popular-events-carousel-group">
+      <div className="embla mt-4">
+        <div className="embla__viewport" ref={emblaRef}>
+          <div className="embla__container">
             {welcomePopularEvents.map((popularEvent) => (
-              <EventCard key={popularEvent.id} popularEvent={popularEvent} />
+              <div
+                style={{ flex: "0 0 300px" }}
+                className="pl-4"
+                key={popularEvent.id}
+              >
+                <EventCard popularEvent={popularEvent} />
+              </div>
             ))}
           </div>
         </div>
-
-        <button
-          type="button"
-          aria-label="Επόμενες εκδηλώσεις"
-          disabled={!canScrollNext}
-          onClick={scrollNext}
-          className="eventloop-popular-events-arrow-button"
-        >
-          <ArrowIcon direction="next" />
-        </button>
       </div>
     </section>
   );

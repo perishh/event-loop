@@ -95,10 +95,6 @@ function getFieldError(
   return messages?.length ? messages[0] : undefined;
 }
 
-/* -------------------------------------------------------------------------- */
-/*  Sub-components                                                            */
-/* -------------------------------------------------------------------------- */
-
 export default function RegisterForm() {
   const [state, formAction, isPending] = useActionState<
     SignUpFormState,
