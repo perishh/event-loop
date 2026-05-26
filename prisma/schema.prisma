@@ -32,4 +32,96 @@ model User {
   city      String
   country   String
   approved  Boolean  @default(false)
+
+  organizedEvents Event[]
+}
+
+enum EventType {
+  CONFERENCE
+  WORKSHOP
+  SEMINAR
+  NETWORKING
+  CONCERT
+  EXHIBITION
+  FESTIVAL
+  GALA
+  PARTY
+  MEETUP
+  WEBINAR
+  SPORTS
+  THEATER
+  COMMUNITY
+  FUNDRAISER
+  OTHER
+}
+
+enum EventCategory {
+  // Conference / Seminar / Workshop
+  ACADEMIC
+  TECH_IT
+  SKILL_BUILDING
+  PROFESSIONAL_DEVELOPMENT
+  PANEL_DISCUSSION
+
+  // Entertainment
+  LIVE_MUSIC
+  STAND_UP_COMEDY
+  FILM_FESTIVAL
+  FOOD_DRINK
+
+  // Social / Community
+  BUSINESS_MIXER
+  VOLUNTEER_FAIR
+  CHARITY_AUCTION
+
+  // Sports
+  TOURNAMENT
+  FITNESS_CLASS
+  ESPORTS
+
+  // Generic
+  GENERAL
+  PRIVATE_EVENT
+}
+
+enum EventStatus {
+  DRAFT
+  PUBLISHED
+  REMOVED
+}
+
+model Event {
+  id            String          @id @default(uuid())
+  title         String
+  description   String
+  type          EventType
+  categories    EventCategory[]
+  venue         String
+  address       String
+  city          String
+  country       String
+  latitude      Float?
+  longitude     Float?
+  startDateTime DateTime
+  endDateTime   DateTime
+  capacity      Int
+  status        EventStatus     @default(DRAFT)
+  ticketTypes   EventTickets[]
+  media         String[]
+
+  organizerId String
+  organizer   User   @relation(fields: [organizerId], references: [id])
+}
+
+model EventTickets {
+  id        Int    @id @default(autoincrement())
+  name      String
+  price     Float
+  quantity  Int
+  available Int
+
+  eventId String
+  event   Event  @relation(fields: [eventId], references: [id])
+
+  @@index([eventId])
 }

@@ -1,8 +1,16 @@
+import { getSession } from "@/lib/auth/session";
 import LoginForm from "./components/LoginForm";
+import { redirect } from "next/navigation";
 
-export default function Page() {
+export default async function Page() {
+  const session = await getSession();
+
+  if (session) {
+    redirect("/");
+  }
+
   return (
-    <main className="eventloop-main-page">
+    <main>
       <LoginForm />
     </main>
   );
