@@ -1,6 +1,10 @@
 import "server-only";
 
 import { cookies } from "next/headers";
+
+import { redirect } from "next/navigation";
+import { UserRole } from "@/app/generated/prisma/enums";
+
 import {
   SessionTokenPayload,
   sessionTtlSeconds,
@@ -40,4 +44,18 @@ export async function getSession(): Promise<SessionTokenPayload | null> {
   }
 
   return verifySessionToken(token);
+}
+
+export async function requireAdmin(): Promise<SessionTokenPayload> {
+  const session = await getSession();
+
+  if (!session) {
+    redirect("/login");
+  }
+
+  if (session.role !== UserRole.ADMIN) {
+    redirect("/");
+  }
+
+  return session;
 }

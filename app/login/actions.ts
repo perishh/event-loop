@@ -6,6 +6,7 @@ import prisma from "@/lib/prisma";
 import { verifyPassword } from "@/lib/auth/password";
 import { createSession } from "@/lib/auth/session";
 import { redirect } from "next/navigation";
+import { UserRole } from "@/app/generated/prisma/enums";
 
 export type SignInResult =
   | { success: true }
@@ -74,5 +75,5 @@ export async function signInAction(
     role: user.role,
   });
 
-  redirect("/", "replace");
+  redirect(user.role === UserRole.ADMIN ? "/admin" : "/", "replace");
 }
