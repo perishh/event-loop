@@ -18,27 +18,56 @@ import { useState } from "react";
 import LocationPicker from "./LocationPicker";
 import MediaList from "./MediaList";
 import TicketEntry from "./TicketEntry";
-import { TicketDraft } from "../types";
-import { EventInputSchema } from "../schema";
+import { TicketDraft } from "./types";
+import { EventInputSchema } from "./schema";
 import z from "zod";
-import { createEventAction } from "../actions";
+import { createEventAction } from "../new/actions";
 import { useRouter } from "next/navigation";
 import { LatLng } from "@/components/Map";
+import { EditableEvent } from "../[id]/edit/types";
+import { updateEventAction } from "../[id]/edit/actions";
 
-const getDefaultTicket = () => ({
+const getDefaultTicket = (): TicketDraft => ({
   id: Date.now(),
   name: "Γενική Είσοδος",
   price: "10",
   quantity: "50",
 });
 
-export default function EventForm() {
+interface Props {
+  eventToEdit?: EditableEvent;
+}
+
+export default function EventForm({ eventToEdit }: Props) {
   const router = useRouter();
-  const [type, setType] = useState<EventType>(EventType.CONCERT);
-  const [categories, setCategories] = useState<Set<EventCategory>>(new Set());
-  const [tickets, setTickets] = useState<TicketDraft[]>([getDefaultTicket()]);
-  const [media, setMedia] = useState<string[]>([]);
-  const [latLng, setLatLng] = useState<LatLng | undefined>(undefined);
+
+  const [type, setType] = useState<EventType>(
+    eventToEdit?.type ?? EventType.CONCERT,
+  );
+
+  const [categories, setCategories] = useState<Set<EventCategory>>(
+    new Set(eventToEdit?.categories ?? []),
+  );
+
+  const [tickets, setTickets] = useState<TicketDraft[]>(
+    eventToEdit?.ticketTypes?.map(
+      (t): TicketDraft => ({
+        id: t.id,
+        name: t.name,
+        price: t.price.toString(),
+        quantity: t.quantity.toString(),
+      }),
+    ) ?? [getDefaultTicket()],
+  );
+
+  const [media, setMedia] = useState<string[]>(eventToEdit?.media ?? []);
+
+  const [latLng, setLatLng] = useState<LatLng | undefined>(
+    eventToEdit?.latitude && eventToEdit?.longitude
+      ? [eventToEdit.latitude, eventToEdit.longitude]
+      : undefined,
+  );
+
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string[]>>({});
   const [message, setMessage] = useState("");
@@ -91,12 +120,17 @@ export default function EventForm() {
     setLoading(true);
 
     try {
-      const response = await createEventAction(payload);
+      const response = await (eventToEdit
+        ? updateEventAction(eventToEdit.id, payload)
+        : createEventAction(payload));
 
       if (!response.success) {
         setErrors(response.fieldErrors || {});
         setMessage(
-          response.message || "Σφάλμα κατά τη δημιουργία της εκδήλωσης.",
+          response.message ||
+            (eventToEdit
+              ? "Σφάλμα κατά την επεξεργασία της εκδήλωσης."
+              : "Σφάλμα κατά τη δημιουργία της εκδήλωσης."),
         );
         return;
       }
@@ -122,6 +156,7 @@ export default function EventForm() {
               wrapperClassName="col-span-2"
               icon={Tag}
               id="title"
+              defaultValue={eventToEdit?.title}
               error={errors.title?.[0]}
               name="title"
               label="Τίτλος"
@@ -131,6 +166,7 @@ export default function EventForm() {
               wrapperClassName="col-span-2"
               id="description"
               name="description"
+              defaultValue={eventToEdit?.description}
               error={errors.description?.[0]}
               label="Περιγραφή"
               placeholder="Μια συναυλία με τους καλύτερους καλλιτέχνες της πόλης!"
@@ -154,6 +190,7 @@ export default function EventForm() {
               id="capacity"
               label="Χωρητικότητα"
               name="capacity"
+              defaultValue={eventToEdit?.capacity.toString()}
               icon={Users}
               placeholder="100"
               type="number"
@@ -199,6 +236,9 @@ export default function EventForm() {
             <InputField
               label="Έναρξη"
               name="startDateTime"
+              defaultValue={eventToEdit?.startDateTime
+                .toISOString()
+                .slice(0, 16)}
               type="datetime-local"
               icon={Clock3}
               placeholder=""
@@ -208,6 +248,7 @@ export default function EventForm() {
             <InputField
               label="Λήξη"
               name="endDateTime"
+              defaultValue={eventToEdit?.endDateTime.toISOString().slice(0, 16)}
               type="datetime-local"
               icon={Clock3}
               id="endDateTime"
@@ -217,7 +258,21 @@ export default function EventForm() {
           </div>
         </section>
 
-        <LocationPicker latLng={latLng} setLatLng={setLatLng} errors={errors} />
+        <LocationPicker
+          latLng={latLng}
+          setLatLng={setLatLng}
+          errors={errors}
+          defaultValues={
+            eventToEdit
+              ? {
+                  address: eventToEdit.address,
+                  city: eventToEdit.city,
+                  country: eventToEdit.country,
+                  venue: eventToEdit.venue,
+                }
+              : undefined
+          }
+        />
         <MediaList
           media={media}
           setMedia={setMedia}
@@ -236,14 +291,16 @@ export default function EventForm() {
         )}
 
         <div className="flex justify-end mt-6 space-x-2">
-          <button
-            type="submit"
-            name={EventStatus.DRAFT}
-            className="bg-white text-violet-500 px-3 py-2 rounded-lg ring-2 ring-violet-500 transition-all hover:ring-offset-1 focus:ring-offset-2 outline-0 tracking-wide font-semibold"
-            disabled={loading}
-          >
-            {loading ? "Αποστολή…" : "Αποθήκευση"}
-          </button>
+          {(!eventToEdit || eventToEdit.status === EventStatus.DRAFT) && (
+            <button
+              type="submit"
+              name={EventStatus.DRAFT}
+              className="bg-white text-violet-500 px-3 py-2 rounded-lg ring-2 ring-violet-500 transition-all hover:ring-offset-1 focus:ring-offset-2 outline-0 tracking-wide font-semibold"
+              disabled={loading}
+            >
+              {loading ? "Αποστολή…" : "Αποθήκευση"}
+            </button>
+          )}
           <button
             name={EventStatus.PUBLISHED}
             type="submit"

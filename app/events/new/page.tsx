@@ -2,7 +2,7 @@ import { UserRole } from "@/app/generated/prisma/enums";
 import Breadcrumb from "@/components/Breadcrumb";
 import { getSession } from "@/lib/auth/session";
 import { redirect } from "next/navigation";
-import EventForm from "./components/EventForm";
+import EventForm from "../_form/EventForm";
 
 export default async function NewEventPage() {
   const session = await getSession();

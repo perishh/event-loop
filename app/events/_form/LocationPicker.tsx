@@ -9,9 +9,20 @@ interface Props {
   latLng: LatLng | undefined;
   setLatLng: React.Dispatch<React.SetStateAction<LatLng | undefined>>;
   errors: Record<string, string[]>;
+  defaultValues?: {
+    venue: string;
+    address: string;
+    city: string;
+    country: string;
+  };
 }
 
-export default function LocationPicker({ latLng, setLatLng, errors }: Props) {
+export default function LocationPicker({
+  latLng,
+  setLatLng,
+  errors,
+  defaultValues,
+}: Props) {
   return (
     <section className="w-full rounded-2xl border border-violet-100 bg-white/80 p-5 shadow-sm shadow-violet-100/60">
       <p className="text-xs font-bold tracking-[0.22em] text-violet-500 mb-3">
@@ -23,6 +34,7 @@ export default function LocationPicker({ latLng, setLatLng, errors }: Props) {
           label="Χώρος"
           name="venue"
           icon={MapPinHouse}
+          defaultValue={defaultValues?.venue}
           placeholder="Μέγαρο Μουσικής"
           error={errors.venue?.[0]}
           id="venue"
@@ -30,6 +42,7 @@ export default function LocationPicker({ latLng, setLatLng, errors }: Props) {
         <InputField
           label="Διεύθυνση"
           name="address"
+          defaultValue={defaultValues?.address}
           icon={Navigation}
           error={errors.address?.[0]}
           placeholder="Βασιλίσσης Σοφίας 1"
@@ -38,6 +51,7 @@ export default function LocationPicker({ latLng, setLatLng, errors }: Props) {
         <InputField
           label="Πόλη"
           name="city"
+          defaultValue={defaultValues?.city}
           error={errors.city?.[0]}
           icon={MapPin}
           placeholder="Αθήνα"
@@ -47,6 +61,7 @@ export default function LocationPicker({ latLng, setLatLng, errors }: Props) {
           label="Χώρα"
           name="country"
           icon={Globe}
+          defaultValue={defaultValues?.country}
           error={errors.country?.[0]}
           placeholder="Ελλάδα"
           id="country"

@@ -77,20 +77,30 @@ export const EventInputSchema = z
       .min(1, "Προσθέστε τουλάχιστον έναν τύπο εισιτηρίου")
       .superRefine((ticketTypes, ctx) => {
         const seenIds = new Set<number>();
+        const seenNames = new Set<string>();
 
         ticketTypes.forEach((ticketType, index) => {
-          if (!ticketType.id) return;
+          if (ticketType.id) {
+            if (seenIds.has(ticketType.id)) {
+              ctx.addIssue({
+                code: "custom",
+                path: [index, "id"],
+                message: "Δεν επιτρέπεται διπλότυπο id εισιτηρίου",
+              });
+              return;
+            }
+            seenIds.add(ticketType.id);
+          }
 
-          if (seenIds.has(ticketType.id)) {
+          if (seenNames.has(ticketType.name)) {
             ctx.addIssue({
               code: "custom",
-              path: [index, "id"],
-              message: "Δεν επιτρέπεται διπλότυπο id εισιτηρίου",
+              path: [index, "name"],
+              message: "Δεν επιτρέπεται διπλότυπο όνομα εισιτηρίου",
             });
             return;
           }
-
-          seenIds.add(ticketType.id);
+          seenNames.add(ticketType.name);
         });
       }),
     status: z.enum([EventStatus.DRAFT, EventStatus.PUBLISHED]),

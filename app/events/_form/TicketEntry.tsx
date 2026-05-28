@@ -1,8 +1,8 @@
 "use client";
 
 import { Euro, Plus, Trash2 } from "lucide-react";
-import { Dispatch, useState } from "react";
-import { TicketDraft } from "../types";
+import { Dispatch } from "react";
+import { TicketDraft } from "./types";
 import InputField from "@/components/InputField";
 
 interface Props {

@@ -2,18 +2,11 @@
 
 import { UserRole } from "@/app/generated/prisma/enums";
 import { getSession } from "@/lib/auth/session";
-import { EventInputSchema } from "./schema";
+import { EventInputSchema } from "../_form/schema";
 import z from "zod";
 import prisma from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
-
-export type EventActionResult =
-  | { success: true; message: string }
-  | {
-      success: false;
-      message?: string;
-      fieldErrors?: Record<string, string[]>;
-    };
+import { EventActionResult } from "../types";
 
 export async function createEventAction(
   rawInput: unknown,
