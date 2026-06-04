@@ -1,13 +1,14 @@
 "use client";
 
-import { useActionState, useState, type FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { getRawInput, SignInInputSchema } from "../schema";
 import z from "zod";
 import InputField from "../../../components/InputField";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Lock, SquareArrowRightEnter, User } from "lucide-react";
 import Link from "next/link";
-import { signInAction, SignInFormState } from "../actions";
+import { useRouter } from "next/navigation";
+import { signInAction } from "../actions";
 
 /**
  * Returns the first error message for a given field name, or undefined.
@@ -21,30 +22,41 @@ function getFieldError(
 }
 
 export default function LoginForm() {
+  const router = useRouter();
 
-  const [state, formAction, isPending] = useActionState<
-    SignInFormState,
-    FormData
-  >(signInAction, null);
+  const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string[]>>({});
+  const [message, setMessage] = useState("");
 
-  const [errors, setErrors] = useState<Record<string, string[]> | null>(null);
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    const formData = new FormData(event.currentTarget);
-    const parsed = SignInInputSchema.safeParse(getRawInput(formData));
+    const rawInput = getRawInput(new FormData(event.currentTarget));
+    const parsed = SignInInputSchema.safeParse(rawInput);
 
     if (!parsed.success) {
-      event.preventDefault();
       setErrors(z.flattenError(parsed.error).fieldErrors);
       return;
     }
 
-    setErrors(null);
-  }
+    setErrors({});
+    setMessage("");
+    setLoading(true);
 
-  // Prefer client-side validation errors if present, otherwise use server-side errors from state.
-  const fieldErrors =
-    errors ?? (state && !state.success ? state.fieldErrors : undefined);
+    try {
+      const result = await signInAction(rawInput);
+
+      if (result.success) {
+        router.replace(result.message);
+        return;
+      }
+
+      setErrors(result.fieldErrors ?? {});
+      setMessage(result.error);
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <>
@@ -70,7 +82,6 @@ export default function LoginForm() {
           <form
             id="eventloop-login-form"
             className="eventloop-login-card"
-            action={formAction}
             onSubmit={handleSubmit}
             noValidate
           >
@@ -81,7 +92,7 @@ export default function LoginForm() {
               type="text"
               icon={User}
               placeholder="john_doe"
-              error={getFieldError(fieldErrors, "username")}
+              error={getFieldError(errors, "username")}
             />
             <InputField
               id="login-password"
@@ -91,7 +102,7 @@ export default function LoginForm() {
               icon={Lock}
               placeholder="••••••••"
               wrapperClassName="mt-2"
-              error={getFieldError(fieldErrors, "password")}
+              error={getFieldError(errors, "password") || message}
             />
           </form>
 
@@ -110,9 +121,9 @@ export default function LoginForm() {
               form="eventloop-login-form"
               type="submit"
               className="bg-violet-500 text-white px-3 py-2 rounded-lg ring-0 hover:ring-2 ring-violet-500 transition-all active:ring-offset-1 focus:ring-offset-2 outline-0 tracking-wide font-semibold"
-              disabled={isPending}
+              disabled={loading}
             >
-              {isPending ? "Είσοδος..." : "Είσοδος"}
+              {loading ? "Είσοδος…" : "Είσοδος"}
             </button>
           </div>
         </div>

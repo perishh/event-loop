@@ -1,7 +1,7 @@
 "use client";
 
-import { useActionState, useState, type FormEvent } from "react";
-import { signUp, type SignUpFormState } from "../actions";
+import { useState, type FormEvent } from "react";
+import { signUp } from "../actions";
 import { getRawInput, SignUpInputSchema } from "../schema";
 import z from "zod";
 import PendingStatus from "./PendingStatus";
@@ -153,32 +153,42 @@ function getFieldError(
 }
 
 export default function RegisterForm() {
-  const [state, formAction, isPending] = useActionState<
-    SignUpFormState,
-    FormData
-  >(signUp, null);
+  const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string[]>>({});
+  const [message, setMessage] = useState("");
+  const [showPending, setShowPending] = useState(false);
 
-  const [errors, setErrors] = useState<Record<string, string[]> | null>(null);
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    const formData = new FormData(event.currentTarget);
-    const parsed = SignUpInputSchema.safeParse(getRawInput(formData));
+    const rawInput = getRawInput(new FormData(event.currentTarget));
+    const parsed = SignUpInputSchema.safeParse(rawInput);
 
     if (!parsed.success) {
-      event.preventDefault();
       setErrors(z.flattenError(parsed.error).fieldErrors);
       return;
     }
 
-    setErrors(null);
+    setErrors({});
+    setMessage("");
+    setLoading(true);
+
+    try {
+      const result = await signUp(rawInput);
+
+      if (result.success) {
+        setShowPending(true);
+        return;
+      }
+
+      setErrors(result.fieldErrors ?? {});
+      setMessage(result.error);
+    } finally {
+      setLoading(false);
+    }
   }
 
-  // Prefer client-side validation errors if present, otherwise use server-side errors from state.
-  const fieldErrors =
-    errors ?? (state && !state.success ? state.fieldErrors : undefined);
-
-  // If register succeeded, show pending confirmation status
-  if (state && state.success) return <PendingStatus />;
+  if (showPending) return <PendingStatus />;
 
   return (
     <section className="max-w-3xl mx-auto mt-8 px-4">
@@ -197,7 +207,6 @@ export default function RegisterForm() {
         <form
           id="eventloop-register-form"
           className="space-y-5"
-          action={formAction}
           onSubmit={handleSubmit}
           noValidate
         >
@@ -233,7 +242,7 @@ export default function RegisterForm() {
                   <InputField
                     key={registerField.id}
                     {...registerField}
-                    error={getFieldError(fieldErrors, registerField.name)}
+                    error={getFieldError(errors, registerField.name)}
                   />
                 ))}
               </div>
@@ -241,9 +250,9 @@ export default function RegisterForm() {
           ))}
         </form>
 
-        {state && !state.success && state.error && (
+        {!loading && message && (
           <p className="text-sm text-red-700 mt-4 ml-1" role="alert">
-            {state.error}
+            {message}
           </p>
         )}
 
@@ -252,9 +261,9 @@ export default function RegisterForm() {
             form="eventloop-register-form"
             type="submit"
             className="bg-violet-500 text-white px-3 py-2 rounded-lg ring-0 hover:ring-2 ring-violet-500 transition-all active:ring-offset-1 focus:ring-offset-2 outline-0 tracking-wide font-semibold"
-            disabled={isPending}
+            disabled={loading}
           >
-            {isPending ? "Αποστολή…" : "Συνέχεια"}
+            {loading ? "Αποστολή…" : "Συνέχεια"}
           </button>
         </div>
       </div>

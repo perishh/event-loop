@@ -7,14 +7,16 @@ export default async function Page() {
   await requireAdmin();
 
   const users = await prisma.user.findMany({
-    orderBy: { createdAt: "desc" },
+    orderBy: [{ approved: "asc" }, { createdAt: "desc" }],
   });
 
   const pendingCount = users.filter((user) => !user.approved).length;
 
   return (
     <main className="eventloop-main-page p-6">
-      <h1 className="text-xl font-semibold text-gray-900">Διαχείριση χρηστών</h1>
+      <h1 className="text-xl font-semibold text-gray-900">
+        Διαχείριση χρηστών
+      </h1>
       <p className="text-sm text-gray-500 mt-1 mb-5">
         {users.length} χρήστες · {pendingCount} εκκρεμείς
       </p>

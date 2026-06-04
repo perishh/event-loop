@@ -1,25 +1,18 @@
 "use server";
 
-import { getRawInput, SignInInputSchema } from "./schema";
+import { SignInInputSchema } from "./schema";
 import z from "zod";
 import prisma from "@/lib/prisma";
 import { verifyPassword } from "@/lib/auth/password";
 import { createSession } from "@/lib/auth/session";
-import { redirect } from "next/navigation";
 import { UserRole } from "@/app/generated/prisma/enums";
 
 export type SignInResult =
-  | { success: true }
+  | { success: true; message: string }
   | { success: false; error: string; fieldErrors?: Record<string, string[]> };
 
-/** Type used by useActionState, null means idle */
-export type SignInFormState = SignInResult | null;
-
-export async function signInAction(
-  prevState: SignInFormState,
-  formData: FormData,
-): Promise<SignInResult> {
-  const parsed = SignInInputSchema.safeParse(getRawInput(formData));
+export async function signInAction(rawInput: unknown): Promise<SignInResult> {
+  const parsed = SignInInputSchema.safeParse(rawInput);
 
   if (!parsed.success) {
     return {
@@ -75,5 +68,8 @@ export async function signInAction(
     role: user.role,
   });
 
-  redirect(user.role === UserRole.ADMIN ? "/admin" : "/", "replace");
+  return {
+    success: true,
+    message: user.role === UserRole.ADMIN ? "/admin" : "/",
+  };
 }
