@@ -1,4 +1,5 @@
 import {
+  BookingStatus,
   EventCategory,
   EventType,
   UserRole,
@@ -136,3 +137,9 @@ export const EVENT_TYPE_CATEGORIES = {
   ],
   [EventType.OTHER]: [EventCategory.GENERAL, EventCategory.PRIVATE_EVENT],
 } as const satisfies Record<EventTypeValue, readonly EventCategoryValue[]>;
+
+export const STATUS_LABELS = {
+  [BookingStatus.PENDING]: "Σε εκκρεμότητα",
+  [BookingStatus.CONFIRMED]: "Επιβεβαιωμένη",
+  [BookingStatus.CANCELLED]: "Ακυρωμένη",
+} as const satisfies Record<BookingStatus, string>;

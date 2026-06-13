@@ -6,6 +6,7 @@ import prisma from "@/lib/prisma";
 import BookingForm from "./components/BookingForm";
 import { Calendar, Clock, MapPin, AlertCircle } from "lucide-react";
 import { notFound } from "next/navigation";
+import BookingList from "./components/BookingList";
 
 export default async function EventBookingPage({
   params,
@@ -31,6 +32,27 @@ export default async function EventBookingPage({
   if (!event || event.status !== EventStatus.PUBLISHED) {
     notFound();
   }
+
+  const existingBookings = await prisma.booking.findMany({
+    where: {
+      attendeeId: session.sub,
+      ticketType: {
+        eventId: id,
+      },
+    },
+    include: {
+      ticketType: {
+        select: {
+          id: true,
+          name: true,
+          price: true,
+        },
+      },
+    },
+    orderBy: {
+      time: "desc",
+    },
+  });
 
   const now = new Date();
   const isPastEvent = event.endDateTime < now; // TODO: Maybe check start datetime?
@@ -138,6 +160,7 @@ export default async function EventBookingPage({
         ) : (
           <BookingForm eventId={event.id} ticketTypes={event.ticketTypes} />
         )}
+        <BookingList bookings={existingBookings} />
       </div>
     </section>
   );
