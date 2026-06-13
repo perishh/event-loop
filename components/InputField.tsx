@@ -3,7 +3,7 @@ import { LucideProps } from "lucide-react";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   id: string;
-  label: string;
+  label?: string;
   name?: string;
   placeholder: string;
   icon?: ComponentType<LucideProps>;
@@ -27,12 +27,14 @@ const InputField = forwardRef<HTMLInputElement, InputProps>(
   ) => {
     return (
       <div className={`group w-full ${wrapperClassName}`}>
-        <label
-          htmlFor={id}
-          className="block text-sm tracking-wide font-semibold mb-1 ml-1 opacity-70 group-focus-within:opacity-100 group-hover:opacity-100 transition-opacity"
-        >
-          {label}
-        </label>
+        {label && (
+          <label
+            htmlFor={id}
+            className="block text-sm tracking-wide font-semibold mb-1 ml-1 opacity-70 group-focus-within:opacity-100 group-hover:opacity-100 transition-opacity"
+          >
+            {label}
+          </label>
+        )}
 
         <div className="relative flex items-center">
           {Icon && (

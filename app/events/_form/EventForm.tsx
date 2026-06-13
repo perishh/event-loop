@@ -100,10 +100,15 @@ export default function EventForm({ eventToEdit }: Props) {
       ...Object.fromEntries(formData.entries()),
       categories: Array.from(categories),
       media,
-      ticketTypes: tickets,
+      ticketTypes: tickets.map(({ name, price, quantity }) => ({
+        name,
+        price,
+        quantity,
+      })),
       latitude: latLng?.[0],
       longitude: latLng?.[1],
       status,
+      updatedAt: eventToEdit?.updatedAt?.toISOString(),
     };
 
     const validationResult = EventInputSchema.safeParse(payload);

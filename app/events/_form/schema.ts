@@ -15,7 +15,6 @@ const datetimeInputSchema = z
   });
 
 const ticketTypeSchema = z.strictObject({
-  id: z.int("Το id πρέπει να είναι ακέραιος"),
   name: z.string().trim().min(2, "Το όνομα εισιτηρίου είναι υποχρεωτικό"),
   price: z.coerce
     .number({ message: "Η τιμή πρέπει να είναι αριθμός" })
@@ -76,22 +75,9 @@ export const EventInputSchema = z
       .array(ticketTypeSchema)
       .min(1, "Προσθέστε τουλάχιστον έναν τύπο εισιτηρίου")
       .superRefine((ticketTypes, ctx) => {
-        const seenIds = new Set<number>();
         const seenNames = new Set<string>();
 
         ticketTypes.forEach((ticketType, index) => {
-          if (ticketType.id) {
-            if (seenIds.has(ticketType.id)) {
-              ctx.addIssue({
-                code: "custom",
-                path: [index, "id"],
-                message: "Δεν επιτρέπεται διπλότυπο id εισιτηρίου",
-              });
-              return;
-            }
-            seenIds.add(ticketType.id);
-          }
-
           if (seenNames.has(ticketType.name)) {
             ctx.addIssue({
               code: "custom",
@@ -104,6 +90,10 @@ export const EventInputSchema = z
         });
       }),
     status: z.enum([EventStatus.DRAFT, EventStatus.PUBLISHED]),
+    updatedAt: z
+      .string()
+      .transform((value) => new Date(value))
+      .optional(),
   })
   .superRefine((data, ctx) => {
     const allowedCategories = new Set<EventCategory>(

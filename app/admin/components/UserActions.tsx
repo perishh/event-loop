@@ -37,7 +37,7 @@ export default function UserActions({ userId }: { userId: string }) {
         onSubmit={(e) => {
           if (
             !window.confirm(
-              "Σίγουρα θέλετε να απορρίψετε αυτόν τον χρήστη; Ο λογαριασμός θα διαγραφεί οριστικά."
+              "Σίγουρα θέλετε να απορρίψετε αυτόν τον χρήστη; Ο λογαριασμός θα διαγραφεί οριστικά.",
             )
           ) {
             e.preventDefault();

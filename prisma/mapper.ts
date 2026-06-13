@@ -1,7 +1,17 @@
-import { EventCategory, EventType } from "../app/generated/prisma/enums";
+import {
+  EventCategory,
+  EventType,
+  UserRole,
+} from "../app/generated/prisma/enums";
 
 type EventTypeValue = (typeof EventType)[keyof typeof EventType];
 type EventCategoryValue = (typeof EventCategory)[keyof typeof EventCategory];
+
+export const USER_ROLE_LABELS = {
+  [UserRole.ADMIN]: "ΔΙΑΧΕΙΡΙΣΤΗΣ",
+  [UserRole.ORGANIZER]: "ΔΙΟΡΓΑΝΩΤΗΣ",
+  [UserRole.ATTENDEE]: "ΣΥΜΜΕΤΕΧΩΝ",
+} as const satisfies Record<UserRole, string>;
 
 export const EVENT_TYPE_LABELS = {
   [EventType.CONFERENCE]: "Συνέδριο",

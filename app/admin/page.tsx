@@ -2,6 +2,7 @@ import Link from "next/link";
 import prisma from "@/lib/prisma";
 import { requireAdmin } from "@/lib/auth/session";
 import UserActions from "./components/UserActions";
+import { USER_ROLE_LABELS } from "@/prisma/mapper";
 
 export default async function Page() {
   await requireAdmin();
@@ -44,7 +45,7 @@ export default async function Page() {
                       {user.firstName} {user.lastName}
                     </span>
                     <span className="shrink-0 text-xs text-gray-600 border border-gray-300 rounded px-2 py-0.5">
-                      {user.role}
+                      {USER_ROLE_LABELS[user.role]}
                     </span>
                   </div>
                   <div className="text-sm text-gray-500 truncate">

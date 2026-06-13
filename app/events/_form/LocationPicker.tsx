@@ -103,6 +103,7 @@ export default function LocationPicker({
         <Map
           initialZoom={13}
           marker={latLng ?? undefined}
+          initialPosition={latLng ?? undefined}
           onMarkerClick={() => setLatLng(undefined)}
           onClick={(latlng) => setLatLng(latlng)}
         />

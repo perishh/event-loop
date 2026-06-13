@@ -34,6 +34,7 @@ model User {
   approved  Boolean  @default(false)
 
   organizedEvents Event[]
+  bookings        Booking[]
 }
 
 enum EventType {
@@ -106,6 +107,7 @@ model Event {
   endDateTime   DateTime
   capacity      Int
   status        EventStatus     @default(DRAFT)
+  updatedAt     DateTime        @updatedAt @default(now())
   ticketTypes   EventTickets[]
   media         String[]
 
@@ -120,8 +122,29 @@ model EventTickets {
   quantity  Int
   available Int
 
-  eventId String
-  event   Event  @relation(fields: [eventId], references: [id])
+  eventId  String
+  event    Event     @relation(fields: [eventId], references: [id])
+  bookings Booking[]
 
   @@index([eventId])
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+}
+
+model Booking {
+  id              String        @id @default(uuid())
+  time            DateTime      @default(now())
+  status          BookingStatus @default(PENDING)
+  numberOfTickets Int
+  totalCost       Float
+
+  ticketTypeId Int
+  ticketType   EventTickets @relation(fields: [ticketTypeId], references: [id])
+
+  attendeeId String
+  attendee   User   @relation(fields: [attendeeId], references: [id])
 }

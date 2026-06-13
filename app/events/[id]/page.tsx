@@ -6,6 +6,8 @@ import { getSession } from "@/lib/auth/session";
 import { EVENT_CATEGORY_LABELS, EVENT_TYPE_LABELS } from "@/prisma/mapper";
 import { Calendar, Clock, MapPin, Users, Ticket, Euro } from "lucide-react";
 import { notFound } from "next/navigation";
+import { UserRole } from "@/app/generated/prisma/enums";
+import Link from "next/link";
 
 export default async function EventDetailPage({
   params,
@@ -32,6 +34,7 @@ export default async function EventDetailPage({
     notFound();
   }
 
+  // TODO: move to utils
   const formatDate = (date: Date) =>
     date.toLocaleDateString("el-GR", {
       weekday: "long",
@@ -155,6 +158,7 @@ export default async function EventDetailPage({
           {event.latitude && event.longitude && (
             <Map
               marker={[event.latitude, event.longitude]}
+              initialPosition={[event.latitude, event.longitude]}
               initialZoom={14}
               className="h-40 mt-3 flex-2"
             />
@@ -194,9 +198,20 @@ export default async function EventDetailPage({
       </div>
 
       <div className="rounded-2xl border border-violet-100 bg-white/80 p-5 shadow-sm shadow-violet-100/60 mb-8">
-        <p className="text-xs font-bold tracking-[0.22em] text-violet-500 mb-4">
-          ΤΥΠΟΙ ΕΙΣΙΤΗΡΙΩΝ
-        </p>
+        <div className="flex items-center justify-between mb-4">
+          <p className="text-xs font-bold tracking-[0.22em] text-violet-500">
+            ΤΥΠΟΙ ΕΙΣΙΤΗΡΙΩΝ
+          </p>
+
+          {session && session.role === UserRole.ATTENDEE && (
+            <Link
+              href={`/events/${encodeURIComponent(event.id)}/book`}
+              className="bg-violet-500 text-white rounded-xl px-3 py-2 text-sm font-medium tracking-wide"
+            >
+              Κράτηση
+            </Link>
+          )}
+        </div>
 
         {event.ticketTypes.length === 0 ? (
           <p className="text-gray-500 text-sm">

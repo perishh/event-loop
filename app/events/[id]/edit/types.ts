@@ -28,5 +28,6 @@ export type EditableEvent = {
   endDateTime: Date;
   capacity: number;
   status: EventStatus;
+  updatedAt: Date;
   media: string[];
 };
