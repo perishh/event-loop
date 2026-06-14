@@ -138,7 +138,7 @@ export default function BookingForm({
 
   return (
     <form onSubmit={handleSubmit} noValidate>
-      <div className="rounded-2xl border border-violet-100 bg-white/80 p-5 shadow-sm shadow-violet-100/60">
+      <div className="rounded-2xl border border-violet-100 bg-white/80 p-5 shadow-sm shadow-violet-100/60 mt-4">
         <p className="text-xs font-bold tracking-[0.22em] text-violet-500 mb-3">
           ΤΥΠΟΙ ΕΙΣΙΤΗΡΙΩΝ
         </p>
@@ -230,45 +230,44 @@ export default function BookingForm({
                 </div>
               );
             })}
+
+            <div className="mt-3">
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-sm font-semibold text-gray-600">
+                  Σύνολο
+                </span>
+                <span className="text-xl font-bold text-gray-800 flex items-center gap-1">
+                  {totalCost.toFixed(2)}
+                  <Euro size={18} className="text-violet-500" />
+                </span>
+              </div>
+
+              {message && (
+                <div
+                  className="mb-4 p-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm"
+                  role="alert"
+                >
+                  {message}
+                </div>
+              )}
+
+              <button
+                type="submit"
+                disabled={loading || !hasSelection}
+                className="w-full py-3 px-6 bg-violet-600 hover:bg-violet-700 disabled:bg-violet-300 text-white font-semibold rounded-xl transition-colors disabled:cursor-not-allowed"
+              >
+                {loading ? "Γίνεται κράτηση..." : "Ολοκλήρωση κράτησης"}
+              </button>
+
+              {!hasSelection && (
+                <p className="text-xs text-gray-400 text-center mt-2">
+                  Επιλέξτε τουλάχιστον ένα εισιτήριο για να συνεχίσετε.
+                </p>
+              )}
+            </div>
           </div>
         )}
       </div>
-
-      {/* Summary & Submit */}
-      {hasAnyTickets && (
-        <div className="rounded-2xl border border-violet-100 bg-white/80 p-5 shadow-sm shadow-violet-100/60 mt-4">
-          <div className="flex items-center justify-between mb-4">
-            <span className="text-sm font-semibold text-gray-600">Σύνολο</span>
-            <span className="text-xl font-bold text-gray-800 flex items-center gap-1">
-              {totalCost.toFixed(2)}
-              <Euro size={18} className="text-violet-500" />
-            </span>
-          </div>
-
-          {message && (
-            <div
-              className="mb-4 p-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm"
-              role="alert"
-            >
-              {message}
-            </div>
-          )}
-
-          <button
-            type="submit"
-            disabled={loading || !hasSelection}
-            className="w-full py-3 px-6 bg-violet-600 hover:bg-violet-700 disabled:bg-violet-300 text-white font-semibold rounded-xl transition-colors disabled:cursor-not-allowed"
-          >
-            {loading ? "Γίνεται κράτηση..." : "Ολοκλήρωση κράτησης"}
-          </button>
-
-          {!hasSelection && (
-            <p className="text-xs text-gray-400 text-center mt-2">
-              Επιλέξτε τουλάχιστον ένα εισιτήριο για να συνεχίσετε.
-            </p>
-          )}
-        </div>
-      )}
     </form>
   );
 }

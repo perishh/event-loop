@@ -1,4 +1,5 @@
 import { BookingStatus } from "@/app/generated/prisma/enums";
+import { formatDate, formatTime } from "@/lib/dateUtils";
 import { STATUS_LABELS } from "@/prisma/mapper";
 import { Ticket, Clock, Euro } from "lucide-react";
 
@@ -27,26 +28,12 @@ const STATUS_STYLES: Record<BookingStatus, string> = {
 };
 
 export default function BookingList({ bookings }: Props) {
-  const formatDate = (date: Date) =>
-    date.toLocaleDateString("el-GR", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-
-  const formatTime = (date: Date) =>
-    date.toLocaleTimeString("el-GR", {
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-
   if (bookings.length === 0) {
     return null;
   }
 
   return (
-    <div className="rounded-2xl border border-violet-100 bg-white/80 p-5 shadow-sm shadow-violet-100/60">
+    <div className="rounded-2xl border border-violet-100 bg-white/80 p-5 shadow-sm shadow-violet-100/60 mt-4">
       <p className="text-xs font-bold tracking-[0.22em] text-violet-500 mb-3">
         ΟΙ ΚΡΑΤΗΣΕΙΣ ΜΟΥ
       </p>

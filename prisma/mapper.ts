@@ -31,7 +31,7 @@ export const EVENT_TYPE_LABELS = {
   [EventType.COMMUNITY]: "Κοινότητα",
   [EventType.FUNDRAISER]: "Φιλανθρωπική εκδήλωση",
   [EventType.OTHER]: "Άλλο",
-} as const satisfies Record<EventTypeValue, string>;
+} as const satisfies Record<EventType, string>;
 
 export const EVENT_CATEGORY_LABELS = {
   [EventCategory.ACADEMIC]: "Ακαδημαϊκό",

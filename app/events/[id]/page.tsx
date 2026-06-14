@@ -8,6 +8,7 @@ import { Calendar, Clock, MapPin, Users, Ticket, Euro } from "lucide-react";
 import { notFound } from "next/navigation";
 import { UserRole } from "@/app/generated/prisma/enums";
 import Link from "next/link";
+import { formatDate, formatTime } from "@/lib/dateUtils";
 
 export default async function EventDetailPage({
   params,
@@ -33,21 +34,6 @@ export default async function EventDetailPage({
   ) {
     notFound();
   }
-
-  // TODO: move to utils
-  const formatDate = (date: Date) =>
-    date.toLocaleDateString("el-GR", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-
-  const formatTime = (date: Date) =>
-    date.toLocaleTimeString("el-GR", {
-      hour: "2-digit",
-      minute: "2-digit",
-    });
 
   const startDate = formatDate(event.startDateTime);
   const startTime = formatTime(event.startDateTime);
