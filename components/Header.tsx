@@ -85,7 +85,7 @@ export default async function Header() {
   const session = await getSession();
 
   return (
-    <nav className="bg-violet-700 px-4 py-2 md:px-6 lg:px-10 2xl:px-32 flex justify-between items-center">
+    <nav className="bg-violet-700 px-4 py-2 md:px-6 lg:px-10 2xl:px-32 flex justify-between items-center sticky top-0 left-0 z-50">
       <Link href="/">
         <Image src={Logo} alt="Λογότυπο EventLoop" priority className="w-28" />
       </Link>

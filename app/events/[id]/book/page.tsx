@@ -7,7 +7,7 @@ import { notFound } from "next/navigation";
 import AttendeeBookingsPage from "./_attendee/AttendeeBookings";
 import OrganizerBookingsPage from "./_organizer/OrganizerBookings";
 import { EVENT_TYPE_LABELS } from "@/prisma/mapper";
-import { formatDate, formatTime } from "@/lib/dateUtils";
+import { formatDate, formatTime } from "@/lib/utils";
 
 export default async function EventBookingPage({
   params,

@@ -1,5 +1,5 @@
 import { BookingStatus } from "@/app/generated/prisma/enums";
-import { formatDate, formatTime } from "@/lib/dateUtils";
+import { formatDate, formatTime } from "@/lib/utils";
 import { STATUS_LABELS } from "@/prisma/mapper";
 import { Ticket, Clock, Euro } from "lucide-react";
 

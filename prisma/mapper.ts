@@ -89,6 +89,7 @@ export const EVENT_TYPE_CATEGORIES = {
     EventCategory.LIVE_MUSIC,
     EventCategory.FILM_FESTIVAL,
     EventCategory.FOOD_DRINK,
+    EventCategory.STAND_UP_COMEDY,
     EventCategory.GENERAL,
   ],
   [EventType.GALA]: [
@@ -106,6 +107,7 @@ export const EVENT_TYPE_CATEGORIES = {
   [EventType.MEETUP]: [
     EventCategory.BUSINESS_MIXER,
     EventCategory.TECH_IT,
+    EventCategory.STAND_UP_COMEDY,
     EventCategory.PROFESSIONAL_DEVELOPMENT,
     EventCategory.GENERAL,
   ],

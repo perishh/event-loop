@@ -8,7 +8,7 @@ import { Calendar, Clock, MapPin, Users, Ticket, Euro } from "lucide-react";
 import { notFound } from "next/navigation";
 import { UserRole } from "@/app/generated/prisma/enums";
 import Link from "next/link";
-import { formatDate, formatTime } from "@/lib/dateUtils";
+import { formatDate, formatTime } from "@/lib/utils";
 
 export default async function EventDetailPage({
   params,

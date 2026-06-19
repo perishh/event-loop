@@ -2,7 +2,7 @@
 
 import { Check, Clock, Euro, Ticket, User, X } from "lucide-react";
 import { BookingRow } from "../types";
-import { formatDate, formatTime } from "@/lib/dateUtils";
+import { formatDate, formatTime } from "@/lib/utils";
 import { cancelBookingAction, confirmBookingAction } from "../actions";
 import { useState } from "react";
 import { BookingStatus } from "@/app/generated/prisma/enums";
