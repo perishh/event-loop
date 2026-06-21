@@ -35,6 +35,9 @@ model User {
 
   organizedEvents Event[]
   bookings        Booking[]
+
+  conversations   Conversation[]
+  sentMessages    Message[]
 }
 
 enum EventType {
@@ -88,7 +91,7 @@ enum EventCategory {
 enum EventStatus {
   DRAFT
   PUBLISHED
-  REMOVED
+  CANCELLED
 }
 
 model Event {
@@ -109,6 +112,7 @@ model Event {
   status        EventStatus     @default(DRAFT)
   updatedAt     DateTime        @updatedAt @default(now())
   ticketTypes   EventTickets[]
+  conversations Conversation[]
   media         String[]
 
   organizerId String
@@ -147,4 +151,35 @@ model Booking {
 
   attendeeId String
   attendee   User   @relation(fields: [attendeeId], references: [id])
+}
+
+model Conversation {
+  id         String    @id @default(uuid())
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt @default(now())
+
+  eventId    String
+  event      Event     @relation(fields: [eventId], references: [id])
+
+  attendeeId String
+  attendee   User      @relation(fields: [attendeeId], references: [id])
+
+  messages   Message[]
+
+  @@unique([eventId, attendeeId])
+}
+
+model Message {
+  id                String       @id @default(uuid())
+  body              String
+  read              Boolean      @default(false)
+  hiddenByAttendee  Boolean      @default(false)
+  hiddenByOrganizer Boolean      @default(false)
+  createdAt         DateTime     @default(now())
+
+  conversationId String
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+
+  senderId       String
+  sender         User         @relation(fields: [senderId], references: [id])
 }
