@@ -4,6 +4,8 @@ import { getRawInput, UserActionInputSchema } from "./schema";
 import z from "zod";
 import prisma from "@/lib/prisma";
 import { redirect } from "next/navigation";
+import { getSession } from "@/lib/auth/session";
+import { train } from "@/lib/recommendation/training";
 
 export type UserActionResult =
   | { success: true }

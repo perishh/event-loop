@@ -2,7 +2,7 @@ import "server-only";
 
 import { cookies } from "next/headers";
 
-import { redirect } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { UserRole } from "@/app/generated/prisma/enums";
 
 import {
@@ -54,7 +54,7 @@ export async function requireAdmin(): Promise<SessionTokenPayload> {
   }
 
   if (session.role !== UserRole.ADMIN) {
-    redirect("/");
+    notFound();
   }
 
   return session;

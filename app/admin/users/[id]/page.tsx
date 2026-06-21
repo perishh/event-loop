@@ -1,7 +1,8 @@
 import Link from "next/link";
 import prisma from "@/lib/prisma";
 import { requireAdmin } from "@/lib/auth/session";
-import UserActions from "../components/UserActions";
+import UserActions from "../../components/UserActions";
+import { USER_ROLE_LABELS } from "@/prisma/mapper";
 
 export default async function Page({
   params,
@@ -19,7 +20,7 @@ export default async function Page({
   return (
     <main className="eventloop-main-page p-6">
       <Link
-        href="/admin"
+        href="/admin/users"
         className="text-sm text-violet-700 hover:underline"
       >
         ← Πίσω στη λίστα
@@ -40,7 +41,7 @@ export default async function Page({
               </h1>
               <div className="flex items-center gap-2 mt-1">
                 <span className="text-xs text-gray-600 border border-gray-300 rounded px-2 py-0.5">
-                  {user.role}
+                  {USER_ROLE_LABELS[user.role]}
                 </span>
                 {user.approved ? (
                   <span className="text-xs text-green-700 bg-green-100 rounded px-2 py-0.5">

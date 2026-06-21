@@ -35,6 +35,7 @@ model User {
 
   organizedEvents Event[]
   bookings        Booking[]
+  eventVisits     EventVisit[]
 }
 
 enum EventType {
@@ -107,12 +108,13 @@ model Event {
   endDateTime   DateTime
   capacity      Int
   status        EventStatus     @default(DRAFT)
-  updatedAt     DateTime        @updatedAt @default(now())
+  updatedAt     DateTime        @default(now()) @updatedAt
   ticketTypes   EventTickets[]
   media         String[]
 
   organizerId String
-  organizer   User   @relation(fields: [organizerId], references: [id])
+  organizer   User         @relation(fields: [organizerId], references: [id])
+  eventVisits EventVisit[]
 }
 
 model EventTickets {
@@ -147,4 +149,23 @@ model Booking {
 
   attendeeId String
   attendee   User   @relation(fields: [attendeeId], references: [id])
+}
+
+model EventVisit {
+  id        Int      @id @default(autoincrement())
+  eventId   String
+  event     Event    @relation(fields: [eventId], references: [id])
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  visitedAt DateTime @default(now())
+}
+
+model RecommendationModel {
+  id          String   @id @default("global")
+  globalMean  Float
+  userBiases  Json
+  itemBiases  Json
+  userFactors Json
+  itemFactors Json
+  updatedAt   DateTime @updatedAt
 }

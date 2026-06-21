@@ -115,14 +115,16 @@ export default async function EventsPage({
           <AsyncFilterSidebar params={resolvedParams} />
         </Suspense>
 
-        <div className="flex-3 px-6 py-4">
-          <Breadcrumb
-            breadcrumbItems={[
-              { href: "/", label: "Αρχική" },
-              { href: "/events", label: "Εκδηλώσεις" },
-            ]}
-          />
-          <h1 className="text-3xl font-bold mb-4 mt-1">Εκδηλώσεις</h1>
+        <div className="flex-3">
+          <div className="sticky top-[76px] left-0 bg-white z-10 py-4 px-6 border-b-2 border-b-violet-100">
+            <Breadcrumb
+              breadcrumbItems={[
+                { href: "/", label: "Αρχική" },
+                { href: "/events", label: "Εκδηλώσεις" },
+              ]}
+            />
+            <h1 className="text-3xl font-bold mt-1">Εκδηλώσεις</h1>
+          </div>
 
           <Suspense key={`grid-${searchKey}`} fallback={<EventGridSkeleton />}>
             <AsyncEventGrid params={resolvedParams} />

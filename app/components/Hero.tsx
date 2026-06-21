@@ -3,55 +3,26 @@
 import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-
-/**
- * @brief Defines one temporary welcome hero image.
- */
-type Welcome_Hero_Image = {
-  id: string;
-  imageSource: string;
-  imageAlternativeText: string;
-};
+import Link from "next/link";
 
 /**
  * @brief Stores the automatic hero change delay in milliseconds.
  */
 const cycleDelayMilliseconds = 10000;
 
-/**
- * @brief Stores the temporary hero images shown on the welcome page.
- */
-const welcomeHeroImages: Welcome_Hero_Image[] = [
-  {
-    id: "welcome-hero-image-1",
-    imageSource: "/images_hero/hero_image_1.png",
-    imageAlternativeText: "EventLoop featured event banner 1",
-  },
-
-  {
-    id: "welcome-hero-image-2",
-    imageSource: "/images_hero/hero_image_2.png",
-    imageAlternativeText: "EventLoop featured event banner 2",
-  },
-
-  {
-    id: "welcome-hero-image-3",
-    imageSource: "/images_hero/hero_image_3.png",
-    imageAlternativeText: "EventLoop featured event banner 3",
-  },
-
-  {
-    id: "welcome-hero-image-4",
-    imageSource: "/images_hero/hero_image_4.png",
-    imageAlternativeText: "EventLoop featured event banner 4",
-  },
-];
+interface Props {
+  events: {
+    id: string;
+    image: string;
+    title: string;
+  }[];
+}
 
 /**
  * @brief  Renders the shared welcome hero carousel section.
  * @return The JSX structure of the shared welcome hero carousel.
  */
-export default function Hero() {
+export default function Hero({ events }: Props) {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       loop: true,
@@ -101,25 +72,23 @@ export default function Hero() {
   }, [emblaApi]);
 
   return (
-    <section>
+    <section className="mb-8">
       <div className="embla relative">
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container">
-            {welcomeHeroImages.map((welcomeHeroImage) => (
-              <div
-                key={welcomeHeroImage.id}
-                className="embla__slide relative group"
-              >
+            {events.map((event) => (
+              <div key={event.id} className="embla__slide relative group">
                 <img
-                  src={welcomeHeroImage.imageSource}
-                  alt={welcomeHeroImage.imageAlternativeText}
+                  src={event.image}
+                  alt={event.title}
+                  className="object-cover h-[400px] w-full"
                 />
-                <button
-                  type="button"
+                <Link
+                  href={`/events/${encodeURIComponent(event.id)}`}
                   className="z-10 absolute bottom-16 right-16 bg-orange-700 text-white px-4 py-2 rounded-lg shadow-lg opacity-50 group-hover:opacity-100 transition-opacity"
                 >
                   Εισιτήρια
-                </button>
+                </Link>
               </div>
             ))}
           </div>
@@ -127,13 +96,13 @@ export default function Hero() {
       </div>
 
       <div className="flex items-center justify-center space-x-1.5 mt-4">
-        {welcomeHeroImages.map((img, index) => (
+        {events.map((event, index) => (
           <button
-            key={img.id}
+            key={event.id}
             type="button"
             aria-label={`Μετάβαση στο hero ${index + 1}`}
             onClick={() => scrollTo(index)}
-            className={`bg-purple-300 rounded-full h-2 w-${index === selectedIndex ? "4" : "2"} focus:outline-none ${index === selectedIndex ? "bg-purple-500" : ""} focus:ring-2 focus:ring-purple-500 focus:ring-offset-1 transition-all`}
+            className={`rounded-full h-2 ${index === selectedIndex ? "w-4" : "w-2"} focus:outline-none ${index === selectedIndex ? "bg-purple-500" : "bg-purple-200"} focus:ring-2 focus:ring-purple-500 focus:ring-offset-1 transition-all`}
           />
         ))}
       </div>

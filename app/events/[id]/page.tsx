@@ -35,6 +35,16 @@ export default async function EventDetailPage({
     notFound();
   }
 
+  // Log visit for recommendations
+  if (session && session.role === UserRole.ATTENDEE) {
+    await prisma.eventVisit.create({
+      data: {
+        eventId: event.id,
+        userId: session.sub,
+      },
+    });
+  }
+
   const startDate = formatDate(event.startDateTime);
   const startTime = formatTime(event.startDateTime);
   const endDate = formatDate(event.endDateTime);

@@ -2,19 +2,23 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Users, FileDown } from "lucide-react";
+import { Users, FileDown, Brain } from "lucide-react";
 
 export default function AdminMenu() {
   const pathname = usePathname();
+
   const usersActive =
-    pathname === "/admin" || pathname.startsWith("/admin/");
+    pathname === "/admin/users" || pathname.startsWith("/admin/users/");
+
+  const trainActive =
+    pathname === "/admin/train" || pathname.startsWith("/admin/train/");
 
   return (
-    <aside className="w-56 shrink-0 bg-violet-50 p-4">
+    <aside className="max-w-96 shrink-0 bg-violet-50 p-4 sticky top-[76px] left-0 max-h-[calc(100dvh-76px)]">
       <p className="text-xs text-gray-500 px-3 mb-3">Πίνακας διαχείρισης</p>
 
       <Link
-        href="/admin"
+        href="/admin/users"
         className={`flex items-center gap-2 px-3 py-2 rounded-lg mb-1 ${
           usersActive
             ? "bg-violet-500 text-white"
@@ -29,6 +33,18 @@ export default function AdminMenu() {
         <FileDown size={18} />
         Εξαγωγή εκδηλώσεων
       </span>
+
+      <Link
+        href="/admin/train"
+        className={`flex items-center gap-2 px-3 py-2 rounded-lg mt-1 ${
+          trainActive
+            ? "bg-violet-500 text-white"
+            : "text-gray-700 hover:bg-violet-100"
+        }`}
+      >
+        <Brain size={18} />
+        Εκπαίδευση μοντέλου συστάσεων
+      </Link>
     </aside>
   );
 }

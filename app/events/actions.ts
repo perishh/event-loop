@@ -1,7 +1,11 @@
 "use server";
 
 import prisma from "@/lib/prisma";
-import { EventCategory, EventType } from "../generated/prisma/enums";
+import {
+  EventCategory,
+  EventStatus,
+  EventType,
+} from "../generated/prisma/enums";
 
 interface FilterParams {
   type: EventType | null;
@@ -18,7 +22,9 @@ export async function getFilteredEvents(
   page: number = 1,
   pageSize: number = 10,
 ) {
-  const where: Record<string, unknown> = {};
+  const where: Record<string, unknown> = {
+    status: EventStatus.PUBLISHED,
+  };
 
   if (params.type) where.type = params.type;
   if (params.city) where.city = params.city;

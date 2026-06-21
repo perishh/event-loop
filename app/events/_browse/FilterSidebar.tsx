@@ -85,7 +85,7 @@ export default function FilterSidebar({ cities, params }: Props) {
 
   return (
     <div
-      className={`flex-1 sticky top-[76px] left-0 border-r-2 border-violet-100 max-h-[calc(100dvh-76px)] max-w-100 transition-opacity${isPending ? " opacity-50 pointer-events-none" : ""}`}
+      className={`flex-1 sticky top-[76px] left-0 max-h-[calc(100dvh-76px)] border-r-2 border-r-violet-100 max-w-100 z-20 bg-white transition-opacity${isPending ? " opacity-50 pointer-events-none" : ""}`}
     >
       <div className="overflow-y-auto p-4 max-h-full">
         <div className="flex items-center justify-between gap-2">

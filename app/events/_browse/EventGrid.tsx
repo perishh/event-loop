@@ -7,7 +7,7 @@ import {
   EventStatus,
   EventType,
 } from "@/app/generated/prisma/enums";
-import { EventCard } from "./EventCard";
+import { EventCard } from "../../../components/EventCard";
 import type { ResolvedParams } from "../types";
 
 export type EventBrowseResult = {
@@ -76,11 +76,20 @@ export default function EventGrid({
 
   return (
     <>
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-5">
+      <div className="px-4 py-4 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-5">
         {Object.values(results)
           .flat()
           .map((event) => (
-            <EventCard key={event.id} event={event} />
+            <EventCard
+              key={event.id}
+              id={event.id}
+              city={event.city}
+              image={event.media[0] || null}
+              startDateTime={event.startDateTime}
+              title={event.title}
+              type={event.type}
+              venue={event.venue}
+            />
           ))}
       </div>
       {hasMore && (
@@ -88,7 +97,7 @@ export default function EventGrid({
           type="button"
           onClick={loadMore}
           disabled={loading}
-          className="rounded-2xl border-2 border-violet-200 text-violet-700 px-4 py-2 font-semibold hover:bg-violet-50 transition-colors mx-auto mt-8 block"
+          className="rounded-2xl border-2 border-violet-200 text-violet-700 px-4 py-2 font-semibold hover:bg-violet-50 transition-colors mx-auto mb-8 block"
         >
           {loading ? "Φόρτωση..." : "Περισσότερα"}
         </button>
