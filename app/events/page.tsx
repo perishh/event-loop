@@ -22,6 +22,7 @@ interface SearchParams {
   categories?: string;
   priceFrom?: string;
   priceTo?: string;
+  query?: string;
 }
 
 const CategoriesSchema = z.enum(EventCategory);
@@ -32,8 +33,16 @@ export default async function EventsPage({
 }: {
   searchParams: Promise<SearchParams>;
 }) {
-  const { type, dateFrom, dateTo, city, categories, priceFrom, priceTo } =
-    await searchParams;
+  const {
+    type,
+    dateFrom,
+    dateTo,
+    city,
+    categories,
+    priceFrom,
+    priceTo,
+    query,
+  } = await searchParams;
   let selectedType: EventType | null = null;
   if (type && type in EventType) {
     selectedType = type as EventType;
@@ -42,7 +51,7 @@ export default async function EventsPage({
   if (dateFrom) {
     if (!isValidDate(dateFrom)) {
       redirect(
-        `/events?${new URLSearchParams(cleanParams({ type, dateTo, city, categories, priceFrom, priceTo }))}`,
+        `/events?${new URLSearchParams(cleanParams({ type, dateTo, city, categories, priceFrom, priceTo, query }))}`,
       );
     }
   }
@@ -50,7 +59,7 @@ export default async function EventsPage({
   if (dateTo) {
     if (!isValidDate(dateTo)) {
       redirect(
-        `/events?${new URLSearchParams(cleanParams({ type, dateFrom, city, categories, priceFrom, priceTo }))}`,
+        `/events?${new URLSearchParams(cleanParams({ type, dateFrom, city, categories, priceFrom, priceTo, query }))}`,
       );
     }
   }
@@ -60,7 +69,7 @@ export default async function EventsPage({
     const price = parseFloat(priceFrom);
     if (isNaN(price)) {
       redirect(
-        `/events?${new URLSearchParams(cleanParams({ type, dateFrom, dateTo, city, categories, priceTo }))}`,
+        `/events?${new URLSearchParams(cleanParams({ type, dateFrom, dateTo, city, categories, priceTo, query }))}`,
       );
     }
     selectedPriceFrom = price;
@@ -71,7 +80,7 @@ export default async function EventsPage({
     const price = parseFloat(priceTo);
     if (isNaN(price)) {
       redirect(
-        `/events?${new URLSearchParams(cleanParams({ type, dateFrom, dateTo, city, categories, priceFrom }))}`,
+        `/events?${new URLSearchParams(cleanParams({ type, dateFrom, dateTo, city, categories, priceFrom, query }))}`,
       );
     }
     selectedPriceTo = price;
@@ -92,7 +101,7 @@ export default async function EventsPage({
     }
   } catch {
     redirect(
-      `/events?${new URLSearchParams(cleanParams({ type, dateFrom, dateTo, city, priceFrom, priceTo }))}`,
+      `/events?${new URLSearchParams(cleanParams({ type, dateFrom, dateTo, city, priceFrom, priceTo, query }))}`,
     );
   }
 
@@ -104,9 +113,10 @@ export default async function EventsPage({
     categories: categories ?? "[]",
     priceFrom: selectedPriceFrom,
     priceTo: selectedPriceTo,
+    query: query || null,
   };
 
-  const searchKey = `${selectedType}|${dateFrom}|${dateTo}|${city}|${categories}|${selectedPriceFrom}|${selectedPriceTo}`;
+  const searchKey = `${selectedType}|${dateFrom}|${dateTo}|${city}|${categories}|${selectedPriceFrom}|${selectedPriceTo}|${query}`;
 
   return (
     <main className="flex-1 flex flex-col">

@@ -142,10 +142,25 @@ export default async function Header() {
         )}
       </div>
 
+      <form action="/events" method="GET" className="flex items-center">
+        <div className="relative flex items-center">
+          <Search
+            size={18}
+            className="absolute left-3 text-violet-200 pointer-events-none"
+          />
+          <input
+            type="text"
+            name="query"
+            placeholder="Αναζήτηση εκδηλώσεων"
+            className="bg-violet-600 text-white placeholder-violet-200 pl-10 pr-4 py-2 rounded-xl text-sm outline-none focus:ring-2 focus:ring-violet-400 w-48 lg:w-64 transition-all font-semibold"
+          />
+        </div>
+      </form>
+
       <div className="flex items-center space-x-2">
         {session ? (
           <>
-            <div className="flex items-center space-x-2 mr-4">
+            <div className="flex items-center space-x-2 mr-4 select-none">
               <CircleUserRound className="text-white" />
               <span className="text-white text-sm font-bold">
                 {session.username}

@@ -16,4 +16,5 @@ export interface ResolvedParams {
   categories: string;
   priceFrom: number | null;
   priceTo: number | null;
+  query: string | null;
 }

@@ -19,13 +19,14 @@ export default async function AsyncEventGrid({
       city: params.city ?? null,
       priceFrom: params.priceFrom,
       priceTo: params.priceTo,
+      query: params.query ?? null,
     },
     1,
   );
 
   return (
     <EventGrid
-      key={`${params.type}|${params.city}|${params.categories}|${params.priceFrom}|${params.priceTo}|${params.dateFrom}|${params.dateTo}`}
+      key={`${params.type}|${params.city}|${params.categories}|${params.priceFrom}|${params.priceTo}|${params.dateFrom}|${params.dateTo}|${params.query}`}
       initialEvents={initialData}
       initialHasMore={hasMore}
       filterParams={params}

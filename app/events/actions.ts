@@ -15,6 +15,7 @@ interface FilterParams {
   categories: EventCategory[] | null;
   priceFrom: number | null;
   priceTo: number | null;
+  query: string | null;
 }
 
 export async function getFilteredEvents(
@@ -48,6 +49,17 @@ export async function getFilteredEvents(
         : {}),
       ...(params.priceTo ? { some: { price: { lte: params.priceTo } } } : {}),
     };
+  }
+
+  if (params.query && params.query.trim() !== "") {
+    const term = params.query.trim();
+    where.OR = [
+      { title: { contains: term } },
+      { description: { contains: term } },
+      { venue: { contains: term } },
+      { address: { contains: term } },
+      { city: { contains: term } },
+    ];
   }
 
   const events = await prisma.event.findMany({

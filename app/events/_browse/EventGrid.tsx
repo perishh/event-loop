@@ -65,6 +65,7 @@ export default function EventGrid({
         city: filterParams.city ?? null,
         priceFrom: filterParams.priceFrom,
         priceTo: filterParams.priceTo,
+        query: filterParams.query ?? null,
       },
       page,
     );

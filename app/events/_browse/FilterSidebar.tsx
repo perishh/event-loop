@@ -9,7 +9,7 @@ import {
   EVENT_TYPE_CATEGORIES,
   EVENT_TYPE_LABELS,
 } from "@/prisma/mapper";
-import { Euro, SlidersHorizontal, X } from "lucide-react";
+import { Euro, Search, SlidersHorizontal, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import {
   useCallback,
@@ -30,6 +30,7 @@ interface Props {
     categories: string;
     priceFrom: number | null;
     priceTo: number | null;
+    query: string | null;
   };
 }
 
@@ -58,7 +59,10 @@ export default function FilterSidebar({ cities, params }: Props) {
     params.priceTo?.toString() ?? "",
   );
 
+  const [localQuery, setLocalQuery] = useState(params.query ?? "");
+
   const priceTimerRef = useRef<ReturnType<typeof setTimeout>>(null);
+  const queryTimerRef = useRef<ReturnType<typeof setTimeout>>(null);
 
   useEffect(() => {
     setLocalPriceFrom(params.priceFrom?.toString() ?? "");
@@ -67,6 +71,24 @@ export default function FilterSidebar({ cities, params }: Props) {
   useEffect(() => {
     setLocalPriceTo(params.priceTo?.toString() ?? "");
   }, [params.priceTo]);
+
+  useEffect(() => {
+    setLocalQuery(params.query ?? "");
+  }, [params.query]);
+
+  const debouncedQueryNavigate = useCallback(
+    (raw: string) => {
+      if (queryTimerRef.current) clearTimeout(queryTimerRef.current);
+      queryTimerRef.current = setTimeout(() => {
+        const newParams = cleanParams({
+          ...params,
+          query: raw || null,
+        });
+        navigate(`/events?${new URLSearchParams(newParams)}`);
+      }, 400);
+    },
+    [params, navigate],
+  );
 
   const debouncedNavigate = useCallback(
     (field: "priceFrom" | "priceTo", raw: string) => {
@@ -107,6 +129,20 @@ export default function FilterSidebar({ cities, params }: Props) {
             <X size={16} />
           </button>
         </div>
+
+        <InputField
+          id="event-query"
+          label="Αναζήτηση"
+          type="text"
+          icon={Search}
+          placeholder="Τίτλος, περιγραφή, τοποθεσία"
+          value={localQuery}
+          onChange={(e) => {
+            setLocalQuery(e.target.value);
+            debouncedQueryNavigate(e.target.value);
+          }}
+          wrapperClassName="mt-4"
+        />
 
         <SelectField
           id="event-type"
