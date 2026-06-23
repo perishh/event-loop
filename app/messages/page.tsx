@@ -1,7 +1,6 @@
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { CalendarDays } from "lucide-react";
-import Breadcrumb from "@/components/Breadcrumb";
 import prisma from "@/lib/prisma";
 import { getSession } from "@/lib/auth/session";
 import { UserRole } from "@/app/generated/prisma/enums";
@@ -118,7 +117,8 @@ export default async function MessagesPage({
     ? (items.find((it) => it.conv.id === activeId) ?? null)
     : null;
 
-  const unreadLabel = (n: number) => (n === 1 ? "1 αδιάβαστο" : `${n} αδιάβαστα`);
+  const unreadLabel = (n: number) =>
+    n === 1 ? "1 αδιάβαστο" : `${n} αδιάβαστα`;
 
   const shortDate = (d: Date) =>
     new Intl.DateTimeFormat("el-GR", {
@@ -175,14 +175,18 @@ export default async function MessagesPage({
 
   const inboxList =
     inboxItems.length === 0 ? (
-      <p className="px-4 py-3 text-sm text-gray-500">Δεν υπάρχουν εισερχόμενα.</p>
+      <p className="px-4 py-3 text-sm text-gray-500">
+        Δεν υπάρχουν εισερχόμενα.
+      </p>
     ) : (
       inboxItems.map((f) => messageRow(f, { highlightUnread: true }))
     );
 
   const sentList =
     sentItems.length === 0 ? (
-      <p className="px-4 py-3 text-sm text-gray-500">Δεν υπάρχουν απεσταλμένα.</p>
+      <p className="px-4 py-3 text-sm text-gray-500">
+        Δεν υπάρχουν απεσταλμένα.
+      </p>
     ) : (
       sentItems.map((f) => messageRow(f, { highlightUnread: false }))
     );
@@ -192,7 +196,9 @@ export default async function MessagesPage({
   const convItems = items.filter((it) => it.visibleMsgs.length > 0);
   const convList =
     convItems.length === 0 ? (
-      <p className="px-4 py-3 text-sm text-gray-500">Δεν υπάρχουν συνομιλίες.</p>
+      <p className="px-4 py-3 text-sm text-gray-500">
+        Δεν υπάρχουν συνομιλίες.
+      </p>
     ) : (
       convItems.map((it) => {
         const isActive = it.conv.id === active?.conv.id;
@@ -247,9 +253,8 @@ export default async function MessagesPage({
     );
 
   return (
-    <main className="eventloop-main-page flex h-[calc(100vh-4.5rem)]">
+    <main className="flex flex-1">
       <MessagesSidebar
-        isOrganizer={isOrganizer}
         inboxBadge={inboxUnread}
         inbox={inboxList}
         sent={sentList}
@@ -257,15 +262,6 @@ export default async function MessagesPage({
       />
 
       <section className="flex min-w-0 flex-1 flex-col bg-white">
-        <div className="shrink-0 px-5 py-3">
-          <Breadcrumb
-            breadcrumbItems={[
-              { label: "Αρχική", href: "/" },
-              { label: "Μηνύματα", href: "/messages" },
-            ]}
-          />
-        </div>
-
         {!active ? (
           <div className="flex flex-1 items-center justify-center px-4 text-center text-sm text-gray-500">
             Διαλέξτε μια συνομιλία για να δείτε τα μηνύματα.
@@ -273,7 +269,9 @@ export default async function MessagesPage({
         ) : (
           <>
             <div className="shrink-0 border-y border-violet-100 px-5 py-3">
-              <p className="text-sm font-medium text-gray-900">{active.title}</p>
+              <p className="text-sm font-medium text-gray-900">
+                {active.title}
+              </p>
               <p className="text-xs text-violet-600">{active.subtitle}</p>
             </div>
 
@@ -340,7 +338,10 @@ export default async function MessagesPage({
               )}
             </div>
 
-            <MessageComposer key={active.conv.id} conversationId={active.conv.id} />
+            <MessageComposer
+              key={active.conv.id}
+              conversationId={active.conv.id}
+            />
           </>
         )}
       </section>

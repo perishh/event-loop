@@ -7,6 +7,7 @@ import Link from "next/link";
 import { EVENT_TYPE_LABELS } from "@/prisma/mapper";
 import { EventType } from "../generated/prisma/enums";
 import { formatDate } from "@/lib/utils";
+import SafeImage from "@/components/SafeImage";
 
 /**
  * @brief Stores the automatic hero change delay in milliseconds.
@@ -85,11 +86,13 @@ export default function Hero({ events }: Props) {
           <div className="embla__container">
             {events.map((event) => (
               <div key={event.id} className="embla__slide relative group">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <SafeImage
                   src={event.image}
                   alt={event.title}
-                  className="object-cover h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] w-full"
+                  fill
+                  className="object-cover"
+                  preload
+                  wrapperClassName="h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] w-full"
                 />
 
                 {/* Gradient overlay */}

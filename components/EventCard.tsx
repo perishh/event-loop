@@ -2,7 +2,7 @@ import Link from "next/link";
 import { formatDate } from "@/lib/utils";
 import { EVENT_TYPE_LABELS } from "@/prisma/mapper";
 import { EventType } from "@/app/generated/prisma/enums";
-import EventCardImage from "./EventCardImage";
+import SafeImage from "./SafeImage";
 
 export interface EventCardProps {
   id: string;
@@ -29,10 +29,12 @@ export function EventCard({
       className="group h-full rounded-2xl border border-violet-100 bg-white/80 shadow-sm shadow-violet-100/60 transition-all hover:shadow-md hover:shadow-violet-200/60 hover:-translate-y-0.5 flex flex-col"
     >
       <div className="overflow-hidden rounded-t-2xl">
-        <EventCardImage
-          src={image ?? undefined}
+        <SafeImage
+          src={image}
           alt={title}
-          className="w-full h-48 object-cover transition-transform group-hover:scale-105"
+          fill
+          wrapperClassName="w-full h-48 transition-transform group-hover:scale-105"
+          className="object-cover"
         />
       </div>
 

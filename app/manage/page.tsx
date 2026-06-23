@@ -45,35 +45,36 @@ export default async function Page() {
   const publishedCount = events.filter((e) => e.status === "PUBLISHED").length;
 
   return (
-    <main className="eventloop-main-page p-6">
-      <Breadcrumb
-        breadcrumbItems={[
-          { label: "Αρχική", href: "/" },
-          { label: "Διαχείριση εκδηλώσεων", href: "/manage" },
-        ]}
-        className="mb-4"
-      />
-      <div className="flex items-center justify-between gap-3">
-        <h1 className="text-xl font-semibold text-gray-900">
-          Διαχείριση εκδηλώσεων
-        </h1>
-        <Link
-          href="/events/new"
-          className="shrink-0 text-sm bg-violet-600 text-white rounded-lg px-4 py-2 hover:bg-violet-700"
-        >
-          Νέα εκδήλωση
-        </Link>
+    <main>
+      <div className="bg-white sticky left-0 top-[76px] p-6 shadow-sm shadow-violet-100/60 z-10">
+        <Breadcrumb
+          breadcrumbItems={[
+            { label: "Αρχική", href: "/" },
+            { label: "Οι διοργανώσεις μου", href: "/manage" },
+          ]}
+        />
+        <div className="flex items-center justify-between gap-3">
+          <h1 className="text-xl font-semibold text-gray-900">
+            Διαχείριση εκδηλώσεων
+          </h1>
+          <Link
+            href="/events/new"
+            className="shrink-0 text-sm bg-violet-600 text-white rounded-lg px-4 py-2 hover:bg-violet-700"
+          >
+            Νέα εκδήλωση
+          </Link>
+        </div>
+        <p className="text-sm text-gray-500">
+          {events.length} εκδηλώσεις · {publishedCount} δημοσιευμένες
+        </p>
       </div>
-      <p className="text-sm text-gray-500 mt-1 mb-5">
-        {events.length} εκδηλώσεις · {publishedCount} δημοσιευμένες
-      </p>
 
       {events.length === 0 ? (
         <p className="text-gray-500">
           Δεν έχεις δημιουργήσει εκδηλώσεις ακόμη.
         </p>
       ) : (
-        <ul className="flex flex-col gap-2 overflow-y-auto max-h-[calc(100vh_-_13rem)]">
+        <ul className="flex flex-col gap-2 px-6 pt-2 pb-6">
           {events.map((event) => {
             const booked = event.ticketTypes.reduce(
               (sum, t) => sum + (t.quantity - t.available),

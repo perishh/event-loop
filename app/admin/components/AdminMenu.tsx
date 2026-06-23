@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Users, FileDown, Brain } from "lucide-react";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export default function AdminMenu() {
   const pathname = usePathname();
@@ -15,7 +16,13 @@ export default function AdminMenu() {
 
   return (
     <aside className="max-w-96 shrink-0 bg-violet-50 p-4 sticky top-[76px] left-0 max-h-[calc(100dvh-76px)]">
-      <p className="text-xs text-gray-500 px-3 mb-3">Πίνακας διαχείρισης</p>
+      <Breadcrumb
+        breadcrumbItems={[
+          { label: "Αρχική", href: "/" },
+          { label: "Διαχείριση", href: "/admin" },
+        ]}
+        className="mb-2"
+      />
 
       <Link
         href="/admin/users"

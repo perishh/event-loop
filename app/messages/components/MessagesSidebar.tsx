@@ -2,19 +2,12 @@
 
 import { useState } from "react";
 import type { ReactNode } from "react";
-import {
-  ChevronDown,
-  Inbox,
-  Send,
-  MessageSquare,
-  Briefcase,
-  User,
-} from "lucide-react";
+import { ChevronDown, Inbox, Send, MessageSquare } from "lucide-react";
+import Breadcrumb from "@/components/Breadcrumb";
 
 type SectionKey = "inbox" | "sent" | "conv";
 
 type Props = {
-  isOrganizer: boolean;
   inboxBadge: number;
   inbox: ReactNode;
   sent: ReactNode;
@@ -22,7 +15,6 @@ type Props = {
 };
 
 export default function MessagesSidebar({
-  isOrganizer,
   inboxBadge,
   inbox,
   sent,
@@ -44,22 +36,20 @@ export default function MessagesSidebar({
 
   const headerClass = (isOpen: boolean) =>
     `flex w-full items-center gap-2 px-4 py-2.5 text-sm font-medium transition ${
-      isOpen ? "bg-violet-100 text-violet-800" : "text-gray-700 hover:bg-violet-100"
+      isOpen
+        ? "bg-violet-100 text-violet-800"
+        : "text-gray-700 hover:bg-violet-100"
     }`;
 
   return (
     <aside className="flex w-72 shrink-0 flex-col bg-violet-50">
-      <div className="flex items-center justify-between gap-2 px-4 py-3">
-        <span className="text-sm font-medium text-gray-900">Μηνύματα</span>
-        <span className="flex items-center gap-1 rounded-md bg-violet-100 px-2 py-0.5 text-[11px] font-medium text-violet-700">
-          {isOrganizer ? (
-            <Briefcase className="h-3 w-3" />
-          ) : (
-            <User className="h-3 w-3" />
-          )}
-          {isOrganizer ? "Διοργανωτής" : "Χρήστης"}
-        </span>
-      </div>
+      <Breadcrumb
+        className="px-4 pt-4 pb-2"
+        breadcrumbItems={[
+          { label: "Αρχική", href: "/" },
+          { label: "Μηνύματα", href: "/messages" },
+        ]}
+      />
 
       <div className="min-h-0 flex-1 overflow-y-auto">
         <button

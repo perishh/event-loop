@@ -7,6 +7,7 @@ import { UserRole, BookingStatus } from "@/app/generated/prisma/enums";
 import { EVENT_TYPE_LABELS } from "@/prisma/mapper";
 import { formatDate, formatTime } from "@/lib/utils";
 import { startConversation } from "@/app/messages/actions";
+import Breadcrumb from "@/components/Breadcrumb";
 
 // Application (booking) status — descriptive, attendee-facing.
 const BOOKING_STATUS_LABELS: Record<string, string> = {
@@ -70,16 +71,25 @@ export default async function Page() {
   });
 
   return (
-    <main className="eventloop-main-page p-6">
-      <h1 className="text-xl font-semibold text-gray-900">Οι κρατήσεις μου</h1>
-      <p className="text-sm text-gray-500 mt-1 mb-5">
-        {bookings.length} κρατήσεις
-      </p>
+    <main>
+      <div className="bg-white sticky left-0 top-[76px] p-6 shadow-sm shadow-violet-100/60 z-10">
+        <Breadcrumb
+          breadcrumbItems={[
+            { label: "Αρχική", href: "/" },
+            { label: "Κρατήσεις", href: "/bookings" },
+          ]}
+        />
+
+        <h1 className="text-xl font-semibold text-gray-900">
+          Οι κρατήσεις μου
+        </h1>
+        <p className="text-sm text-gray-500">{bookings.length} κρατήσεις</p>
+      </div>
 
       {bookings.length === 0 ? (
         <p className="text-gray-500">Δεν έχεις κάνει κρατήσεις ακόμη.</p>
       ) : (
-        <ul className="flex flex-col gap-2 overflow-y-auto max-h-[calc(100vh_-_13rem)]">
+        <ul className="flex flex-col gap-2 pt-2 pb-6 px-6">
           {bookings.map((booking) => {
             const event = booking.ticketType.event;
 

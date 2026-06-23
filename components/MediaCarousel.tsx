@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import Image from "next/image";
+import SafeImage from "./SafeImage";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface MediaCarouselProps {
@@ -92,8 +92,7 @@ export default function MediaCarousel({
         <div className="flex touch-pan-y">
           {images.map((src, idx) => (
             <div key={`${src}-${idx}`} className="relative flex-[0_0_100%]">
-              <div className={`relative w-full ${heightClass}`}>
-                <Image
+                <SafeImage
                   src={src}
                   alt={
                     eventTitle
@@ -101,16 +100,15 @@ export default function MediaCarousel({
                       : `${imageAlt} ${idx + 1}`
                   }
                   fill
-                  unoptimized={/^(https?:)?\/\//.test(src)}
+                  preload={idx === 0}
                   sizes={
                     size === "compact"
                       ? "(max-width: 640px) 100vw, 380px"
                       : "(max-width: 640px) 100vw, 50vw"
                   }
+                  wrapperClassName={`w-full ${heightClass}`}
                   className="object-cover"
-                  priority={idx === 0}
                 />
-              </div>
             </div>
           ))}
         </div>
