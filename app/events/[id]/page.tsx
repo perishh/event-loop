@@ -4,11 +4,20 @@ import Map from "@/components/Map";
 import prisma from "@/lib/prisma";
 import { getSession } from "@/lib/auth/session";
 import { EVENT_CATEGORY_LABELS, EVENT_TYPE_LABELS } from "@/prisma/mapper";
-import { Calendar, Clock, MapPin, Users, Ticket, Euro } from "lucide-react";
+import {
+  Calendar,
+  Clock,
+  MapPin,
+  Users,
+  Ticket,
+  Euro,
+  MessageSquare,
+} from "lucide-react";
 import { notFound } from "next/navigation";
-import { UserRole } from "@/app/generated/prisma/enums";
+import { UserRole, BookingStatus } from "@/app/generated/prisma/enums";
 import Link from "next/link";
 import { formatDate, formatTime } from "@/lib/utils";
+import { startConversation } from "@/app/messages/actions";
 
 export default async function EventDetailPage({
   params,
@@ -35,14 +44,26 @@ export default async function EventDetailPage({
     notFound();
   }
 
-  // Log visit for recommendations
+  let hasConfirmedBooking = false;
   if (session && session.role === UserRole.ATTENDEE) {
-    await prisma.eventVisit.create({
-      data: {
-        eventId: event.id,
-        userId: session.sub,
-      },
-    });
+    const [confirmed, _] = await Promise.all([
+      prisma.booking.findFirst({
+        where: {
+          attendeeId: session.sub,
+          status: BookingStatus.CONFIRMED,
+          ticketType: { eventId: event.id },
+        },
+        select: { id: true },
+      }),
+      prisma.eventVisit.create({
+        data: {
+          eventId: event.id,
+          userId: session.sub,
+        },
+      }),
+    ]);
+
+    hasConfirmedBooking = confirmed !== null;
   }
 
   const startDate = formatDate(event.startDateTime);
@@ -90,6 +111,18 @@ export default async function EventDetailPage({
               <span className="rounded-full bg-orange-100 text-amber-800 text-sm font-semibold px-3 py-1">
                 Πρόχειρο
               </span>
+            )}
+            {hasConfirmedBooking && (
+              <form action={startConversation}>
+                <input type="hidden" name="eventId" value={event.id} />
+                <button
+                  type="submit"
+                  className="flex items-center gap-1.5 rounded-xl bg-violet-500 px-3 py-2 text-sm font-medium text-white"
+                >
+                  <MessageSquare className="h-4 w-4 shrink-0" />
+                  Μήνυμα στον διοργανωτή
+                </button>
+              </form>
             )}
           </div>
         </div>

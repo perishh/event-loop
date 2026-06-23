@@ -31,7 +31,17 @@ export default async function EventBookingPage({
     },
   });
 
-  if (!event || event.status !== EventStatus.PUBLISHED) {
+  if (!event) {
+    notFound();
+  }
+
+  // Attendees may only reach the booking form for PUBLISHED events. The
+  // organizer can review bookings regardless of status (cancelled/completed
+  // bookings are kept for traceability).
+  if (
+    session.role === UserRole.ATTENDEE &&
+    event.status !== EventStatus.PUBLISHED
+  ) {
     notFound();
   }
 

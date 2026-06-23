@@ -28,7 +28,7 @@ export async function getModelStatus() {
 
   const [userCount, eventCount, interactionCount] = await Promise.all([
     prisma.user.count(),
-    prisma.event.count({ where: { status: { not: EventStatus.REMOVED } } }),
+    prisma.event.count({ where: { status: { not: EventStatus.CANCELLED } } }),
     prisma.eventVisit.count(),
   ]);
 

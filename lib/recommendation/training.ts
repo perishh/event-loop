@@ -123,7 +123,7 @@ export async function train(
   const userIds = Array.from(new Set(interactions.map((i) => i.userId)));
 
   const allEvents = await prisma.event.findMany({
-    where: { status: { not: EventStatus.REMOVED } },
+    where: { status: { not: EventStatus.CANCELLED } },
     select: { id: true },
   });
   const eventIds = allEvents.map((e) => e.id);
