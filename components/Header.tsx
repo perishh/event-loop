@@ -3,10 +3,18 @@ import Link from "next/link";
 import { signOut } from "@/app/logout/actions";
 
 import Logo from "../assets/logo.png";
-import { Search } from "lucide-react";
+import {
+  CircleUserRound,
+  Cog,
+  LayoutList,
+  LogOut,
+  MessagesSquare,
+  Search,
+} from "lucide-react";
 import { getSession } from "@/lib/auth/session";
 import EventsDropdown from "@/components/EventsDropdown";
-import { UserRole } from "@/app/generated/prisma/enums";
+import { BookingStatus, UserRole } from "@/app/generated/prisma/enums";
+import prisma from "@/lib/prisma";
 
 /**
  * @brief Renders the logout button used inside the profile dropdown.
@@ -16,64 +24,10 @@ export function LogoutButton() {
     <button
       type="button"
       onClick={signOut}
-      className="bg-white px-3 py-2 rounded-xl text-sm shadow-md shadow-violet-800 font-semibold"
+      className="bg-white p-2 rounded-xl text-sm shadow-md shadow-violet-800 font-semibold"
     >
-      Αποσύνδεση
+      <LogOut size={20} />
     </button>
-  );
-}
-
-/**
- * @brief  Renders the authentication area for a visitor that is not logged in.
- * @return The JSX structure of the guest authentication links.
- */
-function GuestAuthenticationLinks() {
-  return (
-    <>
-      <Link
-        href="/login"
-        className="bg-white px-3 py-2 rounded-xl text-sm shadow-md shadow-violet-800 font-semibold"
-      >
-        Σύνδεση
-      </Link>
-
-      <Link
-        href="/register"
-        className="bg-white px-3 py-2 rounded-xl text-sm shadow-md shadow-violet-800 font-semibold"
-      >
-        Εγγραφή
-      </Link>
-    </>
-  );
-}
-
-/**
- * @brief  Renders the authentication area for a logged-in user.
- * @param  username the username shown inside the profile dropdown.
- * @return The JSX structure of the logged-in user links.
- */
-function LoggedInUserLinks({
-  username,
-  role,
-}: {
-  username: string;
-  role: string;
-}) {
-  return (
-    <div className="flex items-center space-x-2">
-      {role === UserRole.ADMIN && (
-        <Link
-          href="/admin"
-          className="bg-white px-3 py-2 rounded-xl text-sm shadow-md shadow-violet-800 font-semibold"
-        >
-          Διαχείριση
-        </Link>
-      )}
-      <span className="bg-white px-3 py-2 rounded-xl text-sm shadow-md shadow-violet-800 font-semibold">
-        {username}
-      </span>
-      <LogoutButton />
-    </div>
   );
 }
 
@@ -88,6 +42,41 @@ export default async function Header() {
   // not signed in.
   const session = await getSession();
 
+  const unreadMessageCount = !session
+    ? 0
+    : await prisma.message.count({
+        where: {
+          conversation: {
+            OR: [
+              { attendeeId: session.sub },
+              {
+                event: {
+                  organizerId: session.sub,
+                },
+              },
+            ],
+          },
+          senderId: {
+            not: session.sub,
+          },
+          read: false,
+        },
+      });
+
+  const pendingTicketConfirmations =
+    session?.role !== UserRole.ORGANIZER
+      ? 0
+      : await prisma.booking.count({
+          where: {
+            ticketType: {
+              event: {
+                organizerId: session.sub,
+              },
+            },
+            status: BookingStatus.PENDING,
+          },
+        });
+
   return (
     <nav className="bg-violet-700 px-4 py-2 md:px-6 lg:px-10 2xl:px-32 flex justify-between items-center sticky top-0 left-0 z-50">
       <div className="flex items-center gap-6">
@@ -100,25 +89,86 @@ export default async function Header() {
           />
         </Link>
         <EventsDropdown />
+        {session?.role === UserRole.ATTENDEE && (
+          <Link
+            href="/bookings"
+            className="flex items-center text-white text-sm font-semibold space-x-4"
+          >
+            <div className="relative">
+              <LayoutList size={20} />
+              {pendingTicketConfirmations > 0 && (
+                <div className="absolute -top-2 -right-3 bg-amber-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                  {pendingTicketConfirmations}
+                </div>
+              )}
+            </div>
+            <span>Κρατήσεις</span>
+          </Link>
+        )}
+        {session?.role === UserRole.ORGANIZER && (
+          <Link
+            href="/manage"
+            className="flex items-center text-white text-sm font-semibold space-x-4"
+          >
+            <LayoutList size={20} />
+            <span>Οι διοργανώσεις μου</span>
+          </Link>
+        )}
+        {session?.role === UserRole.ADMIN && (
+          <Link
+            href="/admin"
+            className="flex items-center text-white text-sm font-semibold space-x-4"
+          >
+            <Cog size={20} />
+            <span>Διαχείριση</span>
+          </Link>
+        )}
+        {session && (
+          <Link
+            href="/messages"
+            className="flex items-center text-white text-sm font-semibold space-x-4"
+          >
+            <div className="relative">
+              <MessagesSquare size={20} />
+
+              {unreadMessageCount > 0 && (
+                <div className="absolute -top-2 -right-3 bg-amber-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                  {unreadMessageCount}
+                </div>
+              )}
+            </div>
+            <span>Μηνύματα</span>
+          </Link>
+        )}
       </div>
 
       <div className="flex items-center space-x-2">
-        <div className="relative flex items-center justify-end mr-4">
-          <input
-            type="text"
-            placeholder="Αναζήτηση"
-            className="bg-white px-3 py-2 rounded-full focus:outline-2 focus:outline-violet-800 transition-all outline-0 outline-violet-500 text-sm shadow-md shadow-violet-800 focus:shadow-lg"
-          />
-          <Search className="absolute right-2 pointer-events-none" />
-        </div>
-
         {session ? (
-          <LoggedInUserLinks
-            role={session!.role}
-            username={session!.username}
-          />
+          <>
+            <div className="flex items-center space-x-2 mr-4">
+              <CircleUserRound className="text-white" />
+              <span className="text-white text-sm font-bold">
+                {session.username}
+              </span>
+            </div>
+            <LogoutButton />
+          </>
         ) : (
-          <GuestAuthenticationLinks />
+          <>
+            <Link
+              href="/login"
+              className="bg-white px-3 py-2 rounded-xl text-sm shadow-md shadow-violet-800 font-semibold"
+            >
+              Σύνδεση
+            </Link>
+
+            <Link
+              href="/register"
+              className="bg-white px-3 py-2 rounded-xl text-sm shadow-md shadow-violet-800 font-semibold"
+            >
+              Εγγραφή
+            </Link>
+          </>
         )}
       </div>
     </nav>

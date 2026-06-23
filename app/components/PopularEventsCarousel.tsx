@@ -69,7 +69,7 @@ export default function PopularEventsCarousel({ events }: Props) {
         </div>
       </div>
 
-      <div className="embla mt-4">
+      <div className="embla mt-4 select-none">
         <div className="embla__viewport pb-8" ref={emblaRef}>
           <div className="embla__container">
             {events.map((event) => (

@@ -1,0 +1,5234 @@
+[
+  {
+    "id":0,
+    "eventId":"f43b5fd1-0c1a-415a-968a-5935eca2d10f",
+    "name":"Κανονικό Εισιτήριο Συνεδρίου",
+    "price":300.0,
+    "quantity":450,
+    "available":433
+  },
+  {
+    "id":1,
+    "eventId":"f43b5fd1-0c1a-415a-968a-5935eca2d10f",
+    "name":"Φοιτητικό \/ Ακαδημαϊκό",
+    "price":100.0,
+    "quantity":188,
+    "available":186
+  },
+  {
+    "id":2,
+    "eventId":"f43b5fd1-0c1a-415a-968a-5935eca2d10f",
+    "name":"Εταιρικό Πακέτο",
+    "price":240.0,
+    "quantity":112,
+    "available":108
+  },
+  {
+    "id":3,
+    "eventId":"89f8aaf6-c93a-439c-abcc-533243f61c0c",
+    "name":"Γενική Είσοδος",
+    "price":41.5,
+    "quantity":140,
+    "available":124
+  },
+  {
+    "id":4,
+    "eventId":"89f8aaf6-c93a-439c-abcc-533243f61c0c",
+    "name":"Εισιτήριο VIP",
+    "price":125.0,
+    "quantity":20,
+    "available":15
+  },
+  {
+    "id":5,
+    "eventId":"89f8aaf6-c93a-439c-abcc-533243f61c0c",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":30.0,
+    "quantity":40,
+    "available":38
+  },
+  {
+    "id":6,
+    "eventId":"e0b36936-0cbb-48b8-b4e1-03f930eeeb70",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":35.5,
+    "quantity":165,
+    "available":164
+  },
+  {
+    "id":7,
+    "eventId":"e0b36936-0cbb-48b8-b4e1-03f930eeeb70",
+    "name":"Online Παρακολούθηση",
+    "price":15.0,
+    "quantity":385,
+    "available":385
+  },
+  {
+    "id":8,
+    "eventId":"5303d590-e598-4bd3-bfd6-dd946cee411b",
+    "name":"Απλή Είσοδος Μουσείου\/Έκθεσης",
+    "price":20.0,
+    "quantity":618,
+    "available":607
+  },
+  {
+    "id":9,
+    "eventId":"5303d590-e598-4bd3-bfd6-dd946cee411b",
+    "name":"Είσοδος με Ξενάγηση",
+    "price":36.5,
+    "quantity":190,
+    "available":185
+  },
+  {
+    "id":10,
+    "eventId":"5303d590-e598-4bd3-bfd6-dd946cee411b",
+    "name":"Μειωμένο (ΑμεΑ \/ Συνταξιούχοι)",
+    "price":10.0,
+    "quantity":142,
+    "available":137
+  },
+  {
+    "id":11,
+    "eventId":"43ae5594-4c22-40f9-982e-30cf92511d91",
+    "name":"Εισιτήριο Αγώνα - Θύρα Φιλάθλων",
+    "price":50.0,
+    "quantity":520,
+    "available":507
+  },
+  {
+    "id":12,
+    "eventId":"43ae5594-4c22-40f9-982e-30cf92511d91",
+    "name":"Θύρα VIP Lounge",
+    "price":333.5,
+    "quantity":33,
+    "available":29
+  },
+  {
+    "id":13,
+    "eventId":"43ae5594-4c22-40f9-982e-30cf92511d91",
+    "name":"Οικογενειακό Πακέτο",
+    "price":116.5,
+    "quantity":97,
+    "available":94
+  },
+  {
+    "id":14,
+    "eventId":"64ca96db-0487-46d3-8d76-6594a7138c1d",
+    "name":"Κανονικό Εισιτήριο Συνεδρίου",
+    "price":210.0,
+    "quantity":210,
+    "available":194
+  },
+  {
+    "id":15,
+    "eventId":"64ca96db-0487-46d3-8d76-6594a7138c1d",
+    "name":"Φοιτητικό \/ Ακαδημαϊκό",
+    "price":70.0,
+    "quantity":88,
+    "available":85
+  },
+  {
+    "id":16,
+    "eventId":"64ca96db-0487-46d3-8d76-6594a7138c1d",
+    "name":"Εταιρικό Πακέτο",
+    "price":168.0,
+    "quantity":52,
+    "available":47
+  },
+  {
+    "id":17,
+    "eventId":"fe961fe1-8788-4d2a-8949-12299560e630",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":71.0,
+    "quantity":165,
+    "available":154
+  },
+  {
+    "id":18,
+    "eventId":"fe961fe1-8788-4d2a-8949-12299560e630",
+    "name":"Online Παρακολούθηση",
+    "price":30.0,
+    "quantity":385,
+    "available":383
+  },
+  {
+    "id":19,
+    "eventId":"695410ef-ffd5-46f5-8b25-6102cb9dfc14",
+    "name":"Γενική Είσοδος",
+    "price":97.0,
+    "quantity":350,
+    "available":343
+  },
+  {
+    "id":20,
+    "eventId":"695410ef-ffd5-46f5-8b25-6102cb9dfc14",
+    "name":"Εισιτήριο VIP",
+    "price":291.5,
+    "quantity":50,
+    "available":46
+  },
+  {
+    "id":21,
+    "eventId":"695410ef-ffd5-46f5-8b25-6102cb9dfc14",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":70.0,
+    "quantity":100,
+    "available":96
+  },
+  {
+    "id":22,
+    "eventId":"35c197d8-22cd-4e47-991a-49ac3c24a864",
+    "name":"Γενική Είσοδος",
+    "price":128.5,
+    "quantity":638,
+    "available":638
+  },
+  {
+    "id":23,
+    "eventId":"35c197d8-22cd-4e47-991a-49ac3c24a864",
+    "name":"Θέσεις Premium (Recliner)",
+    "price":200.0,
+    "quantity":127,
+    "available":127
+  },
+  {
+    "id":24,
+    "eventId":"35c197d8-22cd-4e47-991a-49ac3c24a864",
+    "name":"Παιδικό \/ Φοιτητικό",
+    "price":100.0,
+    "quantity":85,
+    "available":85
+  },
+  {
+    "id":25,
+    "eventId":"fc980e09-5108-42e1-975e-a89d90dd64e0",
+    "name":"Ατομικό Εισιτήριο Γκαλά",
+    "price":30.0,
+    "quantity":280,
+    "available":279
+  },
+  {
+    "id":26,
+    "eventId":"fc980e09-5108-42e1-975e-a89d90dd64e0",
+    "name":"Εισιτήριο Ζευγαριού",
+    "price":52.5,
+    "quantity":80,
+    "available":79
+  },
+  {
+    "id":27,
+    "eventId":"fc980e09-5108-42e1-975e-a89d90dd64e0",
+    "name":"Τραπέζι Χορηγών (10 άτομα)",
+    "price":375.0,
+    "quantity":40,
+    "available":39
+  },
+  {
+    "id":28,
+    "eventId":"29d68920-d09f-418b-a8dc-379acd93391a",
+    "name":"Online Παρακολούθηση Webinar",
+    "price":15.0,
+    "quantity":800,
+    "available":789
+  },
+  {
+    "id":29,
+    "eventId":"ba82f818-1ce0-4447-987e-f0fbc22051b8",
+    "name":"Μονοήμερο Εισιτήριο Φεστιβάλ",
+    "price":50.0,
+    "quantity":450,
+    "available":432
+  },
+  {
+    "id":30,
+    "eventId":"ba82f818-1ce0-4447-987e-f0fbc22051b8",
+    "name":"Τριήμερο Εισιτήριο Φεστιβάλ",
+    "price":122.0,
+    "quantity":360,
+    "available":353
+  },
+  {
+    "id":31,
+    "eventId":"ba82f818-1ce0-4447-987e-f0fbc22051b8",
+    "name":"Premium Camp Pass",
+    "price":200.0,
+    "quantity":90,
+    "available":85
+  },
+  {
+    "id":32,
+    "eventId":"ed7854db-89b4-42b4-89ba-b0a916ab78c8",
+    "name":"Γενική Είσοδος",
+    "price":97.0,
+    "quantity":245,
+    "available":245
+  },
+  {
+    "id":33,
+    "eventId":"ed7854db-89b4-42b4-89ba-b0a916ab78c8",
+    "name":"Εισιτήριο VIP",
+    "price":291.5,
+    "quantity":35,
+    "available":35
+  },
+  {
+    "id":34,
+    "eventId":"ed7854db-89b4-42b4-89ba-b0a916ab78c8",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":70.0,
+    "quantity":70,
+    "available":70
+  },
+  {
+    "id":35,
+    "eventId":"a6a9a4e4-aba4-4c03-95cd-2f12a403a24c",
+    "name":"Κανονικό Εισιτήριο Συνεδρίου",
+    "price":300.0,
+    "quantity":420,
+    "available":410
+  },
+  {
+    "id":36,
+    "eventId":"a6a9a4e4-aba4-4c03-95cd-2f12a403a24c",
+    "name":"Φοιτητικό \/ Ακαδημαϊκό",
+    "price":100.0,
+    "quantity":175,
+    "available":170
+  },
+  {
+    "id":37,
+    "eventId":"a6a9a4e4-aba4-4c03-95cd-2f12a403a24c",
+    "name":"Εταιρικό Πακέτο",
+    "price":240.0,
+    "quantity":105,
+    "available":100
+  },
+  {
+    "id":38,
+    "eventId":"dec4d697-ad8d-4290-a949-bcc461c7312d",
+    "name":"Εισιτήριο Αγώνα - Θύρα Φιλάθλων",
+    "price":20.0,
+    "quantity":480,
+    "available":480
+  },
+  {
+    "id":39,
+    "eventId":"dec4d697-ad8d-4290-a949-bcc461c7312d",
+    "name":"Θύρα VIP Lounge",
+    "price":133.5,
+    "quantity":30,
+    "available":30
+  },
+  {
+    "id":40,
+    "eventId":"dec4d697-ad8d-4290-a949-bcc461c7312d",
+    "name":"Οικογενειακό Πακέτο",
+    "price":46.5,
+    "quantity":90,
+    "available":90
+  },
+  {
+    "id":41,
+    "eventId":"98de01c2-8fed-43a5-838b-e869f8a10358",
+    "name":"Απλή Είσοδος Μουσείου\/Έκθεσης",
+    "price":40.0,
+    "quantity":553,
+    "available":548
+  },
+  {
+    "id":42,
+    "eventId":"98de01c2-8fed-43a5-838b-e869f8a10358",
+    "name":"Είσοδος με Ξενάγηση",
+    "price":73.5,
+    "quantity":170,
+    "available":168
+  },
+  {
+    "id":43,
+    "eventId":"98de01c2-8fed-43a5-838b-e869f8a10358",
+    "name":"Μειωμένο (ΑμεΑ \/ Συνταξιούχοι)",
+    "price":20.0,
+    "quantity":127,
+    "available":124
+  },
+  {
+    "id":44,
+    "eventId":"d1fbafd7-7833-48a9-82cd-35910e8888e4",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":166.0,
+    "quantity":300,
+    "available":300
+  },
+  {
+    "id":45,
+    "eventId":"d1fbafd7-7833-48a9-82cd-35910e8888e4",
+    "name":"Online Παρακολούθηση",
+    "price":70.0,
+    "quantity":700,
+    "available":700
+  },
+  {
+    "id":46,
+    "eventId":"c643ff28-0be7-4710-ab72-364c97088fab",
+    "name":"Γενική Είσοδος",
+    "price":28.0,
+    "quantity":175,
+    "available":162
+  },
+  {
+    "id":47,
+    "eventId":"c643ff28-0be7-4710-ab72-364c97088fab",
+    "name":"Εισιτήριο VIP",
+    "price":83.5,
+    "quantity":25,
+    "available":17
+  },
+  {
+    "id":48,
+    "eventId":"c643ff28-0be7-4710-ab72-364c97088fab",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":20.0,
+    "quantity":50,
+    "available":41
+  },
+  {
+    "id":49,
+    "eventId":"f7c665d9-c214-4d09-bf85-4c19b3193b1c",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":71.0,
+    "quantity":135,
+    "available":126
+  },
+  {
+    "id":50,
+    "eventId":"f7c665d9-c214-4d09-bf85-4c19b3193b1c",
+    "name":"Online Παρακολούθηση",
+    "price":30.0,
+    "quantity":315,
+    "available":313
+  },
+  {
+    "id":51,
+    "eventId":"080462a4-5161-4dc2-b987-e0b80573ca61",
+    "name":"Μονοήμερο Εισιτήριο Φεστιβάλ",
+    "price":70.0,
+    "quantity":450,
+    "available":430
+  },
+  {
+    "id":52,
+    "eventId":"080462a4-5161-4dc2-b987-e0b80573ca61",
+    "name":"Τριήμερο Εισιτήριο Φεστιβάλ",
+    "price":171.0,
+    "quantity":360,
+    "available":351
+  },
+  {
+    "id":53,
+    "eventId":"080462a4-5161-4dc2-b987-e0b80573ca61",
+    "name":"Premium Camp Pass",
+    "price":280.0,
+    "quantity":90,
+    "available":84
+  },
+  {
+    "id":54,
+    "eventId":"d1197520-59de-4dfb-89b2-ca2910fb904d",
+    "name":"Γενική Είσοδος",
+    "price":13.0,
+    "quantity":563,
+    "available":559
+  },
+  {
+    "id":55,
+    "eventId":"d1197520-59de-4dfb-89b2-ca2910fb904d",
+    "name":"Θέσεις Premium (Recliner)",
+    "price":20.0,
+    "quantity":112,
+    "available":112
+  },
+  {
+    "id":56,
+    "eventId":"d1197520-59de-4dfb-89b2-ca2910fb904d",
+    "name":"Παιδικό \/ Φοιτητικό",
+    "price":10.0,
+    "quantity":75,
+    "available":75
+  },
+  {
+    "id":57,
+    "eventId":"aaaf58ee-4fd5-4494-bec5-8e25f2cc5a4e",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":47.5,
+    "quantity":225,
+    "available":225
+  },
+  {
+    "id":58,
+    "eventId":"aaaf58ee-4fd5-4494-bec5-8e25f2cc5a4e",
+    "name":"Online Παρακολούθηση",
+    "price":20.0,
+    "quantity":525,
+    "available":525
+  },
+  {
+    "id":59,
+    "eventId":"a328828b-7db1-460d-b00c-f4e6aea0837f",
+    "name":"Ζώνη Α (Διακεκριμένη)",
+    "price":53.5,
+    "quantity":143,
+    "available":143
+  },
+  {
+    "id":60,
+    "eventId":"a328828b-7db1-460d-b00c-f4e6aea0837f",
+    "name":"Ζώνη Β (Κανονικό)",
+    "price":33.5,
+    "quantity":475,
+    "available":475
+  },
+  {
+    "id":61,
+    "eventId":"a328828b-7db1-460d-b00c-f4e6aea0837f",
+    "name":"Εξώστης",
+    "price":20.0,
+    "quantity":332,
+    "available":332
+  },
+  {
+    "id":62,
+    "eventId":"d8c34291-2d34-4427-8ee3-d04cf7ead2d3",
+    "name":"Κανονικό Εισιτήριο Συνεδρίου",
+    "price":45.0,
+    "quantity":390,
+    "available":376
+  },
+  {
+    "id":63,
+    "eventId":"d8c34291-2d34-4427-8ee3-d04cf7ead2d3",
+    "name":"Φοιτητικό \/ Ακαδημαϊκό",
+    "price":15.0,
+    "quantity":163,
+    "available":158
+  },
+  {
+    "id":64,
+    "eventId":"d8c34291-2d34-4427-8ee3-d04cf7ead2d3",
+    "name":"Εταιρικό Πακέτο",
+    "price":36.0,
+    "quantity":97,
+    "available":91
+  },
+  {
+    "id":65,
+    "eventId":"cc5fc6f6-39ee-4e3a-a6b0-df041b69c1b0",
+    "name":"Γενική Είσοδος",
+    "price":97.0,
+    "quantity":490,
+    "available":474
+  },
+  {
+    "id":66,
+    "eventId":"cc5fc6f6-39ee-4e3a-a6b0-df041b69c1b0",
+    "name":"Εισιτήριο VIP",
+    "price":291.5,
+    "quantity":70,
+    "available":68
+  },
+  {
+    "id":67,
+    "eventId":"cc5fc6f6-39ee-4e3a-a6b0-df041b69c1b0",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":70.0,
+    "quantity":140,
+    "available":132
+  },
+  {
+    "id":68,
+    "eventId":"e427ac87-32fb-4346-a84c-789235b21a40",
+    "name":"Online Παρακολούθηση Webinar",
+    "price":30.0,
+    "quantity":800,
+    "available":791
+  },
+  {
+    "id":69,
+    "eventId":"59adf558-9501-406e-aadc-767aa628c114",
+    "name":"Απλή Είσοδος Μουσείου\/Έκθεσης",
+    "price":40.0,
+    "quantity":260,
+    "available":257
+  },
+  {
+    "id":70,
+    "eventId":"59adf558-9501-406e-aadc-767aa628c114",
+    "name":"Είσοδος με Ξενάγηση",
+    "price":73.5,
+    "quantity":80,
+    "available":78
+  },
+  {
+    "id":71,
+    "eventId":"59adf558-9501-406e-aadc-767aa628c114",
+    "name":"Μειωμένο (ΑμεΑ \/ Συνταξιούχοι)",
+    "price":20.0,
+    "quantity":60,
+    "available":60
+  },
+  {
+    "id":72,
+    "eventId":"f2db768a-9bc0-439e-bc82-6a5b5d2ba2b8",
+    "name":"Εισιτήριο Αγώνα - Θύρα Φιλάθλων",
+    "price":50.0,
+    "quantity":200,
+    "available":197
+  },
+  {
+    "id":73,
+    "eventId":"f2db768a-9bc0-439e-bc82-6a5b5d2ba2b8",
+    "name":"Θύρα VIP Lounge",
+    "price":333.5,
+    "quantity":13,
+    "available":12
+  },
+  {
+    "id":74,
+    "eventId":"f2db768a-9bc0-439e-bc82-6a5b5d2ba2b8",
+    "name":"Οικογενειακό Πακέτο",
+    "price":116.5,
+    "quantity":37,
+    "available":35
+  },
+  {
+    "id":75,
+    "eventId":"872ffe12-d055-468d-b16d-0d07b45626e3",
+    "name":"Μονοήμερο Εισιτήριο Φεστιβάλ",
+    "price":20.0,
+    "quantity":200,
+    "available":181
+  },
+  {
+    "id":76,
+    "eventId":"872ffe12-d055-468d-b16d-0d07b45626e3",
+    "name":"Τριήμερο Εισιτήριο Φεστιβάλ",
+    "price":49.0,
+    "quantity":160,
+    "available":156
+  },
+  {
+    "id":77,
+    "eventId":"872ffe12-d055-468d-b16d-0d07b45626e3",
+    "name":"Premium Camp Pass",
+    "price":80.0,
+    "quantity":40,
+    "available":38
+  },
+  {
+    "id":78,
+    "eventId":"79f7a51d-efb9-41e9-9fea-f5d72a1a8168",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":71.0,
+    "quantity":195,
+    "available":183
+  },
+  {
+    "id":79,
+    "eventId":"79f7a51d-efb9-41e9-9fea-f5d72a1a8168",
+    "name":"Online Παρακολούθηση",
+    "price":30.0,
+    "quantity":455,
+    "available":452
+  },
+  {
+    "id":80,
+    "eventId":"5c80dbb3-8fbf-4617-82e6-a3974917139e",
+    "name":"Ατομικό Εισιτήριο Γκαλά",
+    "price":10.0,
+    "quantity":140,
+    "available":137
+  },
+  {
+    "id":81,
+    "eventId":"5c80dbb3-8fbf-4617-82e6-a3974917139e",
+    "name":"Εισιτήριο Ζευγαριού",
+    "price":17.5,
+    "quantity":40,
+    "available":38
+  },
+  {
+    "id":82,
+    "eventId":"5c80dbb3-8fbf-4617-82e6-a3974917139e",
+    "name":"Τραπέζι Χορηγών (10 άτομα)",
+    "price":125.0,
+    "quantity":20,
+    "available":16
+  },
+  {
+    "id":83,
+    "eventId":"f4d403fb-fafd-4a30-9466-9f78b0d5b9d2",
+    "name":"Γενική Είσοδος",
+    "price":25.5,
+    "quantity":263,
+    "available":251
+  },
+  {
+    "id":84,
+    "eventId":"f4d403fb-fafd-4a30-9466-9f78b0d5b9d2",
+    "name":"Θέσεις Premium (Recliner)",
+    "price":40.0,
+    "quantity":52,
+    "available":50
+  },
+  {
+    "id":85,
+    "eventId":"f4d403fb-fafd-4a30-9466-9f78b0d5b9d2",
+    "name":"Παιδικό \/ Φοιτητικό",
+    "price":20.0,
+    "quantity":35,
+    "available":29
+  },
+  {
+    "id":86,
+    "eventId":"3007e875-94d0-48d4-a80e-d891fa5cbeb6",
+    "name":"Ζώνη Α (Διακεκριμένη)",
+    "price":186.5,
+    "quantity":53,
+    "available":48
+  },
+  {
+    "id":87,
+    "eventId":"3007e875-94d0-48d4-a80e-d891fa5cbeb6",
+    "name":"Ζώνη Β (Κανονικό)",
+    "price":116.5,
+    "quantity":175,
+    "available":171
+  },
+  {
+    "id":88,
+    "eventId":"3007e875-94d0-48d4-a80e-d891fa5cbeb6",
+    "name":"Εξώστης",
+    "price":70.0,
+    "quantity":122,
+    "available":118
+  },
+  {
+    "id":89,
+    "eventId":"4ed576e6-5890-4f8d-b697-6a595c816128",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":166.0,
+    "quantity":105,
+    "available":105
+  },
+  {
+    "id":90,
+    "eventId":"4ed576e6-5890-4f8d-b697-6a595c816128",
+    "name":"Online Παρακολούθηση",
+    "price":70.0,
+    "quantity":245,
+    "available":245
+  },
+  {
+    "id":91,
+    "eventId":"3b73df56-3f5c-4122-826b-dc5527c2717a",
+    "name":"Μονοήμερο Εισιτήριο Φεστιβάλ",
+    "price":10.0,
+    "quantity":325,
+    "available":308
+  },
+  {
+    "id":92,
+    "eventId":"3b73df56-3f5c-4122-826b-dc5527c2717a",
+    "name":"Τριήμερο Εισιτήριο Φεστιβάλ",
+    "price":24.5,
+    "quantity":260,
+    "available":253
+  },
+  {
+    "id":93,
+    "eventId":"3b73df56-3f5c-4122-826b-dc5527c2717a",
+    "name":"Premium Camp Pass",
+    "price":40.0,
+    "quantity":65,
+    "available":59
+  },
+  {
+    "id":94,
+    "eventId":"3ef06048-38c8-4c9b-8109-a05f349eec39",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":24.0,
+    "quantity":105,
+    "available":102
+  },
+  {
+    "id":95,
+    "eventId":"3ef06048-38c8-4c9b-8109-a05f349eec39",
+    "name":"Online Παρακολούθηση",
+    "price":10.0,
+    "quantity":245,
+    "available":243
+  },
+  {
+    "id":96,
+    "eventId":"b8b6e226-7b72-4726-82a0-b22e6745141e",
+    "name":"Εισιτήριο Αγώνα - Θύρα Φιλάθλων",
+    "price":25.0,
+    "quantity":720,
+    "available":709
+  },
+  {
+    "id":97,
+    "eventId":"b8b6e226-7b72-4726-82a0-b22e6745141e",
+    "name":"Θύρα VIP Lounge",
+    "price":166.5,
+    "quantity":45,
+    "available":42
+  },
+  {
+    "id":98,
+    "eventId":"b8b6e226-7b72-4726-82a0-b22e6745141e",
+    "name":"Οικογενειακό Πακέτο",
+    "price":58.5,
+    "quantity":135,
+    "available":129
+  },
+  {
+    "id":99,
+    "eventId":"655dfe92-eba0-40b0-851e-93cb1b0a9bef",
+    "name":"Γενική Είσοδος",
+    "price":139.0,
+    "quantity":490,
+    "available":485
+  },
+  {
+    "id":100,
+    "eventId":"655dfe92-eba0-40b0-851e-93cb1b0a9bef",
+    "name":"Εισιτήριο VIP",
+    "price":416.5,
+    "quantity":70,
+    "available":66
+  },
+  {
+    "id":101,
+    "eventId":"655dfe92-eba0-40b0-851e-93cb1b0a9bef",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":100.0,
+    "quantity":140,
+    "available":136
+  },
+  {
+    "id":102,
+    "eventId":"79fc7639-36f0-4f3e-ab3f-b51700d231a6",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":71.0,
+    "quantity":165,
+    "available":158
+  },
+  {
+    "id":103,
+    "eventId":"79fc7639-36f0-4f3e-ab3f-b51700d231a6",
+    "name":"Online Παρακολούθηση",
+    "price":30.0,
+    "quantity":385,
+    "available":383
+  },
+  {
+    "id":104,
+    "eventId":"779a9e55-69ad-40aa-ac98-55bdb4911399",
+    "name":"Απλή Είσοδος Μουσείου\/Έκθεσης",
+    "price":60.0,
+    "quantity":423,
+    "available":414
+  },
+  {
+    "id":105,
+    "eventId":"779a9e55-69ad-40aa-ac98-55bdb4911399",
+    "name":"Είσοδος με Ξενάγηση",
+    "price":110.0,
+    "quantity":130,
+    "available":127
+  },
+  {
+    "id":106,
+    "eventId":"779a9e55-69ad-40aa-ac98-55bdb4911399",
+    "name":"Μειωμένο (ΑμεΑ \/ Συνταξιούχοι)",
+    "price":30.0,
+    "quantity":97,
+    "available":93
+  },
+  {
+    "id":107,
+    "eventId":"9c63e599-5e23-4769-89e2-e835ce693ce2",
+    "name":"Κανονικό Εισιτήριο Συνεδρίου",
+    "price":30.0,
+    "quantity":510,
+    "available":505
+  },
+  {
+    "id":108,
+    "eventId":"9c63e599-5e23-4769-89e2-e835ce693ce2",
+    "name":"Φοιτητικό \/ Ακαδημαϊκό",
+    "price":10.0,
+    "quantity":213,
+    "available":211
+  },
+  {
+    "id":109,
+    "eventId":"9c63e599-5e23-4769-89e2-e835ce693ce2",
+    "name":"Εταιρικό Πακέτο",
+    "price":24.0,
+    "quantity":127,
+    "available":125
+  },
+  {
+    "id":110,
+    "eventId":"213091c8-cd5f-4e3e-8f94-6d5329d8f057",
+    "name":"Μονοήμερο Εισιτήριο Φεστιβάλ",
+    "price":100.0,
+    "quantity":500,
+    "available":490
+  },
+  {
+    "id":111,
+    "eventId":"213091c8-cd5f-4e3e-8f94-6d5329d8f057",
+    "name":"Τριήμερο Εισιτήριο Φεστιβάλ",
+    "price":244.5,
+    "quantity":400,
+    "available":398
+  },
+  {
+    "id":112,
+    "eventId":"213091c8-cd5f-4e3e-8f94-6d5329d8f057",
+    "name":"Premium Camp Pass",
+    "price":400.0,
+    "quantity":100,
+    "available":98
+  },
+  {
+    "id":113,
+    "eventId":"beb5dae0-d7c6-4dc2-9247-9254ca9d9a31",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":71.0,
+    "quantity":60,
+    "available":60
+  },
+  {
+    "id":114,
+    "eventId":"beb5dae0-d7c6-4dc2-9247-9254ca9d9a31",
+    "name":"Online Παρακολούθηση",
+    "price":30.0,
+    "quantity":140,
+    "available":140
+  },
+  {
+    "id":115,
+    "eventId":"9a96aed4-8849-44e1-b0b2-c2a2957a87da",
+    "name":"Γενική Είσοδος",
+    "price":34.5,
+    "quantity":210,
+    "available":203
+  },
+  {
+    "id":116,
+    "eventId":"9a96aed4-8849-44e1-b0b2-c2a2957a87da",
+    "name":"Εισιτήριο VIP",
+    "price":104.0,
+    "quantity":30,
+    "available":27
+  },
+  {
+    "id":117,
+    "eventId":"9a96aed4-8849-44e1-b0b2-c2a2957a87da",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":25.0,
+    "quantity":60,
+    "available":55
+  },
+  {
+    "id":118,
+    "eventId":"e378ef3b-e7d9-4fe2-a6c2-36a7fe7cae73",
+    "name":"Online Παρακολούθηση Webinar",
+    "price":100.0,
+    "quantity":600,
+    "available":598
+  },
+  {
+    "id":119,
+    "eventId":"55b8a25a-5b54-4e62-babc-70d40b31d0ca",
+    "name":"Απλή Είσοδος Μουσείου\/Έκθεσης",
+    "price":200.0,
+    "quantity":325,
+    "available":315
+  },
+  {
+    "id":120,
+    "eventId":"55b8a25a-5b54-4e62-babc-70d40b31d0ca",
+    "name":"Είσοδος με Ξενάγηση",
+    "price":366.5,
+    "quantity":100,
+    "available":99
+  },
+  {
+    "id":121,
+    "eventId":"55b8a25a-5b54-4e62-babc-70d40b31d0ca",
+    "name":"Μειωμένο (ΑμεΑ \/ Συνταξιούχοι)",
+    "price":100.0,
+    "quantity":75,
+    "available":72
+  },
+  {
+    "id":122,
+    "eventId":"038df518-5da4-4290-b1a9-22eb0ca12695",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":119.0,
+    "quantity":270,
+    "available":270
+  },
+  {
+    "id":123,
+    "eventId":"038df518-5da4-4290-b1a9-22eb0ca12695",
+    "name":"Online Παρακολούθηση",
+    "price":50.0,
+    "quantity":630,
+    "available":630
+  },
+  {
+    "id":124,
+    "eventId":"57ea14dd-4a16-4809-a9b2-f43beff666c4",
+    "name":"Κανονικό Εισιτήριο Συνεδρίου",
+    "price":210.0,
+    "quantity":600,
+    "available":585
+  },
+  {
+    "id":125,
+    "eventId":"57ea14dd-4a16-4809-a9b2-f43beff666c4",
+    "name":"Φοιτητικό \/ Ακαδημαϊκό",
+    "price":70.0,
+    "quantity":250,
+    "available":242
+  },
+  {
+    "id":126,
+    "eventId":"57ea14dd-4a16-4809-a9b2-f43beff666c4",
+    "name":"Εταιρικό Πακέτο",
+    "price":168.0,
+    "quantity":150,
+    "available":145
+  },
+  {
+    "id":127,
+    "eventId":"5a7762a3-de97-444b-b287-029911a905f4",
+    "name":"Εισιτήριο Αγώνα - Θύρα Φιλάθλων",
+    "price":10.0,
+    "quantity":360,
+    "available":360
+  },
+  {
+    "id":128,
+    "eventId":"5a7762a3-de97-444b-b287-029911a905f4",
+    "name":"Θύρα VIP Lounge",
+    "price":66.5,
+    "quantity":23,
+    "available":23
+  },
+  {
+    "id":129,
+    "eventId":"5a7762a3-de97-444b-b287-029911a905f4",
+    "name":"Οικογενειακό Πακέτο",
+    "price":23.5,
+    "quantity":67,
+    "available":67
+  },
+  {
+    "id":130,
+    "eventId":"b2947692-a309-4fae-a51a-9cd68f28ef26",
+    "name":"Γενική Είσοδος",
+    "price":139.0,
+    "quantity":630,
+    "available":618
+  },
+  {
+    "id":131,
+    "eventId":"b2947692-a309-4fae-a51a-9cd68f28ef26",
+    "name":"Εισιτήριο VIP",
+    "price":416.5,
+    "quantity":90,
+    "available":86
+  },
+  {
+    "id":132,
+    "eventId":"b2947692-a309-4fae-a51a-9cd68f28ef26",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":100.0,
+    "quantity":180,
+    "available":174
+  },
+  {
+    "id":133,
+    "eventId":"6eb188cc-f47f-4003-9fe7-80e662f26af1",
+    "name":"Γενική Είσοδος",
+    "price":14.0,
+    "quantity":700,
+    "available":696
+  },
+  {
+    "id":134,
+    "eventId":"6eb188cc-f47f-4003-9fe7-80e662f26af1",
+    "name":"Εισιτήριο VIP",
+    "price":41.5,
+    "quantity":100,
+    "available":97
+  },
+  {
+    "id":135,
+    "eventId":"6eb188cc-f47f-4003-9fe7-80e662f26af1",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":10.0,
+    "quantity":200,
+    "available":199
+  },
+  {
+    "id":136,
+    "eventId":"3b573549-6cf9-4f42-98c2-cc6a42bfd1e8",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":47.5,
+    "quantity":90,
+    "available":86
+  },
+  {
+    "id":137,
+    "eventId":"3b573549-6cf9-4f42-98c2-cc6a42bfd1e8",
+    "name":"Online Παρακολούθηση",
+    "price":20.0,
+    "quantity":210,
+    "available":208
+  },
+  {
+    "id":138,
+    "eventId":"5bab51ed-c39b-4d87-adbd-b1020b3b0681",
+    "name":"Κανονικό Εισιτήριο Συνεδρίου",
+    "price":75.0,
+    "quantity":300,
+    "available":293
+  },
+  {
+    "id":139,
+    "eventId":"5bab51ed-c39b-4d87-adbd-b1020b3b0681",
+    "name":"Φοιτητικό \/ Ακαδημαϊκό",
+    "price":25.0,
+    "quantity":125,
+    "available":118
+  },
+  {
+    "id":140,
+    "eventId":"5bab51ed-c39b-4d87-adbd-b1020b3b0681",
+    "name":"Εταιρικό Πακέτο",
+    "price":60.0,
+    "quantity":75,
+    "available":71
+  },
+  {
+    "id":141,
+    "eventId":"79db1e54-26f3-4999-83a2-1eb9e737a3a5",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":47.5,
+    "quantity":165,
+    "available":161
+  },
+  {
+    "id":142,
+    "eventId":"79db1e54-26f3-4999-83a2-1eb9e737a3a5",
+    "name":"Online Παρακολούθηση",
+    "price":20.0,
+    "quantity":385,
+    "available":383
+  },
+  {
+    "id":143,
+    "eventId":"875e475a-b7b5-4468-9d0e-1dbd014b7ed7",
+    "name":"Γενική Είσοδος",
+    "price":14.0,
+    "quantity":280,
+    "available":278
+  },
+  {
+    "id":144,
+    "eventId":"875e475a-b7b5-4468-9d0e-1dbd014b7ed7",
+    "name":"Εισιτήριο VIP",
+    "price":41.5,
+    "quantity":40,
+    "available":39
+  },
+  {
+    "id":145,
+    "eventId":"875e475a-b7b5-4468-9d0e-1dbd014b7ed7",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":10.0,
+    "quantity":80,
+    "available":78
+  },
+  {
+    "id":146,
+    "eventId":"c86814df-99d8-4419-9316-a256d6639215",
+    "name":"Γενική Είσοδος",
+    "price":97.0,
+    "quantity":210,
+    "available":208
+  },
+  {
+    "id":147,
+    "eventId":"c86814df-99d8-4419-9316-a256d6639215",
+    "name":"Εισιτήριο VIP",
+    "price":291.5,
+    "quantity":30,
+    "available":29
+  },
+  {
+    "id":148,
+    "eventId":"c86814df-99d8-4419-9316-a256d6639215",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":70.0,
+    "quantity":60,
+    "available":60
+  },
+  {
+    "id":149,
+    "eventId":"cd3c15c0-c542-410b-bd8e-d9786bf93d8b",
+    "name":"Απλή Είσοδος Μουσείου\/Έκθεσης",
+    "price":30.0,
+    "quantity":163,
+    "available":151
+  },
+  {
+    "id":150,
+    "eventId":"cd3c15c0-c542-410b-bd8e-d9786bf93d8b",
+    "name":"Είσοδος με Ξενάγηση",
+    "price":55.0,
+    "quantity":50,
+    "available":45
+  },
+  {
+    "id":151,
+    "eventId":"cd3c15c0-c542-410b-bd8e-d9786bf93d8b",
+    "name":"Μειωμένο (ΑμεΑ \/ Συνταξιούχοι)",
+    "price":15.0,
+    "quantity":37,
+    "available":31
+  },
+  {
+    "id":152,
+    "eventId":"2fe125d1-ecbb-4ee3-a03a-e47e824c02bf",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":59.5,
+    "quantity":135,
+    "available":129
+  },
+  {
+    "id":153,
+    "eventId":"2fe125d1-ecbb-4ee3-a03a-e47e824c02bf",
+    "name":"Online Παρακολούθηση",
+    "price":25.0,
+    "quantity":315,
+    "available":311
+  },
+  {
+    "id":154,
+    "eventId":"a18d4732-74a4-4a92-82db-b0243bf668b8",
+    "name":"Ζώνη Α (Διακεκριμένη)",
+    "price":80.0,
+    "quantity":128,
+    "available":122
+  },
+  {
+    "id":155,
+    "eventId":"a18d4732-74a4-4a92-82db-b0243bf668b8",
+    "name":"Ζώνη Β (Κανονικό)",
+    "price":50.0,
+    "quantity":425,
+    "available":424
+  },
+  {
+    "id":156,
+    "eventId":"a18d4732-74a4-4a92-82db-b0243bf668b8",
+    "name":"Εξώστης",
+    "price":30.0,
+    "quantity":297,
+    "available":295
+  },
+  {
+    "id":157,
+    "eventId":"6be8b9aa-7acc-406d-a49b-c2665e8ce72f",
+    "name":"Εισιτήριο Αγώνα - Θύρα Φιλάθλων",
+    "price":50.0,
+    "quantity":320,
+    "available":304
+  },
+  {
+    "id":158,
+    "eventId":"6be8b9aa-7acc-406d-a49b-c2665e8ce72f",
+    "name":"Θύρα VIP Lounge",
+    "price":333.5,
+    "quantity":20,
+    "available":14
+  },
+  {
+    "id":159,
+    "eventId":"6be8b9aa-7acc-406d-a49b-c2665e8ce72f",
+    "name":"Οικογενειακό Πακέτο",
+    "price":116.5,
+    "quantity":60,
+    "available":54
+  },
+  {
+    "id":160,
+    "eventId":"976747d0-8ff0-4649-a5a2-b2a6651386dc",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":119.0,
+    "quantity":75,
+    "available":71
+  },
+  {
+    "id":161,
+    "eventId":"976747d0-8ff0-4649-a5a2-b2a6651386dc",
+    "name":"Online Παρακολούθηση",
+    "price":50.0,
+    "quantity":175,
+    "available":175
+  },
+  {
+    "id":162,
+    "eventId":"93dc43bf-17c3-4c63-8015-8804d352d0ea",
+    "name":"Μονοήμερο Εισιτήριο Φεστιβάλ",
+    "price":100.0,
+    "quantity":425,
+    "available":417
+  },
+  {
+    "id":163,
+    "eventId":"93dc43bf-17c3-4c63-8015-8804d352d0ea",
+    "name":"Τριήμερο Εισιτήριο Φεστιβάλ",
+    "price":244.5,
+    "quantity":340,
+    "available":335
+  },
+  {
+    "id":164,
+    "eventId":"93dc43bf-17c3-4c63-8015-8804d352d0ea",
+    "name":"Premium Camp Pass",
+    "price":400.0,
+    "quantity":85,
+    "available":80
+  },
+  {
+    "id":165,
+    "eventId":"619f1cf9-b871-4961-ae14-e072e32c2f5c",
+    "name":"Γενική Είσοδος",
+    "price":32.0,
+    "quantity":600,
+    "available":582
+  },
+  {
+    "id":166,
+    "eventId":"619f1cf9-b871-4961-ae14-e072e32c2f5c",
+    "name":"Θέσεις Premium (Recliner)",
+    "price":50.0,
+    "quantity":120,
+    "available":117
+  },
+  {
+    "id":167,
+    "eventId":"619f1cf9-b871-4961-ae14-e072e32c2f5c",
+    "name":"Παιδικό \/ Φοιτητικό",
+    "price":25.0,
+    "quantity":80,
+    "available":71
+  },
+  {
+    "id":168,
+    "eventId":"f0440fab-703a-44b2-9440-ecfe15acfcbd",
+    "name":"Εισιτήριο Αγώνα - Θύρα Φιλάθλων",
+    "price":20.0,
+    "quantity":680,
+    "available":680
+  },
+  {
+    "id":169,
+    "eventId":"f0440fab-703a-44b2-9440-ecfe15acfcbd",
+    "name":"Θύρα VIP Lounge",
+    "price":133.5,
+    "quantity":43,
+    "available":43
+  },
+  {
+    "id":170,
+    "eventId":"f0440fab-703a-44b2-9440-ecfe15acfcbd",
+    "name":"Οικογενειακό Πακέτο",
+    "price":46.5,
+    "quantity":127,
+    "available":127
+  },
+  {
+    "id":171,
+    "eventId":"b4fb48a8-bdfb-47d9-a8f2-dd3a56a7a108",
+    "name":"Γενική Είσοδος",
+    "price":41.5,
+    "quantity":280,
+    "available":276
+  },
+  {
+    "id":172,
+    "eventId":"b4fb48a8-bdfb-47d9-a8f2-dd3a56a7a108",
+    "name":"Εισιτήριο VIP",
+    "price":125.0,
+    "quantity":40,
+    "available":39
+  },
+  {
+    "id":173,
+    "eventId":"b4fb48a8-bdfb-47d9-a8f2-dd3a56a7a108",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":30.0,
+    "quantity":80,
+    "available":80
+  },
+  {
+    "id":174,
+    "eventId":"3435a107-f785-4255-a03f-5e99caca1101",
+    "name":"Γενική Είσοδος",
+    "price":69.5,
+    "quantity":630,
+    "available":617
+  },
+  {
+    "id":175,
+    "eventId":"3435a107-f785-4255-a03f-5e99caca1101",
+    "name":"Εισιτήριο VIP",
+    "price":208.5,
+    "quantity":90,
+    "available":88
+  },
+  {
+    "id":176,
+    "eventId":"3435a107-f785-4255-a03f-5e99caca1101",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":50.0,
+    "quantity":180,
+    "available":173
+  },
+  {
+    "id":177,
+    "eventId":"3f659ef1-8fb0-4b6b-b1aa-eb92ac0e9500",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":35.5,
+    "quantity":165,
+    "available":147
+  },
+  {
+    "id":178,
+    "eventId":"3f659ef1-8fb0-4b6b-b1aa-eb92ac0e9500",
+    "name":"Online Παρακολούθηση",
+    "price":15.0,
+    "quantity":385,
+    "available":377
+  },
+  {
+    "id":179,
+    "eventId":"f14cf873-ab6e-4902-8fe1-f0f4abdcecc0",
+    "name":"Εισιτήριο Αγώνα - Θύρα Φιλάθλων",
+    "price":25.0,
+    "quantity":560,
+    "available":543
+  },
+  {
+    "id":180,
+    "eventId":"f14cf873-ab6e-4902-8fe1-f0f4abdcecc0",
+    "name":"Θύρα VIP Lounge",
+    "price":166.5,
+    "quantity":35,
+    "available":27
+  },
+  {
+    "id":181,
+    "eventId":"f14cf873-ab6e-4902-8fe1-f0f4abdcecc0",
+    "name":"Οικογενειακό Πακέτο",
+    "price":58.5,
+    "quantity":105,
+    "available":100
+  },
+  {
+    "id":182,
+    "eventId":"0ba37967-45db-429d-ad61-860152201986",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":24.0,
+    "quantity":195,
+    "available":192
+  },
+  {
+    "id":183,
+    "eventId":"0ba37967-45db-429d-ad61-860152201986",
+    "name":"Online Παρακολούθηση",
+    "price":10.0,
+    "quantity":455,
+    "available":454
+  },
+  {
+    "id":184,
+    "eventId":"f73d420c-9e4d-49bc-abf5-61c8b78adc01",
+    "name":"Κανονικό Εισιτήριο Συνεδρίου",
+    "price":60.0,
+    "quantity":360,
+    "available":356
+  },
+  {
+    "id":185,
+    "eventId":"f73d420c-9e4d-49bc-abf5-61c8b78adc01",
+    "name":"Φοιτητικό \/ Ακαδημαϊκό",
+    "price":20.0,
+    "quantity":150,
+    "available":145
+  },
+  {
+    "id":186,
+    "eventId":"f73d420c-9e4d-49bc-abf5-61c8b78adc01",
+    "name":"Εταιρικό Πακέτο",
+    "price":48.0,
+    "quantity":90,
+    "available":86
+  },
+  {
+    "id":187,
+    "eventId":"48164615-d894-484a-a618-3443aa58c186",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":166.0,
+    "quantity":150,
+    "available":149
+  },
+  {
+    "id":188,
+    "eventId":"48164615-d894-484a-a618-3443aa58c186",
+    "name":"Online Παρακολούθηση",
+    "price":70.0,
+    "quantity":350,
+    "available":350
+  },
+  {
+    "id":189,
+    "eventId":"3a106a22-b9d9-402d-9548-77cccce3944d",
+    "name":"Γενική Είσοδος",
+    "price":97.0,
+    "quantity":665,
+    "available":665
+  },
+  {
+    "id":190,
+    "eventId":"3a106a22-b9d9-402d-9548-77cccce3944d",
+    "name":"Εισιτήριο VIP",
+    "price":291.5,
+    "quantity":95,
+    "available":95
+  },
+  {
+    "id":191,
+    "eventId":"3a106a22-b9d9-402d-9548-77cccce3944d",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":70.0,
+    "quantity":190,
+    "available":190
+  },
+  {
+    "id":192,
+    "eventId":"97dd6953-38a1-4c6c-9a9f-ce63d00b47c4",
+    "name":"Απλή Είσοδος Μουσείου\/Έκθεσης",
+    "price":200.0,
+    "quantity":163,
+    "available":160
+  },
+  {
+    "id":193,
+    "eventId":"97dd6953-38a1-4c6c-9a9f-ce63d00b47c4",
+    "name":"Είσοδος με Ξενάγηση",
+    "price":366.5,
+    "quantity":50,
+    "available":49
+  },
+  {
+    "id":194,
+    "eventId":"97dd6953-38a1-4c6c-9a9f-ce63d00b47c4",
+    "name":"Μειωμένο (ΑμεΑ \/ Συνταξιούχοι)",
+    "price":100.0,
+    "quantity":37,
+    "available":35
+  },
+  {
+    "id":195,
+    "eventId":"7983d073-ad21-4993-b20d-71678e1e3cb3",
+    "name":"Κανονικό Εισιτήριο Συνεδρίου",
+    "price":75.0,
+    "quantity":540,
+    "available":523
+  },
+  {
+    "id":196,
+    "eventId":"7983d073-ad21-4993-b20d-71678e1e3cb3",
+    "name":"Φοιτητικό \/ Ακαδημαϊκό",
+    "price":25.0,
+    "quantity":225,
+    "available":222
+  },
+  {
+    "id":197,
+    "eventId":"7983d073-ad21-4993-b20d-71678e1e3cb3",
+    "name":"Εταιρικό Πακέτο",
+    "price":60.0,
+    "quantity":135,
+    "available":129
+  },
+  {
+    "id":198,
+    "eventId":"62907f35-f882-4f5e-9dca-bdc4dc5be316",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":35.5,
+    "quantity":135,
+    "available":133
+  },
+  {
+    "id":199,
+    "eventId":"62907f35-f882-4f5e-9dca-bdc4dc5be316",
+    "name":"Online Παρακολούθηση",
+    "price":15.0,
+    "quantity":315,
+    "available":313
+  },
+  {
+    "id":200,
+    "eventId":"794e9546-1233-4fe9-b98c-bb0e54f805d0",
+    "name":"Εισιτήριο Αγώνα - Θύρα Φιλάθλων",
+    "price":15.0,
+    "quantity":280,
+    "available":276
+  },
+  {
+    "id":201,
+    "eventId":"794e9546-1233-4fe9-b98c-bb0e54f805d0",
+    "name":"Θύρα VIP Lounge",
+    "price":100.0,
+    "quantity":18,
+    "available":18
+  },
+  {
+    "id":202,
+    "eventId":"794e9546-1233-4fe9-b98c-bb0e54f805d0",
+    "name":"Οικογενειακό Πακέτο",
+    "price":35.0,
+    "quantity":52,
+    "available":51
+  },
+  {
+    "id":203,
+    "eventId":"e87b7f9d-3c19-4a5a-8586-429c2b254089",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":35.5,
+    "quantity":105,
+    "available":97
+  },
+  {
+    "id":204,
+    "eventId":"e87b7f9d-3c19-4a5a-8586-429c2b254089",
+    "name":"Online Παρακολούθηση",
+    "price":15.0,
+    "quantity":245,
+    "available":241
+  },
+  {
+    "id":205,
+    "eventId":"a545ad68-be97-48b9-af1b-369f8dcdc7d9",
+    "name":"Γενική Είσοδος",
+    "price":97.0,
+    "quantity":455,
+    "available":444
+  },
+  {
+    "id":206,
+    "eventId":"a545ad68-be97-48b9-af1b-369f8dcdc7d9",
+    "name":"Εισιτήριο VIP",
+    "price":291.5,
+    "quantity":65,
+    "available":62
+  },
+  {
+    "id":207,
+    "eventId":"a545ad68-be97-48b9-af1b-369f8dcdc7d9",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":70.0,
+    "quantity":130,
+    "available":128
+  },
+  {
+    "id":208,
+    "eventId":"f3b51087-3ad1-4b25-b9c9-58aea16125f9",
+    "name":"Γενική Είσοδος",
+    "price":14.0,
+    "quantity":385,
+    "available":365
+  },
+  {
+    "id":209,
+    "eventId":"f3b51087-3ad1-4b25-b9c9-58aea16125f9",
+    "name":"Εισιτήριο VIP",
+    "price":41.5,
+    "quantity":55,
+    "available":43
+  },
+  {
+    "id":210,
+    "eventId":"f3b51087-3ad1-4b25-b9c9-58aea16125f9",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":10.0,
+    "quantity":110,
+    "available":103
+  },
+  {
+    "id":211,
+    "eventId":"656161d1-0501-40d9-8da4-830122ebc4ab",
+    "name":"Γενική Είσοδος",
+    "price":32.0,
+    "quantity":525,
+    "available":503
+  },
+  {
+    "id":212,
+    "eventId":"656161d1-0501-40d9-8da4-830122ebc4ab",
+    "name":"Θέσεις Premium (Recliner)",
+    "price":50.0,
+    "quantity":105,
+    "available":97
+  },
+  {
+    "id":213,
+    "eventId":"656161d1-0501-40d9-8da4-830122ebc4ab",
+    "name":"Παιδικό \/ Φοιτητικό",
+    "price":25.0,
+    "quantity":70,
+    "available":65
+  },
+  {
+    "id":214,
+    "eventId":"57cf3e88-2812-4870-adbd-ddbac1f1d372",
+    "name":"Γενική Είσοδος",
+    "price":21.0,
+    "quantity":175,
+    "available":171
+  },
+  {
+    "id":215,
+    "eventId":"57cf3e88-2812-4870-adbd-ddbac1f1d372",
+    "name":"Εισιτήριο VIP",
+    "price":62.5,
+    "quantity":25,
+    "available":23
+  },
+  {
+    "id":216,
+    "eventId":"57cf3e88-2812-4870-adbd-ddbac1f1d372",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":15.0,
+    "quantity":50,
+    "available":47
+  },
+  {
+    "id":217,
+    "eventId":"cf5116dd-6adc-4ff0-8661-8a0733bd7304",
+    "name":"Online Παρακολούθηση Webinar",
+    "price":50.0,
+    "quantity":450,
+    "available":444
+  },
+  {
+    "id":218,
+    "eventId":"15fdf7cf-5102-47fe-a11e-7b9073f93607",
+    "name":"Γενική Είσοδος",
+    "price":13.0,
+    "quantity":263,
+    "available":263
+  },
+  {
+    "id":219,
+    "eventId":"15fdf7cf-5102-47fe-a11e-7b9073f93607",
+    "name":"Θέσεις Premium (Recliner)",
+    "price":20.0,
+    "quantity":52,
+    "available":52
+  },
+  {
+    "id":220,
+    "eventId":"15fdf7cf-5102-47fe-a11e-7b9073f93607",
+    "name":"Παιδικό \/ Φοιτητικό",
+    "price":10.0,
+    "quantity":35,
+    "available":35
+  },
+  {
+    "id":221,
+    "eventId":"c733c0db-96ff-4bce-adbd-919d9c925124",
+    "name":"Μονοήμερο Εισιτήριο Φεστιβάλ",
+    "price":25.0,
+    "quantity":100,
+    "available":89
+  },
+  {
+    "id":222,
+    "eventId":"c733c0db-96ff-4bce-adbd-919d9c925124",
+    "name":"Τριήμερο Εισιτήριο Φεστιβάλ",
+    "price":61.0,
+    "quantity":80,
+    "available":74
+  },
+  {
+    "id":223,
+    "eventId":"c733c0db-96ff-4bce-adbd-919d9c925124",
+    "name":"Premium Camp Pass",
+    "price":100.0,
+    "quantity":20,
+    "available":14
+  },
+  {
+    "id":224,
+    "eventId":"93a7c9b0-e75c-4852-b8d9-6957a37cf253",
+    "name":"Γενική Είσοδος",
+    "price":14.0,
+    "quantity":385,
+    "available":378
+  },
+  {
+    "id":225,
+    "eventId":"93a7c9b0-e75c-4852-b8d9-6957a37cf253",
+    "name":"Εισιτήριο VIP",
+    "price":41.5,
+    "quantity":55,
+    "available":55
+  },
+  {
+    "id":226,
+    "eventId":"93a7c9b0-e75c-4852-b8d9-6957a37cf253",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":10.0,
+    "quantity":110,
+    "available":109
+  },
+  {
+    "id":227,
+    "eventId":"6127b7e5-750b-4fc2-8f82-6c4b79dde2de",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":35.5,
+    "quantity":210,
+    "available":203
+  },
+  {
+    "id":228,
+    "eventId":"6127b7e5-750b-4fc2-8f82-6c4b79dde2de",
+    "name":"Online Παρακολούθηση",
+    "price":15.0,
+    "quantity":490,
+    "available":487
+  },
+  {
+    "id":229,
+    "eventId":"fc03a38b-b510-4dc8-a2b5-bd8e924b3e5a",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":71.0,
+    "quantity":165,
+    "available":156
+  },
+  {
+    "id":230,
+    "eventId":"fc03a38b-b510-4dc8-a2b5-bd8e924b3e5a",
+    "name":"Online Παρακολούθηση",
+    "price":30.0,
+    "quantity":385,
+    "available":378
+  },
+  {
+    "id":231,
+    "eventId":"cdd5f7ba-c81e-4bdd-8b4b-b04edc0067b5",
+    "name":"Γενική Είσοδος",
+    "price":69.5,
+    "quantity":140,
+    "available":125
+  },
+  {
+    "id":232,
+    "eventId":"cdd5f7ba-c81e-4bdd-8b4b-b04edc0067b5",
+    "name":"Εισιτήριο VIP",
+    "price":208.5,
+    "quantity":20,
+    "available":17
+  },
+  {
+    "id":233,
+    "eventId":"cdd5f7ba-c81e-4bdd-8b4b-b04edc0067b5",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":50.0,
+    "quantity":40,
+    "available":34
+  },
+  {
+    "id":234,
+    "eventId":"eba2d894-d209-4e73-a178-6cd9291fe0f2",
+    "name":"Απλή Είσοδος Μουσείου\/Έκθεσης",
+    "price":200.0,
+    "quantity":195,
+    "available":193
+  },
+  {
+    "id":235,
+    "eventId":"eba2d894-d209-4e73-a178-6cd9291fe0f2",
+    "name":"Είσοδος με Ξενάγηση",
+    "price":366.5,
+    "quantity":60,
+    "available":58
+  },
+  {
+    "id":236,
+    "eventId":"eba2d894-d209-4e73-a178-6cd9291fe0f2",
+    "name":"Μειωμένο (ΑμεΑ \/ Συνταξιούχοι)",
+    "price":100.0,
+    "quantity":45,
+    "available":44
+  },
+  {
+    "id":237,
+    "eventId":"8c5bf67c-3f63-4d45-af64-cb80bb089da6",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":59.5,
+    "quantity":165,
+    "available":155
+  },
+  {
+    "id":238,
+    "eventId":"8c5bf67c-3f63-4d45-af64-cb80bb089da6",
+    "name":"Online Παρακολούθηση",
+    "price":25.0,
+    "quantity":385,
+    "available":383
+  },
+  {
+    "id":239,
+    "eventId":"f8df6387-1018-4542-8092-964e13ca38c2",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":237.5,
+    "quantity":210,
+    "available":201
+  },
+  {
+    "id":240,
+    "eventId":"f8df6387-1018-4542-8092-964e13ca38c2",
+    "name":"Online Παρακολούθηση",
+    "price":100.0,
+    "quantity":490,
+    "available":488
+  },
+  {
+    "id":241,
+    "eventId":"cc412567-977c-46be-a530-dc6a24862035",
+    "name":"Γενική Είσοδος",
+    "price":28.0,
+    "quantity":700,
+    "available":693
+  },
+  {
+    "id":242,
+    "eventId":"cc412567-977c-46be-a530-dc6a24862035",
+    "name":"Εισιτήριο VIP",
+    "price":83.5,
+    "quantity":100,
+    "available":100
+  },
+  {
+    "id":243,
+    "eventId":"cc412567-977c-46be-a530-dc6a24862035",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":20.0,
+    "quantity":200,
+    "available":196
+  },
+  {
+    "id":244,
+    "eventId":"2c5b3687-185b-405c-82f8-4f9cd0073967",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":237.5,
+    "quantity":225,
+    "available":216
+  },
+  {
+    "id":245,
+    "eventId":"2c5b3687-185b-405c-82f8-4f9cd0073967",
+    "name":"Online Παρακολούθηση",
+    "price":100.0,
+    "quantity":525,
+    "available":522
+  },
+  {
+    "id":246,
+    "eventId":"bca9a9c5-806b-4c56-8526-6898d9a34ae7",
+    "name":"Εισιτήριο Αγώνα - Θύρα Φιλάθλων",
+    "price":10.0,
+    "quantity":240,
+    "available":235
+  },
+  {
+    "id":247,
+    "eventId":"bca9a9c5-806b-4c56-8526-6898d9a34ae7",
+    "name":"Θύρα VIP Lounge",
+    "price":66.5,
+    "quantity":15,
+    "available":13
+  },
+  {
+    "id":248,
+    "eventId":"bca9a9c5-806b-4c56-8526-6898d9a34ae7",
+    "name":"Οικογενειακό Πακέτο",
+    "price":23.5,
+    "quantity":45,
+    "available":43
+  },
+  {
+    "id":249,
+    "eventId":"90eb2b8f-4c06-4a07-bbc7-c6c857f2c402",
+    "name":"Μονοήμερο Εισιτήριο Φεστιβάλ",
+    "price":70.0,
+    "quantity":350,
+    "available":343
+  },
+  {
+    "id":250,
+    "eventId":"90eb2b8f-4c06-4a07-bbc7-c6c857f2c402",
+    "name":"Τριήμερο Εισιτήριο Φεστιβάλ",
+    "price":171.0,
+    "quantity":280,
+    "available":276
+  },
+  {
+    "id":251,
+    "eventId":"90eb2b8f-4c06-4a07-bbc7-c6c857f2c402",
+    "name":"Premium Camp Pass",
+    "price":280.0,
+    "quantity":70,
+    "available":65
+  },
+  {
+    "id":252,
+    "eventId":"00a6ea65-1763-4811-9896-7c9ca7622bf9",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":71.0,
+    "quantity":195,
+    "available":177
+  },
+  {
+    "id":253,
+    "eventId":"00a6ea65-1763-4811-9896-7c9ca7622bf9",
+    "name":"Online Παρακολούθηση",
+    "price":30.0,
+    "quantity":455,
+    "available":449
+  },
+  {
+    "id":254,
+    "eventId":"07d2f8f4-50c2-48e9-b39e-9dc463cdd748",
+    "name":"Μονοήμερο Εισιτήριο Φεστιβάλ",
+    "price":50.0,
+    "quantity":400,
+    "available":390
+  },
+  {
+    "id":255,
+    "eventId":"07d2f8f4-50c2-48e9-b39e-9dc463cdd748",
+    "name":"Τριήμερο Εισιτήριο Φεστιβάλ",
+    "price":122.0,
+    "quantity":320,
+    "available":316
+  },
+  {
+    "id":256,
+    "eventId":"07d2f8f4-50c2-48e9-b39e-9dc463cdd748",
+    "name":"Premium Camp Pass",
+    "price":200.0,
+    "quantity":80,
+    "available":73
+  },
+  {
+    "id":257,
+    "eventId":"7627e9db-4ba4-46df-bed4-c713bf9797bc",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":35.5,
+    "quantity":90,
+    "available":83
+  },
+  {
+    "id":258,
+    "eventId":"7627e9db-4ba4-46df-bed4-c713bf9797bc",
+    "name":"Online Παρακολούθηση",
+    "price":15.0,
+    "quantity":210,
+    "available":208
+  },
+  {
+    "id":259,
+    "eventId":"d5e88f7f-9e1a-4995-99e4-4b354fe9cc4b",
+    "name":"Απλή Είσοδος Μουσείου\/Έκθεσης",
+    "price":60.0,
+    "quantity":228,
+    "available":224
+  },
+  {
+    "id":260,
+    "eventId":"d5e88f7f-9e1a-4995-99e4-4b354fe9cc4b",
+    "name":"Είσοδος με Ξενάγηση",
+    "price":110.0,
+    "quantity":70,
+    "available":66
+  },
+  {
+    "id":261,
+    "eventId":"d5e88f7f-9e1a-4995-99e4-4b354fe9cc4b",
+    "name":"Μειωμένο (ΑμεΑ \/ Συνταξιούχοι)",
+    "price":30.0,
+    "quantity":52,
+    "available":49
+  },
+  {
+    "id":262,
+    "eventId":"216277b1-ac51-4f69-a401-12ac1c984851",
+    "name":"Εισιτήριο Αγώνα - Θύρα Φιλάθλων",
+    "price":25.0,
+    "quantity":760,
+    "available":752
+  },
+  {
+    "id":263,
+    "eventId":"216277b1-ac51-4f69-a401-12ac1c984851",
+    "name":"Θύρα VIP Lounge",
+    "price":166.5,
+    "quantity":48,
+    "available":44
+  },
+  {
+    "id":264,
+    "eventId":"216277b1-ac51-4f69-a401-12ac1c984851",
+    "name":"Οικογενειακό Πακέτο",
+    "price":58.5,
+    "quantity":142,
+    "available":140
+  },
+  {
+    "id":265,
+    "eventId":"fd8a9077-fccc-40ef-bbb5-870eff397de4",
+    "name":"Κανονικό Εισιτήριο Συνεδρίου",
+    "price":45.0,
+    "quantity":240,
+    "available":225
+  },
+  {
+    "id":266,
+    "eventId":"fd8a9077-fccc-40ef-bbb5-870eff397de4",
+    "name":"Φοιτητικό \/ Ακαδημαϊκό",
+    "price":15.0,
+    "quantity":100,
+    "available":97
+  },
+  {
+    "id":267,
+    "eventId":"fd8a9077-fccc-40ef-bbb5-870eff397de4",
+    "name":"Εταιρικό Πακέτο",
+    "price":36.0,
+    "quantity":60,
+    "available":55
+  },
+  {
+    "id":268,
+    "eventId":"3a5efa3d-ef82-41e2-913a-b67a6710cac4",
+    "name":"Μονοήμερο Εισιτήριο Φεστιβάλ",
+    "price":10.0,
+    "quantity":350,
+    "available":343
+  },
+  {
+    "id":269,
+    "eventId":"3a5efa3d-ef82-41e2-913a-b67a6710cac4",
+    "name":"Τριήμερο Εισιτήριο Φεστιβάλ",
+    "price":24.5,
+    "quantity":280,
+    "available":278
+  },
+  {
+    "id":270,
+    "eventId":"3a5efa3d-ef82-41e2-913a-b67a6710cac4",
+    "name":"Premium Camp Pass",
+    "price":40.0,
+    "quantity":70,
+    "available":65
+  },
+  {
+    "id":271,
+    "eventId":"a2be4f80-e567-4644-a0b4-525f2acf3666",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":24.0,
+    "quantity":270,
+    "available":266
+  },
+  {
+    "id":272,
+    "eventId":"a2be4f80-e567-4644-a0b4-525f2acf3666",
+    "name":"Online Παρακολούθηση",
+    "price":10.0,
+    "quantity":630,
+    "available":629
+  },
+  {
+    "id":273,
+    "eventId":"a4998daa-7670-4e8b-a465-619986ac3c14",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":35.5,
+    "quantity":240,
+    "available":238
+  },
+  {
+    "id":274,
+    "eventId":"a4998daa-7670-4e8b-a465-619986ac3c14",
+    "name":"Online Παρακολούθηση",
+    "price":15.0,
+    "quantity":560,
+    "available":557
+  },
+  {
+    "id":275,
+    "eventId":"8a3e2fc9-73d0-4777-8c55-6999281680e9",
+    "name":"Εισιτήριο Αγώνα - Θύρα Φιλάθλων",
+    "price":70.0,
+    "quantity":640,
+    "available":634
+  },
+  {
+    "id":276,
+    "eventId":"8a3e2fc9-73d0-4777-8c55-6999281680e9",
+    "name":"Θύρα VIP Lounge",
+    "price":466.5,
+    "quantity":40,
+    "available":37
+  },
+  {
+    "id":277,
+    "eventId":"8a3e2fc9-73d0-4777-8c55-6999281680e9",
+    "name":"Οικογενειακό Πακέτο",
+    "price":163.5,
+    "quantity":120,
+    "available":117
+  },
+  {
+    "id":278,
+    "eventId":"20101e12-fbf0-4aef-9e1a-636fd637b0e4",
+    "name":"Γενική Είσοδος",
+    "price":28.0,
+    "quantity":630,
+    "available":626
+  },
+  {
+    "id":279,
+    "eventId":"20101e12-fbf0-4aef-9e1a-636fd637b0e4",
+    "name":"Εισιτήριο VIP",
+    "price":83.5,
+    "quantity":90,
+    "available":88
+  },
+  {
+    "id":280,
+    "eventId":"20101e12-fbf0-4aef-9e1a-636fd637b0e4",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":20.0,
+    "quantity":180,
+    "available":177
+  },
+  {
+    "id":281,
+    "eventId":"5c4a78dd-917f-41c2-802d-38713ac7ec17",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":237.5,
+    "quantity":180,
+    "available":177
+  },
+  {
+    "id":282,
+    "eventId":"5c4a78dd-917f-41c2-802d-38713ac7ec17",
+    "name":"Online Παρακολούθηση",
+    "price":100.0,
+    "quantity":420,
+    "available":418
+  },
+  {
+    "id":283,
+    "eventId":"38daa3f1-864e-4b1b-bed7-ecbc346f3d62",
+    "name":"Απλή Είσοδος Μουσείου\/Έκθεσης",
+    "price":200.0,
+    "quantity":195,
+    "available":191
+  },
+  {
+    "id":284,
+    "eventId":"38daa3f1-864e-4b1b-bed7-ecbc346f3d62",
+    "name":"Είσοδος με Ξενάγηση",
+    "price":366.5,
+    "quantity":60,
+    "available":58
+  },
+  {
+    "id":285,
+    "eventId":"38daa3f1-864e-4b1b-bed7-ecbc346f3d62",
+    "name":"Μειωμένο (ΑμεΑ \/ Συνταξιούχοι)",
+    "price":100.0,
+    "quantity":45,
+    "available":43
+  },
+  {
+    "id":286,
+    "eventId":"3cf4cdd0-7c99-471b-a54a-399f9ca07b90",
+    "name":"Μονοήμερο Εισιτήριο Φεστιβάλ",
+    "price":10.0,
+    "quantity":225,
+    "available":222
+  },
+  {
+    "id":287,
+    "eventId":"3cf4cdd0-7c99-471b-a54a-399f9ca07b90",
+    "name":"Τριήμερο Εισιτήριο Φεστιβάλ",
+    "price":24.5,
+    "quantity":180,
+    "available":180
+  },
+  {
+    "id":288,
+    "eventId":"3cf4cdd0-7c99-471b-a54a-399f9ca07b90",
+    "name":"Premium Camp Pass",
+    "price":40.0,
+    "quantity":45,
+    "available":44
+  },
+  {
+    "id":289,
+    "eventId":"87ff772a-f8de-485f-ad9a-ea85a028bb70",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":237.5,
+    "quantity":210,
+    "available":206
+  },
+  {
+    "id":290,
+    "eventId":"87ff772a-f8de-485f-ad9a-ea85a028bb70",
+    "name":"Online Παρακολούθηση",
+    "price":100.0,
+    "quantity":490,
+    "available":488
+  },
+  {
+    "id":291,
+    "eventId":"69d67b5a-33c2-4fea-9dbe-03138a5fca0b",
+    "name":"Κανονικό Εισιτήριο Συνεδρίου",
+    "price":300.0,
+    "quantity":360,
+    "available":354
+  },
+  {
+    "id":292,
+    "eventId":"69d67b5a-33c2-4fea-9dbe-03138a5fca0b",
+    "name":"Φοιτητικό \/ Ακαδημαϊκό",
+    "price":100.0,
+    "quantity":150,
+    "available":149
+  },
+  {
+    "id":293,
+    "eventId":"69d67b5a-33c2-4fea-9dbe-03138a5fca0b",
+    "name":"Εταιρικό Πακέτο",
+    "price":240.0,
+    "quantity":90,
+    "available":90
+  },
+  {
+    "id":294,
+    "eventId":"a17595dd-00e2-40d7-b766-88b1a024bd91",
+    "name":"Γενική Είσοδος",
+    "price":13.0,
+    "quantity":338,
+    "available":335
+  },
+  {
+    "id":295,
+    "eventId":"a17595dd-00e2-40d7-b766-88b1a024bd91",
+    "name":"Θέσεις Premium (Recliner)",
+    "price":20.0,
+    "quantity":67,
+    "available":66
+  },
+  {
+    "id":296,
+    "eventId":"a17595dd-00e2-40d7-b766-88b1a024bd91",
+    "name":"Παιδικό \/ Φοιτητικό",
+    "price":10.0,
+    "quantity":45,
+    "available":45
+  },
+  {
+    "id":297,
+    "eventId":"380dfb16-6e1c-42a2-8877-c2da089ae11f",
+    "name":"Online Παρακολούθηση Webinar",
+    "price":50.0,
+    "quantity":200,
+    "available":196
+  },
+  {
+    "id":298,
+    "eventId":"6e258ec7-b54d-4808-b44b-700989bf06ca",
+    "name":"Γενική Είσοδος",
+    "price":21.0,
+    "quantity":350,
+    "available":344
+  },
+  {
+    "id":299,
+    "eventId":"6e258ec7-b54d-4808-b44b-700989bf06ca",
+    "name":"Εισιτήριο VIP",
+    "price":62.5,
+    "quantity":50,
+    "available":48
+  },
+  {
+    "id":300,
+    "eventId":"6e258ec7-b54d-4808-b44b-700989bf06ca",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":15.0,
+    "quantity":100,
+    "available":100
+  },
+  {
+    "id":301,
+    "eventId":"53ad5e85-9c02-418b-9908-9e1c65fed2ef",
+    "name":"Εισιτήριο Αγώνα - Θύρα Φιλάθλων",
+    "price":20.0,
+    "quantity":240,
+    "available":233
+  },
+  {
+    "id":302,
+    "eventId":"53ad5e85-9c02-418b-9908-9e1c65fed2ef",
+    "name":"Θύρα VIP Lounge",
+    "price":133.5,
+    "quantity":15,
+    "available":12
+  },
+  {
+    "id":303,
+    "eventId":"53ad5e85-9c02-418b-9908-9e1c65fed2ef",
+    "name":"Οικογενειακό Πακέτο",
+    "price":46.5,
+    "quantity":45,
+    "available":44
+  },
+  {
+    "id":304,
+    "eventId":"dbedede5-b903-489b-a550-20f727001089",
+    "name":"Απλή Είσοδος Μουσείου\/Έκθεσης",
+    "price":200.0,
+    "quantity":390,
+    "available":387
+  },
+  {
+    "id":305,
+    "eventId":"dbedede5-b903-489b-a550-20f727001089",
+    "name":"Είσοδος με Ξενάγηση",
+    "price":366.5,
+    "quantity":120,
+    "available":118
+  },
+  {
+    "id":306,
+    "eventId":"dbedede5-b903-489b-a550-20f727001089",
+    "name":"Μειωμένο (ΑμεΑ \/ Συνταξιούχοι)",
+    "price":100.0,
+    "quantity":90,
+    "available":86
+  },
+  {
+    "id":307,
+    "eventId":"fefdf4a3-688c-42f3-96c7-7f0a7d6f8f10",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":237.5,
+    "quantity":75,
+    "available":69
+  },
+  {
+    "id":308,
+    "eventId":"fefdf4a3-688c-42f3-96c7-7f0a7d6f8f10",
+    "name":"Online Παρακολούθηση",
+    "price":100.0,
+    "quantity":175,
+    "available":175
+  },
+  {
+    "id":309,
+    "eventId":"af7d11db-2ee1-4c33-9e80-0c21f5a07cf9",
+    "name":"Μονοήμερο Εισιτήριο Φεστιβάλ",
+    "price":15.0,
+    "quantity":375,
+    "available":353
+  },
+  {
+    "id":310,
+    "eventId":"af7d11db-2ee1-4c33-9e80-0c21f5a07cf9",
+    "name":"Τριήμερο Εισιτήριο Φεστιβάλ",
+    "price":36.5,
+    "quantity":300,
+    "available":296
+  },
+  {
+    "id":311,
+    "eventId":"af7d11db-2ee1-4c33-9e80-0c21f5a07cf9",
+    "name":"Premium Camp Pass",
+    "price":60.0,
+    "quantity":75,
+    "available":65
+  },
+  {
+    "id":312,
+    "eventId":"63125dcf-5b75-4494-9ba8-d81ed073b820",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":59.5,
+    "quantity":60,
+    "available":50
+  },
+  {
+    "id":313,
+    "eventId":"63125dcf-5b75-4494-9ba8-d81ed073b820",
+    "name":"Online Παρακολούθηση",
+    "price":25.0,
+    "quantity":140,
+    "available":133
+  },
+  {
+    "id":314,
+    "eventId":"898e166c-03b0-4b0a-ae08-26e654450695",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":71.0,
+    "quantity":180,
+    "available":177
+  },
+  {
+    "id":315,
+    "eventId":"898e166c-03b0-4b0a-ae08-26e654450695",
+    "name":"Online Παρακολούθηση",
+    "price":30.0,
+    "quantity":420,
+    "available":417
+  },
+  {
+    "id":316,
+    "eventId":"4c2c5970-1cc8-4aaf-be33-bc542bca5b76",
+    "name":"Κανονικό Εισιτήριο Συνεδρίου",
+    "price":60.0,
+    "quantity":360,
+    "available":332
+  },
+  {
+    "id":317,
+    "eventId":"4c2c5970-1cc8-4aaf-be33-bc542bca5b76",
+    "name":"Φοιτητικό \/ Ακαδημαϊκό",
+    "price":20.0,
+    "quantity":150,
+    "available":139
+  },
+  {
+    "id":318,
+    "eventId":"4c2c5970-1cc8-4aaf-be33-bc542bca5b76",
+    "name":"Εταιρικό Πακέτο",
+    "price":48.0,
+    "quantity":90,
+    "available":78
+  },
+  {
+    "id":319,
+    "eventId":"b76a9e7f-a54e-4051-b40b-2ec6d1565c29",
+    "name":"Γενική Είσοδος",
+    "price":28.0,
+    "quantity":490,
+    "available":486
+  },
+  {
+    "id":320,
+    "eventId":"b76a9e7f-a54e-4051-b40b-2ec6d1565c29",
+    "name":"Εισιτήριο VIP",
+    "price":83.5,
+    "quantity":70,
+    "available":67
+  },
+  {
+    "id":321,
+    "eventId":"b76a9e7f-a54e-4051-b40b-2ec6d1565c29",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":20.0,
+    "quantity":140,
+    "available":137
+  },
+  {
+    "id":322,
+    "eventId":"8b892dc7-1eee-4911-b954-b1d2d285f478",
+    "name":"Απλή Είσοδος Μουσείου\/Έκθεσης",
+    "price":140.0,
+    "quantity":293,
+    "available":287
+  },
+  {
+    "id":323,
+    "eventId":"8b892dc7-1eee-4911-b954-b1d2d285f478",
+    "name":"Είσοδος με Ξενάγηση",
+    "price":256.5,
+    "quantity":90,
+    "available":87
+  },
+  {
+    "id":324,
+    "eventId":"8b892dc7-1eee-4911-b954-b1d2d285f478",
+    "name":"Μειωμένο (ΑμεΑ \/ Συνταξιούχοι)",
+    "price":70.0,
+    "quantity":67,
+    "available":65
+  },
+  {
+    "id":325,
+    "eventId":"ac74946a-90d9-4610-8f18-6dfd21ad81fe",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":59.5,
+    "quantity":195,
+    "available":188
+  },
+  {
+    "id":326,
+    "eventId":"ac74946a-90d9-4610-8f18-6dfd21ad81fe",
+    "name":"Online Παρακολούθηση",
+    "price":25.0,
+    "quantity":455,
+    "available":450
+  },
+  {
+    "id":327,
+    "eventId":"43c531d7-f1d0-4ba0-a697-568f6b9df330",
+    "name":"Μονοήμερο Εισιτήριο Φεστιβάλ",
+    "price":70.0,
+    "quantity":200,
+    "available":196
+  },
+  {
+    "id":328,
+    "eventId":"43c531d7-f1d0-4ba0-a697-568f6b9df330",
+    "name":"Τριήμερο Εισιτήριο Φεστιβάλ",
+    "price":171.0,
+    "quantity":160,
+    "available":159
+  },
+  {
+    "id":329,
+    "eventId":"43c531d7-f1d0-4ba0-a697-568f6b9df330",
+    "name":"Premium Camp Pass",
+    "price":280.0,
+    "quantity":40,
+    "available":40
+  },
+  {
+    "id":330,
+    "eventId":"e3216e26-adad-4b75-a533-c5e7e4dc27a8",
+    "name":"Εισιτήριο Αγώνα - Θύρα Φιλάθλων",
+    "price":10.0,
+    "quantity":640,
+    "available":633
+  },
+  {
+    "id":331,
+    "eventId":"e3216e26-adad-4b75-a533-c5e7e4dc27a8",
+    "name":"Θύρα VIP Lounge",
+    "price":66.5,
+    "quantity":40,
+    "available":36
+  },
+  {
+    "id":332,
+    "eventId":"e3216e26-adad-4b75-a533-c5e7e4dc27a8",
+    "name":"Οικογενειακό Πακέτο",
+    "price":23.5,
+    "quantity":120,
+    "available":114
+  },
+  {
+    "id":333,
+    "eventId":"3fd9f508-d8df-4228-996c-08dbb4cc0142",
+    "name":"Κανονικό Εισιτήριο Συνεδρίου",
+    "price":90.0,
+    "quantity":300,
+    "available":291
+  },
+  {
+    "id":334,
+    "eventId":"3fd9f508-d8df-4228-996c-08dbb4cc0142",
+    "name":"Φοιτητικό \/ Ακαδημαϊκό",
+    "price":30.0,
+    "quantity":125,
+    "available":121
+  },
+  {
+    "id":335,
+    "eventId":"3fd9f508-d8df-4228-996c-08dbb4cc0142",
+    "name":"Εταιρικό Πακέτο",
+    "price":72.0,
+    "quantity":75,
+    "available":68
+  },
+  {
+    "id":336,
+    "eventId":"d87eac1c-cbc0-43b0-80ce-cd69384a5782",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":71.0,
+    "quantity":180,
+    "available":177
+  },
+  {
+    "id":337,
+    "eventId":"d87eac1c-cbc0-43b0-80ce-cd69384a5782",
+    "name":"Online Παρακολούθηση",
+    "price":30.0,
+    "quantity":420,
+    "available":420
+  },
+  {
+    "id":338,
+    "eventId":"ca485969-c4d0-456f-9616-3d2577a92d55",
+    "name":"Γενική Είσοδος",
+    "price":139.0,
+    "quantity":700,
+    "available":696
+  },
+  {
+    "id":339,
+    "eventId":"ca485969-c4d0-456f-9616-3d2577a92d55",
+    "name":"Εισιτήριο VIP",
+    "price":416.5,
+    "quantity":100,
+    "available":100
+  },
+  {
+    "id":340,
+    "eventId":"ca485969-c4d0-456f-9616-3d2577a92d55",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":100.0,
+    "quantity":200,
+    "available":198
+  },
+  {
+    "id":341,
+    "eventId":"f97e079b-8d65-44e2-bb0c-060772d897fc",
+    "name":"Γενική Είσοδος",
+    "price":64.5,
+    "quantity":713,
+    "available":697
+  },
+  {
+    "id":342,
+    "eventId":"f97e079b-8d65-44e2-bb0c-060772d897fc",
+    "name":"Θέσεις Premium (Recliner)",
+    "price":100.0,
+    "quantity":142,
+    "available":130
+  },
+  {
+    "id":343,
+    "eventId":"f97e079b-8d65-44e2-bb0c-060772d897fc",
+    "name":"Παιδικό \/ Φοιτητικό",
+    "price":50.0,
+    "quantity":95,
+    "available":85
+  },
+  {
+    "id":344,
+    "eventId":"b367e59a-11c4-4ca6-8e52-dba82db6f9d2",
+    "name":"Απλή Είσοδος Μουσείου\/Έκθεσης",
+    "price":60.0,
+    "quantity":520,
+    "available":519
+  },
+  {
+    "id":345,
+    "eventId":"b367e59a-11c4-4ca6-8e52-dba82db6f9d2",
+    "name":"Είσοδος με Ξενάγηση",
+    "price":110.0,
+    "quantity":160,
+    "available":158
+  },
+  {
+    "id":346,
+    "eventId":"b367e59a-11c4-4ca6-8e52-dba82db6f9d2",
+    "name":"Μειωμένο (ΑμεΑ \/ Συνταξιούχοι)",
+    "price":30.0,
+    "quantity":120,
+    "available":120
+  },
+  {
+    "id":347,
+    "eventId":"809362e8-17ec-4b6a-afb4-5b5cff51f025",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":24.0,
+    "quantity":75,
+    "available":64
+  },
+  {
+    "id":348,
+    "eventId":"809362e8-17ec-4b6a-afb4-5b5cff51f025",
+    "name":"Online Παρακολούθηση",
+    "price":10.0,
+    "quantity":175,
+    "available":171
+  },
+  {
+    "id":349,
+    "eventId":"b2b4cffb-6a29-42f4-a895-8341a208ad73",
+    "name":"Μονοήμερο Εισιτήριο Φεστιβάλ",
+    "price":50.0,
+    "quantity":125,
+    "available":101
+  },
+  {
+    "id":350,
+    "eventId":"b2b4cffb-6a29-42f4-a895-8341a208ad73",
+    "name":"Τριήμερο Εισιτήριο Φεστιβάλ",
+    "price":122.0,
+    "quantity":100,
+    "available":88
+  },
+  {
+    "id":351,
+    "eventId":"b2b4cffb-6a29-42f4-a895-8341a208ad73",
+    "name":"Premium Camp Pass",
+    "price":200.0,
+    "quantity":25,
+    "available":13
+  },
+  {
+    "id":352,
+    "eventId":"0a767d91-5b5f-4020-b95e-ede2e77205dc",
+    "name":"Εισιτήριο Αγώνα - Θύρα Φιλάθλων",
+    "price":100.0,
+    "quantity":400,
+    "available":396
+  },
+  {
+    "id":353,
+    "eventId":"0a767d91-5b5f-4020-b95e-ede2e77205dc",
+    "name":"Θύρα VIP Lounge",
+    "price":666.5,
+    "quantity":25,
+    "available":24
+  },
+  {
+    "id":354,
+    "eventId":"0a767d91-5b5f-4020-b95e-ede2e77205dc",
+    "name":"Οικογενειακό Πακέτο",
+    "price":233.5,
+    "quantity":75,
+    "available":74
+  },
+  {
+    "id":355,
+    "eventId":"0708fcde-b175-45a7-863a-923876992230",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":24.0,
+    "quantity":255,
+    "available":250
+  },
+  {
+    "id":356,
+    "eventId":"0708fcde-b175-45a7-863a-923876992230",
+    "name":"Online Παρακολούθηση",
+    "price":10.0,
+    "quantity":595,
+    "available":594
+  },
+  {
+    "id":357,
+    "eventId":"de3cb206-3ac7-4a81-9122-c2bc751f045e",
+    "name":"Κανονικό Εισιτήριο Συνεδρίου",
+    "price":90.0,
+    "quantity":180,
+    "available":165
+  },
+  {
+    "id":358,
+    "eventId":"de3cb206-3ac7-4a81-9122-c2bc751f045e",
+    "name":"Φοιτητικό \/ Ακαδημαϊκό",
+    "price":30.0,
+    "quantity":75,
+    "available":69
+  },
+  {
+    "id":359,
+    "eventId":"de3cb206-3ac7-4a81-9122-c2bc751f045e",
+    "name":"Εταιρικό Πακέτο",
+    "price":72.0,
+    "quantity":45,
+    "available":41
+  },
+  {
+    "id":360,
+    "eventId":"0d3ba249-a011-4eb4-b553-02e9b9614d9b",
+    "name":"Γενική Είσοδος",
+    "price":97.0,
+    "quantity":700,
+    "available":697
+  },
+  {
+    "id":361,
+    "eventId":"0d3ba249-a011-4eb4-b553-02e9b9614d9b",
+    "name":"Εισιτήριο VIP",
+    "price":291.5,
+    "quantity":100,
+    "available":99
+  },
+  {
+    "id":362,
+    "eventId":"0d3ba249-a011-4eb4-b553-02e9b9614d9b",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":70.0,
+    "quantity":200,
+    "available":197
+  },
+  {
+    "id":363,
+    "eventId":"fe3f10b5-875e-4785-a19a-e1998b159ba0",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":71.0,
+    "quantity":240,
+    "available":225
+  },
+  {
+    "id":364,
+    "eventId":"fe3f10b5-875e-4785-a19a-e1998b159ba0",
+    "name":"Online Παρακολούθηση",
+    "price":30.0,
+    "quantity":560,
+    "available":553
+  },
+  {
+    "id":365,
+    "eventId":"6d731672-9060-4978-affc-6eb79e911e50",
+    "name":"Απλή Είσοδος Μουσείου\/Έκθεσης",
+    "price":40.0,
+    "quantity":130,
+    "available":128
+  },
+  {
+    "id":366,
+    "eventId":"6d731672-9060-4978-affc-6eb79e911e50",
+    "name":"Είσοδος με Ξενάγηση",
+    "price":73.5,
+    "quantity":40,
+    "available":38
+  },
+  {
+    "id":367,
+    "eventId":"6d731672-9060-4978-affc-6eb79e911e50",
+    "name":"Μειωμένο (ΑμεΑ \/ Συνταξιούχοι)",
+    "price":20.0,
+    "quantity":30,
+    "available":28
+  },
+  {
+    "id":368,
+    "eventId":"785b4488-e409-4d04-bd94-e794a31fa108",
+    "name":"Μονοήμερο Εισιτήριο Φεστιβάλ",
+    "price":15.0,
+    "quantity":150,
+    "available":139
+  },
+  {
+    "id":369,
+    "eventId":"785b4488-e409-4d04-bd94-e794a31fa108",
+    "name":"Τριήμερο Εισιτήριο Φεστιβάλ",
+    "price":36.5,
+    "quantity":120,
+    "available":118
+  },
+  {
+    "id":370,
+    "eventId":"785b4488-e409-4d04-bd94-e794a31fa108",
+    "name":"Premium Camp Pass",
+    "price":60.0,
+    "quantity":30,
+    "available":28
+  },
+  {
+    "id":371,
+    "eventId":"ecf39983-b17f-40a4-920e-4a797afa60d4",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":35.5,
+    "quantity":210,
+    "available":202
+  },
+  {
+    "id":372,
+    "eventId":"ecf39983-b17f-40a4-920e-4a797afa60d4",
+    "name":"Online Παρακολούθηση",
+    "price":15.0,
+    "quantity":490,
+    "available":486
+  },
+  {
+    "id":373,
+    "eventId":"56a78119-10e8-4241-8efb-5ba6a36d7c88",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":24.0,
+    "quantity":180,
+    "available":171
+  },
+  {
+    "id":374,
+    "eventId":"56a78119-10e8-4241-8efb-5ba6a36d7c88",
+    "name":"Online Παρακολούθηση",
+    "price":10.0,
+    "quantity":420,
+    "available":418
+  },
+  {
+    "id":375,
+    "eventId":"e9900093-8311-4f3f-923a-4d50faad4f45",
+    "name":"Κανονικό Εισιτήριο Συνεδρίου",
+    "price":45.0,
+    "quantity":330,
+    "available":313
+  },
+  {
+    "id":376,
+    "eventId":"e9900093-8311-4f3f-923a-4d50faad4f45",
+    "name":"Φοιτητικό \/ Ακαδημαϊκό",
+    "price":15.0,
+    "quantity":138,
+    "available":127
+  },
+  {
+    "id":377,
+    "eventId":"e9900093-8311-4f3f-923a-4d50faad4f45",
+    "name":"Εταιρικό Πακέτο",
+    "price":36.0,
+    "quantity":82,
+    "available":74
+  },
+  {
+    "id":378,
+    "eventId":"cf8119f9-9e52-45f7-8120-68ef7eb76951",
+    "name":"Γενική Είσοδος",
+    "price":21.0,
+    "quantity":525,
+    "available":508
+  },
+  {
+    "id":379,
+    "eventId":"cf8119f9-9e52-45f7-8120-68ef7eb76951",
+    "name":"Εισιτήριο VIP",
+    "price":62.5,
+    "quantity":75,
+    "available":71
+  },
+  {
+    "id":380,
+    "eventId":"cf8119f9-9e52-45f7-8120-68ef7eb76951",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":15.0,
+    "quantity":150,
+    "available":143
+  },
+  {
+    "id":381,
+    "eventId":"e2bd03ef-1ae6-4601-8f0f-e35ca0dfae2d",
+    "name":"Απλή Είσοδος Μουσείου\/Έκθεσης",
+    "price":30.0,
+    "quantity":488,
+    "available":478
+  },
+  {
+    "id":382,
+    "eventId":"e2bd03ef-1ae6-4601-8f0f-e35ca0dfae2d",
+    "name":"Είσοδος με Ξενάγηση",
+    "price":55.0,
+    "quantity":150,
+    "available":146
+  },
+  {
+    "id":383,
+    "eventId":"e2bd03ef-1ae6-4601-8f0f-e35ca0dfae2d",
+    "name":"Μειωμένο (ΑμεΑ \/ Συνταξιούχοι)",
+    "price":15.0,
+    "quantity":112,
+    "available":108
+  },
+  {
+    "id":384,
+    "eventId":"8844976a-be85-4510-b00a-45bcc355da49",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":71.0,
+    "quantity":135,
+    "available":132
+  },
+  {
+    "id":385,
+    "eventId":"8844976a-be85-4510-b00a-45bcc355da49",
+    "name":"Online Παρακολούθηση",
+    "price":30.0,
+    "quantity":315,
+    "available":313
+  },
+  {
+    "id":386,
+    "eventId":"f7a3b192-e3ea-4e71-bf4b-fafbdcb96005",
+    "name":"Μονοήμερο Εισιτήριο Φεστιβάλ",
+    "price":70.0,
+    "quantity":375,
+    "available":368
+  },
+  {
+    "id":387,
+    "eventId":"f7a3b192-e3ea-4e71-bf4b-fafbdcb96005",
+    "name":"Τριήμερο Εισιτήριο Φεστιβάλ",
+    "price":171.0,
+    "quantity":300,
+    "available":296
+  },
+  {
+    "id":388,
+    "eventId":"f7a3b192-e3ea-4e71-bf4b-fafbdcb96005",
+    "name":"Premium Camp Pass",
+    "price":280.0,
+    "quantity":75,
+    "available":71
+  },
+  {
+    "id":389,
+    "eventId":"72c1fd50-a2b8-4fa6-b3e6-7dcde6a9ce6c",
+    "name":"Εισιτήριο Αγώνα - Θύρα Φιλάθλων",
+    "price":70.0,
+    "quantity":240,
+    "available":237
+  },
+  {
+    "id":390,
+    "eventId":"72c1fd50-a2b8-4fa6-b3e6-7dcde6a9ce6c",
+    "name":"Θύρα VIP Lounge",
+    "price":466.5,
+    "quantity":15,
+    "available":13
+  },
+  {
+    "id":391,
+    "eventId":"72c1fd50-a2b8-4fa6-b3e6-7dcde6a9ce6c",
+    "name":"Οικογενειακό Πακέτο",
+    "price":163.5,
+    "quantity":45,
+    "available":43
+  },
+  {
+    "id":392,
+    "eventId":"b0d6c311-cb51-40ee-8f3f-16d8c4706fea",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":24.0,
+    "quantity":75,
+    "available":65
+  },
+  {
+    "id":393,
+    "eventId":"b0d6c311-cb51-40ee-8f3f-16d8c4706fea",
+    "name":"Online Παρακολούθηση",
+    "price":10.0,
+    "quantity":175,
+    "available":168
+  },
+  {
+    "id":394,
+    "eventId":"7c1d4d89-4f21-414b-b36a-31cf53c961aa",
+    "name":"Ατομικό Εισιτήριο Γκαλά",
+    "price":20.0,
+    "quantity":490,
+    "available":477
+  },
+  {
+    "id":395,
+    "eventId":"7c1d4d89-4f21-414b-b36a-31cf53c961aa",
+    "name":"Εισιτήριο Ζευγαριού",
+    "price":35.0,
+    "quantity":140,
+    "available":137
+  },
+  {
+    "id":396,
+    "eventId":"7c1d4d89-4f21-414b-b36a-31cf53c961aa",
+    "name":"Τραπέζι Χορηγών (10 άτομα)",
+    "price":250.0,
+    "quantity":70,
+    "available":66
+  },
+  {
+    "id":397,
+    "eventId":"7a2461de-8b6b-4af0-ac85-15c7879f1079",
+    "name":"Κανονικό Εισιτήριο Συνεδρίου",
+    "price":30.0,
+    "quantity":510,
+    "available":505
+  },
+  {
+    "id":398,
+    "eventId":"7a2461de-8b6b-4af0-ac85-15c7879f1079",
+    "name":"Φοιτητικό \/ Ακαδημαϊκό",
+    "price":10.0,
+    "quantity":213,
+    "available":208
+  },
+  {
+    "id":399,
+    "eventId":"7a2461de-8b6b-4af0-ac85-15c7879f1079",
+    "name":"Εταιρικό Πακέτο",
+    "price":24.0,
+    "quantity":127,
+    "available":123
+  },
+  {
+    "id":400,
+    "eventId":"2f76d6dc-2d11-4b14-9c32-ad3aa8d36a74",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":24.0,
+    "quantity":150,
+    "available":150
+  },
+  {
+    "id":401,
+    "eventId":"2f76d6dc-2d11-4b14-9c32-ad3aa8d36a74",
+    "name":"Online Παρακολούθηση",
+    "price":10.0,
+    "quantity":350,
+    "available":350
+  },
+  {
+    "id":402,
+    "eventId":"311e58e2-c665-4703-b831-ee7576724288",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":35.5,
+    "quantity":150,
+    "available":150
+  },
+  {
+    "id":403,
+    "eventId":"311e58e2-c665-4703-b831-ee7576724288",
+    "name":"Online Παρακολούθηση",
+    "price":15.0,
+    "quantity":350,
+    "available":350
+  },
+  {
+    "id":404,
+    "eventId":"5a62053f-0008-40a3-8eec-acd890a7aa8d",
+    "name":"Κανονικό Εισιτήριο Συνεδρίου",
+    "price":60.0,
+    "quantity":540,
+    "available":526
+  },
+  {
+    "id":405,
+    "eventId":"5a62053f-0008-40a3-8eec-acd890a7aa8d",
+    "name":"Φοιτητικό \/ Ακαδημαϊκό",
+    "price":20.0,
+    "quantity":225,
+    "available":216
+  },
+  {
+    "id":406,
+    "eventId":"5a62053f-0008-40a3-8eec-acd890a7aa8d",
+    "name":"Εταιρικό Πακέτο",
+    "price":48.0,
+    "quantity":135,
+    "available":129
+  },
+  {
+    "id":407,
+    "eventId":"cfdb2ebd-2276-40f2-809a-3cbc4c6ad58f",
+    "name":"Μονοήμερο Εισιτήριο Φεστιβάλ",
+    "price":50.0,
+    "quantity":350,
+    "available":336
+  },
+  {
+    "id":408,
+    "eventId":"cfdb2ebd-2276-40f2-809a-3cbc4c6ad58f",
+    "name":"Τριήμερο Εισιτήριο Φεστιβάλ",
+    "price":122.0,
+    "quantity":280,
+    "available":274
+  },
+  {
+    "id":409,
+    "eventId":"cfdb2ebd-2276-40f2-809a-3cbc4c6ad58f",
+    "name":"Premium Camp Pass",
+    "price":200.0,
+    "quantity":70,
+    "available":67
+  },
+  {
+    "id":410,
+    "eventId":"54bb6ae5-8f67-4540-93d5-c18abf1b1c61",
+    "name":"Γενική Είσοδος",
+    "price":34.5,
+    "quantity":525,
+    "available":517
+  },
+  {
+    "id":411,
+    "eventId":"54bb6ae5-8f67-4540-93d5-c18abf1b1c61",
+    "name":"Εισιτήριο VIP",
+    "price":104.0,
+    "quantity":75,
+    "available":68
+  },
+  {
+    "id":412,
+    "eventId":"54bb6ae5-8f67-4540-93d5-c18abf1b1c61",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":25.0,
+    "quantity":150,
+    "available":147
+  },
+  {
+    "id":413,
+    "eventId":"30ce72ba-e0d8-48f7-823e-ad00ffa176c2",
+    "name":"Απλή Είσοδος Μουσείου\/Έκθεσης",
+    "price":50.0,
+    "quantity":325,
+    "available":324
+  },
+  {
+    "id":414,
+    "eventId":"30ce72ba-e0d8-48f7-823e-ad00ffa176c2",
+    "name":"Είσοδος με Ξενάγηση",
+    "price":91.5,
+    "quantity":100,
+    "available":98
+  },
+  {
+    "id":415,
+    "eventId":"30ce72ba-e0d8-48f7-823e-ad00ffa176c2",
+    "name":"Μειωμένο (ΑμεΑ \/ Συνταξιούχοι)",
+    "price":25.0,
+    "quantity":75,
+    "available":75
+  },
+  {
+    "id":416,
+    "eventId":"ba01c9ce-ac18-4edc-b00e-2f2644c07f26",
+    "name":"Γενική Είσοδος",
+    "price":128.5,
+    "quantity":488,
+    "available":479
+  },
+  {
+    "id":417,
+    "eventId":"ba01c9ce-ac18-4edc-b00e-2f2644c07f26",
+    "name":"Θέσεις Premium (Recliner)",
+    "price":200.0,
+    "quantity":97,
+    "available":95
+  },
+  {
+    "id":418,
+    "eventId":"ba01c9ce-ac18-4edc-b00e-2f2644c07f26",
+    "name":"Παιδικό \/ Φοιτητικό",
+    "price":100.0,
+    "quantity":65,
+    "available":59
+  },
+  {
+    "id":419,
+    "eventId":"669c2b2a-34f9-4631-92e0-a8270b8711c2",
+    "name":"Ατομικό Εισιτήριο Γκαλά",
+    "price":15.0,
+    "quantity":630,
+    "available":623
+  },
+  {
+    "id":420,
+    "eventId":"669c2b2a-34f9-4631-92e0-a8270b8711c2",
+    "name":"Εισιτήριο Ζευγαριού",
+    "price":26.0,
+    "quantity":180,
+    "available":176
+  },
+  {
+    "id":421,
+    "eventId":"669c2b2a-34f9-4631-92e0-a8270b8711c2",
+    "name":"Τραπέζι Χορηγών (10 άτομα)",
+    "price":187.5,
+    "quantity":90,
+    "available":88
+  },
+  {
+    "id":422,
+    "eventId":"465fb332-b85c-4b0f-9aac-17a2a4ab344d",
+    "name":"Εισιτήριο Αγώνα - Θύρα Φιλάθλων",
+    "price":100.0,
+    "quantity":760,
+    "available":757
+  },
+  {
+    "id":423,
+    "eventId":"465fb332-b85c-4b0f-9aac-17a2a4ab344d",
+    "name":"Θύρα VIP Lounge",
+    "price":666.5,
+    "quantity":48,
+    "available":48
+  },
+  {
+    "id":424,
+    "eventId":"465fb332-b85c-4b0f-9aac-17a2a4ab344d",
+    "name":"Οικογενειακό Πακέτο",
+    "price":233.5,
+    "quantity":142,
+    "available":141
+  },
+  {
+    "id":425,
+    "eventId":"f3a242e9-9161-417e-a244-1ff132b40f3b",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":59.5,
+    "quantity":225,
+    "available":221
+  },
+  {
+    "id":426,
+    "eventId":"f3a242e9-9161-417e-a244-1ff132b40f3b",
+    "name":"Online Παρακολούθηση",
+    "price":25.0,
+    "quantity":525,
+    "available":525
+  },
+  {
+    "id":427,
+    "eventId":"5061f1ba-231f-4307-a03d-b85120a247f8",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":237.5,
+    "quantity":135,
+    "available":123
+  },
+  {
+    "id":428,
+    "eventId":"5061f1ba-231f-4307-a03d-b85120a247f8",
+    "name":"Online Παρακολούθηση",
+    "price":100.0,
+    "quantity":315,
+    "available":311
+  },
+  {
+    "id":429,
+    "eventId":"6775ed1e-1e53-4490-97f3-3fdf7fc038c5",
+    "name":"Απλή Είσοδος Μουσείου\/Έκθεσης",
+    "price":100.0,
+    "quantity":618,
+    "available":611
+  },
+  {
+    "id":430,
+    "eventId":"6775ed1e-1e53-4490-97f3-3fdf7fc038c5",
+    "name":"Είσοδος με Ξενάγηση",
+    "price":183.5,
+    "quantity":190,
+    "available":189
+  },
+  {
+    "id":431,
+    "eventId":"6775ed1e-1e53-4490-97f3-3fdf7fc038c5",
+    "name":"Μειωμένο (ΑμεΑ \/ Συνταξιούχοι)",
+    "price":50.0,
+    "quantity":142,
+    "available":138
+  },
+  {
+    "id":432,
+    "eventId":"bb349518-1a78-40bc-9a4b-e2b552190af3",
+    "name":"Εισιτήριο Αγώνα - Θύρα Φιλάθλων",
+    "price":30.0,
+    "quantity":440,
+    "available":430
+  },
+  {
+    "id":433,
+    "eventId":"bb349518-1a78-40bc-9a4b-e2b552190af3",
+    "name":"Θύρα VIP Lounge",
+    "price":200.0,
+    "quantity":28,
+    "available":23
+  },
+  {
+    "id":434,
+    "eventId":"bb349518-1a78-40bc-9a4b-e2b552190af3",
+    "name":"Οικογενειακό Πακέτο",
+    "price":70.0,
+    "quantity":82,
+    "available":79
+  },
+  {
+    "id":435,
+    "eventId":"b263dcb7-8a18-4911-ad45-b73ef6ed1087",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":47.5,
+    "quantity":225,
+    "available":220
+  },
+  {
+    "id":436,
+    "eventId":"b263dcb7-8a18-4911-ad45-b73ef6ed1087",
+    "name":"Online Παρακολούθηση",
+    "price":20.0,
+    "quantity":525,
+    "available":524
+  },
+  {
+    "id":437,
+    "eventId":"03a176d6-e2d5-4d1b-8d20-95c90c4c886c",
+    "name":"Γενική Είσοδος",
+    "price":69.5,
+    "quantity":385,
+    "available":380
+  },
+  {
+    "id":438,
+    "eventId":"03a176d6-e2d5-4d1b-8d20-95c90c4c886c",
+    "name":"Εισιτήριο VIP",
+    "price":208.5,
+    "quantity":55,
+    "available":54
+  },
+  {
+    "id":439,
+    "eventId":"03a176d6-e2d5-4d1b-8d20-95c90c4c886c",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":50.0,
+    "quantity":110,
+    "available":108
+  },
+  {
+    "id":440,
+    "eventId":"f18aa1a0-3436-4bdf-95b2-4b6b944e0c4e",
+    "name":"Κανονικό Εισιτήριο Συνεδρίου",
+    "price":210.0,
+    "quantity":450,
+    "available":441
+  },
+  {
+    "id":441,
+    "eventId":"f18aa1a0-3436-4bdf-95b2-4b6b944e0c4e",
+    "name":"Φοιτητικό \/ Ακαδημαϊκό",
+    "price":70.0,
+    "quantity":188,
+    "available":184
+  },
+  {
+    "id":442,
+    "eventId":"f18aa1a0-3436-4bdf-95b2-4b6b944e0c4e",
+    "name":"Εταιρικό Πακέτο",
+    "price":168.0,
+    "quantity":112,
+    "available":105
+  },
+  {
+    "id":443,
+    "eventId":"4ff7c140-65c3-4b9e-820e-7c2251450305",
+    "name":"Γενική Είσοδος",
+    "price":139.0,
+    "quantity":350,
+    "available":340
+  },
+  {
+    "id":444,
+    "eventId":"4ff7c140-65c3-4b9e-820e-7c2251450305",
+    "name":"Εισιτήριο VIP",
+    "price":416.5,
+    "quantity":50,
+    "available":47
+  },
+  {
+    "id":445,
+    "eventId":"4ff7c140-65c3-4b9e-820e-7c2251450305",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":100.0,
+    "quantity":100,
+    "available":96
+  },
+  {
+    "id":446,
+    "eventId":"3c4293e2-3f9e-404b-93f6-6ba3c3f349bb",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":35.5,
+    "quantity":150,
+    "available":138
+  },
+  {
+    "id":447,
+    "eventId":"3c4293e2-3f9e-404b-93f6-6ba3c3f349bb",
+    "name":"Online Παρακολούθηση",
+    "price":15.0,
+    "quantity":350,
+    "available":346
+  },
+  {
+    "id":448,
+    "eventId":"e267159e-eb5a-46ad-accb-332a1fbaea71",
+    "name":"Μονοήμερο Εισιτήριο Φεστιβάλ",
+    "price":70.0,
+    "quantity":500,
+    "available":495
+  },
+  {
+    "id":449,
+    "eventId":"e267159e-eb5a-46ad-accb-332a1fbaea71",
+    "name":"Τριήμερο Εισιτήριο Φεστιβάλ",
+    "price":171.0,
+    "quantity":400,
+    "available":398
+  },
+  {
+    "id":450,
+    "eventId":"e267159e-eb5a-46ad-accb-332a1fbaea71",
+    "name":"Premium Camp Pass",
+    "price":280.0,
+    "quantity":100,
+    "available":99
+  },
+  {
+    "id":451,
+    "eventId":"71f2917b-85ed-48ca-892d-5a78bdeb01a1",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":47.5,
+    "quantity":90,
+    "available":90
+  },
+  {
+    "id":452,
+    "eventId":"71f2917b-85ed-48ca-892d-5a78bdeb01a1",
+    "name":"Online Παρακολούθηση",
+    "price":20.0,
+    "quantity":210,
+    "available":210
+  },
+  {
+    "id":453,
+    "eventId":"e1eace0a-9ff2-4d92-b98d-133d602263ed",
+    "name":"Απλή Είσοδος Μουσείου\/Έκθεσης",
+    "price":200.0,
+    "quantity":195,
+    "available":189
+  },
+  {
+    "id":454,
+    "eventId":"e1eace0a-9ff2-4d92-b98d-133d602263ed",
+    "name":"Είσοδος με Ξενάγηση",
+    "price":366.5,
+    "quantity":60,
+    "available":56
+  },
+  {
+    "id":455,
+    "eventId":"e1eace0a-9ff2-4d92-b98d-133d602263ed",
+    "name":"Μειωμένο (ΑμεΑ \/ Συνταξιούχοι)",
+    "price":100.0,
+    "quantity":45,
+    "available":42
+  },
+  {
+    "id":456,
+    "eventId":"387f3fe0-ce20-4660-8561-69d9a58d11c2",
+    "name":"Εισιτήριο Αγώνα - Θύρα Φιλάθλων",
+    "price":70.0,
+    "quantity":640,
+    "available":633
+  },
+  {
+    "id":457,
+    "eventId":"387f3fe0-ce20-4660-8561-69d9a58d11c2",
+    "name":"Θύρα VIP Lounge",
+    "price":466.5,
+    "quantity":40,
+    "available":35
+  },
+  {
+    "id":458,
+    "eventId":"387f3fe0-ce20-4660-8561-69d9a58d11c2",
+    "name":"Οικογενειακό Πακέτο",
+    "price":163.5,
+    "quantity":120,
+    "available":116
+  },
+  {
+    "id":459,
+    "eventId":"316ecaff-0a7f-4166-ae42-ef3b581ad4d0",
+    "name":"Γενική Είσοδος",
+    "price":139.0,
+    "quantity":595,
+    "available":583
+  },
+  {
+    "id":460,
+    "eventId":"316ecaff-0a7f-4166-ae42-ef3b581ad4d0",
+    "name":"Εισιτήριο VIP",
+    "price":416.5,
+    "quantity":85,
+    "available":81
+  },
+  {
+    "id":461,
+    "eventId":"316ecaff-0a7f-4166-ae42-ef3b581ad4d0",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":100.0,
+    "quantity":170,
+    "available":163
+  },
+  {
+    "id":462,
+    "eventId":"252ba9d6-f58b-4947-a71b-512a451cfc03",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":237.5,
+    "quantity":270,
+    "available":264
+  },
+  {
+    "id":463,
+    "eventId":"252ba9d6-f58b-4947-a71b-512a451cfc03",
+    "name":"Online Παρακολούθηση",
+    "price":100.0,
+    "quantity":630,
+    "available":628
+  },
+  {
+    "id":464,
+    "eventId":"be02786f-cf39-4406-8123-1236c2c8eb85",
+    "name":"Μονοήμερο Εισιτήριο Φεστιβάλ",
+    "price":25.0,
+    "quantity":200,
+    "available":191
+  },
+  {
+    "id":465,
+    "eventId":"be02786f-cf39-4406-8123-1236c2c8eb85",
+    "name":"Τριήμερο Εισιτήριο Φεστιβάλ",
+    "price":61.0,
+    "quantity":160,
+    "available":155
+  },
+  {
+    "id":466,
+    "eventId":"be02786f-cf39-4406-8123-1236c2c8eb85",
+    "name":"Premium Camp Pass",
+    "price":100.0,
+    "quantity":40,
+    "available":34
+  },
+  {
+    "id":467,
+    "eventId":"ac6dea93-bda2-4f76-ba64-f05242e09cb6",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":237.5,
+    "quantity":300,
+    "available":283
+  },
+  {
+    "id":468,
+    "eventId":"ac6dea93-bda2-4f76-ba64-f05242e09cb6",
+    "name":"Online Παρακολούθηση",
+    "price":100.0,
+    "quantity":700,
+    "available":691
+  },
+  {
+    "id":469,
+    "eventId":"0104b8ee-fc15-43e0-84aa-4b4600d07c9a",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":166.0,
+    "quantity":180,
+    "available":180
+  },
+  {
+    "id":470,
+    "eventId":"0104b8ee-fc15-43e0-84aa-4b4600d07c9a",
+    "name":"Online Παρακολούθηση",
+    "price":70.0,
+    "quantity":420,
+    "available":420
+  },
+  {
+    "id":471,
+    "eventId":"87b5d114-5232-4dc8-862a-ade9ac39633c",
+    "name":"Απλή Είσοδος Μουσείου\/Έκθεσης",
+    "price":40.0,
+    "quantity":520,
+    "available":517
+  },
+  {
+    "id":472,
+    "eventId":"87b5d114-5232-4dc8-862a-ade9ac39633c",
+    "name":"Είσοδος με Ξενάγηση",
+    "price":73.5,
+    "quantity":160,
+    "available":160
+  },
+  {
+    "id":473,
+    "eventId":"87b5d114-5232-4dc8-862a-ade9ac39633c",
+    "name":"Μειωμένο (ΑμεΑ \/ Συνταξιούχοι)",
+    "price":20.0,
+    "quantity":120,
+    "available":119
+  },
+  {
+    "id":474,
+    "eventId":"2ced4c90-29d7-494c-b674-356f89038aa4",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":166.0,
+    "quantity":240,
+    "available":227
+  },
+  {
+    "id":475,
+    "eventId":"2ced4c90-29d7-494c-b674-356f89038aa4",
+    "name":"Online Παρακολούθηση",
+    "price":70.0,
+    "quantity":560,
+    "available":556
+  },
+  {
+    "id":476,
+    "eventId":"3c80f8e8-dfd1-4eed-8010-7905168150e3",
+    "name":"Γενική Είσοδος",
+    "price":14.0,
+    "quantity":140,
+    "available":128
+  },
+  {
+    "id":477,
+    "eventId":"3c80f8e8-dfd1-4eed-8010-7905168150e3",
+    "name":"Εισιτήριο VIP",
+    "price":41.5,
+    "quantity":20,
+    "available":14
+  },
+  {
+    "id":478,
+    "eventId":"3c80f8e8-dfd1-4eed-8010-7905168150e3",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":10.0,
+    "quantity":40,
+    "available":36
+  },
+  {
+    "id":479,
+    "eventId":"41b46176-67bc-4246-b85a-a78d506038d2",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":59.5,
+    "quantity":285,
+    "available":282
+  },
+  {
+    "id":480,
+    "eventId":"41b46176-67bc-4246-b85a-a78d506038d2",
+    "name":"Online Παρακολούθηση",
+    "price":25.0,
+    "quantity":665,
+    "available":663
+  },
+  {
+    "id":481,
+    "eventId":"5038969a-e06b-40dc-a5bd-85ab210ce298",
+    "name":"Κανονικό Εισιτήριο Συνεδρίου",
+    "price":30.0,
+    "quantity":150,
+    "available":133
+  },
+  {
+    "id":482,
+    "eventId":"5038969a-e06b-40dc-a5bd-85ab210ce298",
+    "name":"Φοιτητικό \/ Ακαδημαϊκό",
+    "price":10.0,
+    "quantity":63,
+    "available":59
+  },
+  {
+    "id":483,
+    "eventId":"5038969a-e06b-40dc-a5bd-85ab210ce298",
+    "name":"Εταιρικό Πακέτο",
+    "price":24.0,
+    "quantity":37,
+    "available":27
+  },
+  {
+    "id":484,
+    "eventId":"522be6e8-b8d2-4139-89e5-216de4c74a3c",
+    "name":"Εισιτήριο Αγώνα - Θύρα Φιλάθλων",
+    "price":30.0,
+    "quantity":240,
+    "available":230
+  },
+  {
+    "id":485,
+    "eventId":"522be6e8-b8d2-4139-89e5-216de4c74a3c",
+    "name":"Θύρα VIP Lounge",
+    "price":200.0,
+    "quantity":15,
+    "available":8
+  },
+  {
+    "id":486,
+    "eventId":"522be6e8-b8d2-4139-89e5-216de4c74a3c",
+    "name":"Οικογενειακό Πακέτο",
+    "price":70.0,
+    "quantity":45,
+    "available":43
+  },
+  {
+    "id":487,
+    "eventId":"5969c08d-935b-4231-b717-524d79e91e5d",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":24.0,
+    "quantity":60,
+    "available":46
+  },
+  {
+    "id":488,
+    "eventId":"5969c08d-935b-4231-b717-524d79e91e5d",
+    "name":"Online Παρακολούθηση",
+    "price":10.0,
+    "quantity":140,
+    "available":136
+  },
+  {
+    "id":489,
+    "eventId":"5b794946-33c1-45d1-82de-07d5a79faeeb",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":166.0,
+    "quantity":150,
+    "available":146
+  },
+  {
+    "id":490,
+    "eventId":"5b794946-33c1-45d1-82de-07d5a79faeeb",
+    "name":"Online Παρακολούθηση",
+    "price":70.0,
+    "quantity":350,
+    "available":348
+  },
+  {
+    "id":491,
+    "eventId":"03a3a15b-da8d-4187-a571-3cd51364cd05",
+    "name":"Μονοήμερο Εισιτήριο Φεστιβάλ",
+    "price":30.0,
+    "quantity":175,
+    "available":167
+  },
+  {
+    "id":492,
+    "eventId":"03a3a15b-da8d-4187-a571-3cd51364cd05",
+    "name":"Τριήμερο Εισιτήριο Φεστιβάλ",
+    "price":73.5,
+    "quantity":140,
+    "available":135
+  },
+  {
+    "id":493,
+    "eventId":"03a3a15b-da8d-4187-a571-3cd51364cd05",
+    "name":"Premium Camp Pass",
+    "price":120.0,
+    "quantity":35,
+    "available":34
+  },
+  {
+    "id":494,
+    "eventId":"4ce49ea8-2a64-4c15-a165-10cd3b3efcda",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":59.5,
+    "quantity":300,
+    "available":298
+  },
+  {
+    "id":495,
+    "eventId":"4ce49ea8-2a64-4c15-a165-10cd3b3efcda",
+    "name":"Online Παρακολούθηση",
+    "price":25.0,
+    "quantity":700,
+    "available":698
+  },
+  {
+    "id":496,
+    "eventId":"fe11e5b0-9b6d-454e-8ae1-b47204716a83",
+    "name":"Απλή Είσοδος Μουσείου\/Έκθεσης",
+    "price":50.0,
+    "quantity":488,
+    "available":485
+  },
+  {
+    "id":497,
+    "eventId":"fe11e5b0-9b6d-454e-8ae1-b47204716a83",
+    "name":"Είσοδος με Ξενάγηση",
+    "price":91.5,
+    "quantity":150,
+    "available":150
+  },
+  {
+    "id":498,
+    "eventId":"fe11e5b0-9b6d-454e-8ae1-b47204716a83",
+    "name":"Μειωμένο (ΑμεΑ \/ Συνταξιούχοι)",
+    "price":25.0,
+    "quantity":112,
+    "available":111
+  },
+  {
+    "id":499,
+    "eventId":"eca766de-947d-4977-a6f8-39d32872196c",
+    "name":"Γενική Είσοδος",
+    "price":32.0,
+    "quantity":600,
+    "available":574
+  },
+  {
+    "id":500,
+    "eventId":"eca766de-947d-4977-a6f8-39d32872196c",
+    "name":"Θέσεις Premium (Recliner)",
+    "price":50.0,
+    "quantity":120,
+    "available":112
+  },
+  {
+    "id":501,
+    "eventId":"eca766de-947d-4977-a6f8-39d32872196c",
+    "name":"Παιδικό \/ Φοιτητικό",
+    "price":25.0,
+    "quantity":80,
+    "available":74
+  },
+  {
+    "id":502,
+    "eventId":"10f876eb-3c73-41cc-9a94-b2a91006f536",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":35.5,
+    "quantity":225,
+    "available":217
+  },
+  {
+    "id":503,
+    "eventId":"10f876eb-3c73-41cc-9a94-b2a91006f536",
+    "name":"Online Παρακολούθηση",
+    "price":15.0,
+    "quantity":525,
+    "available":518
+  },
+  {
+    "id":504,
+    "eventId":"2d98fe01-957a-4a4e-8e28-151f124b3e0a",
+    "name":"Εισιτήριο Αγώνα - Θύρα Φιλάθλων",
+    "price":50.0,
+    "quantity":320,
+    "available":306
+  },
+  {
+    "id":505,
+    "eventId":"2d98fe01-957a-4a4e-8e28-151f124b3e0a",
+    "name":"Θύρα VIP Lounge",
+    "price":333.5,
+    "quantity":20,
+    "available":15
+  },
+  {
+    "id":506,
+    "eventId":"2d98fe01-957a-4a4e-8e28-151f124b3e0a",
+    "name":"Οικογενειακό Πακέτο",
+    "price":116.5,
+    "quantity":60,
+    "available":54
+  },
+  {
+    "id":507,
+    "eventId":"0b8fa758-d9dc-4161-8cff-e8ef46e23db5",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":35.5,
+    "quantity":195,
+    "available":191
+  },
+  {
+    "id":508,
+    "eventId":"0b8fa758-d9dc-4161-8cff-e8ef46e23db5",
+    "name":"Online Παρακολούθηση",
+    "price":15.0,
+    "quantity":455,
+    "available":454
+  },
+  {
+    "id":509,
+    "eventId":"098506df-5c44-421b-859d-a9b6eeb0d993",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":119.0,
+    "quantity":105,
+    "available":98
+  },
+  {
+    "id":510,
+    "eventId":"098506df-5c44-421b-859d-a9b6eeb0d993",
+    "name":"Online Παρακολούθηση",
+    "price":50.0,
+    "quantity":245,
+    "available":243
+  },
+  {
+    "id":511,
+    "eventId":"5f3d0578-9b8b-47ce-b8b9-f390fb653d94",
+    "name":"Γενική Είσοδος",
+    "price":14.0,
+    "quantity":560,
+    "available":552
+  },
+  {
+    "id":512,
+    "eventId":"5f3d0578-9b8b-47ce-b8b9-f390fb653d94",
+    "name":"Εισιτήριο VIP",
+    "price":41.5,
+    "quantity":80,
+    "available":78
+  },
+  {
+    "id":513,
+    "eventId":"5f3d0578-9b8b-47ce-b8b9-f390fb653d94",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":10.0,
+    "quantity":160,
+    "available":158
+  },
+  {
+    "id":514,
+    "eventId":"b5ebce0f-ddc8-443b-a6c3-c56c1af8b239",
+    "name":"Απλή Είσοδος Μουσείου\/Έκθεσης",
+    "price":30.0,
+    "quantity":488,
+    "available":481
+  },
+  {
+    "id":515,
+    "eventId":"b5ebce0f-ddc8-443b-a6c3-c56c1af8b239",
+    "name":"Είσοδος με Ξενάγηση",
+    "price":55.0,
+    "quantity":150,
+    "available":148
+  },
+  {
+    "id":516,
+    "eventId":"b5ebce0f-ddc8-443b-a6c3-c56c1af8b239",
+    "name":"Μειωμένο (ΑμεΑ \/ Συνταξιούχοι)",
+    "price":15.0,
+    "quantity":112,
+    "available":109
+  },
+  {
+    "id":517,
+    "eventId":"762caaed-f55a-4bda-adb0-62c93571e40c",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":166.0,
+    "quantity":75,
+    "available":65
+  },
+  {
+    "id":518,
+    "eventId":"762caaed-f55a-4bda-adb0-62c93571e40c",
+    "name":"Online Παρακολούθηση",
+    "price":70.0,
+    "quantity":175,
+    "available":173
+  },
+  {
+    "id":519,
+    "eventId":"fe06c55c-14d6-454f-b055-51220527ae27",
+    "name":"Μονοήμερο Εισιτήριο Φεστιβάλ",
+    "price":25.0,
+    "quantity":350,
+    "available":333
+  },
+  {
+    "id":520,
+    "eventId":"fe06c55c-14d6-454f-b055-51220527ae27",
+    "name":"Τριήμερο Εισιτήριο Φεστιβάλ",
+    "price":61.0,
+    "quantity":280,
+    "available":273
+  },
+  {
+    "id":521,
+    "eventId":"fe06c55c-14d6-454f-b055-51220527ae27",
+    "name":"Premium Camp Pass",
+    "price":100.0,
+    "quantity":70,
+    "available":64
+  },
+  {
+    "id":522,
+    "eventId":"7ea348e1-a9a2-4d53-8dba-6d3b3a9c366b",
+    "name":"Εισιτήριο Αγώνα - Θύρα Φιλάθλων",
+    "price":70.0,
+    "quantity":600,
+    "available":588
+  },
+  {
+    "id":523,
+    "eventId":"7ea348e1-a9a2-4d53-8dba-6d3b3a9c366b",
+    "name":"Θύρα VIP Lounge",
+    "price":466.5,
+    "quantity":38,
+    "available":38
+  },
+  {
+    "id":524,
+    "eventId":"7ea348e1-a9a2-4d53-8dba-6d3b3a9c366b",
+    "name":"Οικογενειακό Πακέτο",
+    "price":163.5,
+    "quantity":112,
+    "available":109
+  },
+  {
+    "id":525,
+    "eventId":"a09f4cc7-8946-435e-a61f-0d38bfd99758",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":24.0,
+    "quantity":255,
+    "available":251
+  },
+  {
+    "id":526,
+    "eventId":"a09f4cc7-8946-435e-a61f-0d38bfd99758",
+    "name":"Online Παρακολούθηση",
+    "price":10.0,
+    "quantity":595,
+    "available":593
+  },
+  {
+    "id":527,
+    "eventId":"d97a52e8-1caf-4a05-9ca7-9c722c03382b",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":71.0,
+    "quantity":255,
+    "available":248
+  },
+  {
+    "id":528,
+    "eventId":"d97a52e8-1caf-4a05-9ca7-9c722c03382b",
+    "name":"Online Παρακολούθηση",
+    "price":30.0,
+    "quantity":595,
+    "available":589
+  },
+  {
+    "id":529,
+    "eventId":"d2ebcbdc-d342-43f6-bfc8-f2c6d20e0ed3",
+    "name":"Εισιτήριο Αγώνα - Θύρα Φιλάθλων",
+    "price":100.0,
+    "quantity":200,
+    "available":194
+  },
+  {
+    "id":530,
+    "eventId":"d2ebcbdc-d342-43f6-bfc8-f2c6d20e0ed3",
+    "name":"Θύρα VIP Lounge",
+    "price":666.5,
+    "quantity":13,
+    "available":13
+  },
+  {
+    "id":531,
+    "eventId":"d2ebcbdc-d342-43f6-bfc8-f2c6d20e0ed3",
+    "name":"Οικογενειακό Πακέτο",
+    "price":233.5,
+    "quantity":37,
+    "available":35
+  },
+  {
+    "id":532,
+    "eventId":"5ca1b81d-938d-40d6-bf80-dddd0216c470",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":35.5,
+    "quantity":285,
+    "available":281
+  },
+  {
+    "id":533,
+    "eventId":"5ca1b81d-938d-40d6-bf80-dddd0216c470",
+    "name":"Online Παρακολούθηση",
+    "price":15.0,
+    "quantity":665,
+    "available":664
+  },
+  {
+    "id":534,
+    "eventId":"6fa4ddc0-30f8-4b29-9107-97feaceb4994",
+    "name":"Κανονικό Εισιτήριο Συνεδρίου",
+    "price":90.0,
+    "quantity":600,
+    "available":582
+  },
+  {
+    "id":535,
+    "eventId":"6fa4ddc0-30f8-4b29-9107-97feaceb4994",
+    "name":"Φοιτητικό \/ Ακαδημαϊκό",
+    "price":30.0,
+    "quantity":250,
+    "available":244
+  },
+  {
+    "id":536,
+    "eventId":"6fa4ddc0-30f8-4b29-9107-97feaceb4994",
+    "name":"Εταιρικό Πακέτο",
+    "price":72.0,
+    "quantity":150,
+    "available":146
+  },
+  {
+    "id":537,
+    "eventId":"c7395e76-ad3c-424c-9116-13c60579a009",
+    "name":"Απλή Είσοδος Μουσείου\/Έκθεσης",
+    "price":140.0,
+    "quantity":455,
+    "available":451
+  },
+  {
+    "id":538,
+    "eventId":"c7395e76-ad3c-424c-9116-13c60579a009",
+    "name":"Είσοδος με Ξενάγηση",
+    "price":256.5,
+    "quantity":140,
+    "available":139
+  },
+  {
+    "id":539,
+    "eventId":"c7395e76-ad3c-424c-9116-13c60579a009",
+    "name":"Μειωμένο (ΑμεΑ \/ Συνταξιούχοι)",
+    "price":70.0,
+    "quantity":105,
+    "available":101
+  },
+  {
+    "id":540,
+    "eventId":"6b16d1a7-1554-4830-af62-31aef373df69",
+    "name":"Γενική Είσοδος",
+    "price":28.0,
+    "quantity":490,
+    "available":481
+  },
+  {
+    "id":541,
+    "eventId":"6b16d1a7-1554-4830-af62-31aef373df69",
+    "name":"Εισιτήριο VIP",
+    "price":83.5,
+    "quantity":70,
+    "available":68
+  },
+  {
+    "id":542,
+    "eventId":"6b16d1a7-1554-4830-af62-31aef373df69",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":20.0,
+    "quantity":140,
+    "available":138
+  },
+  {
+    "id":543,
+    "eventId":"832bd09d-5d31-4576-af0f-7d0c5906a4ee",
+    "name":"Γενική Είσοδος",
+    "price":13.0,
+    "quantity":675,
+    "available":661
+  },
+  {
+    "id":544,
+    "eventId":"832bd09d-5d31-4576-af0f-7d0c5906a4ee",
+    "name":"Θέσεις Premium (Recliner)",
+    "price":20.0,
+    "quantity":135,
+    "available":130
+  },
+  {
+    "id":545,
+    "eventId":"832bd09d-5d31-4576-af0f-7d0c5906a4ee",
+    "name":"Παιδικό \/ Φοιτητικό",
+    "price":10.0,
+    "quantity":90,
+    "available":87
+  },
+  {
+    "id":546,
+    "eventId":"58c56e26-a449-4b51-b36e-cda1bd2b8849",
+    "name":"Online Παρακολούθηση Webinar",
+    "price":30.0,
+    "quantity":300,
+    "available":289
+  },
+  {
+    "id":547,
+    "eventId":"bcb4a969-1faa-47ce-844f-a965eaa0f100",
+    "name":"Εισιτήριο Αγώνα - Θύρα Φιλάθλων",
+    "price":70.0,
+    "quantity":480,
+    "available":470
+  },
+  {
+    "id":548,
+    "eventId":"bcb4a969-1faa-47ce-844f-a965eaa0f100",
+    "name":"Θύρα VIP Lounge",
+    "price":466.5,
+    "quantity":30,
+    "available":26
+  },
+  {
+    "id":549,
+    "eventId":"bcb4a969-1faa-47ce-844f-a965eaa0f100",
+    "name":"Οικογενειακό Πακέτο",
+    "price":163.5,
+    "quantity":90,
+    "available":87
+  },
+  {
+    "id":550,
+    "eventId":"3590ca62-46be-4f09-ab95-54b6866bddf9",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":59.5,
+    "quantity":150,
+    "available":143
+  },
+  {
+    "id":551,
+    "eventId":"3590ca62-46be-4f09-ab95-54b6866bddf9",
+    "name":"Online Παρακολούθηση",
+    "price":25.0,
+    "quantity":350,
+    "available":347
+  },
+  {
+    "id":552,
+    "eventId":"b4c16cab-e151-4b0a-8d5a-3b891c334bfc",
+    "name":"Απλή Είσοδος Μουσείου\/Έκθεσης",
+    "price":20.0,
+    "quantity":390,
+    "available":389
+  },
+  {
+    "id":553,
+    "eventId":"b4c16cab-e151-4b0a-8d5a-3b891c334bfc",
+    "name":"Είσοδος με Ξενάγηση",
+    "price":36.5,
+    "quantity":120,
+    "available":118
+  },
+  {
+    "id":554,
+    "eventId":"b4c16cab-e151-4b0a-8d5a-3b891c334bfc",
+    "name":"Μειωμένο (ΑμεΑ \/ Συνταξιούχοι)",
+    "price":10.0,
+    "quantity":90,
+    "available":88
+  },
+  {
+    "id":555,
+    "eventId":"fd7a1968-ca61-4bb2-92b8-2a4529eddb1a",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":237.5,
+    "quantity":75,
+    "available":71
+  },
+  {
+    "id":556,
+    "eventId":"fd7a1968-ca61-4bb2-92b8-2a4529eddb1a",
+    "name":"Online Παρακολούθηση",
+    "price":100.0,
+    "quantity":175,
+    "available":173
+  },
+  {
+    "id":557,
+    "eventId":"7889623a-9c8b-41d5-9669-b8856146481b",
+    "name":"Κανονικό Εισιτήριο Συνεδρίου",
+    "price":90.0,
+    "quantity":540,
+    "available":521
+  },
+  {
+    "id":558,
+    "eventId":"7889623a-9c8b-41d5-9669-b8856146481b",
+    "name":"Φοιτητικό \/ Ακαδημαϊκό",
+    "price":30.0,
+    "quantity":225,
+    "available":214
+  },
+  {
+    "id":559,
+    "eventId":"7889623a-9c8b-41d5-9669-b8856146481b",
+    "name":"Εταιρικό Πακέτο",
+    "price":72.0,
+    "quantity":135,
+    "available":128
+  },
+  {
+    "id":560,
+    "eventId":"c1ab9a36-6aa0-4a70-a9c6-ecbe8d49887c",
+    "name":"Μονοήμερο Εισιτήριο Φεστιβάλ",
+    "price":10.0,
+    "quantity":450,
+    "available":437
+  },
+  {
+    "id":561,
+    "eventId":"c1ab9a36-6aa0-4a70-a9c6-ecbe8d49887c",
+    "name":"Τριήμερο Εισιτήριο Φεστιβάλ",
+    "price":24.5,
+    "quantity":360,
+    "available":355
+  },
+  {
+    "id":562,
+    "eventId":"c1ab9a36-6aa0-4a70-a9c6-ecbe8d49887c",
+    "name":"Premium Camp Pass",
+    "price":40.0,
+    "quantity":90,
+    "available":85
+  },
+  {
+    "id":563,
+    "eventId":"6bb2699a-804a-41ab-8d2e-250cc0432719",
+    "name":"Κανονικό Εισιτήριο Συνεδρίου",
+    "price":30.0,
+    "quantity":450,
+    "available":439
+  },
+  {
+    "id":564,
+    "eventId":"6bb2699a-804a-41ab-8d2e-250cc0432719",
+    "name":"Φοιτητικό \/ Ακαδημαϊκό",
+    "price":10.0,
+    "quantity":188,
+    "available":185
+  },
+  {
+    "id":565,
+    "eventId":"6bb2699a-804a-41ab-8d2e-250cc0432719",
+    "name":"Εταιρικό Πακέτο",
+    "price":24.0,
+    "quantity":112,
+    "available":109
+  },
+  {
+    "id":566,
+    "eventId":"fcff54ed-ac42-4f4c-b44d-577417f80b4d",
+    "name":"Ατομικό Εισιτήριο Γκαλά",
+    "price":30.0,
+    "quantity":315,
+    "available":312
+  },
+  {
+    "id":567,
+    "eventId":"fcff54ed-ac42-4f4c-b44d-577417f80b4d",
+    "name":"Εισιτήριο Ζευγαριού",
+    "price":52.5,
+    "quantity":90,
+    "available":88
+  },
+  {
+    "id":568,
+    "eventId":"fcff54ed-ac42-4f4c-b44d-577417f80b4d",
+    "name":"Τραπέζι Χορηγών (10 άτομα)",
+    "price":375.0,
+    "quantity":45,
+    "available":43
+  },
+  {
+    "id":569,
+    "eventId":"933d3b14-a6f8-49bf-934a-87fcd282cbe1",
+    "name":"Ζώνη Α (Διακεκριμένη)",
+    "price":266.5,
+    "quantity":60,
+    "available":53
+  },
+  {
+    "id":570,
+    "eventId":"933d3b14-a6f8-49bf-934a-87fcd282cbe1",
+    "name":"Ζώνη Β (Κανονικό)",
+    "price":166.5,
+    "quantity":200,
+    "available":196
+  },
+  {
+    "id":571,
+    "eventId":"933d3b14-a6f8-49bf-934a-87fcd282cbe1",
+    "name":"Εξώστης",
+    "price":100.0,
+    "quantity":140,
+    "available":136
+  },
+  {
+    "id":572,
+    "eventId":"2ad77edd-14e4-422e-945f-174862c8bac3",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":237.5,
+    "quantity":105,
+    "available":103
+  },
+  {
+    "id":573,
+    "eventId":"2ad77edd-14e4-422e-945f-174862c8bac3",
+    "name":"Online Παρακολούθηση",
+    "price":100.0,
+    "quantity":245,
+    "available":243
+  },
+  {
+    "id":574,
+    "eventId":"5bbb14f7-e5ac-4e0f-81d2-b4a7c206170a",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":47.5,
+    "quantity":180,
+    "available":180
+  },
+  {
+    "id":575,
+    "eventId":"5bbb14f7-e5ac-4e0f-81d2-b4a7c206170a",
+    "name":"Online Παρακολούθηση",
+    "price":20.0,
+    "quantity":420,
+    "available":420
+  },
+  {
+    "id":576,
+    "eventId":"057012e2-be96-441e-9d82-7d1c77e24162",
+    "name":"Απλή Είσοδος Μουσείου\/Έκθεσης",
+    "price":60.0,
+    "quantity":260,
+    "available":256
+  },
+  {
+    "id":577,
+    "eventId":"057012e2-be96-441e-9d82-7d1c77e24162",
+    "name":"Είσοδος με Ξενάγηση",
+    "price":110.0,
+    "quantity":80,
+    "available":79
+  },
+  {
+    "id":578,
+    "eventId":"057012e2-be96-441e-9d82-7d1c77e24162",
+    "name":"Μειωμένο (ΑμεΑ \/ Συνταξιούχοι)",
+    "price":30.0,
+    "quantity":60,
+    "available":60
+  },
+  {
+    "id":579,
+    "eventId":"3559bebc-ed08-4827-9411-12c3ee2a8b28",
+    "name":"Γενική Είσοδος",
+    "price":90.0,
+    "quantity":713,
+    "available":704
+  },
+  {
+    "id":580,
+    "eventId":"3559bebc-ed08-4827-9411-12c3ee2a8b28",
+    "name":"Θέσεις Premium (Recliner)",
+    "price":140.0,
+    "quantity":142,
+    "available":134
+  },
+  {
+    "id":581,
+    "eventId":"3559bebc-ed08-4827-9411-12c3ee2a8b28",
+    "name":"Παιδικό \/ Φοιτητικό",
+    "price":70.0,
+    "quantity":95,
+    "available":89
+  },
+  {
+    "id":582,
+    "eventId":"775941da-048a-4f85-bfa6-d9c918098f2d",
+    "name":"Εισιτήριο Αγώνα - Θύρα Φιλάθλων",
+    "price":50.0,
+    "quantity":160,
+    "available":160
+  },
+  {
+    "id":583,
+    "eventId":"775941da-048a-4f85-bfa6-d9c918098f2d",
+    "name":"Θύρα VIP Lounge",
+    "price":333.5,
+    "quantity":10,
+    "available":10
+  },
+  {
+    "id":584,
+    "eventId":"775941da-048a-4f85-bfa6-d9c918098f2d",
+    "name":"Οικογενειακό Πακέτο",
+    "price":116.5,
+    "quantity":30,
+    "available":30
+  },
+  {
+    "id":585,
+    "eventId":"af8f9db0-aff4-47fb-99c7-729b7191f16d",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":47.5,
+    "quantity":135,
+    "available":130
+  },
+  {
+    "id":586,
+    "eventId":"af8f9db0-aff4-47fb-99c7-729b7191f16d",
+    "name":"Online Παρακολούθηση",
+    "price":20.0,
+    "quantity":315,
+    "available":313
+  },
+  {
+    "id":587,
+    "eventId":"9a3ed0b2-a942-4f45-b7cd-b38b81010fcf",
+    "name":"Κανονικό Εισιτήριο Συνεδρίου",
+    "price":60.0,
+    "quantity":570,
+    "available":559
+  },
+  {
+    "id":588,
+    "eventId":"9a3ed0b2-a942-4f45-b7cd-b38b81010fcf",
+    "name":"Φοιτητικό \/ Ακαδημαϊκό",
+    "price":20.0,
+    "quantity":238,
+    "available":237
+  },
+  {
+    "id":589,
+    "eventId":"9a3ed0b2-a942-4f45-b7cd-b38b81010fcf",
+    "name":"Εταιρικό Πακέτο",
+    "price":48.0,
+    "quantity":142,
+    "available":138
+  },
+  {
+    "id":590,
+    "eventId":"63d37d01-4331-413e-9677-b78b3bb9bd5d",
+    "name":"Απλή Είσοδος Μουσείου\/Έκθεσης",
+    "price":200.0,
+    "quantity":163,
+    "available":158
+  },
+  {
+    "id":591,
+    "eventId":"63d37d01-4331-413e-9677-b78b3bb9bd5d",
+    "name":"Είσοδος με Ξενάγηση",
+    "price":366.5,
+    "quantity":50,
+    "available":48
+  },
+  {
+    "id":592,
+    "eventId":"63d37d01-4331-413e-9677-b78b3bb9bd5d",
+    "name":"Μειωμένο (ΑμεΑ \/ Συνταξιούχοι)",
+    "price":100.0,
+    "quantity":37,
+    "available":35
+  },
+  {
+    "id":593,
+    "eventId":"c794b550-cd3c-46e5-a340-e2e6329ce8ad",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":47.5,
+    "quantity":105,
+    "available":105
+  },
+  {
+    "id":594,
+    "eventId":"c794b550-cd3c-46e5-a340-e2e6329ce8ad",
+    "name":"Online Παρακολούθηση",
+    "price":20.0,
+    "quantity":245,
+    "available":245
+  },
+  {
+    "id":595,
+    "eventId":"02e00e1c-54af-4ba7-bec6-0cfb4b98b926",
+    "name":"Online Παρακολούθηση Webinar",
+    "price":15.0,
+    "quantity":350,
+    "available":343
+  },
+  {
+    "id":596,
+    "eventId":"70cfbe29-be5f-45df-9850-cb5cd249d034",
+    "name":"Μονοήμερο Εισιτήριο Φεστιβάλ",
+    "price":50.0,
+    "quantity":150,
+    "available":140
+  },
+  {
+    "id":597,
+    "eventId":"70cfbe29-be5f-45df-9850-cb5cd249d034",
+    "name":"Τριήμερο Εισιτήριο Φεστιβάλ",
+    "price":122.0,
+    "quantity":120,
+    "available":113
+  },
+  {
+    "id":598,
+    "eventId":"70cfbe29-be5f-45df-9850-cb5cd249d034",
+    "name":"Premium Camp Pass",
+    "price":200.0,
+    "quantity":30,
+    "available":26
+  },
+  {
+    "id":599,
+    "eventId":"a0f878e0-005b-4963-aac4-242e9d144307",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":119.0,
+    "quantity":60,
+    "available":43
+  },
+  {
+    "id":600,
+    "eventId":"a0f878e0-005b-4963-aac4-242e9d144307",
+    "name":"Online Παρακολούθηση",
+    "price":50.0,
+    "quantity":140,
+    "available":137
+  },
+  {
+    "id":601,
+    "eventId":"17527f25-b50b-4d72-9e5a-1f63862dbaa6",
+    "name":"Γενική Είσοδος",
+    "price":13.0,
+    "quantity":488,
+    "available":486
+  },
+  {
+    "id":602,
+    "eventId":"17527f25-b50b-4d72-9e5a-1f63862dbaa6",
+    "name":"Θέσεις Premium (Recliner)",
+    "price":20.0,
+    "quantity":97,
+    "available":95
+  },
+  {
+    "id":603,
+    "eventId":"17527f25-b50b-4d72-9e5a-1f63862dbaa6",
+    "name":"Παιδικό \/ Φοιτητικό",
+    "price":10.0,
+    "quantity":65,
+    "available":63
+  },
+  {
+    "id":604,
+    "eventId":"5cee35e2-323e-40ad-9edf-bbac718b0953",
+    "name":"Γενική Είσοδος",
+    "price":25.5,
+    "quantity":413,
+    "available":400
+  },
+  {
+    "id":605,
+    "eventId":"5cee35e2-323e-40ad-9edf-bbac718b0953",
+    "name":"Θέσεις Premium (Recliner)",
+    "price":40.0,
+    "quantity":82,
+    "available":77
+  },
+  {
+    "id":606,
+    "eventId":"5cee35e2-323e-40ad-9edf-bbac718b0953",
+    "name":"Παιδικό \/ Φοιτητικό",
+    "price":20.0,
+    "quantity":55,
+    "available":51
+  },
+  {
+    "id":607,
+    "eventId":"301b28d5-c5b8-4ac7-8c0f-83b83f84fea0",
+    "name":"Απλή Είσοδος Μουσείου\/Έκθεσης",
+    "price":20.0,
+    "quantity":358,
+    "available":358
+  },
+  {
+    "id":608,
+    "eventId":"301b28d5-c5b8-4ac7-8c0f-83b83f84fea0",
+    "name":"Είσοδος με Ξενάγηση",
+    "price":36.5,
+    "quantity":110,
+    "available":110
+  },
+  {
+    "id":609,
+    "eventId":"301b28d5-c5b8-4ac7-8c0f-83b83f84fea0",
+    "name":"Μειωμένο (ΑμεΑ \/ Συνταξιούχοι)",
+    "price":10.0,
+    "quantity":82,
+    "available":82
+  },
+  {
+    "id":610,
+    "eventId":"032f82b6-1855-4e0b-9826-d69cb0c7c43e",
+    "name":"Γενική Είσοδος",
+    "price":28.0,
+    "quantity":700,
+    "available":694
+  },
+  {
+    "id":611,
+    "eventId":"032f82b6-1855-4e0b-9826-d69cb0c7c43e",
+    "name":"Εισιτήριο VIP",
+    "price":83.5,
+    "quantity":100,
+    "available":96
+  },
+  {
+    "id":612,
+    "eventId":"032f82b6-1855-4e0b-9826-d69cb0c7c43e",
+    "name":"Πρόωρη Κράτηση (Early Bird)",
+    "price":20.0,
+    "quantity":200,
+    "available":198
+  },
+  {
+    "id":613,
+    "eventId":"40d69eb8-0c19-46a7-9505-73816def5cf7",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":59.5,
+    "quantity":180,
+    "available":176
+  },
+  {
+    "id":614,
+    "eventId":"40d69eb8-0c19-46a7-9505-73816def5cf7",
+    "name":"Online Παρακολούθηση",
+    "price":25.0,
+    "quantity":420,
+    "available":419
+  },
+  {
+    "id":615,
+    "eventId":"dee094a0-9053-4c80-8877-387fa0d826ec",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":237.5,
+    "quantity":285,
+    "available":273
+  },
+  {
+    "id":616,
+    "eventId":"dee094a0-9053-4c80-8877-387fa0d826ec",
+    "name":"Online Παρακολούθηση",
+    "price":100.0,
+    "quantity":665,
+    "available":658
+  },
+  {
+    "id":617,
+    "eventId":"942e9347-5469-4b63-84e6-4dc23316d614",
+    "name":"Εισιτήριο Αγώνα - Θύρα Φιλάθλων",
+    "price":50.0,
+    "quantity":240,
+    "available":225
+  },
+  {
+    "id":618,
+    "eventId":"942e9347-5469-4b63-84e6-4dc23316d614",
+    "name":"Θύρα VIP Lounge",
+    "price":333.5,
+    "quantity":15,
+    "available":11
+  },
+  {
+    "id":619,
+    "eventId":"942e9347-5469-4b63-84e6-4dc23316d614",
+    "name":"Οικογενειακό Πακέτο",
+    "price":116.5,
+    "quantity":45,
+    "available":39
+  },
+  {
+    "id":620,
+    "eventId":"2f5d6189-8a36-462d-ac32-f980a8ba2e13",
+    "name":"Μονοήμερο Εισιτήριο Φεστιβάλ",
+    "price":50.0,
+    "quantity":375,
+    "available":359
+  },
+  {
+    "id":621,
+    "eventId":"2f5d6189-8a36-462d-ac32-f980a8ba2e13",
+    "name":"Τριήμερο Εισιτήριο Φεστιβάλ",
+    "price":122.0,
+    "quantity":300,
+    "available":293
+  },
+  {
+    "id":622,
+    "eventId":"2f5d6189-8a36-462d-ac32-f980a8ba2e13",
+    "name":"Premium Camp Pass",
+    "price":200.0,
+    "quantity":75,
+    "available":70
+  },
+  {
+    "id":623,
+    "eventId":"21f9ad8f-2e44-4c95-a47a-1917b7ca462d",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":59.5,
+    "quantity":60,
+    "available":59
+  },
+  {
+    "id":624,
+    "eventId":"21f9ad8f-2e44-4c95-a47a-1917b7ca462d",
+    "name":"Online Παρακολούθηση",
+    "price":25.0,
+    "quantity":140,
+    "available":138
+  },
+  {
+    "id":625,
+    "eventId":"ae75c2a0-95b1-4b6c-a268-286f4f4e0e5e",
+    "name":"Κανονικό Εισιτήριο Συνεδρίου",
+    "price":210.0,
+    "quantity":330,
+    "available":322
+  },
+  {
+    "id":626,
+    "eventId":"ae75c2a0-95b1-4b6c-a268-286f4f4e0e5e",
+    "name":"Φοιτητικό \/ Ακαδημαϊκό",
+    "price":70.0,
+    "quantity":138,
+    "available":134
+  },
+  {
+    "id":627,
+    "eventId":"ae75c2a0-95b1-4b6c-a268-286f4f4e0e5e",
+    "name":"Εταιρικό Πακέτο",
+    "price":168.0,
+    "quantity":82,
+    "available":79
+  },
+  {
+    "id":628,
+    "eventId":"eab41ea8-9199-478f-91a1-a087c7a9cc44",
+    "name":"Απλή Είσοδος Μουσείου\/Έκθεσης",
+    "price":30.0,
+    "quantity":163,
+    "available":161
+  },
+  {
+    "id":629,
+    "eventId":"eab41ea8-9199-478f-91a1-a087c7a9cc44",
+    "name":"Είσοδος με Ξενάγηση",
+    "price":55.0,
+    "quantity":50,
+    "available":49
+  },
+  {
+    "id":630,
+    "eventId":"eab41ea8-9199-478f-91a1-a087c7a9cc44",
+    "name":"Μειωμένο (ΑμεΑ \/ Συνταξιούχοι)",
+    "price":15.0,
+    "quantity":37,
+    "available":36
+  },
+  {
+    "id":631,
+    "eventId":"63484d2d-81c8-471a-91aa-a473e365f1d8",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":35.5,
+    "quantity":240,
+    "available":240
+  },
+  {
+    "id":632,
+    "eventId":"63484d2d-81c8-471a-91aa-a473e365f1d8",
+    "name":"Online Παρακολούθηση",
+    "price":15.0,
+    "quantity":560,
+    "available":560
+  },
+  {
+    "id":633,
+    "eventId":"b6653c6a-7585-416c-b334-39ce675e922d",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":59.5,
+    "quantity":75,
+    "available":67
+  },
+  {
+    "id":634,
+    "eventId":"b6653c6a-7585-416c-b334-39ce675e922d",
+    "name":"Online Παρακολούθηση",
+    "price":25.0,
+    "quantity":175,
+    "available":170
+  },
+  {
+    "id":635,
+    "eventId":"abff8a07-6b7f-4a8e-8536-cbfe8d4115e3",
+    "name":"Μονοήμερο Εισιτήριο Φεστιβάλ",
+    "price":15.0,
+    "quantity":325,
+    "available":315
+  },
+  {
+    "id":636,
+    "eventId":"abff8a07-6b7f-4a8e-8536-cbfe8d4115e3",
+    "name":"Τριήμερο Εισιτήριο Φεστιβάλ",
+    "price":36.5,
+    "quantity":260,
+    "available":257
+  },
+  {
+    "id":637,
+    "eventId":"abff8a07-6b7f-4a8e-8536-cbfe8d4115e3",
+    "name":"Premium Camp Pass",
+    "price":60.0,
+    "quantity":65,
+    "available":63
+  },
+  {
+    "id":638,
+    "eventId":"a3f5c4a7-c440-47a3-a0fc-be48c966ffaa",
+    "name":"Εισιτήριο Αγώνα - Θύρα Φιλάθλων",
+    "price":25.0,
+    "quantity":480,
+    "available":470
+  },
+  {
+    "id":639,
+    "eventId":"a3f5c4a7-c440-47a3-a0fc-be48c966ffaa",
+    "name":"Θύρα VIP Lounge",
+    "price":166.5,
+    "quantity":30,
+    "available":25
+  },
+  {
+    "id":640,
+    "eventId":"a3f5c4a7-c440-47a3-a0fc-be48c966ffaa",
+    "name":"Οικογενειακό Πακέτο",
+    "price":58.5,
+    "quantity":90,
+    "available":86
+  },
+  {
+    "id":641,
+    "eventId":"fe53873e-a9dd-4428-94bb-d6067102bb46",
+    "name":"Ατομικό Εισιτήριο Γκαλά",
+    "price":20.0,
+    "quantity":420,
+    "available":418
+  },
+  {
+    "id":642,
+    "eventId":"fe53873e-a9dd-4428-94bb-d6067102bb46",
+    "name":"Εισιτήριο Ζευγαριού",
+    "price":35.0,
+    "quantity":120,
+    "available":116
+  },
+  {
+    "id":643,
+    "eventId":"fe53873e-a9dd-4428-94bb-d6067102bb46",
+    "name":"Τραπέζι Χορηγών (10 άτομα)",
+    "price":250.0,
+    "quantity":60,
+    "available":57
+  },
+  {
+    "id":644,
+    "eventId":"c8d90a3c-85ec-42c0-b2b3-533471e82403",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":59.5,
+    "quantity":150,
+    "available":149
+  },
+  {
+    "id":645,
+    "eventId":"c8d90a3c-85ec-42c0-b2b3-533471e82403",
+    "name":"Online Παρακολούθηση",
+    "price":25.0,
+    "quantity":350,
+    "available":348
+  },
+  {
+    "id":646,
+    "eventId":"3a1b8b42-e528-4c08-b9b5-1630e03aa887",
+    "name":"Γενική Είσοδος",
+    "price":38.5,
+    "quantity":600,
+    "available":590
+  },
+  {
+    "id":647,
+    "eventId":"3a1b8b42-e528-4c08-b9b5-1630e03aa887",
+    "name":"Θέσεις Premium (Recliner)",
+    "price":60.0,
+    "quantity":120,
+    "available":116
+  },
+  {
+    "id":648,
+    "eventId":"3a1b8b42-e528-4c08-b9b5-1630e03aa887",
+    "name":"Παιδικό \/ Φοιτητικό",
+    "price":30.0,
+    "quantity":80,
+    "available":76
+  },
+  {
+    "id":649,
+    "eventId":"987cb3d7-cab3-4caa-b100-f5e734be080b",
+    "name":"Εισιτήριο Σεμιναρίου (Δια ζώσης)",
+    "price":71.0,
+    "quantity":60,
+    "available":58
+  },
+  {
+    "id":650,
+    "eventId":"987cb3d7-cab3-4caa-b100-f5e734be080b",
+    "name":"Online Παρακολούθηση",
+    "price":30.0,
+    "quantity":140,
+    "available":140
+  },
+  {
+    "id":651,
+    "eventId":"adec7719-88c4-4a32-9d29-f682e07775dd",
+    "name":"Μονοήμερο Εισιτήριο Φεστιβάλ",
+    "price":50.0,
+    "quantity":350,
+    "available":344
+  },
+  {
+    "id":652,
+    "eventId":"adec7719-88c4-4a32-9d29-f682e07775dd",
+    "name":"Τριήμερο Εισιτήριο Φεστιβάλ",
+    "price":122.0,
+    "quantity":280,
+    "available":276
+  },
+  {
+    "id":653,
+    "eventId":"adec7719-88c4-4a32-9d29-f682e07775dd",
+    "name":"Premium Camp Pass",
+    "price":200.0,
+    "quantity":70,
+    "available":62
+  }
+]

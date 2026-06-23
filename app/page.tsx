@@ -40,6 +40,10 @@ export default async function Page() {
       id: true,
       title: true,
       media: true,
+      startDateTime: true,
+      venue: true,
+      city: true,
+      type: true,
     },
     where: {
       status: EventStatus.PUBLISHED,
@@ -139,6 +143,10 @@ export default async function Page() {
             id: x.id,
             title: x.title,
             image: x.media[0],
+            startDateTime: x.startDateTime,
+            venue: x.venue,
+            city: x.city,
+            type: x.type,
           }))}
         />
         {recommendedEvents.length > 0 && (

@@ -26,7 +26,7 @@ export function EventCard({
   return (
     <Link
       href={`/events/${encodeURIComponent(id)}`}
-      className="group block rounded-2xl border border-violet-100 bg-white/80 shadow-sm shadow-violet-100/60 transition-all hover:shadow-md hover:shadow-violet-200/60 hover:-translate-y-0.5"
+      className="group h-full rounded-2xl border border-violet-100 bg-white/80 shadow-sm shadow-violet-100/60 transition-all hover:shadow-md hover:shadow-violet-200/60 hover:-translate-y-0.5 flex flex-col"
     >
       <div className="overflow-hidden rounded-t-2xl">
         <EventCardImage
@@ -36,7 +36,7 @@ export function EventCard({
         />
       </div>
 
-      <div className="p-4">
+      <div className="p-4 flex-1">
         <div className="flex items-center justify-between mb-2">
           <span className="rounded-full bg-violet-100 text-violet-700 text-xs font-semibold px-2.5 py-0.5">
             {EVENT_TYPE_LABELS[type]}
