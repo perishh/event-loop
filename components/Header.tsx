@@ -1,35 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
-import { signOut } from "@/app/logout/actions";
 
 import Logo from "../assets/logo.png";
 import {
   CircleUserRound,
   Cog,
   LayoutList,
-  LogOut,
   MessagesSquare,
   Search,
 } from "lucide-react";
 import { getSession } from "@/lib/auth/session";
 import EventsDropdown from "@/components/EventsDropdown";
+import LogoutButton from "@/components/LogoutButton";
 import { BookingStatus, UserRole } from "@/app/generated/prisma/enums";
 import prisma from "@/lib/prisma";
-
-/**
- * @brief Renders the logout button used inside the profile dropdown.
- */
-export function LogoutButton() {
-  return (
-    <button
-      type="button"
-      onClick={signOut}
-      className="bg-white p-2 rounded-xl text-sm shadow-md shadow-violet-800 font-semibold"
-    >
-      <LogOut size={20} />
-    </button>
-  );
-}
 
 /**
  * @brief  Renders the main EventLoop header.

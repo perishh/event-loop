@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { signUp } from "../actions";
 import { getRawInput, SignUpInputSchema } from "../schema";
 import z from "zod";
 import PendingStatus from "./PendingStatus";
@@ -174,7 +173,12 @@ export default function RegisterForm() {
     setLoading(true);
 
     try {
-      const result = await signUp(rawInput);
+      const response = await fetch("/api/auth/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(rawInput),
+      });
+      const result = await response.json();
 
       if (result.success) {
         setShowPending(true);

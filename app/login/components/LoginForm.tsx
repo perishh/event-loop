@@ -8,7 +8,6 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { Lock, User } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { signInAction } from "../actions";
 
 /**
  * Returns the first error message for a given field name, or undefined.
@@ -44,10 +43,15 @@ export default function LoginForm() {
     setLoading(true);
 
     try {
-      const result = await signInAction(rawInput);
+      const response = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(rawInput),
+      });
+      const result = await response.json();
 
       if (result.success) {
-        router.replace(result.message);
+        router.replace(result.redirectTo);
         return;
       }
 

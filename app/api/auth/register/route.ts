@@ -1,24 +1,30 @@
-"use server";
-
-import { SignUpInputSchema } from "./schema";
-import z from "zod";
+import { SignUpInputSchema } from "@/app/register/schema";
 import prisma from "@/lib/prisma";
 import { hashPassword } from "@/lib/auth/password";
+import z from "zod";
 
-export type SignUpResult =
-  | { success: true }
-  | { success: false; error: string; fieldErrors?: Record<string, string[]> };
+export async function POST(request: Request) {
+  let rawInput: unknown;
+  try {
+    rawInput = await request.json();
+  } catch {
+    return Response.json(
+      { success: false, error: "Μη έγκυρο αίτημα." },
+      { status: 400 },
+    );
+  }
 
-// Server action for signup
-export const signUp = async (rawInput: unknown): Promise<SignUpResult> => {
   const parsed = SignUpInputSchema.safeParse(rawInput);
 
   if (!parsed.success) {
-    return {
-      success: false,
-      error: "Μη έγκυρα πεδία.",
-      fieldErrors: z.flattenError(parsed.error).fieldErrors,
-    };
+    return Response.json(
+      {
+        success: false,
+        error: "Μη έγκυρα πεδία.",
+        fieldErrors: z.flattenError(parsed.error).fieldErrors,
+      },
+      { status: 400 },
+    );
   }
 
   const existing = await prisma.user.findFirst({
@@ -45,11 +51,14 @@ export const signUp = async (rawInput: unknown): Promise<SignUpResult> => {
       fieldErrors.username = ["Το όνομα χρήστη χρησιμοποιείται ήδη."];
     }
 
-    return {
-      success: false,
-      error: "Υπάρχει ήδη χρήστης με αυτά τα στοιχεία.",
-      fieldErrors,
-    };
+    return Response.json(
+      {
+        success: false,
+        error: "Υπάρχει ήδη χρήστης με αυτά τα στοιχεία.",
+        fieldErrors,
+      },
+      { status: 400 },
+    );
   }
 
   const hashedPassword = await hashPassword(parsed.data.password);
@@ -68,7 +77,5 @@ export const signUp = async (rawInput: unknown): Promise<SignUpResult> => {
     },
   });
 
-  return {
-    success: true,
-  };
-};
+  return Response.json({ success: true });
+}
