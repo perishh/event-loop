@@ -14,6 +14,9 @@ export default function AdminMenu() {
   const trainActive =
     pathname === "/admin/train" || pathname.startsWith("/admin/train/");
 
+  const exportActive =
+    pathname === "/admin/export" || pathname.startsWith("/admin/export/");
+
   return (
     <aside className="max-w-96 shrink-0 bg-violet-50 p-4 sticky top-[76px] left-0 max-h-[calc(100dvh-76px)]">
       <Breadcrumb
@@ -36,10 +39,17 @@ export default function AdminMenu() {
         Διαχείριση χρηστών
       </Link>
 
-      <span className="flex items-center gap-2 px-3 py-2 rounded-lg text-gray-400 cursor-not-allowed">
+      <Link
+        href="/admin/export"
+        className={`flex items-center gap-2 px-3 py-2 rounded-lg ${
+          exportActive
+            ? "bg-violet-500 text-white"
+            : "text-gray-700 hover:bg-violet-100"
+        }`}
+      >
         <FileDown size={18} />
         Εξαγωγή εκδηλώσεων
-      </span>
+      </Link>
 
       <Link
         href="/admin/train"
