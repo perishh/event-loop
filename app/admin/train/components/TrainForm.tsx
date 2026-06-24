@@ -1,12 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { trainRecommendationsModel } from "../actions";
 import InputField from "@/components/InputField";
 import { Brain, RefreshCw } from "lucide-react";
 import { TrainHyperparamsSchema } from "../schema";
+import { useRouter } from "next/navigation";
 
 export default function TrainForm() {
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
@@ -30,13 +31,20 @@ export default function TrainForm() {
       return;
     }
 
-    const result = await trainRecommendationsModel(rawInput);
+    const res = await fetch("/api/admin/train", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(rawInput),
+    });
+
+    const result = await res.json();
 
     if (!result.success) {
       setError(result.error);
-      setSuccess(true);
     } else {
+      setSuccess(true);
       setError("");
+      router.refresh();
     }
 
     setLoading(false);

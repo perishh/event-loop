@@ -52,6 +52,7 @@ export default function LoginForm() {
 
       if (result.success) {
         router.replace(result.redirectTo);
+        router.refresh();
         return;
       }
 

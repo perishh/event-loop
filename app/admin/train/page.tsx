@@ -6,12 +6,16 @@ import {
   TrendingUp,
   Users,
 } from "lucide-react";
-import { getModelStatus } from "./actions";
+import { getModelStatus } from "@/lib/recommendation/status";
+import { getSession } from "@/lib/auth/session";
+import { UserRole } from "@/app/generated/prisma/enums";
 import StatusCard from "./components/StatusCard";
 import TrainForm from "./components/TrainForm";
 
 export default async function TrainPage() {
-  const status = await getModelStatus();
+  const session = await getSession();
+  const isAdmin = session?.role === UserRole.ADMIN;
+  const status = isAdmin ? await getModelStatus() : null;
 
   return (
     <main className="p-6 flex-1">
