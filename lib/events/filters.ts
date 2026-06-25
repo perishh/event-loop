@@ -1,13 +1,32 @@
-"use server";
-
-import prisma from "@/lib/prisma";
 import {
   EventCategory,
   EventStatus,
   EventType,
-} from "../generated/prisma/enums";
+} from "@/app/generated/prisma/enums";
+import prisma from "../prisma";
 
-interface FilterParams {
+export type EventBrowseResult = {
+  id: string;
+  title: string;
+  description: string;
+  type: EventType;
+  categories: EventCategory[];
+  venue: string;
+  address: string;
+  city: string;
+  country: string;
+  latitude: number | null;
+  longitude: number | null;
+  startDateTime: Date;
+  endDateTime: Date;
+  capacity: number;
+  status: EventStatus;
+  updatedAt: Date;
+  media: string[];
+  organizerId: string;
+};
+
+export interface FilterParams {
   type: EventType | null;
   dateFrom: Date | null;
   dateTo: Date | null;
@@ -22,7 +41,7 @@ export async function getFilteredEvents(
   params: FilterParams,
   page: number = 1,
   pageSize: number = 10,
-) {
+): Promise<{ events: EventBrowseResult[]; hasMore: boolean }> {
   const where: Record<string, unknown> = {
     status: EventStatus.PUBLISHED,
   };

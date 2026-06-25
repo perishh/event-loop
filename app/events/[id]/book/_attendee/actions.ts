@@ -7,7 +7,6 @@ import prisma from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 import { getSession } from "@/lib/auth/session";
 
-// TODO: Maybe make global?
 export type BookActionResult =
   | { success: true }
   | { success: false; error: string; fieldErrors?: Record<string, string[]> };

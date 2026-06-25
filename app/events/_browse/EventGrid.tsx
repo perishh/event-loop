@@ -1,40 +1,35 @@
 "use client";
 
 import { useState } from "react";
-import { getFilteredEvents } from "../actions";
-import {
-  EventCategory,
-  EventStatus,
-  EventType,
-} from "@/app/generated/prisma/enums";
 import { EventCard } from "../../../components/EventCard";
 import type { ResolvedParams } from "../types";
-
-export type EventBrowseResult = {
-  id: string;
-  title: string;
-  description: string;
-  type: EventType;
-  categories: EventCategory[];
-  venue: string;
-  address: string;
-  city: string;
-  country: string;
-  latitude: number | null;
-  longitude: number | null;
-  startDateTime: Date;
-  endDateTime: Date;
-  capacity: number;
-  status: EventStatus;
-  updatedAt: Date;
-  media: string[];
-  organizerId: string;
-};
+import { EventBrowseResult } from "@/lib/events/filters";
 
 interface Props {
   initialEvents: EventBrowseResult[];
   initialHasMore: boolean;
   filterParams: ResolvedParams;
+}
+
+async function fetchEventsFromApi(params: ResolvedParams, page: number) {
+  const sp = new URLSearchParams();
+  if (params.type) sp.set("type", params.type);
+  if (params.dateFrom) sp.set("dateFrom", params.dateFrom);
+  if (params.dateTo) sp.set("dateTo", params.dateTo);
+  if (params.city) sp.set("city", params.city);
+  if (params.categories && params.categories !== "[]")
+    sp.set("categories", params.categories);
+  if (params.priceFrom != null) sp.set("priceFrom", String(params.priceFrom));
+  if (params.priceTo != null) sp.set("priceTo", String(params.priceTo));
+  if (params.query) sp.set("query", params.query);
+  sp.set("page", String(page));
+
+  const res = await fetch(`/api/events?${sp.toString()}`);
+  if (!res.ok) throw new Error("Αποτυχία φόρτωσης εκδηλώσεων");
+  return res.json() as Promise<{
+    events: EventBrowseResult[];
+    hasMore: boolean;
+  }>;
 }
 
 export default function EventGrid({
@@ -51,22 +46,8 @@ export default function EventGrid({
 
   const loadMore = async () => {
     setLoading(true);
-    const { events, hasMore: more } = await getFilteredEvents(
-      {
-        categories:
-          filterParams.categories && filterParams.categories !== "[]"
-            ? JSON.parse(filterParams.categories)
-            : null,
-        type: filterParams.type,
-        dateFrom: filterParams.dateFrom
-          ? new Date(filterParams.dateFrom)
-          : null,
-        dateTo: filterParams.dateTo ? new Date(filterParams.dateTo) : null,
-        city: filterParams.city ?? null,
-        priceFrom: filterParams.priceFrom,
-        priceTo: filterParams.priceTo,
-        query: filterParams.query ?? null,
-      },
+    const { events, hasMore: more } = await fetchEventsFromApi(
+      filterParams,
       page,
     );
     setResults((prevResults) => ({ ...prevResults, [page]: events }));
@@ -86,7 +67,7 @@ export default function EventGrid({
               id={event.id}
               city={event.city}
               image={event.media[0] || null}
-              startDateTime={event.startDateTime}
+              startDateTime={new Date(event.startDateTime)}
               title={event.title}
               type={event.type}
               venue={event.venue}

@@ -1,4 +1,4 @@
-import { getFilteredEvents } from "../actions";
+import { getFilteredEvents } from "@/lib/events/filters";
 import { ResolvedParams } from "../types";
 import EventGrid from "./EventGrid";
 

@@ -1,11 +1,8 @@
-"use server";
-
+import { NextRequest, NextResponse } from "next/server";
 import { BookingStatus, UserRole } from "@/app/generated/prisma/enums";
 import { getSession } from "@/lib/auth/session";
 import prisma from "@/lib/prisma";
-import { ActionResult } from "next/dist/shared/lib/app-router-types";
-import { EventInputSchema } from "../../_form/schema";
-import { EventTickets } from "@/app/generated/prisma/client";
+import { EventInputSchema } from "@/app/events/_form/schema";
 import { revalidatePath } from "next/cache";
 import z from "zod";
 
@@ -17,24 +14,32 @@ function isPrismaNotFound(err: unknown): boolean {
   );
 }
 
-export async function updateEventAction(
-  eventId: string,
-  rawInput: unknown,
-): Promise<ActionResult> {
+export async function PUT(
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> },
+) {
+  const { id: eventId } = await params;
+
   const session = await getSession();
 
   if (!session) {
-    return {
-      success: false,
-      message: "Πρέπει να είστε συνδεδεμένος για να επεξεργαστείτε εκδήλωση.",
-    };
+    return NextResponse.json(
+      {
+        success: false,
+        message: "Πρέπει να είστε συνδεδεμένος για να επεξεργαστείτε εκδήλωση.",
+      },
+      { status: 401 },
+    );
   }
 
   if (session.role !== UserRole.ORGANIZER && session.role !== UserRole.ADMIN) {
-    return {
-      success: false,
-      message: "Μόνο οι διοργανωτές μπορούν να επεξεργαστούν εκδηλώσεις.",
-    };
+    return NextResponse.json(
+      {
+        success: false,
+        message: "Μόνο οι διοργανωτές μπορούν να επεξεργαστούν εκδηλώσεις.",
+      },
+      { status: 403 },
+    );
   }
 
   const event = await prisma.event.findUnique({
@@ -46,26 +51,42 @@ export async function updateEventAction(
   });
 
   if (!event) {
-    return {
-      success: false,
-      message: "Η εκδήλωση δεν βρέθηκε.",
-    };
+    return NextResponse.json(
+      { success: false, message: "Η εκδήλωση δεν βρέθηκε." },
+      { status: 404 },
+    );
   }
 
   if (event.organizerId !== session.sub && session.role !== UserRole.ADMIN) {
-    return {
-      success: false,
-      message: "Δεν έχετε δικαίωμα επεξεργασίας αυτής της εκδήλωσης.",
-    };
+    return NextResponse.json(
+      {
+        success: false,
+        message: "Δεν έχετε δικαίωμα επεξεργασίας αυτής της εκδήλωσης.",
+      },
+      { status: 403 },
+    );
+  }
+
+  let rawInput: unknown;
+  try {
+    rawInput = await request.json();
+  } catch {
+    return NextResponse.json(
+      { success: false, message: "Μη έγκυρο αίτημα." },
+      { status: 400 },
+    );
   }
 
   const parsed = EventInputSchema.safeParse(rawInput);
 
   if (!parsed.success) {
-    return {
-      success: false,
-      fieldErrors: z.flattenError(parsed.error).fieldErrors,
-    };
+    return NextResponse.json(
+      {
+        success: false,
+        fieldErrors: z.flattenError(parsed.error).fieldErrors,
+      },
+      { status: 400 },
+    );
   }
 
   const input = parsed.data;
@@ -97,8 +118,14 @@ export async function updateEventAction(
       });
 
       const del: number[] = [];
-      const upd: Omit<EventTickets, "eventId">[] = [];
-      const create: Omit<EventTickets, "available" | "eventId" | "id">[] = [];
+      const upd: {
+        id: number;
+        name: string;
+        price: number;
+        quantity: number;
+        available: number;
+      }[] = [];
+      const create: { name: string; price: number; quantity: number }[] = [];
 
       for (const ticket of currentTickets) {
         const updatedTicket = inputTicketTypes.find(
@@ -174,21 +201,21 @@ export async function updateEventAction(
       }
     });
   } catch (err) {
-    return {
-      success: false,
-      message:
-        err instanceof Error
-          ? err.message
-          : "Σφάλμα κατά την επεξεργασία της εκδήλωσης.",
-    };
+    return NextResponse.json(
+      {
+        success: false,
+        message:
+          err instanceof Error
+            ? err.message
+            : "Σφάλμα κατά την επεξεργασία της εκδήλωσης.",
+      },
+      { status: 409 },
+    );
   }
 
   revalidatePath(`/events/${event.id}`);
   revalidatePath(`/events/${event.id}/edit`);
   revalidatePath(`/events/${event.id}/book`);
 
-  return {
-    success: true,
-    message: event.id,
-  };
+  return NextResponse.json({ success: true, message: event.id });
 }

@@ -21,11 +21,9 @@ import TicketEntry from "./TicketEntry";
 import { TicketDraft } from "./types";
 import { EventInputSchema } from "./schema";
 import z from "zod";
-import { createEventAction } from "../new/actions";
 import { useRouter } from "next/navigation";
 import { LatLng } from "@/components/Map";
-import { EditableEvent } from "../[id]/edit/types";
-import { updateEventAction } from "../[id]/edit/actions";
+import type { EditableEvent } from "../[id]/edit/types";
 
 const getDefaultTicket = (): TicketDraft => ({
   id: Date.now(),
@@ -125,9 +123,18 @@ export default function EventForm({ eventToEdit }: Props) {
     setLoading(true);
 
     try {
-      const response = await (eventToEdit
-        ? updateEventAction(eventToEdit.id, payload)
-        : createEventAction(payload));
+      const url = eventToEdit
+        ? `/api/events/${encodeURIComponent(eventToEdit.id)}`
+        : "/api/events";
+      const method = eventToEdit ? "PUT" : "POST";
+
+      const res = await fetch(url, {
+        method,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const response = await res.json();
 
       if (!response.success) {
         setErrors(response.fieldErrors || {});
@@ -143,6 +150,7 @@ export default function EventForm({ eventToEdit }: Props) {
       if (response.message) {
         router.replace(`/events/${encodeURIComponent(response.message)}`);
       }
+      router.refresh();
     } finally {
       setLoading(false);
     }
