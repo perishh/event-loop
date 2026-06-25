@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { createBookingAction } from "../actions";
 import { BookingInputSchema } from "../schema";
 import z from "zod";
 import { Ticket, Euro, Minus, Plus, CircleCheck } from "lucide-react";
@@ -98,10 +97,20 @@ export default function BookingForm({
     setLoading(true);
 
     try {
-      const result = await createBookingAction(eventId, rawInput);
+      const response = await fetch(
+        `/api/events/${encodeURIComponent(eventId)}/book`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(rawInput),
+        },
+      );
 
-      if (result.success) {
+      const result = await response.json();
+
+      if (response.ok && result.success) {
         setSuccess(true);
+        router.refresh();
         return;
       }
 

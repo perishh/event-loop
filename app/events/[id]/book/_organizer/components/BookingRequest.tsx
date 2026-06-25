@@ -3,8 +3,8 @@
 import { Check, Clock, Euro, Ticket, User, X } from "lucide-react";
 import { BookingRow } from "../types";
 import { formatDate, formatTime } from "@/lib/utils";
-import { cancelBookingAction, confirmBookingAction } from "../actions";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { BookingStatus } from "@/app/generated/prisma/enums";
 import { STATUS_LABELS } from "@/prisma/mapper";
 
@@ -20,6 +20,7 @@ interface Props {
 }
 
 export default function BookingRequest({ booking }: Props) {
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -29,10 +30,19 @@ export default function BookingRequest({ booking }: Props) {
     setError(null);
 
     try {
-      const result = await confirmBookingAction(booking.id);
+      const response = await fetch(
+        `/api/bookings/${encodeURIComponent(booking.id)}/confirm`,
+        { method: "POST" },
+      );
+
+      const result = await response.json();
+
       if (!result.success) {
         setError(result.error);
+        return;
       }
+
+      router.refresh();
     } catch {
       setError("Σφάλμα κατά την επιβεβαίωση της κράτησης.");
     } finally {
@@ -46,10 +56,19 @@ export default function BookingRequest({ booking }: Props) {
     setError(null);
 
     try {
-      const result = await cancelBookingAction(booking.id);
+      const response = await fetch(
+        `/api/bookings/${encodeURIComponent(booking.id)}/cancel`,
+        { method: "POST" },
+      );
+
+      const result = await response.json();
+
       if (!result.success) {
         setError(result.error);
+        return;
       }
+
+      router.refresh();
     } catch {
       setError("Σφάλμα κατά την ακύρωση της κράτησης.");
     } finally {
