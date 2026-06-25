@@ -24,6 +24,7 @@ import z from "zod";
 import { useRouter } from "next/navigation";
 import { LatLng } from "@/components/Map";
 import type { EditableEvent } from "../[id]/edit/types";
+import AsyncButton from "@/components/AsyncButton";
 
 const getDefaultTicket = (): TicketDraft => ({
   id: Date.now(),
@@ -305,23 +306,19 @@ export default function EventForm({ eventToEdit }: Props) {
 
         <div className="flex justify-end mt-6 space-x-2">
           {(!eventToEdit || eventToEdit.status === EventStatus.DRAFT) && (
-            <button
-              type="submit"
+            <AsyncButton
+              label="Αποθήκευση"
+              loading={loading}
+              theme="secondary"
               name={EventStatus.DRAFT}
-              className="bg-white text-violet-500 px-3 py-2 rounded-lg ring-2 ring-violet-500 transition-all hover:ring-offset-1 focus:ring-offset-2 outline-0 tracking-wide font-semibold"
-              disabled={loading}
-            >
-              {loading ? "Αποστολή…" : "Αποθήκευση"}
-            </button>
+            />
           )}
-          <button
+          <AsyncButton
+            label="Δημοσίευση"
+            loading={loading}
+            theme="primary"
             name={EventStatus.PUBLISHED}
-            type="submit"
-            className="bg-violet-500 text-white px-3 py-2 rounded-lg ring-0 hover:ring-2 ring-violet-500 transition-all active:ring-offset-1 focus:ring-offset-2 outline-0 tracking-wide font-semibold"
-            disabled={loading}
-          >
-            {loading ? "Αποστολή…" : "Δημοσίευση"}
-          </button>
+          />
         </div>
       </form>
     </div>

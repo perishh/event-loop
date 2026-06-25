@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { EventCard } from "../../../components/EventCard";
+import AsyncButton from "@/components/AsyncButton";
 import type { ResolvedParams } from "../types";
 import { EventBrowseResult } from "@/lib/events/filters";
 
@@ -75,14 +76,14 @@ export default function EventGrid({
           ))}
       </div>
       {hasMore && (
-        <button
+        <AsyncButton
           type="button"
+          label="Περισσότερα"
+          loading={loading}
+          theme="secondary"
           onClick={loadMore}
-          disabled={loading}
-          className="rounded-2xl border-2 border-violet-200 text-violet-700 px-4 py-2 font-semibold hover:bg-violet-50 transition-colors mx-auto mb-8 block"
-        >
-          {loading ? "Φόρτωση..." : "Περισσότερα"}
-        </button>
+          className="rounded-2xl border-2 border-violet-200 text-violet-700! px-4 py-2 mx-auto mb-8 block"
+        />
       )}
     </>
   );

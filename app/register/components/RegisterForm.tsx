@@ -20,6 +20,7 @@ import InputField from "@/components/InputField";
 import { LucideProps } from "lucide-react";
 import { ComponentType } from "react";
 import { UserRole } from "@/app/generated/prisma/enums";
+import AsyncButton from "@/components/AsyncButton";
 
 interface RegisterField {
   id: string;
@@ -261,14 +262,11 @@ export default function RegisterForm() {
         )}
 
         <div className="flex justify-end mt-6">
-          <button
+          <AsyncButton
             form="eventloop-register-form"
-            type="submit"
-            className="bg-violet-500 text-white px-3 py-2 rounded-lg ring-0 hover:ring-2 ring-violet-500 transition-all active:ring-offset-1 focus:ring-offset-2 outline-0 tracking-wide font-semibold"
-            disabled={loading}
-          >
-            {loading ? "Αποστολή…" : "Συνέχεια"}
-          </button>
+            label="Συνέχεια"
+            loading={loading}
+          />
         </div>
       </div>
     </section>

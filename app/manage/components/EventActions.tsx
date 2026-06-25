@@ -1,19 +1,11 @@
 "use client";
 
-import { useActionState } from "react";
-import {
-  publishEvent,
-  cancelEvent,
-  deleteEvent,
-  type EventManageFormState,
-} from "../actions";
+import { useState } from "react";
+import AsyncButton from "@/components/AsyncButton";
+import { EventStatus } from "@/app/generated/prisma/enums";
+import { useRouter } from "next/navigation";
 
-const BTN_PRIMARY =
-  "bg-violet-500 text-white text-sm px-3 py-1.5 rounded-lg hover:bg-violet-600 disabled:opacity-50";
-const BTN_SECONDARY =
-  "border border-gray-300 text-gray-700 text-sm px-3 py-1.5 rounded-lg hover:bg-gray-50 disabled:opacity-50";
-const BTN_DANGER =
-  "border border-red-300 text-red-700 text-sm px-3 py-1.5 rounded-lg hover:bg-red-50 disabled:opacity-50";
+type ActionType = "publish" | "cancel" | "delete";
 
 export default function EventActions({
   eventId,
@@ -21,97 +13,94 @@ export default function EventActions({
   bookingCount,
 }: {
   eventId: string;
-  status: string;
+  status: EventStatus;
   bookingCount: number;
 }) {
-  const [publishState, publishAction, publishPending] = useActionState<
-    EventManageFormState,
-    FormData
-  >(publishEvent, null);
-  const [cancelState, cancelAction, cancelPending] = useActionState<
-    EventManageFormState,
-    FormData
-  >(cancelEvent, null);
-  const [deleteState, deleteAction, deletePending] = useActionState<
-    EventManageFormState,
-    FormData
-  >(deleteEvent, null);
+  const router = useRouter();
+  const [action, setAction] = useState<ActionType | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
-  const error =
-    (publishState && !publishState.success ? publishState.error : undefined) ??
-    (cancelState && !cancelState.success ? cancelState.error : undefined) ??
-    (deleteState && !deleteState.success ? deleteState.error : undefined);
-
-  const showPublish = status === "DRAFT";
-  const showCancel = status === "PUBLISHED";
+  const showPublish = status === EventStatus.DRAFT;
+  const showCancel = status === EventStatus.PUBLISHED;
   const showDelete =
-    status === "DRAFT" || (status === "PUBLISHED" && bookingCount === 0);
+    status === EventStatus.DRAFT ||
+    (status === EventStatus.PUBLISHED && bookingCount === 0);
 
   if (!showPublish && !showCancel && !showDelete) {
     return null;
   }
 
+  const performAction = async (actionType: ActionType) => {
+    setAction(actionType);
+    setError(null);
+    try {
+      const res = await fetch(
+        `/api/events/${encodeURIComponent(eventId)}/${actionType}`,
+        { method: "POST" },
+      );
+      const data = await res.json();
+      if (data.success) {
+        router.refresh();
+      } else {
+        setError(data.error ?? "Σφάλμα κατά την εκτέλεση της ενέργειας.");
+        setAction(null);
+      }
+    } catch {
+      setError("Σφάλμα επικοινωνίας με τον διακομιστή.");
+      setAction(null);
+    }
+  };
+
+  const handlePublish = () => performAction("publish");
+  const handleCancel = () => {
+    if (
+      window.confirm(
+        "Σίγουρα θέλετε να ακυρώσετε την εκδήλωση; Δεν θα επιτρέπονται νέες κρατήσεις, αλλά οι υπάρχουσες διατηρούνται.",
+      )
+    ) {
+      performAction("cancel");
+    }
+  };
+  const handleDelete = () => {
+    if (window.confirm("Σίγουρα θέλετε να διαγράψετε οριστικά την εκδήλωση;")) {
+      performAction("delete");
+    }
+  };
+
   return (
     <div className="flex items-center gap-2 flex-wrap justify-end">
       {showPublish && (
-        <form action={publishAction}>
-          <input type="hidden" name="eventId" value={eventId} />
-          <button
-            type="submit"
-            className={BTN_PRIMARY}
-            disabled={publishPending}
-          >
-            {publishPending ? "Δημοσίευση..." : "Δημοσίευση"}
-          </button>
-        </form>
+        <AsyncButton
+          type="button"
+          label="Δημοσίευση"
+          loading={action === "publish"}
+          disabled={action !== null}
+          theme="primary"
+          onClick={handlePublish}
+        />
       )}
 
       {showCancel && (
-        <form
-          action={cancelAction}
-          onSubmit={(e) => {
-            if (
-              !window.confirm(
-                "Σίγουρα θέλετε να ακυρώσετε την εκδήλωση; Δεν θα επιτρέπονται νέες κρατήσεις, αλλά οι υπάρχουσες διατηρούνται.",
-              )
-            ) {
-              e.preventDefault();
-            }
-          }}
-        >
-          <input type="hidden" name="eventId" value={eventId} />
-          <button
-            type="submit"
-            className={BTN_SECONDARY}
-            disabled={cancelPending}
-          >
-            {cancelPending ? "Ακύρωση..." : "Ακύρωση"}
-          </button>
-        </form>
+        <AsyncButton
+          type="button"
+          label="Ακύρωση"
+          loading={action === "cancel"}
+          disabled={action !== null}
+          theme="secondary"
+          onClick={handleCancel}
+        />
       )}
 
       {showDelete && (
-        <form
-          action={deleteAction}
-          onSubmit={(e) => {
-            if (
-              !window.confirm(
-                "Σίγουρα θέλετε να διαγράψετε οριστικά την εκδήλωση;",
-              )
-            ) {
-              e.preventDefault();
-            }
-          }}
-        >
-          <input type="hidden" name="eventId" value={eventId} />
-          <button
-            type="submit"
-            className={BTN_DANGER}
-            disabled={deletePending}
-          >
-            {deletePending ? "Διαγραφή..." : "Διαγραφή"}
-          </button>
-        </form>
+        <AsyncButton
+          type="button"
+          label="Διαγραφή"
+          loading={action === "delete"}
+          disabled={action !== null}
+          theme="secondary"
+          onClick={handleDelete}
+          className="ring-red-300! text-red-700! hover:bg-red-50!"
+        />
       )}
 
       {error && (

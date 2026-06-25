@@ -6,6 +6,7 @@ import { createBookingAction } from "../actions";
 import { BookingInputSchema } from "../schema";
 import z from "zod";
 import { Ticket, Euro, Minus, Plus, CircleCheck } from "lucide-react";
+import AsyncButton from "@/components/AsyncButton";
 
 interface TicketTypeData {
   id: number;
@@ -251,13 +252,12 @@ export default function BookingForm({
                 </div>
               )}
 
-              <button
-                type="submit"
-                disabled={loading || !hasSelection}
-                className="w-full py-3 px-6 bg-violet-600 hover:bg-violet-700 disabled:bg-violet-300 text-white font-semibold rounded-xl transition-colors disabled:cursor-not-allowed"
-              >
-                {loading ? "Γίνεται κράτηση..." : "Ολοκλήρωση κράτησης"}
-              </button>
+              <AsyncButton
+                label="Ολοκλήρωση κράτησης"
+                loading={loading}
+                disabled={!hasSelection}
+                className="w-full py-3 px-6 bg-violet-600 hover:bg-violet-700 disabled:bg-violet-300 rounded-xl"
+              />
 
               {!hasSelection && (
                 <p className="text-xs text-gray-400 text-center mt-2">

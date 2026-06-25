@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import AsyncButton from "@/components/AsyncButton";
 
 export default function UserActions({ userId }: { userId: string }) {
   const router = useRouter();
@@ -61,21 +62,19 @@ export default function UserActions({ userId }: { userId: string }) {
 
   return (
     <div className="flex items-center gap-2 shrink-0">
-      <button
+      <AsyncButton
+        label="Έγκριση"
+        loading={approvePending}
+        theme="primary"
         onClick={approve}
-        className="bg-violet-500 text-white text-sm px-3 py-1.5 rounded-lg hover:bg-violet-600 disabled:opacity-50"
-        disabled={approvePending}
-      >
-        {approvePending ? "Έγκριση..." : "Έγκριση"}
-      </button>
+      />
 
-      <button
+      <AsyncButton
+        label="Απόρριψη"
+        loading={rejectPending}
+        theme="secondary"
         onClick={reject}
-        className="border border-gray-300 text-gray-700 text-sm px-3 py-1.5 rounded-lg hover:bg-gray-50 disabled:opacity-50"
-        disabled={rejectPending}
-      >
-        {rejectPending ? "Απόρριψη..." : "Απόρριψη"}
-      </button>
+      />
 
       {error && <p className="text-sm text-red-600">{error}</p>}
     </div>

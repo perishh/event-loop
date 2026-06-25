@@ -38,14 +38,14 @@ export function EventCard({
         />
       </div>
 
-      <div className="p-4 flex-1">
+      <div className="p-4 flex-1 flex flex-col">
         <div className="flex items-center justify-between mb-2">
           <span className="rounded-full bg-violet-100 text-violet-700 text-xs font-semibold px-2.5 py-0.5">
             {EVENT_TYPE_LABELS[type]}
           </span>
         </div>
 
-        <h3 className="text-lg font-bold tracking-tight text-gray-900 line-clamp-2 leading-snug">
+        <h3 className="text-lg font-bold tracking-tight text-gray-900 line-clamp-2 leading-snug flex-1">
           {title}
         </h3>
 

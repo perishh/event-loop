@@ -8,6 +8,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { Lock, User } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import AsyncButton from "@/components/AsyncButton";
 
 /**
  * Returns the first error message for a given field name, or undefined.
@@ -128,14 +129,11 @@ export default function LoginForm() {
               Εγγραφείτε εδώ
             </Link>
           </p>
-          <button
+          <AsyncButton
             form="eventloop-login-form"
-            type="submit"
-            className="bg-violet-500 text-white px-3 py-2 rounded-lg ring-0 hover:ring-2 ring-violet-500 transition-all active:ring-offset-1 focus:ring-offset-2 outline-0 tracking-wide font-semibold"
-            disabled={loading}
-          >
-            {loading ? "Είσοδος…" : "Είσοδος"}
-          </button>
+            label="Είσοδος"
+            loading={loading}
+          />
         </div>
       </div>
     </section>

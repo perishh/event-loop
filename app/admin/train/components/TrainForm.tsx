@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import InputField from "@/components/InputField";
-import { Brain, RefreshCw } from "lucide-react";
+import { Brain } from "lucide-react";
 import { TrainHyperparamsSchema } from "../schema";
 import { useRouter } from "next/navigation";
+import AsyncButton from "@/components/AsyncButton";
 
 export default function TrainForm() {
   const router = useRouter();
@@ -184,23 +185,13 @@ export default function TrainForm() {
         )}
 
         <div className="flex items-center gap-3 pt-2">
-          <button
-            type="submit"
-            disabled={loading}
-            className="flex items-center gap-2 bg-violet-600 text-white px-6 py-2.5 rounded-xl hover:bg-violet-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-medium"
-          >
-            {loading ? (
-              <>
-                <RefreshCw size={18} className="animate-spin" />
-                Εκπαίδευση σε εξέλιξη…
-              </>
-            ) : (
-              <>
-                <Brain size={18} />
-                Εκπαίδευση μοντέλου
-              </>
-            )}
-          </button>
+          <AsyncButton
+            label="Εκπαίδευση μοντέλου"
+            loading={loading}
+            leadingIcon={Brain}
+            theme="primary"
+            className="px-6 py-2.5 rounded-xl font-medium"
+          />
 
           {loading && (
             <span className="text-sm text-gray-500">
