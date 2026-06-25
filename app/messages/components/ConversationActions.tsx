@@ -2,13 +2,14 @@
 
 import { useState, useRef, useEffect } from "react";
 import { MoreVertical, Trash2 } from "lucide-react";
-import { deleteConversationForMe } from "../actions";
+import { useRouter } from "next/navigation";
 
 export default function ConversationActions({
   conversationId,
 }: {
   conversationId: string;
 }) {
+  const router = useRouter();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -23,14 +24,22 @@ export default function ConversationActions({
     return () => document.removeEventListener("mousedown", handler);
   }, [open]);
 
-  const handleDelete = () => {
+  const handleDelete = async () => {
     setOpen(false);
     if (
-      !window.confirm("Διαγραφή ολόκληρης της συνομιλίας από τη δική σας προβολή;")
+      !window.confirm(
+        "Διαγραφή ολόκληρης της συνομιλίας από τη δική σας προβολή;",
+      )
     ) {
       return;
     }
-    void deleteConversationForMe(conversationId);
+    await fetch("/api/messages/delete-conversation", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ conversationId }),
+    });
+    router.replace("/messages");
+    router.refresh();
   };
 
   return (

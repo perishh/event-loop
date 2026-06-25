@@ -17,7 +17,7 @@ import { notFound } from "next/navigation";
 import { UserRole, BookingStatus } from "@/app/generated/prisma/enums";
 import Link from "next/link";
 import { formatDate, formatTime } from "@/lib/utils";
-import { startConversation } from "@/app/messages/actions";
+import StartConversationButton from "@/app/messages/components/StartConversationButton";
 
 export default async function EventDetailPage({
   params,
@@ -113,16 +113,13 @@ export default async function EventDetailPage({
               </span>
             )}
             {hasConfirmedBooking && (
-              <form action={startConversation}>
-                <input type="hidden" name="eventId" value={event.id} />
-                <button
-                  type="submit"
-                  className="flex items-center gap-1.5 rounded-xl bg-violet-500 px-3 py-2 text-sm font-medium text-white"
-                >
-                  <MessageSquare className="h-4 w-4 shrink-0" />
-                  Μήνυμα στον διοργανωτή
-                </button>
-              </form>
+              <StartConversationButton
+                eventId={event.id}
+                className="flex items-center gap-1.5 rounded-xl bg-violet-500 px-3 py-2 text-sm font-medium text-white"
+              >
+                <MessageSquare className="h-4 w-4 shrink-0" />
+                Μήνυμα στον διοργανωτή
+              </StartConversationButton>
             )}
           </div>
         </div>

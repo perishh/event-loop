@@ -1,37 +1,67 @@
 "use client";
 
-import { useActionState, useEffect, useRef } from "react";
+import { useState, useRef, type FormEvent } from "react";
 import { Send } from "lucide-react";
-import { sendMessage, type MessageFormState } from "../actions";
+import { useRouter } from "next/navigation";
 
 export default function MessageComposer({
   conversationId,
 }: {
   conversationId: string;
 }) {
-  const [state, formAction, pending] = useActionState<
-    MessageFormState,
-    FormData
-  >(sendMessage, null);
+  const router = useRouter();
+  const [error, setError] = useState<string | null>(null);
+  const [pending, setPending] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Clear the field after a successful send and keep focus for the next message.
-  useEffect(() => {
-    if (state?.success) {
+  const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError(null);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const body = (formData.get("body") as string) ?? "";
+
+    if (!body.trim()) {
+      setError("Το μήνυμα είναι κενό.");
+      return;
+    }
+
+    setPending(true);
+
+    try {
+      const res = await fetch("/api/messages/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ conversationId, body: body.trim() }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        setError(data.error ?? "Αποτυχία αποστολής.");
+        return;
+      }
+
       formRef.current?.reset();
       inputRef.current?.focus();
+
+      router.refresh();
+    } catch {
+      setError("Σφάλμα δικτύου.");
+    } finally {
+      setPending(false);
     }
-  }, [state]);
+  };
 
   return (
     <form
       ref={formRef}
-      action={formAction}
+      onSubmit={handleSubmit}
       className="shrink-0 border-t border-violet-100 p-3"
     >
       <div className="flex gap-2">
-        <input type="hidden" name="conversationId" defaultValue={conversationId} />
         <input
           ref={inputRef}
           name="body"
@@ -47,9 +77,7 @@ export default function MessageComposer({
           <Send className="h-4 w-4" />
         </button>
       </div>
-      {state && !state.success && (
-        <p className="mt-1 px-2 text-xs text-red-600">{state.error}</p>
-      )}
+      {error && <p className="mt-1 px-2 text-xs text-red-600">{error}</p>}
     </form>
   );
 }

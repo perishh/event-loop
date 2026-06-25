@@ -157,7 +157,7 @@ export default function RegisterForm() {
   const [message, setMessage] = useState("");
   const [showPending, setShowPending] = useState(false);
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const rawInput = getRawInput(new FormData(event.currentTarget));

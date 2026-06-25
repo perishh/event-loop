@@ -1,7 +1,7 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-import { markConversationRead } from "../actions";
 
 type Props = {
   conversationId: string | null;
@@ -12,10 +12,21 @@ export default function MessagesEffects({
   conversationId,
   highlightMessageId,
 }: Props) {
+  const router = useRouter();
+
   // Mark the open conversation's received messages as read.
   useEffect(() => {
-    if (conversationId) void markConversationRead(conversationId);
-  }, [conversationId]);
+    if (!conversationId) return;
+    fetch("/api/messages/mark-read", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ conversationId }),
+    })
+      .catch(() => {})
+      .then(() => {
+        router.refresh();
+      });
+  }, [conversationId, router]);
 
   // Scroll the message picked from Inbox/Sent into view.
   useEffect(() => {

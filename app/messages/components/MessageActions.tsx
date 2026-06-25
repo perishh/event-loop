@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { MoreVertical, Trash2 } from "lucide-react";
-import { deleteMessageForMe } from "../actions";
+import { useRouter } from "next/navigation";
 
 export default function MessageActions({
   messageId,
@@ -11,6 +11,7 @@ export default function MessageActions({
   messageId: string;
   align?: "left" | "right";
 }) {
+  const router = useRouter();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -26,14 +27,17 @@ export default function MessageActions({
     return () => document.removeEventListener("mousedown", handler);
   }, [open]);
 
-  const handleDelete = () => {
+  const handleDelete = async () => {
     setOpen(false);
     if (!window.confirm("Διαγραφή του μηνύματος από τη δική σας προβολή;")) {
       return;
     }
-    const formData = new FormData();
-    formData.append("messageId", messageId);
-    void deleteMessageForMe(null, formData);
+    await fetch("/api/messages/delete-message", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ messageId }),
+    });
+    router.refresh();
   };
 
   return (

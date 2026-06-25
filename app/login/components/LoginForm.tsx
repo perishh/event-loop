@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState } from "react";
 import { getRawInput, SignInInputSchema } from "../schema";
 import z from "zod";
 import InputField from "@/components/InputField";
@@ -27,7 +27,7 @@ export default function LoginForm() {
   const [errors, setErrors] = useState<Record<string, string[]>>({});
   const [message, setMessage] = useState("");
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const rawInput = getRawInput(new FormData(event.currentTarget));

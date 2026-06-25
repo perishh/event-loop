@@ -6,7 +6,7 @@ import { getSession } from "@/lib/auth/session";
 import { UserRole, BookingStatus } from "@/app/generated/prisma/enums";
 import { EVENT_TYPE_LABELS } from "@/prisma/mapper";
 import { formatDate, formatTime } from "@/lib/utils";
-import { startConversation } from "@/app/messages/actions";
+import StartConversationButton from "@/app/messages/components/StartConversationButton";
 import Breadcrumb from "@/components/Breadcrumb";
 
 // Application (booking) status — descriptive, attendee-facing.
@@ -164,16 +164,13 @@ export default async function Page() {
 
                 <div className="flex shrink-0 items-center gap-3">
                   {booking.status === BookingStatus.CONFIRMED && (
-                    <form action={startConversation}>
-                      <input type="hidden" name="eventId" value={event.id} />
-                      <button
-                        type="submit"
-                        className="flex items-center gap-1 text-sm text-violet-700 hover:underline"
-                      >
-                        <MessageSquare className="h-4 w-4 shrink-0" />
-                        Μήνυμα στον διοργανωτή
-                      </button>
-                    </form>
+                    <StartConversationButton
+                      eventId={event.id}
+                      className="flex items-center gap-1 text-sm text-violet-700 hover:underline"
+                    >
+                      <MessageSquare className="h-4 w-4 shrink-0" />
+                      Μήνυμα στον διοργανωτή
+                    </StartConversationButton>
                   )}
                   <Link
                     href={`/events/${event.id}`}
