@@ -23,7 +23,6 @@
 # misc
 .DS_Store
 *.pem
-!certs/*.pem
 
 # debug
 npm-debug.log*
@@ -48,4 +47,6 @@ next-env.d.ts
 
 
 
-certificates
+certificates/*
+!certificates/localhost.pem
+!certificates/localhost-key.pem

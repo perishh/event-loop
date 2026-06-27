@@ -9,10 +9,6 @@ interface Props {
   events: EventCardProps[];
 }
 
-/**
- * @brief  Renders the popular upcoming events carousel.
- * @return The JSX structure of the popular upcoming events section.
- */
 export default function PopularEventsCarousel({ events }: Props) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ align: "end" });
 

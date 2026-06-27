@@ -10,9 +10,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import AsyncButton from "@/components/AsyncButton";
 
-/**
- * Returns the first error message for a given field name, or undefined.
- */
+
 function getFieldError(
   fieldErrors: Record<string, string[]> | undefined,
   fieldName: string,

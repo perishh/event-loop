@@ -9,10 +9,6 @@ interface Props {
   events: EventCardProps[];
 }
 
-/**
- * @brief  Renders the recommended events carousel based on user preferences.
- * @return The JSX structure of the recommended events section.
- */
 export default function RecommendedEventsCarousel({ events }: Props) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ align: "end" });
 

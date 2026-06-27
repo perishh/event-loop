@@ -6,10 +6,7 @@ import PopularEventsCarousel from "./components/PopularEventsCarousel";
 import RecommendedEventsCarousel from "./components/RecommendedEventsCarousel";
 import { EventStatus } from "./generated/prisma/enums";
 
-/**
- * @brief  Renders the welcome route with temporary logged-in detection.
- * @return The JSX structure of the welcome route.
- */
+
 export default async function Page() {
   // Most Booked (primary), Most Visited (secondary)
 

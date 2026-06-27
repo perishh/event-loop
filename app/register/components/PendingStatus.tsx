@@ -4,10 +4,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { useRouter } from "next/navigation";
 import { CircleCheck } from "lucide-react";
 
-/**
- * @brief  Renders the pending approval status content.
- * @return The JSX structure of the pending approval status
- */
+
 export default function PendingStatus() {
   const router = useRouter();
 

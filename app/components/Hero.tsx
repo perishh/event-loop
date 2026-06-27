@@ -9,9 +9,6 @@ import { EventType } from "../generated/prisma/enums";
 import { formatDate } from "@/lib/utils";
 import SafeImage from "@/components/SafeImage";
 
-/**
- * @brief Stores the automatic hero change delay in milliseconds.
- */
 const cycleDelayMilliseconds = 10000;
 
 interface Props {
@@ -26,10 +23,6 @@ interface Props {
   }[];
 }
 
-/**
- * @brief  Renders the shared welcome hero carousel section.
- * @return The JSX structure of the shared welcome hero carousel.
- */
 export default function Hero({ events }: Props) {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
