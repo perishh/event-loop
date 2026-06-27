@@ -69,6 +69,7 @@ export default function EventGrid({
               city={event.city}
               image={event.media[0] || null}
               startDateTime={new Date(event.startDateTime)}
+              endDateTime={new Date(event.endDateTime)}
               title={event.title}
               type={event.type}
               venue={event.venue}

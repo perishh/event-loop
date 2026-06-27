@@ -66,6 +66,7 @@ export async function POST(request: Request) {
     data: {
       afm: parsed.data.afm,
       email: parsed.data.email,
+      phone: parsed.data.phone,
       firstName: parsed.data.firstName,
       lastName: parsed.data.lastName,
       role: parsed.data.role,

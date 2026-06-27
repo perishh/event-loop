@@ -27,3 +27,21 @@ export const cleanParams = (
     {} as Record<string, string>,
   );
 };
+
+export const formatDateRange = (start: Date, end: Date) => {
+  const sameDay =
+    start.getFullYear() === end.getFullYear() &&
+    start.getMonth() === end.getMonth() &&
+    start.getDate() === end.getDate();
+
+  if (sameDay) return formatDate(start);
+
+  const fmt = (d: Date) =>
+    d.toLocaleDateString("el-GR", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+
+  return `${fmt(start)} - ${fmt(end)}`;
+};

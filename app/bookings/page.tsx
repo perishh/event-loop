@@ -162,7 +162,7 @@ export default async function Page() {
                   </div>
                 </div>
 
-                <div className="flex shrink-0 items-center gap-3">
+                <div className="flex shrink-0 items-center gap-6">
                   {booking.status === BookingStatus.CONFIRMED && (
                     <StartConversationButton
                       eventId={event.id}
@@ -172,6 +172,19 @@ export default async function Page() {
                       Μήνυμα στον διοργανωτή
                     </StartConversationButton>
                   )}
+
+                  {booking.status === BookingStatus.PENDING && (
+                    <div className="flex flex-col items-end">
+                      <span className="flex items-center gap-1 text-sm text-gray-400 cursor-not-allowed select-none">
+                        <MessageSquare className="h-4 w-4 shrink-0" />
+                        Μήνυμα στον διοργανωτή
+                      </span>
+                      <span className="text-[11px] text-gray-400">
+                        Διαθέσιμο μετά την έγκριση
+                      </span>
+                    </div>
+                  )}
+
                   <Link
                     href={`/events/${event.id}`}
                     className="text-sm text-violet-700 hover:underline"

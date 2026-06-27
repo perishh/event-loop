@@ -66,6 +66,10 @@ export default async function Page({
               <p className="text-sm text-gray-900">{user.email}</p>
             </div>
             <div>
+              <p className="text-xs text-gray-500">Τηλέφωνο</p>
+              <p className="text-sm text-gray-900">{user.phone}</p>
+            </div>
+            <div>
               <p className="text-xs text-gray-500">ΑΦΜ</p>
               <p className="text-sm text-gray-900">{user.afm}</p>
             </div>

@@ -42,42 +42,42 @@ export async function getFilteredEvents(
   page: number = 1,
   pageSize: number = 10,
 ): Promise<{ events: EventBrowseResult[]; hasMore: boolean }> {
+  const now = new Date();
   const where: Record<string, unknown> = {
     status: EventStatus.PUBLISHED,
+    endDateTime: { gte: now },
   };
 
   if (params.type) where.type = params.type;
   if (params.city) where.city = params.city;
 
-  if (params.dateFrom) {
-    where.startDateTime = { gte: params.dateFrom };
+  if (params.dateFrom && params.dateFrom > now) {
+    where.endDateTime = { gte: params.dateFrom };
   }
 
   if (params.dateTo) {
-    where.endDateTime = { lte: params.dateTo };
+    where.startDateTime = { lte: params.dateTo };
   }
 
   if (params.categories) {
     where.categories = { hasSome: params.categories };
   }
 
-  if (params.priceFrom || params.priceTo) {
-    where.ticketTypes = {
-      ...(params.priceFrom
-        ? { some: { price: { gte: params.priceFrom } } }
-        : {}),
-      ...(params.priceTo ? { some: { price: { lte: params.priceTo } } } : {}),
-    };
+  if (params.priceFrom != null || params.priceTo != null) {
+    const price: { gte?: number; lte?: number } = {};
+    if (params.priceFrom != null) price.gte = params.priceFrom;
+    if (params.priceTo != null) price.lte = params.priceTo;
+    where.ticketTypes = { some: { price } };
   }
 
   if (params.query && params.query.trim() !== "") {
     const term = params.query.trim();
     where.OR = [
-      { title: { contains: term } },
-      { description: { contains: term } },
-      { venue: { contains: term } },
-      { address: { contains: term } },
-      { city: { contains: term } },
+      { title: { contains: term, mode: "insensitive" } },
+      { description: { contains: term, mode: "insensitive" } },
+      { venue: { contains: term, mode: "insensitive" } },
+      { address: { contains: term, mode: "insensitive" } },
+      { city: { contains: term, mode: "insensitive" } },
     ];
   }
 

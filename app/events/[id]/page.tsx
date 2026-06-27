@@ -237,6 +237,15 @@ export default async function EventDetailPage({
               Κράτηση
             </Link>
           )}
+
+          {!session && (
+            <Link
+              href="/login"
+              className="bg-violet-500 text-white rounded-xl px-3 py-2 text-sm font-medium tracking-wide"
+            >
+              Σύνδεση για κράτηση
+            </Link>
+          )}
         </div>
 
         {event.ticketTypes.length === 0 ? (

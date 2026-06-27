@@ -35,12 +35,14 @@ async function getInteractions(
 ): Promise<Interaction[]> {
   const [visits, bookings] = await Promise.all([
     prisma.eventVisit.findMany({
+      where: { event: { status: { not: EventStatus.CANCELLED } } },
       select: {
         userId: true,
         eventId: true,
       },
     }),
     prisma.booking.findMany({
+      where: { ticketType: { event: { status: { not: EventStatus.CANCELLED } } } },
       select: {
         attendeeId: true,
         ticketType: {

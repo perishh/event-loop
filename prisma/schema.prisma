@@ -31,6 +31,7 @@ model User {
   area      String
   city      String
   country   String
+  phone     String
   approved  Boolean  @default(false)
 
   organizedEvents Event[]

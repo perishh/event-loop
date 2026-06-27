@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { formatDate } from "@/lib/utils";
+import { formatDate, formatDateRange } from "@/lib/utils";
 import { EVENT_TYPE_LABELS } from "@/prisma/mapper";
 import { EventType } from "@/app/generated/prisma/enums";
 import SafeImage from "./SafeImage";
@@ -10,6 +10,7 @@ export interface EventCardProps {
   title: string;
   type: EventType;
   startDateTime: Date;
+  endDateTime?: Date;
   city: string;
   venue: string;
 }
@@ -20,6 +21,7 @@ export function EventCard({
   title,
   type,
   startDateTime,
+  endDateTime,
   city,
   venue,
 }: EventCardProps) {
@@ -50,7 +52,9 @@ export function EventCard({
         </h3>
 
         <p className="text-sm text-violet-600 font-medium mt-2">
-          {formatDate(startDateTime)}
+          {endDateTime
+            ? formatDateRange(startDateTime, endDateTime)
+            : formatDate(startDateTime)}
         </p>
 
         <p className="text-xs text-gray-500 mt-1 truncate">

@@ -4,6 +4,11 @@ import { UserRole } from "../generated/prisma/enums";
 export const SignUpInputSchema = z
   .strictObject({
     email: z.email({ message: "Μη έγκυρο email." }),
+    phone: z
+      .string({ message: "Το τηλέφωνο είναι απαραίτητο." })
+      .regex(/^\d{10}$/, {
+        message: "Το τηλέφωνο πρέπει να έχει ακριβώς 10 ψηφία.",
+      }),
     password: z
       .string({ message: "Ο κωδικός πρόσβασης είναι απαραίτητος." })
       .min(8, {
@@ -57,6 +62,7 @@ export type SignUpInput = z.infer<typeof SignUpInputSchema>;
 export const getRawInput = (formData: FormData) => {
   return {
     email: formData.get("email"),
+    phone: formData.get("phone"),
     password: formData.get("password"),
     confirmPassword: formData.get("confirmPassword"),
     firstName: formData.get("firstName"),

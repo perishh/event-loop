@@ -23,13 +23,6 @@ import {
 async function main() {
   console.log("Seeding database...");
 
-  const ticketBookingsCount: Record<number, number> = {};
-  for (const booking of bookingsData) {
-    ticketBookingsCount[booking.ticketTypeId] =
-      (ticketBookingsCount[booking.ticketTypeId] ?? 0) +
-      booking.numberOfTickets;
-  }
-
   const users: UserCreateManyInput[] = usersData.map((u) => ({
     ...u,
     role: u.role as UserRole,
@@ -76,6 +69,10 @@ async function main() {
   console.log(`Inserting ${messagesData.length} messages...`);
   await prisma.message.createMany({ data: messagesData });
 
+  await prisma.$executeRawUnsafe(
+    `SELECT setval(pg_get_serial_sequence('"EventTickets"', 'id'), (SELECT MAX(id) FROM "EventTickets"))`,
+  );
+
   console.log("Seeding complete!");
 }
 
@@ -88,3 +85,4 @@ main()
     await prisma.$disconnect();
     process.exit(1);
   });
+  

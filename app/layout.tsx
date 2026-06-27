@@ -3,6 +3,7 @@ import { Manrope } from "next/font/google";
 
 import "./globals.css";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -22,11 +23,6 @@ export const metadata: Metadata = {
   },
 };
 
-/**
- * @brief  Renders the root HTML layout of the application.
- * @param  children  the page content rendered inside the body.
- * @return The root HTML and body structure.
- */
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -37,6 +33,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

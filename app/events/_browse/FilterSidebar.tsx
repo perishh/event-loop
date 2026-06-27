@@ -205,6 +205,7 @@ export default function FilterSidebar({ cities, params }: Props) {
             id="event-priceFrom"
             label="Τιμή από"
             type="number"
+            min={0}
             icon={Euro}
             placeholder="Δωρεάν"
             value={localPriceFrom}
@@ -218,6 +219,7 @@ export default function FilterSidebar({ cities, params }: Props) {
             label="Τιμή έως"
             icon={Euro}
             type="number"
+            min={0}
             placeholder="∞"
             value={localPriceTo}
             onChange={(e) => {

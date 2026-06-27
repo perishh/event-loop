@@ -13,6 +13,7 @@ import {
   Lock,
   Mail,
   MapPinned,
+  Phone,
   User,
 } from "lucide-react";
 import InputField from "@/components/InputField";
@@ -35,10 +36,6 @@ interface RegisterSection {
   title: string;
   fields: RegisterField[];
 }
-
-/* -------------------------------------------------------------------------- */
-/*  Field definitions                                                         */
-/* -------------------------------------------------------------------------- */
 
 const sections: RegisterSection[] = [
   {
@@ -105,6 +102,14 @@ const sections: RegisterSection[] = [
         icon: Fingerprint,
         placeholder: "123456789",
       },
+      {
+        id: "register-phone",
+        name: "phone",
+        label: "Τηλέφωνο",
+        type: "tel",
+        icon: Phone,
+        placeholder: "6912345678",
+      },
     ],
   },
   {
@@ -137,13 +142,7 @@ const sections: RegisterSection[] = [
     ],
   },
 ];
-/* -------------------------------------------------------------------------- */
-/*  Helpers                                                                   */
-/* -------------------------------------------------------------------------- */
 
-/**
- * Returns the first error message for a given field name, or undefined.
- */
 function getFieldError(
   fieldErrors: Record<string, string[]> | undefined,
   fieldName: string,

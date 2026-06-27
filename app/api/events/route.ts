@@ -24,8 +24,8 @@ export async function GET(request: NextRequest) {
   const events = await getFilteredEvents(
     {
       type: type && type in EventType ? (type as EventType) : null,
-      dateFrom: dateFrom ? new Date(dateFrom) : null,
-      dateTo: dateTo ? new Date(dateTo) : null,
+      dateFrom: dateFrom ? new Date(`${dateFrom}T00:00:00`) : null,
+      dateTo: dateTo ? new Date(`${dateTo}T23:59:59.999`) : null,
       city: city || null,
       categories: categories ? JSON.parse(categories) : null,
       priceFrom: priceFrom ? parseFloat(priceFrom) : null,

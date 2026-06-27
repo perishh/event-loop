@@ -62,8 +62,8 @@ export default async function Header() {
         });
 
   return (
-    <nav className="bg-violet-700 px-4 py-2 md:px-6 lg:px-10 2xl:px-32 flex justify-between items-center sticky top-0 left-0 z-50">
-      <div className="flex items-center gap-6">
+    <nav className="bg-violet-700 px-6 py-2 flex items-center gap-4 sticky top-0 left-0 z-50">
+      <div className="flex items-center gap-6 shrink-0 pl-2">
         <Link href="/">
           <Image
             src={Logo}
@@ -126,7 +126,11 @@ export default async function Header() {
         )}
       </div>
 
-      <form action="/events" method="GET" className="flex items-center">
+      <form
+        action="/events"
+        method="GET"
+        className="flex flex-1 items-center justify-center"
+      >
         <div className="relative flex items-center">
           <Search
             size={18}
@@ -141,7 +145,7 @@ export default async function Header() {
         </div>
       </form>
 
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center space-x-2 shrink-0">
         {session ? (
           <>
             <div className="flex items-center space-x-2 mr-4 select-none">

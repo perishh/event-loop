@@ -14,8 +14,8 @@ export default async function AsyncEventGrid({
           ? JSON.parse(params.categories)
           : null,
       type: params.type,
-      dateFrom: params.dateFrom ? new Date(params.dateFrom) : null,
-      dateTo: params.dateTo ? new Date(params.dateTo) : null,
+      dateFrom: params.dateFrom ? new Date(`${params.dateFrom}T00:00:00`) : null,
+      dateTo: params.dateTo ? new Date(`${params.dateTo}T23:59:59.999`) : null,
       city: params.city ?? null,
       priceFrom: params.priceFrom,
       priceTo: params.priceTo,

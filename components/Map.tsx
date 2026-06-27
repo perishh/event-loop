@@ -79,10 +79,21 @@ export default function Map({
 
     const map = new maplibregl.Map({
       container: mapContainerRef.current,
-      style: "https://tiles.openfreemap.org/styles/liberty",
+      style: {
+        version: 8,
+        sources: {
+          osm: {
+            type: "raster",
+            tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
+            tileSize: 256,
+            attribution: "© OpenStreetMap contributors",
+          },
+        },
+        layers: [{ id: "osm", type: "raster", source: "osm" }],
+      },
       center: [initialPosition[1], initialPosition[0]],
       zoom: initialZoom,
-      attributionControl: false,
+      attributionControl: { compact: true },
     });
 
     mapRef.current = map;
