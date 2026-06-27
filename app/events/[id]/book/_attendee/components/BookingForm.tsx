@@ -94,6 +94,15 @@ export default function BookingForm({
 
     setFieldErrors({});
     setMessage("");
+
+    if (
+      !window.confirm(
+        "Σίγουρα θέλετε να υποβάλετε την κράτηση; Δεν μπορεί να αναιρεθεί μετά την υποβολή της.",
+      )
+    ) {
+      return;
+    }
+
     setLoading(true);
 
     try {

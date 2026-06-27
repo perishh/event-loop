@@ -92,7 +92,7 @@ export default function Hero({ events }: Props) {
                   fill
                   className="object-cover"
                   preload
-                  wrapperClassName="h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] w-full"
+                  wrapperClassName="h-[420px] w-full"
                 />
 
                 {/* Gradient overlay */}
