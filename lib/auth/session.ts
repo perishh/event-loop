@@ -12,7 +12,7 @@ import {
   verifySessionToken,
 } from "./jwt";
 
-export const SESSION_COOKIE_NAME = "openplanner_session";
+export const SESSION_COOKIE_NAME = "eventloop_session";
 
 export async function createSession(
   payload: SessionTokenPayload,
