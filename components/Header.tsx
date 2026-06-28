@@ -107,7 +107,7 @@ export default async function Header() {
             <span>Διαχείριση</span>
           </Link>
         )}
-        {session && (
+        {session && session.role !== UserRole.ADMIN && (
           <Link
             href="/messages"
             className="flex items-center text-white text-sm font-semibold space-x-4"
